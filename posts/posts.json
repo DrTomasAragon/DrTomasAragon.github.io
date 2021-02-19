@@ -5,7 +5,7 @@
     "description": "Welcome to our new blog, My Blog. We hope you enjoy \nreading what we have to say!",
     "author": [
       {
-        "name": "Nora Jones",
+        "name": "Tomás Aragón",
         "url": "https://example.com/norajones"
       }
     ],
@@ -13,7 +13,7 @@
     "categories": [],
     "contents": "\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-02-18T21:56:51-08:00",
+    "last_modified": "2021-02-18T23:52:07-08:00",
     "input_file": {}
   }
 ]
