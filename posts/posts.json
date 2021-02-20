@@ -1,19 +1,19 @@
 [
   {
     "path": "posts/welcome/",
-    "title": "Welcome to My Blog",
-    "description": "Welcome to our new blog, My Blog. We hope you enjoy \nreading what we have to say!",
+    "title": "Welcome! ¡Bienvenido!",
+    "description": "Rebuilding population health blog.",
     "author": [
       {
         "name": "Tomás Aragón",
-        "url": "https://example.com/norajones"
+        "url": "https://taragonmd.github.io"
       }
     ],
     "date": "2021-02-18",
     "categories": [],
-    "contents": "\n\n\n\n",
+    "contents": "\nI am rebuilding this blog website using https://rstudio.github.io/distill/.\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-02-18T23:52:07-08:00",
+    "last_modified": "2021-02-20T00:15:29-08:00",
     "input_file": {}
   }
 ]
