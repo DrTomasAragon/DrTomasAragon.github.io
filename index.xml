@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>@TAragonMD</title>
+    <link>https://taragonmd.github.io/</link>
+    <atom:link href="https://taragonmd.github.io/index.xml" rel="self" type="application/rss+xml"/>
+    <description>My Blog
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Never say never: Why I moved from local to state public health</title>
+      <dc:creator>Tomás Aragón</dc:creator>
+      <link>https://taragonmd.github.io/posts/2021-02-21-cdph-new-job</link>
+      <description>On January 4, 2021, I started as the new Director and State Health Officer at the California Department of Public Health.</description>
+      <category>CDPH</category>
+      <guid>https://taragonmd.github.io/posts/2021-02-21-cdph-new-job</guid>
+      <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://taragonmd.github.io/posts/2021-02-21-cdph-new-job/images/cdph-logo-gimp.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Welcome! ¡Bienvenido!</title>
+      <dc:creator>Tomás Aragón</dc:creator>
+      <link>https://taragonmd.github.io/posts/welcome</link>
+      <description>Rebuilding population health blog.</description>
+      <category>CDPH</category>
+      <guid>https://taragonmd.github.io/posts/welcome</guid>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
