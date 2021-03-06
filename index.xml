@@ -27,5 +27,18 @@
       <guid>https://taragonmd.github.io/posts/welcome</guid>
       <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
     </item>
+    <item>
+      <title>The Book of Why: The new science of cause and effect</title>
+      <dc:creator>Tomás Aragón</dc:creator>
+      <link>https://taragonmd.github.io/posts/2018-06-11-the-book-of-why</link>
+      <description>Brilliant introduction to causal inference with many public health examples.</description>
+      <category>Book review</category>
+      <category>Causal inference</category>
+      <category>Bayesian networks</category>
+      <category>Data science</category>
+      <guid>https://taragonmd.github.io/posts/2018-06-11-the-book-of-why</guid>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      <media:content url="https://taragonmd.github.io/posts/2018-06-11-the-book-of-why/images/Pearl2018_The-Book-of-Why_COVER_300x448.jpg" medium="image" type="image/jpeg"/>
+    </item>
   </channel>
 </rss>
