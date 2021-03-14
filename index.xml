@@ -7,7 +7,20 @@
     <description>My Blog
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Decision intelligence (Part 1)</title>
+      <dc:creator>Tomás Aragón</dc:creator>
+      <link>https://taragonmd.github.io/posts/2021-03-13-decision-intelligence01</link>
+      <description>Integrating problem solving, decision quality, performance improvement, and data science</description>
+      <category>Decision intelligence</category>
+      <category>Data science</category>
+      <category>Behvioral economics</category>
+      <category>Performance improvement</category>
+      <guid>https://taragonmd.github.io/posts/2021-03-13-decision-intelligence01</guid>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://taragonmd.github.io/posts/2021-03-13-decision-intelligence01/images/feature.png" medium="image" type="image/png" width="900" height="600"/>
+    </item>
     <item>
       <title>Never say never: Why I moved from local to state public health</title>
       <dc:creator>Tomás Aragón</dc:creator>
@@ -38,7 +51,7 @@
       <category>Data science</category>
       <guid>https://taragonmd.github.io/posts/2018-06-11-the-book-of-why</guid>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      <media:content url="https://taragonmd.github.io/posts/2018-06-11-the-book-of-why/images/Pearl2018_The-Book-of-Why_COVER_300x448.jpg" medium="image" type="image/jpeg"/>
+      <media:content url="https://taragonmd.github.io/posts/2018-06-11-the-book-of-why/images/Pearl2018_The-Book-of-Why_COVER_300x200.jpg" medium="image" type="image/jpeg"/>
     </item>
   </channel>
 </rss>

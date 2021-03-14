@@ -1,14 +1,24 @@
 ---
-title: "The Book of Why"
+title: "The Book of Why: The new science of cause and effect"
 description: |
-  A short description of the post.
+  Brilliant introduction to causal inference with many public health examples.
+draft: false
 author:
   - name: Tomás Aragón
     url: https://taragonmd.github.io
-date: 03-06-2021
+    affiliation: California Department of Public Health
+    affiliation_url: https://cdph.ca.gov
+    orcid_id: 0000-0002-2058-0423
+date: 06-11-2018
+categories:
+  - Book review
+  - Causal inference
+  - Bayesian networks
+  - Data science
 output:
   distill::distill_article:
     self_contained: false
+preview: images/Pearl2018_The-Book-of-Why_COVER_300x448.jpg       
 ---
 
 
@@ -16,8 +26,47 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+Causal reasoning is at the core of everything we *see*, *do*, and *imagine*. Causal inference is the foundation of scientific thinking and reasoning. Every explicit decision we make is the realization of causal thinking. You will be surprised to learn that the rigorous study of causality as a science is relatively new in comparison to the disciplines of statistics and probability. The history of the Causal Revolution will surprise, inspire, entertain, and---at times---shock you! Below is my 5-star Amazon review of the Judea Pearl's 
+[The Book of Why: The New Science of Cause and Effect](https://www.amazon.com/dp/1541698967/ref=cm_sw_em_r_mt_dp_9VZQCZSK32XKR9AKGCP6) (which became an Amazon "Best Seller" within the first week of its release!). 
 
+"Wow! I am a physician epidemiologist with a doctorate in epidemiology
+and I teach computational epidemiology (with R) at UC Berkeley. I had
+the opportunity to study biostatistics from the best professors at UC
+Berkeley School of Public Health (Steve Selvin, Nicolas Jewell,
+Richard Brand, and many more). The field of causal inference was just
+beginning to take off with biostatisticians piloting the plane (Mark
+van der Laan, Nicolas Jewell, etc.). I avoided a rigorous study of
+causal inference but eventually came around after studying Bayesian
+networks (pioneered by Judea Pearl) for decision analysis. Judea
+Pearl's Bayesian networks and causal graphs connects the fields of
+statistics, epidemiology, decision and computer sciences in a
+profoundly elegant way. His work empowers and expands the potential of
+"big data." This is the first book written for the general public on
+this topic. It will have a *huge impact*. Causality and causal
+reasoning is at the core of everything we see, do, and imagine. He
+provides a graphical tool (causal graphs) for encoding expert
+knowledge (including community wisdom and experience). Anyone---yes,
+anyone---can learn the basics. For additional rigor, there are
+structural causal models (functional equations). I now consider it
+"data scientific malpractice" to be designing studies, analyzing data,
+and adjusting for confounders without using causal models. Human
+brains are wired to resist new paradigms. Be intellectually wise and
+humble and read this book--you will not regret it!"
+
+## The Ladder of Causation
+
+By the end of this book you will understand, appreciate, and value the
+"Ladder of Causation" (Figure \@ref(fig:ladder))[^mh] as a way of thinking about
+decision making, causal reasoning, and causal discovery. You will
+develop a different appreciation of the important roles of
+epidemiology and statistics which have embraced the Causal Revolution. Be sure to get the 2020 reprint edition.[^reprint]
+
+[^reprint]: Basic Books; Reprint edition (August 25, 2020), ISBN-10: 1541698967, ISBN-13: 978-1541698963
+
+[^mh]: Illustrator: Maayan Harel <http://www.maayanillustration.com/>
+
+```{r ladder, fig.cap="Judea Pearl's Ladder of Causation. Illustrator: Maayan Hare", out.width="80%", fig.align = "center"} 
+knitr::include_graphics("images/Pearl2018_The-Book-of-Why_Ladder-of-Causation_680x950.png") 
+```
 
