@@ -83,9 +83,11 @@ $$
 $$
 \Pr (\text{presence of disease} \mid \text{test results})
 $$
-is called **evidential reasoning** (or diagnostic reasoning) and is the inverse conditional probability of causal reasoning. Unfortunately, human beings are very poor at evidential reasoning because it requires Bayes theorem to calculate probabilities. Humans are unaware of this cognitive limitation; hence, we are overconfident in our assessments and, with confirmation bias, may develop certainty and rigid beliefs. For these reasons, we must approach VUCA with genuine intellectual humility and embrace curiosity over certainty. In fact, in the face of VUCA, key decisions are better managed like hypotheses to be tested.
+is called **evidential reasoning** (or diagnostic reasoning) and is the inverse conditional probability of causal reasoning. Unfortunately, human beings are very poor at evidential reasoning because it requires Bayes theorem to calculate probabilities. Humans are unaware of this cognitive limitation; hence, we are overconfident in our assessments and, with confirmation bias, may develop certainty and rigid beliefs. For these reasons, *we must approach VUCA with genuine intellectual humility and embrace curiosity over certainty*. In fact, in the face of VUCA, *key decisions are better managed like hypotheses to be tested*.
 
 Every decision involves intuition, emotions, and cognitive and social psychology. Because of VUCA, decision making is often more art than science, and the “art” depends on psychological safety and effective interpersonal skills for managing conflict and building consensus. Decisions in organizational environments evolve within a historical, political, and cultural context that may constrain or support good decision making.
+
+The failure to understand basic causal and evidential reasoning leads to wrong inferences, rigid beliefs, and poor decisions. We have seen this time and time again in the SARS'CoV-2 pandemic. The only practical and effective approach is to embrace humility, curiosity, and learning. 
 
 ## Decision intelligence
 
@@ -104,7 +106,7 @@ graphically depicts the problem-solving structure as a causal graph
 knitr::include_graphics("images/FIG5_Problem-Solving_causal-graph.png") 
 ```
 
-The easiest example to understand is clinical diagnosis and treatment. When a patient presents to an emergency room with chest pain (**problem**), the clinician considers and prioritizes **consequences** (death, discomfort, etc.) and **causes** (myocardial infarction, esophageal reflux, anxiety, etc.), tests hypotheses by collecting data (history, physical examination, and diagnostic tests), and then uses the results to select and implement a treatment plan (**countermeasures**). The patient's response to treatment is more data for learning, and for adjusting hypotheses and treatments. This whole process is a series of problem solving decisions, learning, and continuous improvement. The seasoned clinical is an expert in clinical decision intelligence. 
+The easiest example to understand is clinical diagnosis and treatment. When a patient presents to an emergency room with chest pain (**problem**), the clinician considers and prioritizes **consequences** (death, discomfort, etc.) and **causes** (myocardial infarction, esophageal reflux, anxiety, etc.), tests hypotheses by collecting data (history, physical examination, and diagnostic tests), and then uses the results to select and implement a treatment plan (**countermeasures**). The patient's response to treatment is more data for learning, and for adjusting hypotheses and treatments. This whole process is a series of problem solving decisions, learning, and continuous improvement. The seasoned clinical is an expert in clinician decision intelligence. 
 
 ### Decision quality
 
@@ -118,9 +120,28 @@ knitr::include_graphics("images/FIG4_Decision-Quality_diverg-converg2.png")
 ```
 
 
-At a minimum, a decision quality checklist (Table \@ref(tab:dqr)) improves the quality of decisions at any stage of problem solving.
+At a minimum, a decision quality checklist (Table \@ref(tab:dqr1))
+improves the quality of decisions at any stage of problem solving. A
+good decision is only as strong as its weakest link.
 
-Table: (\#tab:dqr) Decision quality requirements engages multiple disciplines and skillsets
+
+Table: (\#tab:dqr1) Decision quality requirements engages multiple disciplines and skillsets
+
+| No. | Requirement  | Key questions to ask                                      |
+|-----+--------------+-----------------------------------------------------------|
+|   1 | Frame        | What are we deciding and why?                             |
+|   2 | Information  | What creative choices do we have?                         |
+|   3 | Alternatives | What do we need to know?                                  |
+|   4 | Reasoning    | Are we thinking straight?                                 |
+|   5 | Commitment   | Is there commitment to action? Are we thinking straight?  |
+|   6 | Prospects    | What future states do we care about?                      |
+
+
+Table \@ref(tab:dqr2)) summarizes specific areas of professional and
+systems developement to improve decision quality.
+
+
+Table: (\#tab:dqr2) Decision quality requirements engages multiple disciplines and skillsets
 
 | No. | Requirement  | Priority areas for development, training, and improvement                          |
 |-----+--------------+------------------------------------------------------------------------------------|
@@ -128,7 +149,7 @@ Table: (\#tab:dqr) Decision quality requirements engages multiple disciplines an
 |   2 | Information  | $\leftarrow$ **data** and **information systems**                                  |
 |   3 | Alternatives | $\leftarrow$ **knowledge management** (discovery, translation, and integration)    |
 |   4 | Reasoning    | $\leftarrow$ **causal and probabilistic reasoning** combined with **data science** |
-|   5 | Commitment   | $\leftarrow$ Involved **stakeholders** increases commitment to action              |
+|   5 | Commitment   | $\leftarrow$ Engage and involve **stakeholders** to increase commitment to action  |
 |   6 | Prospects    | $\leftarrow$ Understand the **consequences**, trade-offs, and opportunity costs    |
 
 
@@ -157,7 +178,12 @@ Table: (\#tab:pdsa) Decision intelligence is the integration of problem solving 
 | Act   | Act on what you learn to improve   | How do we learn and improve?      |
 
 
-**PDSA problem-solving** is a series of decisions (Figure \@ref(fig:pdsa)): finding and selecting the most important problems to tackle; identifying and prioritizing the consequences caused
+
+
+
+
+
+We can now appreciate that **PDSA problem-solving** is a series of decisions (Figure \@ref(fig:pdsa)): finding and selecting the most important problems to tackle; identifying and prioritizing the consequences caused
 by the unresolved problem(s); identifying (or discovering) and prioritizing the root causes of the
 problem(s); selecting effective countermeasures for each level (problem, root causes, and consequences); and deploying and evaluating the effectiveness of the countermeasures where evaluation
 is a type of causal analysis.   
