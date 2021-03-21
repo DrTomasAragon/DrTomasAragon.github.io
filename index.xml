@@ -7,7 +7,20 @@
     <description>My Blog
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>You're about to make a terrible mistake! (book recs)"</title>
+      <dc:creator>Tomás Aragón</dc:creator>
+      <link>https://taragonmd.github.io/posts/2021-03-20-youre-about-to-make-a-terrible-mistake</link>
+      <description>"Decisions determine destiny." Here are my favorite books on making better decisions.</description>
+      <category>Book recommendations</category>
+      <category>Decision intelligence</category>
+      <category>Behvioral economics</category>
+      <category>Decision analysis</category>
+      <guid>https://taragonmd.github.io/posts/2021-03-20-youre-about-to-make-a-terrible-mistake</guid>
+      <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://taragonmd.github.io/posts/2021-03-20-youre-about-to-make-a-terrible-mistake/images/feature.png" medium="image" type="image/png" width="1008" height="672"/>
+    </item>
     <item>
       <title>Decision intelligence (Part 1)</title>
       <dc:creator>Tomás Aragón</dc:creator>
