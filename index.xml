@@ -66,5 +66,18 @@
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       <media:content url="https://taragonmd.github.io/posts/2018-06-11-the-book-of-why/images/Pearl2018_The-Book-of-Why_COVER_300x200.jpg" medium="image" type="image/jpeg"/>
     </item>
+    <item>
+      <title>How emotions are made: The secret life of the brain</title>
+      <dc:creator>Tomás Aragón</dc:creator>
+      <link>https://taragonmd.github.io/posts/2018-06-15-how-emotions-are-made</link>
+      <description>Most of what we know about our emotions (and how our brains work) is just plain wrong---and sometimes harmful!</description>
+      <category>Book review</category>
+      <category>Emotions</category>
+      <category>Neuroscience</category>
+      <category>Psychology</category>
+      <guid>https://taragonmd.github.io/posts/2018-06-15-how-emotions-are-made</guid>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      <media:content url="https://taragonmd.github.io/posts/2018-06-15-how-emotions-are-made/images/feature.jpg" medium="image" type="image/jpeg"/>
+    </item>
   </channel>
 </rss>
