@@ -79,5 +79,18 @@
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       <media:content url="https://taragonmd.github.io/posts/2018-06-15-how-emotions-are-made/images/feature.jpg" medium="image" type="image/jpeg"/>
     </item>
+    <item>
+      <title>Humility is the New Smart! Rethinking human excellence</title>
+      <dc:creator>Tomás Aragón</dc:creator>
+      <link>https://taragonmd.github.io/posts/2017-10-22-humility-is-the-new-smart</link>
+      <description>Supercharge individual and organization learning and performance improvement.</description>
+      <category>Book review</category>
+      <category>Humility</category>
+      <category>Psychological safety</category>
+      <category>Team skills</category>
+      <guid>https://taragonmd.github.io/posts/2017-10-22-humility-is-the-new-smart</guid>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
+      <media:content url="https://taragonmd.github.io/posts/2017-10-22-humility-is-the-new-smart/images/humility-book_200x133.jpg" medium="image" type="image/jpeg"/>
+    </item>
   </channel>
 </rss>
