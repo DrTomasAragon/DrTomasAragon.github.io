@@ -7,7 +7,22 @@
     <description>My Blog
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 May 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Embodying cultural humility</title>
+      <dc:creator>Tomás Aragón</dc:creator>
+      <link>https://taragonmd.github.io/posts/2021-05-15-embodying-cultural-humility</link>
+      <description>Commit to lifelong learning and personal and institutional transformation.</description>
+      <category>Antiracism</category>
+      <category>Equity</category>
+      <category>Humility</category>
+      <category>Implicit bias</category>
+      <category>Leadership</category>
+      <category>Team skills</category>
+      <guid>https://taragonmd.github.io/posts/2021-05-15-embodying-cultural-humility</guid>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://taragonmd.github.io/posts/2021-05-15-embodying-cultural-humility/images/tree-hands_275x183.png" medium="image" type="image/png" width="275" height="183"/>
+    </item>
     <item>
       <title>The 7 principles for building trust</title>
       <dc:creator>Tomás Aragón</dc:creator>
@@ -20,6 +35,7 @@
       <category>Accountability</category>
       <category>Psychological safety</category>
       <category>Team skills</category>
+      <category>Trust</category>
       <guid>https://taragonmd.github.io/posts/2021-05-01-seven-principles-for-building-trust</guid>
       <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
       <media:content url="https://taragonmd.github.io/posts/2021-05-01-seven-principles-for-building-trust/images/building-trust_525x350.jpg" medium="image" type="image/jpeg"/>
@@ -31,7 +47,7 @@
       <description>Here are my favorite books on making better decisions (and avoiding terrible mistakes!)</description>
       <category>Book recommendations</category>
       <category>Decision intelligence</category>
-      <category>Behvioral economics</category>
+      <category>Behavioral economics</category>
       <category>Decision analysis</category>
       <guid>https://taragonmd.github.io/posts/2021-03-20-youre-about-to-make-a-terrible-mistake</guid>
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
@@ -44,7 +60,7 @@
       <description>Integrating problem solving, decision quality, performance improvement, and behavioral, data, and information sciences</description>
       <category>Decision intelligence</category>
       <category>Data science</category>
-      <category>Behvioral economics</category>
+      <category>Behavioral economics</category>
       <category>Performance improvement</category>
       <guid>https://taragonmd.github.io/posts/2021-03-13-decision-intelligence01</guid>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
