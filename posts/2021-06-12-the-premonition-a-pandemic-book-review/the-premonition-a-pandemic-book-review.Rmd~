@@ -1,0 +1,59 @@
+---
+title: "The Premonition---A pandemic book review"
+description: |
+  From a public health official and former local health officer
+draft: false
+author:
+  - name: Tomás Aragón
+    url: https://taragonmd.github.io
+    affiliation: California Department of Public Health
+    affiliation_url: https://cdph.ca.gov
+    orcid_id: 0000-0002-2058-0423
+date: 06-12-2021
+bibliography: /Users/tja/Dropbox/tja/texmf/bibtex/bib/phds.bib 
+link-citations: yes
+csl: /Users/tja/Dropbox/tja/texmf/styles/vancouver-brackets.csl 
+categories:
+  - Book review
+  - COVID-19
+  - Pandemic
+  - Leadership
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+# preview: images/feature.png   
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+**DISCLAIMER:** I am a public health official and former local health officer. I started my medical residency at San Francisco General Hospital in 1988---at the peak of the HIV-AIDS epidemic, and completed an infectious disease fellowship at UCSF. I have been in health officer roles since 1996, and from 2003--2010, I directed two CDC centers for infectious disease emergency preparedness and response focused on research and training. From 2011--December, 2020, I was the health officer of San Francisco, and on March 16, 2020, seven Bay Area health officers, including me, issued the [first stay-at-home order in the United States](https://journals.lww.com/jphmp/fulltext/2021/01001/crisis_decision_making_at_the_speed_of_covid_19_.5.aspx). So, I feel personally and professionally connected to the events in the book.
+
+**Rating:** 4 out of 5 stars (recommended)
+
+The book covers follows three main groups
+
+- Carter Mecher, Richard Hackett, and Bob Glass;
+- Joe DeRisi and UCSF team; and
+- Charity Dean.
+
+I recommend this book because you will learn history and leadership lessons that will put today's circumstances into perspective, and possibly make you a better persona and leader. To get the most from The Premonition book look for effective leadership in action, and for historical context and accuracy, how they interact, and what this tells you about the character and effectiveness of the protagonists. 
+
+For leadership, considers the following statements or definitions:
+
+> "Leadership is getting results in a way that inspires trust." 
+
+> Building trust requires leaders to be have *character* (be honest, have integrity, and be loyal); be *caring* (embody humility and compassion, promote equity and dignity, be kind and help others without expecting anything in return); be *competent* (be capable, consistent, and continuously improving); be *humble* (embody intellectual, cultural, and racial humility); be *accountable* (own your influence; own your mistakes and failures; apologize and make amends, keep commitments and promises); be *transparent* (communicate intent [what], motive [why], agenda [how: who, where, when], and mutual expectations); and ensure psychological *safety* (listen deeply without judgment, respect boundaries, assume good intent, risk vulnerability).
+
+> Public health leadership is “the practice of mobilizing people, organizations, and communities to effectively tackle tough public health challenges.”
+
+> Humility is the noble choice to forgo your status, and to use your influence for the good of others before yourself. Humility is also a mindset about oneself that is open-minded, self-accurate, and 'not all about me,' and that enables one to embrace the world as it 'is' in the pursuit of human excellence.
+
+For historical context and accuracy study the following:
+
+
+
