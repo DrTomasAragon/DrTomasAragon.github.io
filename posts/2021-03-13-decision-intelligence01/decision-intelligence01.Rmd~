@@ -1,0 +1,208 @@
+---
+title: "Decision intelligence (Part 1)"
+description: |
+  Integrating problem solving, decision quality, performance improvement, and data science
+draft: false
+author:
+  - name: Tomás Aragón
+    url: https://taragonmd.github.io
+    affiliation: California Department of Public Health
+    affiliation_url: https://cdph.ca.gov
+    orcid_id: 0000-0002-2058-0423  
+date: 03-13-2021
+categories:
+  - Decision intelligence
+  - Data science
+  - Behvioral economics
+  - Performance improvement
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true   
+preview: images/feature.png           
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+In February, 2021, Bay Area health officers published an article ["Crisis Decision-Making at the Speed of COVID-19: Field Report on Issuing the First Regional Shelter-in-Place Orders in the United States"](https://journals.lww.com/jphmp/fulltext/2021/01001/crisis_decision_making_at_the_speed_of_covid_19_.5.aspx). In this article we discussed the application of decision intelligence (DI) to a public health crisis.
+
+In this blog entry, I briefly summarize key DI concepts. One of my goals is to clarify that "data-driven decision making" is an incomplete construct for DI.
+
+## Decision making
+
+### Causal and probabilistic reasoning
+
+**Decision making** is our most important daily activity. Decisions drive
+vision, strategy, execution, problem solving, performance, evaluation,
+and continuous improvement. Decisions can be rapid and guided by
+experience and intuition, or they can be the product of a slow,
+deliberative process, usually by teams. So, what is a decision?
+
+"A decision is a choice between two or more alternatives that involves
+an irrevocable allocation of resources." Every decision has **causal**
+assumptions, **predictions**, and opportunity costs. For example, we might choose
+option $A$ over option $B$ because we predict option $A$ will achieve outcome
+$Y$ with higher probability $P$ (often unstated). The **opportunity cost** is
+the lost benefit of the better option not chosen or not
+considered. Implicit (non-conscious) cognitive biases, individually
+and collectively, can drive the strength of our causal beliefs,
+predictions, and decisions.  Therefore, to improve team decision
+making, we also need to strengthen our capabilities in causal
+and probabilistic reasoning, balancing trade-offs from
+competing objectives, and leading team deliberations in the face of
+volatility, uncertainty, complexity, and ambiguity (so-called VUCA).
+
+What public health officials bring to the decision-making table are the principles of epidemiology and biostatistics that support causal and probabilistic reasoning, respectfully. Causal reasoning appears in questions such as: What are the key drivers? (root causes); Why and how is this happening? (root causes); Asking “why?” 5 times. (“The 5 Whys”); Does this countermeasure work? (efficacy); Will it work in the real world? (effectiveness); and Which intervention is more cost-effective? (efficiency). 
+
+Probabilistic reasoning appears in questions such as: What are the chances that this exposure leads to infection? (prediction); What are the chances this countermeasure will work? (prediction); What are the sensitivity and specificity of this test or classification? (proportion of false-negative and/or false-positive of any test result or conjecture). This type of reasoning,
+
+$$
+\Pr (\text{effect} \mid \text{cause})
+$$
+$$
+\Pr (\text{evidence} \mid \text{hypothesis})
+$$
+$$
+\Pr (\text{test results} \mid \text{presence of disease})
+$$
+is called **causal reasoning** (or predictive reasoning).[^pr]
+
+[^pr]: I prefer causal reasoning: a causal link has statistical dependence but statistical dependence (an association) does not mean there is a causal link
+
+
+In contrast, What are the chances my hypothesis (conjecture, suspected diagnosis) is correct given the evidence? What is the chance of being infected given a test result? This type of reasoning,
+
+$$
+\Pr (\text{cause} \mid \text{effect})
+$$
+$$
+\Pr (\text{hypothesis} \mid \text{evidence})
+$$
+$$
+\Pr (\text{presence of disease} \mid \text{test results})
+$$
+is called **evidential reasoning** (or diagnostic reasoning) and is the inverse conditional probability of causal reasoning. Unfortunately, human beings are very poor at evidential reasoning because it requires Bayes theorem to calculate probabilities. Humans are unaware of this cognitive limitation; hence, we are overconfident in our assessments and, with confirmation bias, may develop certainty and rigid beliefs. For these reasons, *we must approach VUCA with genuine intellectual humility and embrace curiosity over certainty*. In fact, in the face of VUCA, *key decisions are better managed like hypotheses to be tested*.
+
+Every decision involves intuition, emotions, and cognitive and social psychology. Because of VUCA, decision making is often more art than science, and the “art” depends on psychological safety and effective interpersonal skills for managing conflict and building consensus. Decisions in organizational environments evolve within a historical, political, and cultural context that may constrain or support good decision making.
+
+The failure to understand basic causal and evidential reasoning leads to wrong inferences, rigid beliefs, and poor decisions. We have seen this time and time again in the SARS'CoV-2 pandemic. The only practical and effective approach is to embrace humility, curiosity, and learning. 
+
+## Decision intelligence
+
+For public health officials, **decision intelligence** is the
+practical integration of problem solving, decision quality, performance improvement, and data science.
+
+### Problem solving
+
+Many public
+health officials use components of decision intelligence but are
+unaware of its integrated structure.  Figure \@ref(fig:psolve)
+graphically depicts the problem-solving structure as a causal graph
+(also called directed acyclic graph or DAG).
+
+```{r psolve, fig.cap="Causal graph to guide problem solving", out.width="80%", fig.align = "center"} 
+knitr::include_graphics("images/FIG5_Problem-Solving_causal-graph.png") 
+```
+
+The easiest example to understand is clinical diagnosis and treatment. When a patient presents to an emergency room with chest pain (**problem**), the clinician considers and prioritizes **consequences** (death, discomfort, etc.) and **causes** (myocardial infarction, esophageal reflux, anxiety, etc.), tests hypotheses by collecting data (history, physical examination, and diagnostic tests), and then uses the results to select and implement a treatment plan (**countermeasures**). The patient's response to treatment is more data for learning, and for adjusting hypotheses and treatments. This whole process is a series of problem solving decisions, learning, and continuous improvement. The seasoned clinical is an expert in clinician decision intelligence. 
+
+### Decision quality
+
+Similarly, complex problem-solving is a series of important, causally-linked decisions to (a) select and focus on the right problem, consequences, and root causes, and (b) design, evaluate, and improve countermeasures (prevention, control, mitigation) to achieve the primary objectives while minimizing harmful outcomes and unintended consequences. 
+
+**Decision quality** is understanding and improving the requirements of making good decisions (Figure \@ref(fig:dqr)) even when the decisions are intuitive and fast.  Decision quality  has these requirements (1) **frame** the decision problem or opportunity, including identifying values and setting decision objectives; (2) gather relevant data and **information**; (3) generate creative, doable **alternatives** (choices); (4) conduct sound **reasoning** to select or prioritize the best alternatives to achieve the objectives; (5) involve the right stakeholders and build consensus (**commitment** to action); and (6) understand the consequences, trade-offs, and opportunity costs (**prospects**).
+
+
+```{r dqr, fig.cap="Decision quality requirements", out.width="80%", fig.align = "center"} 
+knitr::include_graphics("images/FIG4_Decision-Quality_diverg-converg2.png") 
+```
+
+
+At a minimum, a decision quality checklist (Table \@ref(tab:dqr1))
+improves the quality of decisions at any stage of problem solving. A
+good decision is only as strong as its weakest link.
+
+
+Table: (\#tab:dqr1) Decision quality requirements engages multiple disciplines and skillsets
+
+| No. | Requirement  | Key questions to ask                                      |
+|-----+--------------+-----------------------------------------------------------|
+|   1 | Frame        | What are we deciding and why?                             |
+|   2 | Information  | What creative choices do we have?                         |
+|   3 | Alternatives | What do we need to know?                                  |
+|   4 | Reasoning    | Are we thinking straight?                                 |
+|   5 | Commitment   | Is there commitment to action? Are we thinking straight?  |
+|   6 | Prospects    | What future states do we care about?                      |
+
+
+Table \@ref(tab:dqr2)) summarizes specific areas of professional and
+systems developement to improve decision quality.
+
+
+Table: (\#tab:dqr2) Decision quality requirements engages multiple disciplines and skillsets
+
+| No. | Requirement  | Priority areas for development, training, and improvement                          |
+|-----+--------------+------------------------------------------------------------------------------------|
+|   1 | Frame        | $\leftarrow$ **decision competency** in PDSA **problem solving**                   |
+|   2 | Information  | $\leftarrow$ **data** and **information systems**                                  |
+|   3 | Alternatives | $\leftarrow$ **knowledge management** (discovery, translation, and integration)    |
+|   4 | Reasoning    | $\leftarrow$ **causal and probabilistic reasoning** combined with **data science** |
+|   5 | Commitment   | $\leftarrow$ Engage and involve **stakeholders** to increase commitment to action  |
+|   6 | Prospects    | $\leftarrow$ Understand the **consequences**, trade-offs, and opportunity costs    |
+
+
+Team problem solving is a series of deliberative decision processes that are divergent (generating creative ideas and options) and convergent (selecting or prioritizing options for action). First, selecting the right problem to tackle is a decision problem, and it is the most important. 
+Second, a root cause analysis identifies what causes the problem. Third, selecting countermeasures for root causes, problem, and consequences is, again, a decision problem. The key point is that problem-solving is a series of linked, interdependent decisions, each with quality requirements. The quality of a decision can only be as strong as its weakest link, and the quality of problem solving can only be as strong as the quality of those decisions.
+
+
+### Performance improvement
+
+Put together, decision intelligence is the integration of problem
+solving and decision quality within a **performance improvement
+framework**, ensuring quality and continuous improvement in decision
+making. Table \@ref(tab:pdsa) summarizes decision intelligence as
+Plan-Do-Study-Act (PDSA) problem solving.
+
+Table: (\#tab:pdsa) Decision intelligence is the integration of problem solving and decision quality within a performance improvement framework
+
+| PDSA  | Components of Problem Solving      | Key decision questions            |
+|-------+------------------------------------+-----------------------------------|
+| Plan  | Problem definition                 | What is main problem to solve?    |
+|       | Consequence (risk) analysis        | What are the consequences?        |
+|       | Root cause (diagnostic) analysis   | What causes the problem?          |
+|       | Countermeasure design and testing  | What strategies and actions work? |
+| Do    | Countermeasure implementation      | How do we deploy countermeasures? |
+| Study | Countermeasure (causal) evaluation | How do we measure effectiveness?  |
+| Act   | Act on what you learn to improve   | How do we learn and improve?      |
+
+
+
+
+
+
+
+We can now appreciate that **PDSA problem-solving** is a series of decisions (Figure \@ref(fig:pdsa)): finding and selecting the most important problems to tackle; identifying and prioritizing the consequences caused
+by the unresolved problem(s); identifying (or discovering) and prioritizing the root causes of the
+problem(s); selecting effective countermeasures for each level (problem, root causes, and consequences); and deploying and evaluating the effectiveness of the countermeasures where evaluation
+is a type of causal analysis.   
+
+```{r pdsa, fig.cap="PDSA problem solving is a series of decisions", out.width="80%", fig.align = "center"} 
+knitr::include_graphics("images/decision-quality-divergence-convergence-triangles.png") 
+```
+
+## Summary
+
+Decision intelligence is integration of
+
+- problem solving,
+- decision quality,
+- performance improvement, and
+- data science (and other sciences; e.g., behavioral economics, artificial intelligence).
+
+Decision intelligence[^cassie] is often promoted through the lens of data science, machine learning, and artificial intelligence. I believe it is more applicable for everyday use, and therefore much more generalizable and powerful.
+
+[^cassie]: See <https://towardsdatascience.com/introduction-to-decision-intelligence-5d147ddab767>
+
+In future blog entries I will expand on these concepts with more emphasis on practical applications and data science.
