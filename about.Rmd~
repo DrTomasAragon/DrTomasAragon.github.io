@@ -1,0 +1,44 @@
+---
+title: "About"
+description: |
+  Tomás J. Aragón, MD, DrPH
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+> _Radical transformational leadership is leading change from the
+> universal values of dignity, equity, compassion and humility to
+> transform self, people, systems and cultures towards equity,
+> antiracism and sustainable results_.
+>
+> ... _Inspired by [Dr. Monica
+> Sharma](https://www.radicallytransform.org/about2), Former director
+> of United Nations Leadership Development_
+
+
+I am the [State Public Health Officer and
+Director](https://www.cdph.ca.gov/Pages/Meet-the-Director.aspx) of the
+[California Department of Public Health](https://www.cdph.ca.gov/)
+(CDPH).  Striving to embody and promote the universal values of
+dignity, equity, compassion and humility, I work to mobilize
+communities and institutions to transform policies and systems towards
+a culture of equity, antiracism, healing and health for all people and
+our planet. As State Public Health Officer, I exercise leadership and
+legal authority to protect health and prevent disease. As CDPH
+Director, I direct a nationally accredited state public health
+department. I taught computational epidemiology with R at the
+University of California, Berkeley School of Public Health. Today, I
+focus on organizational decision intelligence using improvement,
+implementation, and data sciences. For scientific computing I promote
+the [Julia programming language](https://julialang.org/). 
+
+My curriculum vitae is
+[here](https://github.com/drtomasaragon/cv/blob/master/ModCV_Tomas-J-Aragon.pdf).
+
+<!--
+```{r, fig.cap="Tomás J. Aragón, MD, DrPH", fig.align = "center"}
+knitr::include_graphics("images/IFxSd89i_400x400.jpg")
+```
+-->
