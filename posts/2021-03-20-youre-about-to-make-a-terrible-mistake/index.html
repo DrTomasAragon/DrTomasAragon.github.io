@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,12 +77,34 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+<style>
+  div.csl-bib-body { }
+  div.csl-entry {
+    clear: both;
+    }
+  .hanging div.csl-entry {
+    margin-left:2em;
+    text-indent:-2em;
+  }
+  div.csl-left-margin {
+    min-width:2em;
+    float:left;
+  }
+  div.csl-right-inline {
+    margin-left:2em;
+    padding-left:1em;
+  }
+  div.csl-indent {
+    margin-left: 2em;
+  }
 </style>
 
   <!--radix_placeholder_meta_tags-->
@@ -138,7 +160,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["images/feature.png","youre-about-to-make-a-terrible-mistake_files/anchor-4.2.2/anchor.min.js","youre-about-to-make-a-terrible-mistake_files/bowser-1.9.3/bowser.min.js","youre-about-to-make-a-terrible-mistake_files/distill-2.2.21/template.v2.js","youre-about-to-make-a-terrible-mistake_files/header-attrs-2.7/header-attrs.js","youre-about-to-make-a-terrible-mistake_files/jquery-1.11.3/jquery.min.js","youre-about-to-make-a-terrible-mistake_files/popper-2.6.0/popper.min.js","youre-about-to-make-a-terrible-mistake_files/tippy-6.2.7/tippy-bundle.umd.min.js","youre-about-to-make-a-terrible-mistake_files/tippy-6.2.7/tippy-light-border.css","youre-about-to-make-a-terrible-mistake_files/tippy-6.2.7/tippy.css","youre-about-to-make-a-terrible-mistake_files/tippy-6.2.7/tippy.umd.min.js","youre-about-to-make-a-terrible-mistake_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["images/feature.png","youre-about-to-make-a-terrible-mistake_files/anchor-4.2.2/anchor.min.js","youre-about-to-make-a-terrible-mistake_files/bowser-1.9.3/bowser.min.js","youre-about-to-make-a-terrible-mistake_files/distill-2.2.21/template.v2.js","youre-about-to-make-a-terrible-mistake_files/header-attrs-2.7/header-attrs.js","youre-about-to-make-a-terrible-mistake_files/header-attrs-2.8/header-attrs.js","youre-about-to-make-a-terrible-mistake_files/jquery-1.11.3/jquery.min.js","youre-about-to-make-a-terrible-mistake_files/popper-2.6.0/popper.min.js","youre-about-to-make-a-terrible-mistake_files/tippy-6.2.7/tippy-bundle.umd.min.js","youre-about-to-make-a-terrible-mistake_files/tippy-6.2.7/tippy-light-border.css","youre-about-to-make-a-terrible-mistake_files/tippy-6.2.7/tippy.css","youre-about-to-make-a-terrible-mistake_files/tippy-6.2.7/tippy.umd.min.js","youre-about-to-make-a-terrible-mistake_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2375,8 +2397,8 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.8/header-attrs.js"></script>
-  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2486,6 +2508,7 @@ gtag('config', 'UA-111617948-1');
 <ol type="1">
 <li>Hess E. <a href="https://www.amazon.com/Humility-New-Smart-Rethinking-Excellence/dp/1626568758/">Humility is the New Smart: Rethinking Human Excellence in the Smart Machine Age</a>. Berrett-Koehler Publishers, a BK Business Book; 2017. <em>Introduction to the critical importance of humility, especially intellectual humility, having self-awareness, receiving accurate feedback, listening, learning, improving, and building trust</em>.</li>
 <li>Grant A. <a href="https://www.amazon.com/Think-Again-Power-Knowing-What/dp/1984878107/">Think Again: The Power of Knowing What You Don’t Know</a>. Viking (February 2, 2021) <em>“Think Again is a must-read for anyone who wants to create a culture of learning and exploration, whether at home, at work, or at school… In an increasingly divided world, the lessons in this book are more important than ever.” —Bill and Melinda Gates</em></li>
+<li>Galef J. <a href="https://www.amazon.com/Scout-Mindset-Perils-Defensive-Thinking/dp/0735217556/">The Scout Mindset: Why Some People See Things Clearly and Others Don’t</a>. Portfolio (April 13, 2021)</li>
 </ol>
 <h2 id="behavioral-economics">Behavioral economics</h2>
 <ol type="1">
@@ -2504,6 +2527,7 @@ gtag('config', 'UA-111617948-1');
 <ol type="1">
 <li>Roberto MA. <a href="https://www.amazon.com/Great-Leaders-Dont-Take-Answer/dp/0134392787/">Why Great Leaders Don’t Take Yes for an Answer: Managing for Conflict and Consensus</a>. FT Press; 2nd edition (September 25, 2015). How leaders can build consensus and make decisions in the face of disasters. <em>Reviews catastrophic decisions and how to avoid them</em>.</li>
 <li>Marcus LJ, McNulty EJ, Henderson JM, Dorn BC. <a href="https://www.amazon.com/Youre-Crisis-Change-Lead-Matters/dp/1541768043/">You’re It: Crisis, Change, and How to Lead When It Matters Most</a>. PublicAffairs (March 16, 2021). <em>Comprehensive framework for how to lead during disasters. Based on empirical research during actual disasters</em>.</li>
+<li>Sunstein CR. <a href="https://www.amazon.com/Averting-Catastrophe-Decision-Potential-Disasters/dp/1479808482/">Averting Catastrophe: Decision Theory for COVID-19, Climate Change, and Potential Disasters of All Kinds</a>. NYU Press (April 27, 2021)</li>
 </ol>
 <h2 id="decision-analysis">Decision analysis</h2>
 <h3 id="introductory">Introductory</h3>
