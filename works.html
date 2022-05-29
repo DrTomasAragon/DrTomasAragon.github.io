@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -1031,10 +1032,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1.5em;
   }
 
-  .figure img {
-    width: 100%;
-  }
-
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
@@ -1864,6 +1861,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1878,6 +1881,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1977,6 +2005,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1999,7 +2029,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2348,7 +2378,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2424,41 +2454,96 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#instructional">Instructional</a></li>
-<li><a href="#escholarship.org">eScholarship.org</a></li>
-<li><a href="#google-scholar">Google Scholar</a></li>
-<li><a href="#pubmed-citations">PubMed citations</a></li>
+<li><a href="#instructional"
+id="toc-instructional">Instructional</a></li>
+<li><a href="#escholarship.org"
+id="toc-escholarship.org">eScholarship.org</a></li>
+<li><a href="#google-scholar" id="toc-google-scholar">Google
+Scholar</a></li>
+<li><a href="#pubmed-citations" id="toc-pubmed-citations">PubMed
+citations</a></li>
 </ul>
 </nav>
 </div>
 <h1 id="instructional">Instructional</h1>
 <p>These selected PDF documents were created in LaTeX or Rmarkdown.</p>
 <ol type="1">
-<li>Aragón TJ and Colfax GN. We will be the best at getting better! A playbook for population health improvement. eScholarship.org; Winter 2019. Available from <a href="https://escholarship.org/uc/item/9xg5t30s" class="uri">https://escholarship.org/uc/item/9xg5t30s</a>.</li>
-<li>Aragón TJ. Population health thinking with Bayesian networks. eScholarship.org; 2018. Available from <a href="https://escholarship.org/uc/item/8000r5m5" class="uri">https://escholarship.org/uc/item/8000r5m5</a></li>
-<li>Aragón TJ and Scientific Leadership Team. Syringe access, disposal and recovery to protect the public’s health. eScholarship.org; Summer 2018. Available from <a href="https://escholarship.org/uc/item/2r7298jr" class="uri">https://escholarship.org/uc/item/2r7298jr</a>.</li>
-<li>Aragón TJ and Garcia BA. We will be the best at getting better! An introduction to population health lean. eScholarship.org; 2017. Available from <a href="https://escholarship.org/uc/item/825430qn" class="uri">https://escholarship.org/uc/item/825430qn</a> (<strong>updated version <a href="https://escholarship.org/uc/item/9xg5t30s">here</a></strong>.)</li>
-<li>Aragón TJ. PDSA problem-solving: With a gentle introduction to double-loop learning, program theory, and causal graphs. eScholarship.org; 2017. Available from <a href="http://www.escholarship.org/uc/item/8wp451vd" class="uri">http://www.escholarship.org/uc/item/8wp451vd</a>.</li>
-<li>Aragón TJ. Deriving criteria weights for health decision making: A Brief Tutorial. eScholarship.org; 2017. Available from <a href="https://escholarship.org/uc/item/52755837" class="uri">https://escholarship.org/uc/item/52755837</a>.</li>
-<li>Aragón TJ. Practical LaTeX for the health sciences. eScholarship.org; 2016 update. Available from <a href="http://www.escholarship.org/uc/item/30c2r01g" class="uri">http://www.escholarship.org/uc/item/30c2r01g</a>.</li>
-<li>Aragón TJ. What is your leadership equation? Available from <a href="https://www.dropbox.com/s/juqlz7rdojwx118/whatis-your-leadership-equation.pdf?dl=0">Dropbox link</a>
+<li>Aragón TJ and Colfax GN. We will be the best at getting better! A
+playbook for population health improvement. eScholarship.org; Winter
+2019. Available from <a href="https://escholarship.org/uc/item/9xg5t30s"
+class="uri">https://escholarship.org/uc/item/9xg5t30s</a>.</li>
+<li>Aragón TJ. Population health thinking with Bayesian networks.
+eScholarship.org; 2018. Available from <a
+href="https://escholarship.org/uc/item/8000r5m5"
+class="uri">https://escholarship.org/uc/item/8000r5m5</a></li>
+<li>Aragón TJ and Scientific Leadership Team. Syringe access, disposal
+and recovery to protect the public’s health. eScholarship.org; Summer
+2018. Available from <a href="https://escholarship.org/uc/item/2r7298jr"
+class="uri">https://escholarship.org/uc/item/2r7298jr</a>.</li>
+<li>Aragón TJ and Garcia BA. We will be the best at getting better! An
+introduction to population health lean. eScholarship.org; 2017.
+Available from <a href="https://escholarship.org/uc/item/825430qn"
+class="uri">https://escholarship.org/uc/item/825430qn</a>
+(<strong>updated version <a
+href="https://escholarship.org/uc/item/9xg5t30s">here</a></strong>.)</li>
+<li>Aragón TJ. PDSA problem-solving: With a gentle introduction to
+double-loop learning, program theory, and causal graphs.
+eScholarship.org; 2017. Available from <a
+href="http://www.escholarship.org/uc/item/8wp451vd"
+class="uri">http://www.escholarship.org/uc/item/8wp451vd</a>.</li>
+<li>Aragón TJ. Deriving criteria weights for health decision making: A
+Brief Tutorial. eScholarship.org; 2017. Available from <a
+href="https://escholarship.org/uc/item/52755837"
+class="uri">https://escholarship.org/uc/item/52755837</a>.</li>
+<li>Aragón TJ. Practical LaTeX for the health sciences.
+eScholarship.org; 2016 update. Available from <a
+href="http://www.escholarship.org/uc/item/30c2r01g"
+class="uri">http://www.escholarship.org/uc/item/30c2r01g</a>.</li>
+<li>Aragón TJ. What is your leadership equation? Available from <a
+href="https://www.dropbox.com/s/juqlz7rdojwx118/whatis-your-leadership-equation.pdf?dl=0">Dropbox
+link</a>
 <ol start="2015" type="1">
 <li></li>
 </ol></li>
-<li>Aragon TJ, Garcia BA. Outbreak of Shiga toxin-producing <em>Escherichia coli</em> O157 infection associated with a restaurant. San Francisco Department of Public Health; 2013. Available from <a href="https://escholarship.org/uc/item/44m2t9wm" class="uri">https://escholarship.org/uc/item/44m2t9wm</a>.</li>
-<li>Aragón TJ, Mier HM, Payauys T, Siador CS. Project management for health professionals. eScholarship.org; 2012. Available from <a href="https://escholarship.org/uc/item/7bb8b9pw" class="uri">https://escholarship.org/uc/item/7bb8b9pw</a>.</li>
-<li>Aragón TJ, Reingold A. Epidemiologic concepts for the prevention and control of infectious diseases. eScholarship; 2011. Available from <a href="https://escholarship.org/uc/item/7687z08g" class="uri">https://escholarship.org/uc/item/7687z08g</a>.</li>
-<li>Aragon TJ, Crawley A, Martinez-Rubin N. The seasonal and pandemic influenza vaccination assessment toolkit. eScholarship; 2010. Available from <a href="https://escholarship.org/uc/item/76g7r8gz" class="uri">https://escholarship.org/uc/item/76g7r8gz</a>.</li>
+<li>Aragon TJ, Garcia BA. Outbreak of Shiga toxin-producing
+<em>Escherichia coli</em> O157 infection associated with a restaurant.
+San Francisco Department of Public Health; 2013. Available from <a
+href="https://escholarship.org/uc/item/44m2t9wm"
+class="uri">https://escholarship.org/uc/item/44m2t9wm</a>.</li>
+<li>Aragón TJ, Mier HM, Payauys T, Siador CS. Project management for
+health professionals. eScholarship.org; 2012. Available from <a
+href="https://escholarship.org/uc/item/7bb8b9pw"
+class="uri">https://escholarship.org/uc/item/7bb8b9pw</a>.</li>
+<li>Aragón TJ, Reingold A. Epidemiologic concepts for the prevention and
+control of infectious diseases. eScholarship; 2011. Available from <a
+href="https://escholarship.org/uc/item/7687z08g"
+class="uri">https://escholarship.org/uc/item/7687z08g</a>.</li>
+<li>Aragon TJ, Crawley A, Martinez-Rubin N. The seasonal and pandemic
+influenza vaccination assessment toolkit. eScholarship; 2010. Available
+from <a href="https://escholarship.org/uc/item/76g7r8gz"
+class="uri">https://escholarship.org/uc/item/76g7r8gz</a>.</li>
 </ol>
 <h1 id="escholarship.org">eScholarship.org</h1>
-<p>To search eScholarship (University of California) click here: <a href="https://escholarship.org/search?q=%22Aragon%2C+Tomas+J%22">“Aragon, Tomas J”</a>.</p>
-<p>eScholarship serves as the institutional repository for the ten University of California campuses and affiliated research centers. The content includes postprints (previously published articles), as well as working papers, electronic theses and dissertations (ETDs), student capstone projects, and seminar/conference proceedings.</p>
+<p>To search eScholarship (University of California) click here: <a
+href="https://escholarship.org/search?q=%22Aragon%2C+Tomas+J%22">“Aragon,
+Tomas J”</a>.</p>
+<p>eScholarship serves as the institutional repository for the ten
+University of California campuses and affiliated research centers. The
+content includes postprints (previously published articles), as well as
+working papers, electronic theses and dissertations (ETDs), student
+capstone projects, and seminar/conference proceedings.</p>
 <h1 id="google-scholar">Google Scholar</h1>
-<p>To visit my Google Scholar page: <a href="http://bit.ly/tomas-google-scholar" class="uri">http://bit.ly/tomas-google-scholar</a>.</p>
-<p>Google Scholar links to any publicly available document by me. For example, my slide presentations to the San Francisco Health Commission are posted.</p>
+<p>To visit my Google Scholar page: <a
+href="http://bit.ly/tomas-google-scholar"
+class="uri">http://bit.ly/tomas-google-scholar</a>.</p>
+<p>Google Scholar links to any publicly available document by me. For
+example, my slide presentations to the San Francisco Health Commission
+are posted.</p>
 <h1 id="pubmed-citations">PubMed citations</h1>
-<p>View my PubMed citations: <a href="http://bit.ly/tomas-pubmed" class="uri">http://bit.ly/tomas-pubmed</a> (external link)</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>View my PubMed citations: <a href="http://bit.ly/tomas-pubmed"
+class="uri">http://bit.ly/tomas-pubmed</a> (external link)</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
