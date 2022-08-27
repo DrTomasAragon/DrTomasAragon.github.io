@@ -9,7 +9,7 @@
 <link>https://drtomasaragon.github.io/index.html</link>
 <atom:link href="https://drtomasaragon.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>A population health blog</description>
-<generator>quarto-1.0.38</generator>
+<generator>quarto-1.1.147</generator>
 <lastBuildDate>Sat, 20 Aug 2022 07:00:00 GMT</lastBuildDate>
 <item>
   <title>Decision intelligence books</title>
@@ -23,7 +23,7 @@
 <div id="fig-decintell" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2022-08-20-decision-intelligence-books/images/tja_book_decision_intelligence_venn_V04.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 1: Decision intelligence is using science and technology to support teams and individuals to improve decision making for finding and solving problems, and for improving performance in novel, challenging environments, including volatile, uncertain, complex, or ambiguous (VUCA) environments.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Decision intelligence is using science and technology to support teams and individuals to improve decision making for finding and solving problems, and for improving performance in novel, challenging environments, including volatile, uncertain, complex, or ambiguous (VUCA) environments.</figcaption><p></p>
 </figure>
 </div>
 <p><strong>Decision-making</strong> is our most important activity. “A decision is a choice between two or more alternatives that involves an irrevocable allocation of resources” <span class="citation" data-cites="Howard2015_isbn978-0132336246">[1]</span>. Decisions drive vision, strategy, policy, and transformational change. Every decision has causal assumptions, predictions, trade-offs, and an opportunity cost—the lost benefit of the better option(s) not chosen or not considered.</p>
@@ -217,7 +217,7 @@
 <div id="ref-Foronda2015_pmid26122618" class="csl-entry">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline">Foronda C, Baptiste DL, Reinholdt MM, Ousman K. Cultural humility. Journal of Transcultural Nursing [Internet]. 2015 Jun;27(3):210–7. Available from: <a href="https://doi.org/10.1177/1043659615592677">https://doi.org/10.1177/1043659615592677</a></div>
 </div>
-</div></section><section class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>To learn more study “JoHari Window in Interpersonal Communication”: Video lecture by Dr.&nbsp;Lori Zakel, Professor and Chair of the Communication Department at Sinclair College, Dayton, Ohio. Available at <a href="https://youtu.be/-7FhcvoVK8s" class="uri">https://youtu.be/-7FhcvoVK8s</a>.↩︎</p></li>
@@ -303,7 +303,7 @@
 <div id="ref-Brown2015_isbn978-1592408412" class="csl-entry">
 <div class="csl-left-margin">3. </div><div class="csl-right-inline">Brown B. Daring greatly: How the courage to be vulnerable transforms the way we live, love, parent, and lead. Avery; 2015. </div>
 </div>
-</div></section><section class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>Don’t forget to develop a <em>communication plan</em> to communicate progress, problems, and to manage expectations.↩︎</p></li>
@@ -333,7 +333,7 @@
 <div id="fig-decintell" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2021-03-13-decision-intelligence01/images/tja_book_decision_intelligence_venn_V04.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 1: Decision intelligence is using science and technology to support teams and individuals to improve decision making for finding and solving problems, and for improving performance in novel, challenging environments, including volatile, uncertain, complex, or ambiguous (VUCA) environments.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Decision intelligence is using science and technology to support teams and individuals to improve decision making for finding and solving problems, and for improving performance in novel, challenging environments, including volatile, uncertain, complex, or ambiguous (VUCA) environments.</figcaption><p></p>
 </figure>
 </div>
 <p>In February, 2021, Bay Area health officers published an article <a href="https://journals.lww.com/jphmp/fulltext/2021/01001/crisis_decision_making_at_the_speed_of_covid_19_.5.aspx">“Crisis Decision-Making at the Speed of COVID-19: Field Report on Issuing the First Regional Shelter-in-Place Orders in the United States”</a>. In this article we discussed the application of decision intelligence (DI) to a public health crisis.</p>
@@ -346,14 +346,9 @@
 <p>“A decision is a choice between two or more alternatives that involves an irrevocable allocation of resources” <span class="citation" data-cites="Howard2015_isbn978-0132336246">[1]</span>. Every decision has <strong>causal</strong> assumptions, <strong>predictions</strong>, and opportunity costs. For example, we might choose option <img src="https://latex.codecogs.com/png.latex?A"> over option <img src="https://latex.codecogs.com/png.latex?B"> because we predict option <img src="https://latex.codecogs.com/png.latex?A"> will achieve outcome <img src="https://latex.codecogs.com/png.latex?Y"> with higher probability <img src="https://latex.codecogs.com/png.latex?P"> (often unstated). The <strong>opportunity cost</strong> is the lost benefit of the better option not chosen or not considered. Implicit (non-conscious) cognitive biases, individually and collectively, can drive the strength of our causal beliefs, predictions, and decisions. Therefore, to improve team decision making, we also need to strengthen our capabilities in causal and probabilistic reasoning, balancing trade-offs from competing objectives, and leading team deliberations in the face of volatility, uncertainty, complexity, and ambiguity (so-called VUCA).</p>
 <p>What public health officials bring to the decision-making table are the principles of epidemiology and biostatistics that support causal and probabilistic reasoning, respectfully. Causal reasoning appears in questions such as: What are the key drivers? (root causes); Why and how is this happening? (root causes); Asking “why?” 5 times. (“The 5 Whys”); Does this countermeasure work? (efficacy); Will it work in the real world? (effectiveness); and Which intervention is more cost-effective? (efficiency).</p>
 <p>Probabilistic reasoning appears in questions such as: What are the chances that this exposure leads to infection? (prediction); What are the chances this countermeasure will work? (prediction); What are the sensitivity and specificity of this test or classification? (proportion of false-negative and/or false-positive of any test result or conjecture). This type of reasoning,</p>
-<p><img src="https://latex.codecogs.com/png.latex?%0A%5CPr%20(%5Ctext%7Beffect%7D%20%5Cmid%20%5Ctext%7Bcause%7D)%0A"></p>
-<p><img src="https://latex.codecogs.com/png.latex?%0A%5CPr%20(%5Ctext%7Bevidence%7D%20%5Cmid%20%5Ctext%7Bhypothesis%7D)%0A"></p>
-<p><img src="https://latex.codecogs.com/png.latex?%0A%5CPr%20(%5Ctext%7Btest%20results%7D%20%5Cmid%20%5Ctext%7Bpresence%20of%20disease%7D)%0A"></p>
-<p>is called <strong>causal reasoning</strong> (or predictive reasoning).<sup>1</sup></p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5CPr%20(%5Ctext%7Beffect%7D%20%5Cmid%20%5Ctext%7Bcause%7D)%0A"> <img src="https://latex.codecogs.com/png.latex?%0A%5CPr%20(%5Ctext%7Bevidence%7D%20%5Cmid%20%5Ctext%7Bhypothesis%7D)%0A"> <img src="https://latex.codecogs.com/png.latex?%0A%5CPr%20(%5Ctext%7Btest%20results%7D%20%5Cmid%20%5Ctext%7Bpresence%20of%20disease%7D)%0A"> is called <strong>causal reasoning</strong> (or predictive reasoning).<sup>1</sup></p>
 <p>In contrast, What are the chances my hypothesis (conjecture, suspected diagnosis) is correct given the evidence? What is the chance of being infected given a test result? This type of reasoning,</p>
-<p><img src="https://latex.codecogs.com/png.latex?%0A%5CPr%20(%5Ctext%7Bcause%7D%20%5Cmid%20%5Ctext%7Beffect%7D)%0A"></p>
-<p><img src="https://latex.codecogs.com/png.latex?%0A%5CPr%20(%5Ctext%7Bhypothesis%7D%20%5Cmid%20%5Ctext%7Bevidence%7D)%0A"></p>
-<p><img src="https://latex.codecogs.com/png.latex?%0A%5CPr%20(%5Ctext%7Bpresence%20of%20disease%7D%20%5Cmid%20%5Ctext%7Btest%20results%7D)%0A"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5CPr%20(%5Ctext%7Bcause%7D%20%5Cmid%20%5Ctext%7Beffect%7D)%0A"> <img src="https://latex.codecogs.com/png.latex?%0A%5CPr%20(%5Ctext%7Bhypothesis%7D%20%5Cmid%20%5Ctext%7Bevidence%7D)%0A"> <img src="https://latex.codecogs.com/png.latex?%0A%5CPr%20(%5Ctext%7Bpresence%20of%20disease%7D%20%5Cmid%20%5Ctext%7Btest%20results%7D)%0A"></p>
 <p>is called <strong>evidential reasoning</strong> (or diagnostic reasoning) and is the inverse conditional probability of causal reasoning. Unfortunately, human beings are very poor at evidential reasoning because it requires Bayes theorem to calculate probabilities. Humans are unaware of this cognitive limitation; hence, we are overconfident in our assessments and, with confirmation bias, may develop certainty and rigid beliefs. For these reasons, <em>we must approach VUCA with genuine intellectual humility and embrace curiosity over certainty</em>. In fact, in the face of VUCA, <em>key decisions are better managed like hypotheses to be tested</em>.</p>
 <p>Every decision involves intuition, emotions, and cognitive and social psychology. Because of VUCA, decision making is often more art than science, and the “art” depends on psychological safety and effective interpersonal skills for managing conflict and building consensus. Decisions in organizational environments evolve within a historical, political, and cultural context that may constrain or support good decision making.</p>
 <p>The failure to understand basic causal and evidential reasoning leads to wrong inferences, rigid beliefs, and poor decisions. We have seen this time and time again in the SARS’CoV-2 pandemic. The only practical and effective approach is to embrace humility, curiosity, and learning.</p>
@@ -368,7 +363,7 @@
 <div id="fig-psolve" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2021-03-13-decision-intelligence01/images/FIG5_Problem-Solving_causal-graph.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 2: Causal graph to guide problem solving</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Causal graph to guide problem solving</figcaption><p></p>
 </figure>
 </div>
 <p>The easiest example to understand is clinical diagnosis and treatment. When a patient presents to an emergency room with chest pain (<strong>problem</strong>), the clinician considers and prioritizes <strong>consequences</strong> (death, discomfort, etc.) and <strong>causes</strong> (myocardial infarction, esophageal reflux, anxiety, etc.), tests hypotheses by collecting data (history, physical examination, and diagnostic tests), and then uses the results to select and implement a treatment plan (<strong>countermeasures</strong>). The patient’s response to treatment is more data for learning, and for adjusting hypotheses and treatments. This whole process is a series of problem solving decisions, learning, and continuous improvement. The seasoned clinical is an expert in clinician decision intelligence.</p>
@@ -380,13 +375,13 @@
 <div id="fig-dqr" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2021-03-13-decision-intelligence01/images/FIG4_Decision-Quality_diverg-converg2.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3: Decision quality requirements</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: Decision quality requirements</figcaption><p></p>
 </figure>
 </div>
 <p>At a minimum, a decision quality checklist (Table&nbsp;1) improves the quality of decisions at any stage of problem solving. A good decision is only as strong as its weakest link.</p>
 <div id="tbl-dqr1" class="anchored">
 <table class="table">
-<caption>Table 1: Decision quality requirements engages multiple disciplines and skillsets</caption>
+<caption>Table&nbsp;1: Decision quality requirements engages multiple disciplines and skillsets</caption>
 <colgroup>
 <col style="width: 6%">
 <col style="width: 18%">
@@ -436,7 +431,7 @@
 <p>Table&nbsp;2 summarizes specific areas of professional and systems developement to improve decision quality.</p>
 <div id="tbl-dqr2" class="anchored">
 <table class="table">
-<caption>Table 2: Decision quality requirements engages multiple disciplines and skillsets</caption>
+<caption>Table&nbsp;2: Decision quality requirements engages multiple disciplines and skillsets</caption>
 <colgroup>
 <col style="width: 4%">
 <col style="width: 13%">
@@ -490,7 +485,7 @@
 <p>Put together, decision intelligence is the integration of problem solving and decision quality within a <strong>performance improvement framework</strong>, ensuring quality and continuous improvement in decision making. Table&nbsp;3 summarizes decision intelligence as Plan-Do-Study-Act (PDSA) problem solving.</p>
 <div id="tbl-pdsa" class="anchored">
 <table class="table">
-<caption>Table 3: Decision intelligence is the integration of problem solving and decision quality within a performance improvement framework</caption>
+<caption>Table&nbsp;3: Decision intelligence is the integration of problem solving and decision quality within a performance improvement framework</caption>
 <colgroup>
 <col style="width: 8%">
 <col style="width: 46%">
@@ -546,7 +541,7 @@
 <div id="fig-pdsa" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2021-03-13-decision-intelligence01/images/decision-quality-divergence-convergence-triangles.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 4: PDSA problem solving is a series of decisions</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: PDSA problem solving is a series of decisions</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -578,7 +573,7 @@
 <div id="ref-Howard2015_isbn978-0132336246" class="csl-entry">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Howard RA, Abbas AE. Foundations of decision analysis. 1st ed. Pearson; 2015. </div>
 </div>
-</div></section><section class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>I prefer causal reasoning: a causal link has statistical dependence but statistical dependence (an association) does not mean there is a causal link↩︎</p></li>
@@ -641,7 +636,7 @@
 <div id="fig-ladder" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2018-06-11-the-book-of-why/images/Pearl2018_The-Book-of-Why_Ladder-of-Causation_680x950.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure 1: “The Ladder of Causation”</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: “The Ladder of Causation”</figcaption><p></p>
 </figure>
 </div>
 
@@ -649,7 +644,7 @@
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>Illustrator: Maayan Harel <a href="http://www.maayanillustration.com/" class="uri">http://www.maayanillustration.com/</a>↩︎</p></li>
@@ -728,7 +723,7 @@
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>Barrett LF. <em>The science of making emotions: Three main ingredients contribute to how and why the brain creates feelings</em>. HealthyLivingMadeSimple.com. Available from <a href="http://healthylivingmadesimple.com/science-making-emotions/" class="uri">http://healthylivingmadesimple.com/science-making-emotions/</a>↩︎</p></li>
@@ -1034,7 +1029,7 @@
 <div id="ref-Nisbett2016_isbn978-0374536244" class="csl-entry">
 <div class="csl-left-margin">5. </div><div class="csl-right-inline">Nisbett R. Mindware: Tools for smart thinking. New York: Farrar, Straus; Giroux; 2016. </div>
 </div>
-</div></section><section class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>Aragón TJ, Garcia BA. We will be the best at getting better! An introduction to population health lean. eScholarship.org; 2017. Available from <a href="http://bit.ly/phleandoc2" class="uri">http://bit.ly/phleandoc2</a>↩︎</p></li>
