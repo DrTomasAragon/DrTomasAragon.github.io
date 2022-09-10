@@ -9,7 +9,7 @@
 <link>https://drtomasaragon.github.io/index.html</link>
 <atom:link href="https://drtomasaragon.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>A population health blog</description>
-<generator>quarto-1.1.147</generator>
+<generator>quarto-1.1.189</generator>
 <lastBuildDate>Sat, 20 Aug 2022 07:00:00 GMT</lastBuildDate>
 <item>
   <title>Decision intelligence books</title>
@@ -89,6 +89,13 @@
 </ol>
 </section>
 </section>
+<section id="decision-intelligence" class="level2">
+<h2 class="anchored" data-anchor-id="decision-intelligence">Decision intelligence</h2>
+<p>``Decision intelligence is an engineering discipline that augments data science with theory from social science, decision theory, and managerial science. Its application provides a framework for best practices in organizational decision-making and processes for applying machine learning at scale. The basic idea is that decisions are based on our understanding of how actions lead to outcomes. Decision intelligence is a discipline for analyzing this chain of cause and effect, and decision modeling is a visual language for representing these chains.’’<sup>1</sup></p>
+<ol type="1">
+<li>Pratt L. Link: Link: <a href="https://www.amazon.com/Link-Decision-Intelligence-Connects-Outcomes/dp/1787696545/">How Decision Intelligence Connects Data, Actions, and Outcomes for a Better World</a>. Emerald Publishing (September 16, 2019). <em>``Pratt tells the stories of decision intelligence pioneers worldwide, along with examples of their work in areas that include government budgeting, space exploration, emerging democracy conflict resolution, banking, leadership, and much more.’’</em></li>
+</ol>
+</section>
 <section id="leadership-competencies" class="level2">
 <h2 class="anchored" data-anchor-id="leadership-competencies">Leadership competencies</h2>
 <ol type="1">
@@ -101,11 +108,17 @@
 
 </section>
 
+
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body">
 <div id="ref-Howard2015_isbn978-0132336246" class="csl-entry">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Howard RA, Abbas AE. Foundations of decision analysis. 1st ed. Pearson; 2015. </div>
 </div>
-</div></section></div> ]]></description>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Decision intelligence. Available from https://en.wikipedia.org/wiki/Decision_intelligence↩︎</p></li>
+</ol>
+</section></div> ]]></description>
   <category>Book recommendations</category>
   <category>Decision intelligence</category>
   <category>Behavioral economics</category>
