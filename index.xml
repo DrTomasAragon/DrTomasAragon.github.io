@@ -10,7 +10,291 @@
 <atom:link href="https://drtomasaragon.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>A population health blog</description>
 <generator>quarto-1.2.269</generator>
-<lastBuildDate>Sat, 20 Aug 2022 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 10 Dec 2022 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>Becoming the best at getting better</title>
+  <dc:creator>Tomás Aragón</dc:creator>
+  <link>https://drtomasaragon.github.io/posts/2022-12-10-becoming-the-best-at-getting-better/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Download <a href="https://github.com/DrTomasAragon/cdph/blob/main/CDPH_Directorate_Briefings_Guidance_v20229999.pdf">CDPH Guidance for Directorate Briefings</a> (PDF 2-page)</li>
+<li>Download <a href="https://github.com/DrTomasAragon/cdph/blob/main/20229999_CDPH_Lean_Transformation_GEN.pdf">Becoming the Best at Getting Better</a> (PDF slides)</li>
+</ul>
+</div>
+</div>
+<section id="the-cdph-waybecoming-the-best-at-getting-better" class="level2">
+<h2 class="anchored" data-anchor-id="the-cdph-waybecoming-the-best-at-getting-better">The CDPH Way—“Becoming the Best at Getting Better”</h2>
+<p>As part of <a href="https://phaboard.org/">public health accreditation</a> the <a href="https://cdph.ca.gov/">California Department of Public Health</a> (CDPH) must deploy a continuous improvement framework and establish strategic priorities. The CDPH directorate (leadership) has established three strategic priorities to drive CDPH’s lean transformation:</p>
+<ol type="1">
+<li>Be a <strong>learning, healing, and impactful organization</strong>
+<ul>
+<li><a href="https://www.lean.org/">Lean</a> with <a href="https://www.whatmatters.com/">Objectives and Key Results</a> (Figure&nbsp;1)<sup>1</sup></li>
+<li>Trauma informed and responsive</li>
+<li>Equity, antiracism and health equity</li>
+</ul></li>
+<li>Develop <strong>our people</strong>
+<ul>
+<li>Core public health competencies</li>
+<li>Personal professional development</li>
+</ul></li>
+<li>Tackle key <strong>public health challenges</strong>
+<ul>
+<li>The Future of Public Health Initiative</li>
+<li>Behavioral health promotion (especially youth)</li>
+<li>Community Health Improvement</li>
+<li>Emergency readiness and pandemic recovery</li>
+<li>Climate action and community resilience</li>
+</ul></li>
+</ol>
+<p><strong>Lean thinking and practice</strong> is “systematically developing people to solve problems and consuming the fewest possible resources <em>while</em> continuously improving processes to provide value to community members and prosperity to society.”<sup>2</sup></p>
+<p><em>Every health organization should be a lean organization</em>. Why? Because the lean DNA encodes for the following:</p>
+<ol type="1">
+<li><strong>Respect for people</strong> (staff, community, client, patient, customer)</li>
+<li><strong>Continuous improvement</strong> (<a href="https://www.lean.org/lexicon-terms/kata/">The Improvement Kata</a>)</li>
+<li><strong>Scientific thinking</strong>, <strong>problem solving</strong>, and <strong>innovation</strong> (<a href="https://www.lean.org/?s=a3+thinking">A3 thinking</a>)</li>
+<li>Management by <strong>Objectives</strong> and <strong>Key Results</strong> (OKRs) (Figure&nbsp;1)</li>
+<li>Elimination of <strong>waste</strong> and <strong>undesired variability</strong> in inputs, processes, outputs, and outcomes</li>
+<li>Being <strong>agile</strong>, <strong>adaptive</strong>, and <strong>responsive</strong> to meet challenges and opportunities</li>
+</ol>
+<p>These six components are required and, if one is missing, organizational effectiveness and mission will suffer.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every health organization should be a lean organization. … These six components are required and, if one is missing, organizational effectiveness and mission will suffer.</p>
+</div>
+</div>
+<p>For this blog posting I am highlighting <strong>Objectives and Key Results</strong> (Figure&nbsp;1).</p>
+<div id="fig-okrs" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://drtomasaragon.github.io/posts/2022-12-10-becoming-the-best-at-getting-better/images/okrs_coursera_what-are-okrs-okr-definition-with-diagram_orig_cropped.jpg" class="img-fluid figure-img" style="width:95.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: OKRs or Objectives and Key Results is a best practice for setting, tracking, and achieving audacious goals. OKRs was popularized by John Doerr’s best-selling book “Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs.”</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="objectives-and-key-results-okrs" class="level2">
+<h2 class="anchored" data-anchor-id="objectives-and-key-results-okrs">Objectives and Key Results (OKRs)</h2>
+<p><strong>Goal setting and tracking</strong> are at the center of all performance or improvement frameworks (eg, planning, project management, lean, Results-Based Accountability [RBA], Incident Command System [ICS]). Because of its central importance, we are using a best practice for goal setting and tracking called <strong>Objectives and Key Results</strong> (Figure&nbsp;1). OKRs is an updated version of “management by objectives” (around since the 1950s) and is used by organizations like Google, the Gates Foundation, and many others.</p>
+<p>For your top priorities, answer two questions:</p>
+<ol type="1">
+<li><strong>What</strong> do we want to <strong>accomplish</strong>? (Objectives). Good Objectives are significant, concrete, action-oriented, and inspirational.</li>
+<li><strong>How</strong> do we <strong>measure progress and success</strong>? (Key Results). Good Key Results are specific and time-bound, aggressive yet realistic, and measurable and verifiable.</li>
+</ol>
+<p>That’s it! Then, meet at a regular cadence to track progress on Key Results, and adjust activities to achieve your Objectives. To learn more, see <a href="https://www.whatmatters.com/get-started">https://www.whatmatters.com/get-started</a>.</p>
+<p>Key Results are always connected to specific Objectives. Key Results are <em>necessary</em> and <em>sufficient</em> to accomplish the Objective. Objectives are the WHAT and Key Results are the HOW.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart RL
+  kr1.1([Key Result 1.1]) --&gt; o1(Objective 1)
+  kr1.2([Key Result 1.2]) --&gt; o1
+  kr2.1([Key Result 2.1]) --&gt; o2(Objective 2)
+  kr2.2([Key Result 2.2]) --&gt; o2
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p><em>OKRS does <strong>not</strong> replace other frameworks</em>. OKRs is a goal setting best practice, and goal setting is part of all planning, implementation, and improvement frameworks (Figure&nbsp;2).</p>
+<div id="fig-leanrba" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://drtomasaragon.github.io/posts/2022-12-10-becoming-the-best-at-getting-better/images/okrs_how_it_relates_to_lean_rba_etc.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Goal setting is core to all planning, implementation, and improvement frameworks. OKRs or Objectives and Key Results is a best practice for setting, tracking, and achieving audacious goals. OKRs was popularized by John Doerr’s best-selling book “Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs.”</figcaption><p></p>
+</figure>
+</div>
+<p>OKRs supercharges your ability to set and achieve audacious goals by accelerating <strong>FACTS</strong>:</p>
+<ul>
+<li><strong>F</strong> <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> Focus</li>
+<li><strong>A</strong> <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> Align</li>
+<li><strong>C</strong> <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> Commit</li>
+<li><strong>T</strong> <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> Track</li>
+<li><strong>S</strong> <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> Stretch</li>
+</ul>
+<section id="three-kinds-of-okrs" class="level3">
+<h3 class="anchored" data-anchor-id="three-kinds-of-okrs">Three Kinds of OKRs</h3>
+<p>OKRs are a communication tool that describe what success looks like. To reach your Objective, what do you need to accomplish? And how far do you need to stretch your efforts this cycle to get there?</p>
+<p>OKRs are one of three types:</p>
+<ul>
+<li><strong>Committed OKR</strong>: Though still a stretch, we must achieve 100% in the next cycle.</li>
+<li><strong>Aspirational OKR</strong>: A significant stretch in the next cycle; typically only 70% of these KRs will be met.</li>
+<li><strong>Learning OKR</strong>: What you want to learn in the next cycle.</li>
+</ul>
+</section>
+<section id="what-is-a-good-objective" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-a-good-objective">What is a good Objective?</h3>
+<p>A good Objective is</p>
+<ul>
+<li>significant,</li>
+<li>concrete,</li>
+<li>action-oriented,</li>
+<li>inspirational.</li>
+</ul>
+<p>It does not have metrics; it is your destination! Here are additional questions to ask:</p>
+<ol type="1">
+<li>Is the Objective a <em>meaningful</em> change?</li>
+<li>Is the Objective an <em>inspiring</em> change?</li>
+<li>Is the Objective an <em>audacious</em> change?</li>
+<li>Is each one <em>specific</em> enough, articulating a clear <em>direction</em>?</li>
+<li>Do they <em>inspire action</em> with verbs and avoid passive language?</li>
+<li>Are they all <em>concise</em>? Or could you say them in a simpler way?</li>
+</ol>
+</section>
+<section id="what-are-good-key-results" class="level3">
+<h3 class="anchored" data-anchor-id="what-are-good-key-results">What are good Key Results?</h3>
+<p>Good Key Results are</p>
+<ul>
+<li>specific and time-bound,</li>
+<li>aggressive yet realistic, and</li>
+<li>measurable and verifiable.</li>
+</ul>
+<p>Phrase each of your Key Results as an <em>input</em>, <em>process</em>, <em>output</em>, or <em>outcome</em>.</p>
+<ul>
+<li><strong>Inputs</strong> <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> financial, material, or human resources</li>
+<li><strong>Processes</strong> <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> activities that transform inputs into outputs</li>
+<li><strong>Outputs</strong> <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> delivery of products or services</li>
+<li><strong>Outcomes</strong> <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> change in knowledge, behaviors, skills, conditions, etc.</li>
+</ul>
+<p>We have control of inputs, processes, and outputs, but usually only influence on outcomes.</p>
+<p>Key Results based on outcomes are more meaningful, but more difficult to measure and track.</p>
+<p>Look for <em>leading</em> indicators are predictive and provide early warning of trouble.</p>
+<p>Pair <em>quantity</em> KRs with <em>quality</em> KRs</p>
+<p>Determine if your KR is a <em>hold</em>, an <em>increment</em>, or a <em>leap</em></p>
+<ol type="1">
+<li><strong>Hold</strong> <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> Keep getting the same results.</li>
+<li><strong>Increment</strong> <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> Improve what’s working today.</li>
+<li><strong>Leap</strong> <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> Make a big step forward.</li>
+</ol>
+<p>The Figure&nbsp;3 (Table) summarizes Key Results and includes the Results-Based Accountability (RBA) framework. RBA is an epidemiologic framework that distinguishes program versus population results and is commonly used for collective impact approaches.</p>
+<div id="fig-okrstable" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://drtomasaragon.github.io/posts/2022-12-10-becoming-the-best-at-getting-better/images/okrs_lean_rba_table_capto.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: Key Results are metrics that are specific and time-bound, aggressive yet realistic, and measurable and verifiable.</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Objectives and Key Results (OKRs)</strong></p>
+<p>For your top priorities, answer two questions:</p>
+<ol type="1">
+<li><strong>What</strong> do we want to <strong>accomplish</strong>? (Objectives). Good Objectives are significant, concrete, action-oriented, and inspirational.</li>
+<li><strong>How</strong> do we <strong>measure progress and success</strong>? (Key Results). Good Key Results are specific and time-bound, aggressive yet realistic, and measurable and verifiable.</li>
+</ol>
+<p>That’s it! Then, meet at a regular cadence to track progress on Key Results, and adjust activities to achieve your Objectives.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="examples-of-okrs" class="level2">
+<h2 class="anchored" data-anchor-id="examples-of-okrs">Examples of OKRs</h2>
+<section id="sports" class="level3">
+<h3 class="anchored" data-anchor-id="sports">Sports</h3>
+<p><strong>Objective</strong>: Win the Super Bowl for the 2023 season, as measured by</p>
+<ul>
+<li><strong>KR.1</strong>: Recruit franchise quarterback by April, 2023 (input: human resource)</li>
+<li><strong>KR.2</strong>: Recruit highly ranked defensive coordinator by April, 2023 (input: human resource)</li>
+<li><strong>KR.3</strong>: Win the Division title by December 31, 2023 (outcome).</li>
+<li><strong>KR.4</strong>: Win the Conference title by January 30, 2024 (outcome).</li>
+<li><strong>KR.5</strong>: Win the Super Bowl title by February 15, 2024 (outcome).</li>
+</ul>
+</section>
+<section id="personal" class="level3">
+<h3 class="anchored" data-anchor-id="personal">Personal</h3>
+<p><strong>Objective</strong>: Improve and sustain my physical, mental, and emotional well-being, as measured by</p>
+<ul>
+<li><strong>KR.1</strong>: Consume two cups of oatmeal (daily), and do not consume added sugars (daily)</li>
+<li><strong>KR.2</strong>: Get at least 8 hours of sleep (nightly)</li>
+<li><strong>KR.3</strong>: Walk or job 12 miles every weekend (weekly).</li>
+<li><strong>KR.4</strong>: Spend every weekend home with family (weekly).</li>
+<li><strong>KR.5</strong>: Maintain BMI between 24 and 25 (normal BMI is 19-25)</li>
+</ul>
+</section>
+<section id="public-health" class="level3">
+<h3 class="anchored" data-anchor-id="public-health">Public health</h3>
+<section id="covid-19-vaccine-equity" class="level4">
+<h4 class="anchored" data-anchor-id="covid-19-vaccine-equity">COVID-19 vaccine equity</h4>
+<p>Strategic COVID-19 vaccine equity statement: “All communities in California enjoy racial, socioeconomic, and geographic equity in vaccine-related community immunity, health outcomes, and socioeconomic impacts.”</p>
+<p>There are four <strong>Objectives</strong> (Key Results not shown, except for Objective 4 below)</p>
+<ol type="1">
+<li>Achieve high and equitable access to COVID-19 vaccines across California, as measured by <img src="https://latex.codecogs.com/png.latex?%5Cldots"></li>
+<li>Achieve high and equitable acceptance to COVID-19 vaccines across California, as measured by <img src="https://latex.codecogs.com/png.latex?%5Cldots"></li>
+<li>Achieve high quality and equitable administration of COVID-19 vaccines across California, as measured by <img src="https://latex.codecogs.com/png.latex?%5Cldots"></li>
+<li>Achieve equitable community immunity against COVID-19 across California, as measured by <img src="https://latex.codecogs.com/png.latex?%5Cldots"></li>
+</ol>
+<p><strong>Objective 4</strong>: Achieve equitable community immunity against COVID-19 across California, as measured by</p>
+<ul>
+<li><strong>KR 4.1</strong>: Vaccine coverage is &gt;= 80% for persons 50 years or older, stratified by Healthy Places Index, and race/ethnicity by INSERT DATE.</li>
+<li><strong>KR 4.2</strong>: COVID-19 case rates are below TARGET, stratified by Healthy Places Index, and race/ethnicity by INSERT DATE.</li>
+<li><strong>KR 4.3</strong>: COVID-19 hospitalization rates are below TARGET, stratified by Healthy Places Index, and race/ethnicity by INSERT DATE.</li>
+<li><strong>KR 4.4</strong>: COVID-19 death rates are below TARGET, stratified by Healthy Places Index, and race/ethnicity by INSERT DATE.</li>
+</ul>
+</section>
+<section id="substance-addiction-and-prevention-sapb-branch" class="level4">
+<h4 class="anchored" data-anchor-id="substance-addiction-and-prevention-sapb-branch">Substance, Addiction, and Prevention (SAPB) Branch</h4>
+<p>SAPB strategic <strong>Objectives</strong> (Key Results are pending)</p>
+<ol type="1">
+<li>Improve CDPH and state agency coordination between primary, secondary, and tertiary prevention efforts, including evidence-based/informed and emerging practices and interventions, as measured by <img src="https://latex.codecogs.com/png.latex?%5Cldots"></li>
+<li>Improve state and local surveillance, as measured by <img src="https://latex.codecogs.com/png.latex?%5Cldots"></li>
+<li>Promote protective factors and reduce risk factors to support individual and community resiliency, as measured by <img src="https://latex.codecogs.com/png.latex?%5Cldots"></li>
+<li>Increase public awareness and education, as measured by <img src="https://latex.codecogs.com/png.latex?%5Cldots"></li>
+<li>Expand naloxone access, saturation, and education, as measured by <img src="https://latex.codecogs.com/png.latex?%5Cldots"></li>
+<li>Promote treatment and reduce stigma, as measured by <img src="https://latex.codecogs.com/png.latex?%5Cldots"></li>
+<li>Promote harm reduction and drug checking services, as measured by <img src="https://latex.codecogs.com/png.latex?%5Cldots"></li>
+</ol>
+
+
+</section>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>To learn about OKRs visit <a href="https://www.whatmatters.com/get-started">https://www.whatmatters.com/get-started</a>↩︎</p></li>
+<li id="fn2"><p>See [https://www.lean.org/the-lean-post/articles/public-service-leans-next-frontier/]↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>Lean</category>
+  <category>OKRs</category>
+  <category>Leadership</category>
+  <category>Continuous improvement</category>
+  <category>Objectives and Key Results</category>
+  <guid>https://drtomasaragon.github.io/posts/2022-12-10-becoming-the-best-at-getting-better/index.html</guid>
+  <pubDate>Sat, 10 Dec 2022 08:00:00 GMT</pubDate>
+  <media:content url="https://drtomasaragon.github.io/posts/2022-12-10-becoming-the-best-at-getting-better/images/okrs_coursera_what-are-okrs-okr-definition-with-diagram_orig_cropped.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Decision intelligence books</title>
   <dc:creator>Tomás Aragón</dc:creator>
