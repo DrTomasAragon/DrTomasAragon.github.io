@@ -97,8 +97,6 @@
 </tr>
 </tbody>
 </table>
-<section id="odds-ratio-function-for-four-integers" class="level3">
-<h3 class="anchored" data-anchor-id="odds-ratio-function-for-four-integers">Odds ratio function for four integers</h3>
 <p>For an appropriate structured table, the odds ratio is the cross-product.</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0AOR%20=%20%5Cfrac%7Ba%20d%7D%7Bb%20c%7D%0A"></p>
 <p>For a case-control design, the odds ratio is the ratio of the exposure odds.</p>
@@ -180,7 +178,6 @@
 # 3 methods for generic function <b>oddsratio</b>:<ul><li> oddsratio(a::<b>Int64</b>, b::<b>Int64</b>, c::<b>Int64</b>, d::<b>Int64</b>) in Main at In[2]:2</li> <li> oddsratio(p1::<b>Float64</b>, p0::<b>Float64</b>) in Main at In[4]:2</li> <li> oddsratio(x::<b>Matrix{Int64}</b>) in Main at In[6]:2</li> </ul>
 </div>
 </div>
-</section>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
