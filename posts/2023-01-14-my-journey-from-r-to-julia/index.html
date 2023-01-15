@@ -376,7 +376,7 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
 <li>two proportions, or</li>
 <li>a 2x2 table (matrix)</li>
 </ul>
-<p>The catch is that the three functions will have the same name: <code>oddsratio</code>.</p>
+<p>The catch is that the three functions will have the same name: <code>oddsratio</code>. This is possible in Julia because of multiple dispatch. In contrast, R is single dispatch.</p>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 1</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">oddsratio</span>(a<span class="op">::</span><span class="dt">Int</span>, b<span class="op">::</span><span class="dt">Int</span>, c<span class="op">::</span><span class="dt">Int</span>, d<span class="op">::</span><span class="dt">Int</span>)</span>
@@ -478,6 +478,7 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
 <pre><code>oddsratio (generic function with 3 methods)</code></pre>
 </div>
 </div>
+<p>From my biased perspective, Julia has a simplicity and elegance that is lacking in R.</p>
 
 
 
