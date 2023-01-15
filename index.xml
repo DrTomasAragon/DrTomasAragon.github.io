@@ -9,8 +9,212 @@
 <link>https://drtomasaragon.github.io/index.html</link>
 <atom:link href="https://drtomasaragon.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>A population health blog</description>
-<generator>quarto-1.2.280</generator>
-<lastBuildDate>Sat, 10 Dec 2022 08:00:00 GMT</lastBuildDate>
+<generator>quarto-1.2.313</generator>
+<lastBuildDate>Sat, 14 Jan 2023 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>My journey from R to Julia</title>
+  <dc:creator>Tomás Aragón</dc:creator>
+  <link>https://drtomasaragon.github.io/posts/2023-01-14-my-journey-from-r-to-julia/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="my-history-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="my-history-with-r">My history with R</h2>
+<p>For 15 years I taught “Applied Epidemiology using R” at the UC Berkeley School of Public Health. I started teaching this course in the early 2000s when most people were not interested in R. Eventually R’s popularity grew and so did my course enrollment. I taught basic R programming applied to epidemiologic concepts. Students worked on a project of their choosing. Because I had students from multiple disciplines, their projects were often very innovative and I learned a lot from them.</p>
+<p>Over the 15 years I witnessed the emergence of “data science” and students’ ingenuity and creativeness in their projects. Naturally, the course evolved too. I introduced Bayesian networks as a unifying framework to introduce probablistic dependence, causal graphs, and decision networks (for decision analysis).</p>
+<p>I started dabbling in Python. Unfortunately, the COVID-19 pandemic interrupted my teaching because I was the health officer of San Francisco and director of the Population Health Division. Working on the pandemic response left me little time to conduct analyses or to learn Python.<sup>1</sup></p>
+<p>I cannot remember when, but eventually I discovered Julia—a programming language designed for scientific computing with the intuition of Python or R, but with the speed of C++. I fell in love with Julia and I gave up on learn Python. I did not and do not have the time to maintain competency in more than 1.5 programming languages. As I learned more Julia, I became convinced learning it was a better long term investment than sticking with R.</p>
+<p>I now use programming to extend my epidemiologic intuition, and to learn new methods. I have an personal interest in Bayesian networks, decision networks, causal inference, Markov decision processes, and agent-based modeling.</p>
+<p>Here are some key Julia features that I believe epidemiologist will value:</p>
+<ul>
+<li>multiple dispatch</li>
+<li>composite types</li>
+<li>just-in-time compiling</li>
+<li>speed (very fast)</li>
+<li>community</li>
+</ul>
+<p>Julia enables more intuitive programming. For example, in R, we try to avoid loops because they are very inefficient. In Julia, loops are efficient because it compiles before execution. This promotes programming that is more natural.</p>
+<p>Below I demonstrate multiple dispatch with a trivial example. R is single dispatch.</p>
+</section>
+<section id="multiple-dispatch-example-in-julia" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-dispatch-example-in-julia">Multiple dispatch example in Julia</h2>
+<p>I was the founding developer of the R ‘epitools’ package.<sup>2</sup> I developed functions for basic epidemiologic analyses (eg, 2x2 tables), several from Rothman’s “Modern Epidemiology” textbook. For example, if I wanted to create a function to calculate an odds ratio for a 2x2 contingency table, the data could be provided in several ways:</p>
+<ul>
+<li>four integer counts,</li>
+<li>two proportions, or</li>
+<li>a 2x2 table (matrix)</li>
+<li>two vectors with categorical data</li>
+</ul>
+<p>If I wanted to write one function to handle these possible data types as arguments, I would have to do a lot of processing and checking of data types in order to call the next function (nested or external). This requires much more work than is necessary. Let’s do this is Julia using multiple dispatch.</p>
+<p>In 2003, we published a study that provided evidence that drinking unfiltered municipal tap water was associated with developing cryptosporidiosis among patients with advanced HIV disease <span class="citation" data-cites="Aragon2003_pmid12515584">[1]</span>. Here is a contingency table from this paper.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Exposure</th>
+<th style="text-align: right;">Case</th>
+<th style="text-align: right;">Control</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Highest</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td>Intermediate</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">64</td>
+</tr>
+<tr class="odd">
+<td>Lowest</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">29</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s calculate the unadjusted odds ratio comparing the highest exposure category to the lowest exposure category. Here is the 2x2 table for this calculation.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Exposure</th>
+<th style="text-align: right;">Case</th>
+<th style="text-align: right;">Control</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Highest</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td>Lowest</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">29</td>
+</tr>
+</tbody>
+</table>
+<section id="odds-ratio-function-for-four-integers" class="level3">
+<h3 class="anchored" data-anchor-id="odds-ratio-function-for-four-integers">Odds ratio function for four integers</h3>
+<p>For an appropriate structured table, the odds ratio is the cross-product.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AOR%20=%20%5Cfrac%7Ba%20d%7D%7Bb%20c%7D%0A"></p>
+<p>For a case-control design, the odds ratio is the ratio of the exposure odds.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AOR%20=%20%5Cfrac%7Bp_1/(1%20-%20p_1)%7D%7Bp_0/(1%20-%20p_0)%7D%0A"></p>
+<p>We will create three functions that can receive three different types of arguments to calculate an odds ratio.</p>
+<ul>
+<li>four integer counts,</li>
+<li>two proportions, or</li>
+<li>a 2x2 table (matrix)</li>
+</ul>
+<p>The catch is that the three functions will have the same name: <code>oddsratio</code>.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="co" style="color: #5E5E5E;">## Function 1</span></span>
+<span id="cb1-2"><span class="kw" style="color: #003B4F;">function</span> <span class="fu" style="color: #4758AB;">oddsratio</span>(a<span class="op" style="color: #5E5E5E;">::</span><span class="dt" style="color: #AD0000;">Int</span>, b<span class="op" style="color: #5E5E5E;">::</span><span class="dt" style="color: #AD0000;">Int</span>, c<span class="op" style="color: #5E5E5E;">::</span><span class="dt" style="color: #AD0000;">Int</span>, d<span class="op" style="color: #5E5E5E;">::</span><span class="dt" style="color: #AD0000;">Int</span>)</span>
+<span id="cb1-3">    or <span class="op" style="color: #5E5E5E;">=</span> (a <span class="op" style="color: #5E5E5E;">*</span> d) <span class="op" style="color: #5E5E5E;">/</span> (b <span class="op" style="color: #5E5E5E;">*</span> c)</span>
+<span id="cb1-4">    <span class="cf" style="color: #003B4F;">return</span> or</span>
+<span id="cb1-5"><span class="kw" style="color: #003B4F;">end</span> </span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>oddsratio (generic function with 1 method)</code></pre>
+</div>
+</div>
+<p>Let’s test the <code>oddsratio</code> function passing four integers from our 2x2 table.</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><span class="fu" style="color: #4758AB;">oddsratio</span>(<span class="fl" style="color: #AD0000;">12</span>, <span class="fl" style="color: #AD0000;">6</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">29</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>29.0</code></pre>
+</div>
+</div>
+<p>Here is the second function to handle arguments that are proportions; for example, the exposure odds comparing cases to controls.</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><span class="co" style="color: #5E5E5E;">## Function 2</span></span>
+<span id="cb5-2"><span class="kw" style="color: #003B4F;">function</span> <span class="fu" style="color: #4758AB;">oddsratio</span>(p1<span class="op" style="color: #5E5E5E;">::</span><span class="dt" style="color: #AD0000;">Float64</span>, p0<span class="op" style="color: #5E5E5E;">::</span><span class="dt" style="color: #AD0000;">Float64</span>)</span>
+<span id="cb5-3">    or <span class="op" style="color: #5E5E5E;">=</span> ((p1)<span class="op" style="color: #5E5E5E;">/</span>(<span class="fl" style="color: #AD0000;">1</span> <span class="op" style="color: #5E5E5E;">-</span> p1)) <span class="op" style="color: #5E5E5E;">/</span> ((p0)<span class="op" style="color: #5E5E5E;">/</span>(<span class="fl" style="color: #AD0000;">1</span> <span class="op" style="color: #5E5E5E;">-</span> p0))</span>
+<span id="cb5-4">    <span class="cf" style="color: #003B4F;">return</span> or</span>
+<span id="cb5-5"><span class="kw" style="color: #003B4F;">end</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>oddsratio (generic function with 2 methods)</code></pre>
+</div>
+</div>
+<p>Let’s test the <code>oddsratio</code> function passing two proportions from our 2x2 table.</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1">prop1 <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">12</span> <span class="op" style="color: #5E5E5E;">/</span> (<span class="fl" style="color: #AD0000;">12</span> <span class="op" style="color: #5E5E5E;">+</span> <span class="fl" style="color: #AD0000;">2</span>) <span class="co" style="color: #5E5E5E;"># probability of exposure among cases</span></span>
+<span id="cb7-2">prop0 <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">6</span> <span class="op" style="color: #5E5E5E;">/</span> (<span class="fl" style="color: #AD0000;">6</span> <span class="op" style="color: #5E5E5E;">+</span> <span class="fl" style="color: #AD0000;">29</span>) <span class="co" style="color: #5E5E5E;"># probability of exposure among controls</span></span>
+<span id="cb7-3"><span class="fu" style="color: #4758AB;">oddsratio</span>(prop1, prop0)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>28.999999999999982</code></pre>
+</div>
+</div>
+<p>Finally, here is the third function to handle an argument that is a 2x2 table (matrix).</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><span class="co" style="color: #5E5E5E;">## Function 3</span></span>
+<span id="cb9-2"><span class="kw" style="color: #003B4F;">function</span> <span class="fu" style="color: #4758AB;">oddsratio</span>(x<span class="op" style="color: #5E5E5E;">::</span><span class="dt" style="color: #AD0000;">Matrix{Int}</span>)</span>
+<span id="cb9-3">    or <span class="op" style="color: #5E5E5E;">=</span> (x[<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">1</span>] <span class="op" style="color: #5E5E5E;">*</span> x[<span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">2</span>]) <span class="op" style="color: #5E5E5E;">/</span> (x[<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>] <span class="op" style="color: #5E5E5E;">*</span> x[<span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">1</span>])</span>
+<span id="cb9-4">    <span class="cf" style="color: #003B4F;">return</span> or</span>
+<span id="cb9-5"><span class="kw" style="color: #003B4F;">end</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>oddsratio (generic function with 3 methods)</code></pre>
+</div>
+</div>
+<p>Let’s test the <code>oddsratio</code> function passing our 2x2 table.</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1">tab <span class="op" style="color: #5E5E5E;">=</span> [<span class="fl" style="color: #AD0000;">12</span> <span class="fl" style="color: #AD0000;">6</span>; <span class="fl" style="color: #AD0000;">2</span> <span class="fl" style="color: #AD0000;">29</span>]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>2×2 Matrix{Int64}:
+ 12   6
+  2  29</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><span class="fu" style="color: #4758AB;">oddsratio</span>(tab)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>29.0</code></pre>
+</div>
+</div>
+<p>This is called multiple dispatch. The <code>oddsratio</code> function has three methods and can handle multiple data types. Notice how easy that was.</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><span class="fu" style="color: #4758AB;">methods</span>(oddsratio)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+# 3 methods for generic function <b>oddsratio</b>:<ul><li> oddsratio(a::<b>Int64</b>, b::<b>Int64</b>, c::<b>Int64</b>, d::<b>Int64</b>) in Main at In[2]:2</li> <li> oddsratio(p1::<b>Float64</b>, p0::<b>Float64</b>) in Main at In[4]:2</li> <li> oddsratio(x::<b>Matrix{Int64}</b>) in Main at In[6]:2</li> </ul>
+</div>
+</div>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>In this blog entry I summarized why I switched from R to Julia. I illustrated how multiple dispatch works with functions. Notice how easy it was for me to create an <code>oddsratio</code> function with three methods to handle different argument data types (integer counts, proportions, and a matrix).</p>
+<p>I enjoy Julia and you will too. You can also run R or Python from Julia without skipping a beat.</p>
+<p>I will be posting simple examples that highlight Julia features applied to basic epidemiology or epidemiologic programming.</p>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body">
+<div id="ref-Aragon2003_pmid12515584" class="csl-entry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Aragón TJ, Novotny S, Enanoria W, Vugia DJ, Khalakdina A, Katz MH. Endemic cryptosporidiosis and exposure to municipal tap water in persons with acquired immunodeficiency syndrome (<span>AIDS</span>): A case-control study. <span>BMC</span> Public Health [Internet]. 2003 Jan;3(1). Available from: <a href="https://doi.org/10.1186/1471-2458-3-2">https://doi.org/10.1186/1471-2458-3-2</a></div>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>I did not enjoy Python very much.↩︎</p></li>
+<li id="fn2"><p>See <a href="https://cran.r-project.org/web/packages/epitools/index.html" class="uri">https://cran.r-project.org/web/packages/epitools/index.html</a>↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>Julia</category>
+  <category>R</category>
+  <category>Python</category>
+  <category>Data science</category>
+  <category>Programming</category>
+  <category>Epidemiology</category>
+  <category>Scientific computing</category>
+  <guid>https://drtomasaragon.github.io/posts/2023-01-14-my-journey-from-r-to-julia/index.html</guid>
+  <pubDate>Sat, 14 Jan 2023 08:00:00 GMT</pubDate>
+  <media:content url="https://drtomasaragon.github.io/posts/2023-01-14-my-journey-from-r-to-julia/images/julia-programming-language-mit-00.png" medium="image" type="image/png" height="96" width="144"/>
+</item>
 <item>
   <title>Becoming the best at getting better</title>
   <dc:creator>Tomás Aragón</dc:creator>
