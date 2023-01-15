@@ -26,7 +26,7 @@
 <p>Over the 15 years I witnessed the emergence of “data science” and students’ ingenuity and creativeness in their projects. Naturally, the course evolved too. I introduced Bayesian networks as a unifying framework to introduce probablistic dependence, causal graphs, and decision networks (for decision analysis).</p>
 <p>I started dabbling in Python. Unfortunately, the COVID-19 pandemic interrupted my teaching because I was the health officer of San Francisco and director of the Population Health Division. Working on the pandemic response left me little time to conduct analyses or to learn Python.<sup>1</sup></p>
 <p>I cannot remember when, but eventually I discovered Julia—a programming language designed for scientific computing with the intuition of Python or R, but with the speed of C++. I fell in love with Julia and I gave up on learning Python. I did not and do not have the time to maintain competency in more than 1.5 programming languages.<sup>2</sup> As I learned more Julia, I became convinced learning it was a better long term investment than sticking with R.</p>
-<p>I use programming to explore or test my epidemiologic intuition, and to learn new methods. I have an personal interest in Bayesian networks, decision networks, causal inference, Markov decision processes, and agent-based modeling.<sup>3</sup></p>
+<p>I use programming to explore or test my epidemiologic intuition, and to learn new methods. I have a personal interest in Bayesian networks, decision networks, causal inference, Markov decision processes, and agent-based modeling.<sup>3</sup></p>
 <p>Here are some key Julia features that I believe epidemiologist will value:</p>
 <ul>
 <li>multiple dispatch</li>
