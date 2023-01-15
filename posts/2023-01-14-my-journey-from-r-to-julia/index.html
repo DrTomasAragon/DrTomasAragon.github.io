@@ -453,6 +453,31 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
 <p>In this blog entry I summarized why I switched from R to Julia. I illustrated how multiple dispatch works with functions. Notice how easy it was for me to create an <code>oddsratio</code> function with three methods to handle different argument data types (integer counts, proportions, and a matrix).</p>
 <p>I enjoy Julia and you will too. You can also run R or Python from Julia without skipping a beat.</p>
 <p>I will be posting simple examples that highlight Julia features applied to basic epidemiology or epidemiologic programming.</p>
+</section>
+<section id="appendix" class="level2">
+<h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
+<p>Julia is very flexible in the creation of functions. Here are the same three functions in an abbreviated form.</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 1</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(a<span class="op">::</span><span class="dt">Int</span>, b<span class="op">::</span><span class="dt">Int</span>, c<span class="op">::</span><span class="dt">Int</span>, d<span class="op">::</span><span class="dt">Int</span>) <span class="op">=</span> (a <span class="op">*</span> d) <span class="op">/</span> (b <span class="op">*</span> c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>oddsratio (generic function with 3 methods)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 2</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(p1<span class="op">::</span><span class="dt">Float64</span>, p0<span class="op">::</span><span class="dt">Float64</span>) <span class="op">=</span> ((p1)<span class="op">/</span>(<span class="fl">1</span> <span class="op">-</span> p1)) <span class="op">/</span> ((p0)<span class="op">/</span>(<span class="fl">1</span> <span class="op">-</span> p0))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>oddsratio (generic function with 3 methods)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 3</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(x<span class="op">::</span><span class="dt">Matrix{Int}</span>) <span class="op">=</span> (x[<span class="fl">1</span>, <span class="fl">1</span>] <span class="op">*</span> x[<span class="fl">2</span>, <span class="fl">2</span>]) <span class="op">/</span> (x[<span class="fl">1</span>, <span class="fl">2</span>] <span class="op">*</span> x[<span class="fl">2</span>, <span class="fl">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>oddsratio (generic function with 3 methods)</code></pre>
+</div>
+</div>
 
 
 

@@ -70,6 +70,13 @@
     "text": "Summary\nIn this blog entry I summarized why I switched from R to Julia. I illustrated how multiple dispatch works with functions. Notice how easy it was for me to create an oddsratio function with three methods to handle different argument data types (integer counts, proportions, and a matrix).\nI enjoy Julia and you will too. You can also run R or Python from Julia without skipping a beat.\nI will be posting simple examples that highlight Julia features applied to basic epidemiology or epidemiologic programming."
   },
   {
+    "objectID": "posts/2023-01-14-my-journey-from-r-to-julia/index.html#appendix",
+    "href": "posts/2023-01-14-my-journey-from-r-to-julia/index.html#appendix",
+    "title": "My journey from R to Julia",
+    "section": "Appendix",
+    "text": "Appendix\nJulia is very flexible in the creation of functions. Here are the same three functions in an abbreviated form.\n\n## Function 1\noddsratio(a::Int, b::Int, c::Int, d::Int) = (a * d) / (b * c)\n\noddsratio (generic function with 3 methods)\n\n\n\n## Function 2\noddsratio(p1::Float64, p0::Float64) = ((p1)/(1 - p1)) / ((p0)/(1 - p0))\n\noddsratio (generic function with 3 methods)\n\n\n\n## Function 3\noddsratio(x::Matrix{Int}) = (x[1, 1] * x[2, 2]) / (x[1, 2] * x[2, 1])\n\noddsratio (generic function with 3 methods)"
+  },
+  {
     "objectID": "posts/2017-10-22-humility-is-the-new-smart/index.html",
     "href": "posts/2017-10-22-humility-is-the-new-smart/index.html",
     "title": "Humility is the New Smart! Rethinking human excellence",

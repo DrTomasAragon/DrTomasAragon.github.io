@@ -184,6 +184,31 @@
 <p>In this blog entry I summarized why I switched from R to Julia. I illustrated how multiple dispatch works with functions. Notice how easy it was for me to create an <code>oddsratio</code> function with three methods to handle different argument data types (integer counts, proportions, and a matrix).</p>
 <p>I enjoy Julia and you will too. You can also run R or Python from Julia without skipping a beat.</p>
 <p>I will be posting simple examples that highlight Julia features applied to basic epidemiology or epidemiologic programming.</p>
+</section>
+<section id="appendix" class="level2">
+<h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
+<p>Julia is very flexible in the creation of functions. Here are the same three functions in an abbreviated form.</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><span class="co" style="color: #5E5E5E;">## Function 1</span></span>
+<span id="cb16-2"><span class="fu" style="color: #4758AB;">oddsratio</span>(a<span class="op" style="color: #5E5E5E;">::</span><span class="dt" style="color: #AD0000;">Int</span>, b<span class="op" style="color: #5E5E5E;">::</span><span class="dt" style="color: #AD0000;">Int</span>, c<span class="op" style="color: #5E5E5E;">::</span><span class="dt" style="color: #AD0000;">Int</span>, d<span class="op" style="color: #5E5E5E;">::</span><span class="dt" style="color: #AD0000;">Int</span>) <span class="op" style="color: #5E5E5E;">=</span> (a <span class="op" style="color: #5E5E5E;">*</span> d) <span class="op" style="color: #5E5E5E;">/</span> (b <span class="op" style="color: #5E5E5E;">*</span> c)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>oddsratio (generic function with 3 methods)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><span class="co" style="color: #5E5E5E;">## Function 2</span></span>
+<span id="cb18-2"><span class="fu" style="color: #4758AB;">oddsratio</span>(p1<span class="op" style="color: #5E5E5E;">::</span><span class="dt" style="color: #AD0000;">Float64</span>, p0<span class="op" style="color: #5E5E5E;">::</span><span class="dt" style="color: #AD0000;">Float64</span>) <span class="op" style="color: #5E5E5E;">=</span> ((p1)<span class="op" style="color: #5E5E5E;">/</span>(<span class="fl" style="color: #AD0000;">1</span> <span class="op" style="color: #5E5E5E;">-</span> p1)) <span class="op" style="color: #5E5E5E;">/</span> ((p0)<span class="op" style="color: #5E5E5E;">/</span>(<span class="fl" style="color: #AD0000;">1</span> <span class="op" style="color: #5E5E5E;">-</span> p0))</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>oddsratio (generic function with 3 methods)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><span class="co" style="color: #5E5E5E;">## Function 3</span></span>
+<span id="cb20-2"><span class="fu" style="color: #4758AB;">oddsratio</span>(x<span class="op" style="color: #5E5E5E;">::</span><span class="dt" style="color: #AD0000;">Matrix{Int}</span>) <span class="op" style="color: #5E5E5E;">=</span> (x[<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">1</span>] <span class="op" style="color: #5E5E5E;">*</span> x[<span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">2</span>]) <span class="op" style="color: #5E5E5E;">/</span> (x[<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>] <span class="op" style="color: #5E5E5E;">*</span> x[<span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">1</span>])</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>oddsratio (generic function with 3 methods)</code></pre>
+</div>
+</div>
 
 
 
