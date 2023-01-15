@@ -27,7 +27,7 @@
 <p>I started dabbling in Python. Unfortunately, the COVID-19 pandemic interrupted my teaching because I was the health officer of San Francisco and director of the Population Health Division. Working on the pandemic response left me little time to conduct analyses or to learn Python.<sup>1</sup></p>
 <p>I cannot remember when, but eventually I discovered <a href="https://julialang.org/">Julia</a>—a programming language designed for scientific computing with the intuition of Python or R, but with the speed of C++. I fell in love with Julia and I gave up on learning Python. I did not, and do not, have the time to maintain core competency in more than 1.5 programming languages.<sup>2</sup> As I learned more Julia, I became convinced that for me learning Julia was a better long term investment than sticking with R.</p>
 <p>I use programming to explore or test my epidemiologic intuition, and to learn new methods. I have a personal interest in Bayesian networks, decision networks, causal inference, Markov decision processes, and agent-based modeling.<sup>3</sup></p>
-<p>Here are some key Julia features that I believe epidemiologist will value:</p>
+<p>Here are some key Julia features that I believe epidemiologists will value:</p>
 <ul>
 <li>multiple dispatch</li>
 <li>composite types</li>
@@ -118,7 +118,7 @@
 <pre><code>oddsratio (generic function with 1 method)</code></pre>
 </div>
 </div>
-<p>Let’s test the <code>oddsratio</code> function passing four integers from our 2x2 table.</p>
+<p>Let’s test the <code>oddsratio</code> function by passing four integers from our 2x2 table.</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><span class="fu" style="color: #4758AB;">oddsratio</span>(<span class="fl" style="color: #AD0000;">12</span>, <span class="fl" style="color: #AD0000;">6</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">29</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -136,7 +136,7 @@
 <pre><code>oddsratio (generic function with 2 methods)</code></pre>
 </div>
 </div>
-<p>Let’s test the <code>oddsratio</code> function passing two proportions from our 2x2 table.</p>
+<p>Let’s test the <code>oddsratio</code> function by passing two proportions from our 2x2 table.</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1">prop1 <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">12</span> <span class="op" style="color: #5E5E5E;">/</span> (<span class="fl" style="color: #AD0000;">12</span> <span class="op" style="color: #5E5E5E;">+</span> <span class="fl" style="color: #AD0000;">2</span>) <span class="co" style="color: #5E5E5E;"># probability of exposure among cases</span></span>
 <span id="cb7-2">prop0 <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">6</span> <span class="op" style="color: #5E5E5E;">/</span> (<span class="fl" style="color: #AD0000;">6</span> <span class="op" style="color: #5E5E5E;">+</span> <span class="fl" style="color: #AD0000;">29</span>) <span class="co" style="color: #5E5E5E;"># probability of exposure among controls</span></span>
@@ -156,7 +156,7 @@
 <pre><code>oddsratio (generic function with 3 methods)</code></pre>
 </div>
 </div>
-<p>Let’s test the <code>oddsratio</code> function passing our 2x2 table.</p>
+<p>Let’s test the <code>oddsratio</code> function by passing our 2x2 table.</p>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1">tab <span class="op" style="color: #5E5E5E;">=</span> [<span class="fl" style="color: #AD0000;">12</span> <span class="fl" style="color: #AD0000;">6</span>; <span class="fl" style="color: #AD0000;">2</span> <span class="fl" style="color: #AD0000;">29</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">

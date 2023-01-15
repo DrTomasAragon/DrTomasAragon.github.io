@@ -292,7 +292,7 @@ ga('send', {
 <p>I started dabbling in Python. Unfortunately, the COVID-19 pandemic interrupted my teaching because I was the health officer of San Francisco and director of the Population Health Division. Working on the pandemic response left me little time to conduct analyses or to learn Python.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>I cannot remember when, but eventually I discovered <a href="https://julialang.org/">Julia</a>—a programming language designed for scientific computing with the intuition of Python or R, but with the speed of C++. I fell in love with Julia and I gave up on learning Python. I did not, and do not, have the time to maintain core competency in more than 1.5 programming languages.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> As I learned more Julia, I became convinced that for me learning Julia was a better long term investment than sticking with R.</p>
 <p>I use programming to explore or test my epidemiologic intuition, and to learn new methods. I have a personal interest in Bayesian networks, decision networks, causal inference, Markov decision processes, and agent-based modeling.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<p>Here are some key Julia features that I believe epidemiologist will value:</p>
+<p>Here are some key Julia features that I believe epidemiologists will value:</p>
 <ul>
 <li>multiple dispatch</li>
 <li>composite types</li>
@@ -387,7 +387,7 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
 <pre><code>oddsratio (generic function with 1 method)</code></pre>
 </div>
 </div>
-<p>Let’s test the <code>oddsratio</code> function passing four integers from our 2x2 table.</p>
+<p>Let’s test the <code>oddsratio</code> function by passing four integers from our 2x2 table.</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -405,7 +405,7 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
 <pre><code>oddsratio (generic function with 2 methods)</code></pre>
 </div>
 </div>
-<p>Let’s test the <code>oddsratio</code> function passing two proportions from our 2x2 table.</p>
+<p>Let’s test the <code>oddsratio</code> function by passing two proportions from our 2x2 table.</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>prop1 <span class="op">=</span> <span class="fl">12</span> <span class="op">/</span> (<span class="fl">12</span> <span class="op">+</span> <span class="fl">2</span>) <span class="co"># probability of exposure among cases</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>prop0 <span class="op">=</span> <span class="fl">6</span> <span class="op">/</span> (<span class="fl">6</span> <span class="op">+</span> <span class="fl">29</span>) <span class="co"># probability of exposure among controls</span></span>
@@ -425,7 +425,7 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
 <pre><code>oddsratio (generic function with 3 methods)</code></pre>
 </div>
 </div>
-<p>Let’s test the <code>oddsratio</code> function passing our 2x2 table.</p>
+<p>Let’s test the <code>oddsratio</code> function by passing our 2x2 table.</p>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tab <span class="op">=</span> [<span class="fl">12</span> <span class="fl">6</span>; <span class="fl">2</span> <span class="fl">29</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
