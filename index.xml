@@ -9,7 +9,7 @@
 <link>https://drtomasaragon.github.io/index.html</link>
 <atom:link href="https://drtomasaragon.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>A population health blog</description>
-<generator>quarto-1.2.313</generator>
+<generator>quarto-1.2.335</generator>
 <lastBuildDate>Sat, 14 Jan 2023 08:00:00 GMT</lastBuildDate>
 <item>
   <title>My journey from R to Julia</title>
@@ -281,7 +281,7 @@ Note
 <ul>
 <li>The Future of Public Health Initiative</li>
 <li>Behavioral health promotion (especially youth)</li>
-<li>Community Health Improvement</li>
+<li>Community and Population Health Improvement</li>
 <li>Emergency readiness and pandemic recovery</li>
 <li>Climate action and community resilience</li>
 </ul></li>
