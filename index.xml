@@ -30,12 +30,12 @@
 <p>Here are some key Julia features that I believe epidemiologists will value:</p>
 <ul>
 <li>multiple dispatch (see below)</li>
-<li>composite types (not object-oriented programming)</li>
+<li>composite types</li>
 <li>just-in-time compiling</li>
 <li>speed (very very fast)</li>
-<li>community (mostly computer science, mathematics)</li>
+<li>community (mostly computer science, mathematics, engineering)</li>
 <li>1-based indexing like R and MATLAB (Python is 0-based indexing)</li>
-<li>Capabilities similar to dpylr in R<sup>4</sup><sup>5</sup></li>
+<li>Capabilities similar to dpylr in R<sup>4</sup> {^,} <sup>5</sup></li>
 <li><a href="https://www.datacamp.com/tutorial/pipe-r-tutorial">Pipe operator similar to %&gt;% in R</a></li>
 <li>general programming language (like Python)</li>
 </ul>
