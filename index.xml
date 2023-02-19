@@ -10,7 +10,59 @@
 <atom:link href="https://drtomasaragon.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>A population health blog</description>
 <generator>quarto-1.2.335</generator>
-<lastBuildDate>Sat, 14 Jan 2023 08:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 20 Feb 2023 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>Julia for Data Analysis</title>
+  <dc:creator>Tomás Aragón</dc:creator>
+  <link>https://drtomasaragon.github.io/posts/2023-02-20-julia-for-data-analysis/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Julia is an open source, general purpose programming language for scientific computing and is well suited for data science. I taught R programming for several years at the UC Berkeley School of Public Health. I recently posted a blog entry on why I switched from R to Julia (“<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>”). In this blog entry I review the book “<a href="https://www.manning.com/books/julia-for-data-analysis">Julia for Data Analysis</a>” by Bogumit Kaminski. In short, this is an outstanding book that I highly recommend without any reservations (5/5 stars). This review is a working blog that I will be updating with highlights from the book.</p>
+<p>For data science, Julia is exploding in popularity and there are numerous outstanding <a href="https://julialang.org/learning/">resources for learning Julia</a>, including books, videos, and blog postings. I purchased the print and eBook option which includes an online “liveBook” which is easy to read. However, you cannot beat having a book in hand to read and markup. The author provides a GitHub <a href="https://github.com/bkamins/JuliaForDataAnalysis">repository</a> with code and data files.</p>
+<p>The author, Bogumit Kaminski, is a core developer of the <a href="https://dataframes.juliadata.org/stable/">DataFrames.jl package</a>. He is an associate professor and head of the Decision Support and Analysis Unit at the SGH Warsaw School of Economics, as well as adjunct professor at the data science laboratory, Ryerson University, Toronto.</p>
+<p>This book is perfect for population health data scientist already familiar with R or Python, or have basic proficiency with Julia but need an in depth and systematic introduction to Julia for data science.</p>
+<p>Here is the table of contents.</p>
+<ol type="1">
+<li>Introduction</li>
+<li>Getting started with Julia</li>
+<li>Julia’s support for scaling projects</li>
+<li>Working with collections in Julia</li>
+<li>Advanced topics on handling collections</li>
+<li>Working with strings</li>
+<li>Handling time-series data and missing values</li>
+<li>First steps with data frames</li>
+<li>Getting data from a data frame</li>
+<li>Creating data frame objects</li>
+<li>Converting and grouping data frames</li>
+<li>Mutating and transforming data frames</li>
+<li>Advanced transformations of data frames</li>
+<li>Creating web services for sharing data analysis results</li>
+</ol>
+</section>
+<section id="highlights-to-follow" class="level2">
+<h2 class="anchored" data-anchor-id="highlights-to-follow">Highlights to follow</h2>
+<p>pending</p>
+
+
+</section>
+
+ ]]></description>
+  <category>Julia</category>
+  <category>R</category>
+  <category>Python</category>
+  <category>Data science</category>
+  <category>Programming</category>
+  <category>Epidemiology</category>
+  <category>Scientific computing</category>
+  <guid>https://drtomasaragon.github.io/posts/2023-02-20-julia-for-data-analysis/index.html</guid>
+  <pubDate>Mon, 20 Feb 2023 08:00:00 GMT</pubDate>
+  <media:content url="https://drtomasaragon.github.io/posts/2023-02-20-julia-for-data-analysis/images/book_cover_julia_for_data_analysis_1400x865.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>My journey from R to Julia</title>
   <dc:creator>Tomás Aragón</dc:creator>
