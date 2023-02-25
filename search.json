@@ -95,7 +95,7 @@
     "href": "posts/2023-02-20-julia-for-data-analysis/index.html#highlights-to-follow",
     "title": "Julia for Data Analysis",
     "section": "Highlights to follow",
-    "text": "Highlights to follow\npending"
+    "text": "Highlights to follow\n\nIntroduction\nMy blog posting “My Journey from R to Julia” is a good summary of what is covered in the Introduction. I will cover just one item—execution speed, and compare it to R.\nHere is the R execution of a for loop of length 1 billion.1 It took about 9.6 seconds.\n\n> sum_n = function(n){\n+     s = 0\n+     for (i in 1:n){\n+         s = s + i\n+     }\n+     s\n+ }\n> system.time(x <- sum_n(1000000000))\n   user  system elapsed \n  9.456   0.083   9.540 \n> x\n[1] 5e+17\nOkay, let’s do the execute the same function in Julia. In Julia, it took about 3 seconds. \njulia> function sum_n(n)\n           s = 0\n               for i in 1:n\n                   s += i\n               end\n               return s\n       end\nsum_n (generic function with 1 method)\n\njulia> @time sum_n(1_000_000_000)\n  3.011812 seconds\n500000000500000000\nSome may say R being more than 3 times slower that Julia is no big deal. Notice that this was just one for loop with a summation calculation.\nTo see more benchmarks visit Which programming language is fastest?."
   },
   {
     "objectID": "posts/2017-10-22-humility-is-the-new-smart/index.html",
