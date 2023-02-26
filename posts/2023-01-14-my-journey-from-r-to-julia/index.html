@@ -381,7 +381,7 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
 <li>a 2x2 table (matrix)</li>
 </ul>
 <p>The catch is that the three functions will have the same name: <code>oddsratio</code>. This is possible in Julia because of multiple dispatch. In contrast, R is single dispatch.</p>
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 1</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">oddsratio</span>(a<span class="op">::</span><span class="dt">Int</span>, b<span class="op">::</span><span class="dt">Int</span>, c<span class="op">::</span><span class="dt">Int</span>, d<span class="op">::</span><span class="dt">Int</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    or <span class="op">=</span> (a <span class="op">*</span> d) <span class="op">/</span> (b <span class="op">*</span> c)</span>
@@ -392,14 +392,14 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
 </div>
 </div>
 <p>Let’s test the <code>oddsratio</code> function by passing four integers from our 2x2 table.</p>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>29.0</code></pre>
 </div>
 </div>
 <p>Here is the second function to handle arguments that are proportions; for example, the exposure odds comparing cases to controls.</p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 2</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">oddsratio</span>(p1<span class="op">::</span><span class="dt">Float64</span>, p0<span class="op">::</span><span class="dt">Float64</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    or <span class="op">=</span> ((p1)<span class="op">/</span>(<span class="fl">1</span> <span class="op">-</span> p1)) <span class="op">/</span> ((p0)<span class="op">/</span>(<span class="fl">1</span> <span class="op">-</span> p0))</span>
@@ -410,7 +410,7 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
 </div>
 </div>
 <p>Let’s test the <code>oddsratio</code> function by passing two proportions from our 2x2 table.</p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>prop1 <span class="op">=</span> <span class="fl">12</span> <span class="op">/</span> (<span class="fl">12</span> <span class="op">+</span> <span class="fl">2</span>) <span class="co"># probability of exposure among cases</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>prop0 <span class="op">=</span> <span class="fl">6</span> <span class="op">/</span> (<span class="fl">6</span> <span class="op">+</span> <span class="fl">29</span>) <span class="co"># probability of exposure among controls</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(prop1, prop0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -419,7 +419,7 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
 </div>
 </div>
 <p>Finally, here is the third function to handle an argument that is a 2x2 table (matrix).</p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 3</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">oddsratio</span>(x<span class="op">::</span><span class="dt">Matrix{Int}</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    or <span class="op">=</span> (x[<span class="fl">1</span>, <span class="fl">1</span>] <span class="op">*</span> x[<span class="fl">2</span>, <span class="fl">2</span>]) <span class="op">/</span> (x[<span class="fl">1</span>, <span class="fl">2</span>] <span class="op">*</span> x[<span class="fl">2</span>, <span class="fl">1</span>])</span>
@@ -430,7 +430,7 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
 </div>
 </div>
 <p>Let’s test the <code>oddsratio</code> function by passing our 2x2 table.</p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tab <span class="op">=</span> [<span class="fl">12</span> <span class="fl">6</span>; <span class="fl">2</span> <span class="fl">29</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>2×2 Matrix{Int64}:
@@ -438,14 +438,14 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
   2  29</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(tab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>29.0</code></pre>
 </div>
 </div>
 <p>This is called multiple dispatch. The <code>oddsratio</code> function has three methods and can handle multiple data types. Notice how easy that was.</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">methods</span>(oddsratio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 # 3 methods for generic function <b>oddsratio</b>:<ul><li> oddsratio(a::<b>Int64</b>, b::<b>Int64</b>, c::<b>Int64</b>, d::<b>Int64</b>) in Main at In[2]:2</li> <li> oddsratio(p1::<b>Float64</b>, p0::<b>Float64</b>) in Main at In[4]:2</li> <li> oddsratio(x::<b>Matrix{Int64}</b>) in Main at In[6]:2</li> </ul>
@@ -461,21 +461,21 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
 <section id="appendix" class="level2">
 <h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
 <p>Julia is very flexible in the creation of functions. Here are the same three functions in an abbreviated form.</p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 1</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(a<span class="op">::</span><span class="dt">Int</span>, b<span class="op">::</span><span class="dt">Int</span>, c<span class="op">::</span><span class="dt">Int</span>, d<span class="op">::</span><span class="dt">Int</span>) <span class="op">=</span> (a <span class="op">*</span> d) <span class="op">/</span> (b <span class="op">*</span> c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>oddsratio (generic function with 3 methods)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 2</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(p1<span class="op">::</span><span class="dt">Float64</span>, p0<span class="op">::</span><span class="dt">Float64</span>) <span class="op">=</span> ((p1)<span class="op">/</span>(<span class="fl">1</span> <span class="op">-</span> p1)) <span class="op">/</span> ((p0)<span class="op">/</span>(<span class="fl">1</span> <span class="op">-</span> p0))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>oddsratio (generic function with 3 methods)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 3</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(x<span class="op">::</span><span class="dt">Matrix{Int}</span>) <span class="op">=</span> (x[<span class="fl">1</span>, <span class="fl">1</span>] <span class="op">*</span> x[<span class="fl">2</span>, <span class="fl">2</span>]) <span class="op">/</span> (x[<span class="fl">1</span>, <span class="fl">2</span>] <span class="op">*</span> x[<span class="fl">2</span>, <span class="fl">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
