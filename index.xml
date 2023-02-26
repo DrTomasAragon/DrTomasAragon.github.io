@@ -49,8 +49,30 @@
 <section id="introduction" class="level3">
 <h3 class="anchored" data-anchor-id="introduction">1 Introduction</h3>
 <p>My blog posting “<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>” is a good summary of what is covered in the Introduction. I will cover just one item—execution speed, and compare it to R.</p>
-<p>Here is the R execution of a <code>for</code> loop of length 1 billion.<sup>1</sup> It took about 9.5 seconds.</p>
+<p>We will construct a <code>for</code> loop summation of the sequence of integers from 1 to 1,000,000,000 (1 billion).<sup>1</sup> Here is the correct answer:</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="co" style="color: #5E5E5E;">## In Julia</span></span>
+<span id="cb1-2">julia<span class="op" style="color: #5E5E5E;">&gt;</span>  <span class="fu" style="color: #4758AB;">sum</span>(<span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span><span class="fl" style="color: #AD0000;">1_000_000_000</span>)</span>
+<span id="cb1-3"><span class="fl" style="color: #AD0000;">500000000500000000</span></span>
+<span id="cb1-4"></span>
+<span id="cb1-5"><span class="co" style="color: #5E5E5E;">## In R</span></span>
+<span id="cb1-6"><span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fu" style="color: #4758AB;">options</span>(digits<span class="op" style="color: #5E5E5E;">=</span><span class="fl" style="color: #AD0000;">20</span>)</span>
+<span id="cb1-7"><span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fu" style="color: #4758AB;">sum</span>(<span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span><span class="fl" style="color: #AD0000;">1000000000</span>)</span>
+<span id="cb1-8">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">5.000000005e+17</span></span></code></pre></div>
+</div>
+<p>Let’s start with R. It took about 9.5 seconds.</p>
 <!--
+options(digits=20)
+sum_n = function(n){
+    s = 0
+    for (i in 1:n){
+        s = s + i
+    }
+    s
+}
+system.time(x <- sum_n(1000000000))
+x
+###
 require("Rmpfr")
 sum_n = function(n){
     s = mpfr(0, 64)
@@ -63,18 +85,19 @@ system.time(x <- sum_n(1000000000))
 x
 -->
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="op" style="color: #5E5E5E;">&gt;</span> sum_n <span class="op" style="color: #5E5E5E;">=</span> <span class="kw" style="color: #003B4F;">function</span>(n){</span>
-<span id="cb1-2"><span class="op" style="color: #5E5E5E;">+</span>     s <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0</span></span>
-<span id="cb1-3"><span class="op" style="color: #5E5E5E;">+</span>     <span class="cf" style="color: #003B4F;">for</span> (i <span class="kw" style="color: #003B4F;">in</span> <span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span>n){</span>
-<span id="cb1-4"><span class="op" style="color: #5E5E5E;">+</span>         s <span class="op" style="color: #5E5E5E;">=</span> s <span class="op" style="color: #5E5E5E;">+</span> i</span>
-<span id="cb1-5"><span class="op" style="color: #5E5E5E;">+</span>     }</span>
-<span id="cb1-6"><span class="op" style="color: #5E5E5E;">+</span>     s</span>
-<span id="cb1-7"><span class="op" style="color: #5E5E5E;">+</span> }</span>
-<span id="cb1-8"><span class="op" style="color: #5E5E5E;">&gt;</span> system.<span class="fu" style="color: #4758AB;">time</span>(x <span class="op" style="color: #5E5E5E;">&lt;-</span> <span class="fu" style="color: #4758AB;">sum_n</span>(<span class="fl" style="color: #AD0000;">1000000000</span>))</span>
-<span id="cb1-9">   user  system elapsed </span>
-<span id="cb1-10">  <span class="fl" style="color: #AD0000;">9.456</span>   <span class="fl" style="color: #AD0000;">0.083</span>   <span class="fl" style="color: #AD0000;">9.540</span> </span>
-<span id="cb1-11"><span class="op" style="color: #5E5E5E;">&gt;</span> x</span>
-<span id="cb1-12">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">5e+17</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fu" style="color: #4758AB;">options</span>(digits<span class="op" style="color: #5E5E5E;">=</span><span class="fl" style="color: #AD0000;">20</span>)</span>
+<span id="cb2-2"><span class="op" style="color: #5E5E5E;">&gt;</span> sum_n <span class="op" style="color: #5E5E5E;">=</span> <span class="kw" style="color: #003B4F;">function</span>(n){</span>
+<span id="cb2-3"><span class="op" style="color: #5E5E5E;">+</span>     s <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0</span></span>
+<span id="cb2-4"><span class="op" style="color: #5E5E5E;">+</span>     <span class="cf" style="color: #003B4F;">for</span> (i <span class="kw" style="color: #003B4F;">in</span> <span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span>n){</span>
+<span id="cb2-5"><span class="op" style="color: #5E5E5E;">+</span>         s <span class="op" style="color: #5E5E5E;">=</span> s <span class="op" style="color: #5E5E5E;">+</span> i</span>
+<span id="cb2-6"><span class="op" style="color: #5E5E5E;">+</span>     }</span>
+<span id="cb2-7"><span class="op" style="color: #5E5E5E;">+</span>     s</span>
+<span id="cb2-8"><span class="op" style="color: #5E5E5E;">+</span> }</span>
+<span id="cb2-9"><span class="op" style="color: #5E5E5E;">&gt;</span> system.<span class="fu" style="color: #4758AB;">time</span>(x <span class="op" style="color: #5E5E5E;">&lt;-</span> <span class="fu" style="color: #4758AB;">sum_n</span>(<span class="fl" style="color: #AD0000;">1000000000</span>))</span>
+<span id="cb2-10">                   user                  system                 elapsed </span>
+<span id="cb2-11"><span class="fl" style="color: #AD0000;">9.464000000000000412115</span> <span class="fl" style="color: #AD0000;">0.092000000000000026201</span> <span class="fl" style="color: #AD0000;">9.555000000000006821210</span> </span>
+<span id="cb2-12"><span class="op" style="color: #5E5E5E;">&gt;</span> x</span>
+<span id="cb2-13">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">500000000067108992</span></span></code></pre></div>
 </div>
 <p>Okay, let’s do the execute the same function in Julia. In Julia, it took about 3 seconds. Notice that in Julia I can use <code>1000000000</code> or <code>1_000_000_000</code> for the number 1 billion.</p>
 <!--
@@ -88,51 +111,51 @@ end
 @time sum_n(1_000_000_000)
 -->
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1">julia<span class="op" style="color: #5E5E5E;">&gt;</span> <span class="kw" style="color: #003B4F;">function</span> <span class="fu" style="color: #4758AB;">sum_n</span>(n)</span>
-<span id="cb2-2">           s <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0</span></span>
-<span id="cb2-3">               <span class="cf" style="color: #003B4F;">for</span> i <span class="kw" style="color: #003B4F;">in</span> <span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span>n</span>
-<span id="cb2-4">                   s <span class="op" style="color: #5E5E5E;">+=</span> i</span>
-<span id="cb2-5">               <span class="cf" style="color: #003B4F;">end</span></span>
-<span id="cb2-6">               <span class="cf" style="color: #003B4F;">return</span> s</span>
-<span id="cb2-7">       <span class="kw" style="color: #003B4F;">end</span></span>
-<span id="cb2-8">sum_n (generic <span class="kw" style="color: #003B4F;">function</span> with <span class="fl" style="color: #AD0000;">1</span> method)</span>
-<span id="cb2-9"></span>
-<span id="cb2-10">julia<span class="op" style="color: #5E5E5E;">&gt;</span> <span class="pp" style="color: #AD0000;">@time</span> <span class="fu" style="color: #4758AB;">sum_n</span>(<span class="fl" style="color: #AD0000;">1_000_000_000</span>)</span>
-<span id="cb2-11">  <span class="fl" style="color: #AD0000;">3.011812</span> seconds</span>
-<span id="cb2-12"><span class="fl" style="color: #AD0000;">500000000500000000</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1">julia<span class="op" style="color: #5E5E5E;">&gt;</span> <span class="kw" style="color: #003B4F;">function</span> <span class="fu" style="color: #4758AB;">sum_n</span>(n)</span>
+<span id="cb3-2">           s <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0</span></span>
+<span id="cb3-3">               <span class="cf" style="color: #003B4F;">for</span> i <span class="kw" style="color: #003B4F;">in</span> <span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span>n</span>
+<span id="cb3-4">                   s <span class="op" style="color: #5E5E5E;">+=</span> i</span>
+<span id="cb3-5">               <span class="cf" style="color: #003B4F;">end</span></span>
+<span id="cb3-6">               <span class="cf" style="color: #003B4F;">return</span> s</span>
+<span id="cb3-7">       <span class="kw" style="color: #003B4F;">end</span></span>
+<span id="cb3-8">sum_n (generic <span class="kw" style="color: #003B4F;">function</span> with <span class="fl" style="color: #AD0000;">1</span> method)</span>
+<span id="cb3-9"></span>
+<span id="cb3-10">julia<span class="op" style="color: #5E5E5E;">&gt;</span> <span class="pp" style="color: #AD0000;">@time</span> <span class="fu" style="color: #4758AB;">sum_n</span>(<span class="fl" style="color: #AD0000;">1_000_000_000</span>)</span>
+<span id="cb3-11">  <span class="fl" style="color: #AD0000;">3.011812</span> seconds</span>
+<span id="cb3-12"><span class="fl" style="color: #AD0000;">500000000500000000</span></span></code></pre></div>
 </div>
 <p>Some may say R being more than 3 times slower that Julia is no big deal. Notice that this was just one <code>for</code> loop with a summation calculation. This adds up quickly.</p>
-<p>What else do you notice? By default, R gives the answer <code>5e+17</code> and Julia gives the answer <code>500000000500000000</code>. How big is this difference and which is correct?</p>
+<p>What else do you notice? By default, R gives the answer <code>500000000067108992</code> (a wrong answer) and Julia gives the answer <code>500000000500000000</code> (the correct answer). How big is this difference?</p>
 <p>In R, let’s calculate the observed difference:</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><span class="co" style="color: #5E5E5E;">## difference should be 5.0e8</span></span>
-<span id="cb3-2"><span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fl" style="color: #AD0000;">500000000500000000</span> <span class="op" style="color: #5E5E5E;">-</span> x</span>
-<span id="cb3-3">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">432891008</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><span class="co" style="color: #5E5E5E;">## difference should be 5.0e8</span></span>
+<span id="cb4-2"><span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fl" style="color: #AD0000;">500000000500000000</span> <span class="op" style="color: #5E5E5E;">-</span> x</span>
+<span id="cb4-3">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">432891008</span></span></code></pre></div>
 </div>
 <p>Now, in Julia, let’s calculate the expected (correct) difference:</p>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1">julia<span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fl" style="color: #AD0000;">500000000500000000</span> <span class="op" style="color: #5E5E5E;">-</span> <span class="fl" style="color: #AD0000;">5e+17</span></span>
-<span id="cb4-2"><span class="fl" style="color: #AD0000;">5.0e8</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1">julia<span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fl" style="color: #AD0000;">500000000500000000</span> <span class="op" style="color: #5E5E5E;">-</span> <span class="fl" style="color: #AD0000;">5e+17</span></span>
+<span id="cb5-2"><span class="fl" style="color: #AD0000;">5.0e8</span></span></code></pre></div>
 </div>
-<p>Wow! R is off by 67.1 million (5.0e8 - 432,891,008)!<sup>2</sup></p>
+<p>Wow! R is off by 67.1 million (5.0e8 - 432,891,008)!<sup>2</sup> Bottomline: R takes longer and gives an incorrect answer.</p>
 <p>Note: using the <code>Rmpfr</code> package in R, I was able to increase the precision to 64 bits and successfully execute a <code>for</code> loop for <code>n = 1,000,000</code> (1 million). The execution time was &gt; 100 seconds. But, I could not get R to execute a <code>for</code> loop of <code>n = 1,000,000,000</code> (1 billion).</p>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fu" style="color: #4758AB;">require</span>(<span class="st" style="color: #20794D;">"Rmpfr"</span>)</span>
-<span id="cb5-2"><span class="op" style="color: #5E5E5E;">&gt;</span> sum_n <span class="op" style="color: #5E5E5E;">=</span> <span class="kw" style="color: #003B4F;">function</span>(n){</span>
-<span id="cb5-3"><span class="op" style="color: #5E5E5E;">+</span>     s <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">mpfr</span>(<span class="fl" style="color: #AD0000;">0</span>, <span class="fl" style="color: #AD0000;">64</span>)</span>
-<span id="cb5-4"><span class="op" style="color: #5E5E5E;">+</span>     <span class="cf" style="color: #003B4F;">for</span> (i <span class="kw" style="color: #003B4F;">in</span> <span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span>n){</span>
-<span id="cb5-5"><span class="op" style="color: #5E5E5E;">+</span>         s <span class="op" style="color: #5E5E5E;">=</span> s <span class="op" style="color: #5E5E5E;">+</span> i</span>
-<span id="cb5-6"><span class="op" style="color: #5E5E5E;">+</span>     }</span>
-<span id="cb5-7"><span class="op" style="color: #5E5E5E;">+</span>     s</span>
-<span id="cb5-8"><span class="op" style="color: #5E5E5E;">+</span> }</span>
-<span id="cb5-9"><span class="op" style="color: #5E5E5E;">&gt;</span> system.<span class="fu" style="color: #4758AB;">time</span>(x <span class="op" style="color: #5E5E5E;">&lt;-</span> <span class="fu" style="color: #4758AB;">sum_n</span>(<span class="fl" style="color: #AD0000;">1000000</span>))</span>
-<span id="cb5-10">   user  system elapsed </span>
-<span id="cb5-11"><span class="fl" style="color: #AD0000;">103.702</span>   <span class="fl" style="color: #AD0000;">0.698</span> <span class="fl" style="color: #AD0000;">104.423</span> </span>
-<span id="cb5-12"><span class="op" style="color: #5E5E5E;">&gt;</span> x</span>
-<span id="cb5-13"><span class="fl" style="color: #AD0000;">1</span> <span class="ch" style="color: #20794D;">'mpfr'</span> number of precision  <span class="fl" style="color: #AD0000;">64</span>   bits </span>
-<span id="cb5-14">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">500000500000</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fu" style="color: #4758AB;">require</span>(<span class="st" style="color: #20794D;">"Rmpfr"</span>)</span>
+<span id="cb6-2"><span class="op" style="color: #5E5E5E;">&gt;</span> sum_n <span class="op" style="color: #5E5E5E;">=</span> <span class="kw" style="color: #003B4F;">function</span>(n){</span>
+<span id="cb6-3"><span class="op" style="color: #5E5E5E;">+</span>     s <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">mpfr</span>(<span class="fl" style="color: #AD0000;">0</span>, <span class="fl" style="color: #AD0000;">64</span>)</span>
+<span id="cb6-4"><span class="op" style="color: #5E5E5E;">+</span>     <span class="cf" style="color: #003B4F;">for</span> (i <span class="kw" style="color: #003B4F;">in</span> <span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span>n){</span>
+<span id="cb6-5"><span class="op" style="color: #5E5E5E;">+</span>         s <span class="op" style="color: #5E5E5E;">=</span> s <span class="op" style="color: #5E5E5E;">+</span> i</span>
+<span id="cb6-6"><span class="op" style="color: #5E5E5E;">+</span>     }</span>
+<span id="cb6-7"><span class="op" style="color: #5E5E5E;">+</span>     s</span>
+<span id="cb6-8"><span class="op" style="color: #5E5E5E;">+</span> }</span>
+<span id="cb6-9"><span class="op" style="color: #5E5E5E;">&gt;</span> system.<span class="fu" style="color: #4758AB;">time</span>(x <span class="op" style="color: #5E5E5E;">&lt;-</span> <span class="fu" style="color: #4758AB;">sum_n</span>(<span class="fl" style="color: #AD0000;">1000000</span>))</span>
+<span id="cb6-10">   user  system elapsed </span>
+<span id="cb6-11"><span class="fl" style="color: #AD0000;">103.702</span>   <span class="fl" style="color: #AD0000;">0.698</span> <span class="fl" style="color: #AD0000;">104.423</span> </span>
+<span id="cb6-12"><span class="op" style="color: #5E5E5E;">&gt;</span> x</span>
+<span id="cb6-13"><span class="fl" style="color: #AD0000;">1</span> <span class="ch" style="color: #20794D;">'mpfr'</span> number of precision  <span class="fl" style="color: #AD0000;">64</span>   bits </span>
+<span id="cb6-14">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">500000500000</span></span></code></pre></div>
 </div>
-<p>Conclusion: Compared to R, Julia is much faster and can handle large <code>for</code> loops accurately.</p>
+<p>Conclusion: Compared to R, Julia can handle large <code>for</code> loop for summation and give an accurate answer. R cannot handle large loops and gives an incorrect answer by default.</p>
 <p>To see more benchmarks visit <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html">Which programming language is fastest?</a>.</p>
 </section>
 <section id="getting-started-with-julia" class="level3">
@@ -141,24 +164,24 @@ end
 <h4 class="anchored" data-anchor-id="basic-data-types">Basic data types</h4>
 <p>If you are familar with R or Python, you will feel comfortable with Julia. Here is a <strong>character</strong>:</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><span class="co" style="color: #5E5E5E;">## character; notice single quotation marks</span></span>
-<span id="cb6-2"><span class="ch" style="color: #20794D;">'a'</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><span class="co" style="color: #5E5E5E;">## character; notice single quotation marks</span></span>
+<span id="cb7-2"><span class="ch" style="color: #20794D;">'a'</span></span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>'a': ASCII/Unicode U+0061 (category Ll: Letter, lowercase)</code></pre>
 </div>
 </div>
 <p>A <strong>string</strong> is a collection of characters:</p>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><span class="co" style="color: #5E5E5E;">## string; notice double quotation marks</span></span>
-<span id="cb8-2"><span class="st" style="color: #20794D;">"Hello World"</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><span class="co" style="color: #5E5E5E;">## string; notice double quotation marks</span></span>
+<span id="cb9-2"><span class="st" style="color: #20794D;">"Hello World"</span></span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>"Hello World"</code></pre>
 </div>
 </div>
 <p>An <strong>array</strong> is a collection in brackets. Commas are used to create a <strong>vector</strong> (always as a column).</p>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><span class="co" style="color: #5E5E5E;">## vector</span></span>
-<span id="cb10-2">[<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">3</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><span class="co" style="color: #5E5E5E;">## vector</span></span>
+<span id="cb11-2">[<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">3</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>3-element Vector{Int64}:
  1
@@ -168,8 +191,8 @@ end
 </div>
 <p>Numbers separated by spaces create one row of a <strong>matrix</strong>:</p>
 <div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><span class="co" style="color: #5E5E5E;">## matrix</span></span>
-<span id="cb12-2">[<span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">2</span> <span class="fl" style="color: #AD0000;">3</span> <span class="fl" style="color: #AD0000;">4</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><span class="co" style="color: #5E5E5E;">## matrix</span></span>
+<span id="cb13-2">[<span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">2</span> <span class="fl" style="color: #AD0000;">3</span> <span class="fl" style="color: #AD0000;">4</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>1×4 Matrix{Int64}:
  1  2  3  4</code></pre>
@@ -177,8 +200,8 @@ end
 </div>
 <p>Matrix rows separated by a semi-colon creates a multi-row matrix:</p>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><span class="co" style="color: #5E5E5E;">## matrix</span></span>
-<span id="cb14-2">[<span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">2</span> <span class="fl" style="color: #AD0000;">3</span> <span class="fl" style="color: #AD0000;">4</span>; <span class="fl" style="color: #AD0000;">6</span> <span class="fl" style="color: #AD0000;">7</span> <span class="fl" style="color: #AD0000;">8</span> <span class="fl" style="color: #AD0000;">9</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><span class="co" style="color: #5E5E5E;">## matrix</span></span>
+<span id="cb15-2">[<span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">2</span> <span class="fl" style="color: #AD0000;">3</span> <span class="fl" style="color: #AD0000;">4</span>; <span class="fl" style="color: #AD0000;">6</span> <span class="fl" style="color: #AD0000;">7</span> <span class="fl" style="color: #AD0000;">8</span> <span class="fl" style="color: #AD0000;">9</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>2×4 Matrix{Int64}:
  1  2  3  4
@@ -187,25 +210,25 @@ end
 </div>
 <p>A <strong>tuple</strong> is a collection in parentheses, and commas separate the elements. Tuples are immutable; their elements cannot be changed. Immutable objects increase computational speed.</p>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><span class="co" style="color: #5E5E5E;">## tuple</span></span>
-<span id="cb16-2">(<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">3</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><span class="co" style="color: #5E5E5E;">## tuple</span></span>
+<span id="cb17-2">(<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">3</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>(1, 2, 3)</code></pre>
 </div>
 </div>
 <p>Tuple elements can be named.</p>
 <div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><span class="co" style="color: #5E5E5E;">## named tuple</span></span>
-<span id="cb18-2">(four <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">4</span>, five <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">5</span>, six <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">6</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb19-1"><span class="co" style="color: #5E5E5E;">## named tuple</span></span>
+<span id="cb19-2">(four <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">4</span>, five <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">5</span>, six <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">6</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>(four = 4, five = 5, six = 6)</code></pre>
 </div>
 </div>
 <p>The assigment operation (<code>=</code>) is used to <strong>bind</strong> data <em>values</em> to a <strong>variable</strong>. Binding in Julia is similar to binding in Python, but not R.</p>
 <div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1">x <span class="op" style="color: #5E5E5E;">=</span> [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>]</span>
-<span id="cb20-2">y <span class="op" style="color: #5E5E5E;">=</span> x</span>
-<span id="cb20-3">y</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb21-1">x <span class="op" style="color: #5E5E5E;">=</span> [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>]</span>
+<span id="cb21-2">y <span class="op" style="color: #5E5E5E;">=</span> x</span>
+<span id="cb21-3">y</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>2-element Vector{Int64}:
  1
@@ -214,9 +237,9 @@ end
 </div>
 <p>If we change an element in <code>x</code>, the same change occurs in <code>y</code> because same array was binded to the variables <code>x</code> and <code>y</code>.</p>
 <div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1">x[<span class="fl" style="color: #AD0000;">2</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">99</span></span>
-<span id="cb22-2"><span class="co" style="color: #5E5E5E;">## notice that y changes also</span></span>
-<span id="cb22-3">y</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1">x[<span class="fl" style="color: #AD0000;">2</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">99</span></span>
+<span id="cb23-2"><span class="co" style="color: #5E5E5E;">## notice that y changes also</span></span>
+<span id="cb23-3">y</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>2-element Vector{Int64}:
   1
@@ -225,20 +248,20 @@ end
 </div>
 <p>This is not the case in R:</p>
 <div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1"><span class="op" style="color: #5E5E5E;">&gt;</span> x <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">c</span>(<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>)</span>
-<span id="cb24-2"><span class="op" style="color: #5E5E5E;">&gt;</span> y <span class="op" style="color: #5E5E5E;">=</span> x</span>
-<span id="cb24-3"><span class="op" style="color: #5E5E5E;">&gt;</span> x[<span class="fl" style="color: #AD0000;">2</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">99</span></span>
-<span id="cb24-4"><span class="op" style="color: #5E5E5E;">&gt;</span> x</span>
-<span id="cb24-5">[<span class="fl" style="color: #AD0000;">1</span>]  <span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">99</span></span>
-<span id="cb24-6"><span class="op" style="color: #5E5E5E;">&gt;</span> y</span>
-<span id="cb24-7">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">2</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><span class="op" style="color: #5E5E5E;">&gt;</span> x <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">c</span>(<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>)</span>
+<span id="cb25-2"><span class="op" style="color: #5E5E5E;">&gt;</span> y <span class="op" style="color: #5E5E5E;">=</span> x</span>
+<span id="cb25-3"><span class="op" style="color: #5E5E5E;">&gt;</span> x[<span class="fl" style="color: #AD0000;">2</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">99</span></span>
+<span id="cb25-4"><span class="op" style="color: #5E5E5E;">&gt;</span> x</span>
+<span id="cb25-5">[<span class="fl" style="color: #AD0000;">1</span>]  <span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">99</span></span>
+<span id="cb25-6"><span class="op" style="color: #5E5E5E;">&gt;</span> y</span>
+<span id="cb25-7">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">2</span></span></code></pre></div>
 </div>
 <p>To replicate the R experience we assign a copy of <code>x</code> to <code>y</code>.</p>
 <div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1">x <span class="op" style="color: #5E5E5E;">=</span> [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>]</span>
-<span id="cb25-2">y <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">copy</span>(x)</span>
-<span id="cb25-3">x[<span class="fl" style="color: #AD0000;">2</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">99</span></span>
-<span id="cb25-4">x</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb26-1">x <span class="op" style="color: #5E5E5E;">=</span> [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>]</span>
+<span id="cb26-2">y <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">copy</span>(x)</span>
+<span id="cb26-3">x[<span class="fl" style="color: #AD0000;">2</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">99</span></span>
+<span id="cb26-4">x</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>2-element Vector{Int64}:
   1
@@ -246,7 +269,7 @@ end
 </div>
 </div>
 <div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1">y</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb28-1">y</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>2-element Vector{Int64}:
  1
