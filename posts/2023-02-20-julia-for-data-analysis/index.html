@@ -298,7 +298,7 @@ sum_n = function(n){
     }
     s
 }
-system.time(sum_n(1000000000))
+system.time(x <- sum_n(1000000000))
 x
 -->
 <div class="cell" data-execution_count="1">
@@ -319,7 +319,7 @@ x
 function sum_n(n)
     s = 0
     for i in 1:n
-        s += i
+        s = s + i
     end
     return s
 end
@@ -340,6 +340,19 @@ end
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fl">500000000500000000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Some may say R being more than 3 times slower that Julia is no big deal. Notice that this was just one <code>for</code> loop with a summation calculation.</p>
+<p>What else do you notice? By default, R gives the answer <code>5e+17</code> and Julia gives the answer <code>500000000500000000</code>. How big is this difference and which is correct?</p>
+<p>Let’s evaluate this difference in R:</p>
+<pre class="{julia}"><code>#| eval: false
+
+## difference should be 5.0e8
+&gt; 500000000500000000 - x
+[1] 432891008</code></pre>
+<p>Now, let’s evaluate this difference in Julia</p>
+<pre class="{julia}"><code>#| eval: false
+
+julia&gt; 500000000500000000 - 5e+17
+5.0e8</code></pre>
+<p>Wow! R is off by 67.1 million (5.0e8 - 432,891,008)!<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>To see more benchmarks visit <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html">Which programming language is fastest?</a>.</p>
 </section>
 <section id="getting-started-with-julia" class="level3">
@@ -355,6 +368,7 @@ end
 
 <ol>
 <li id="fn1"><p>Used Rstudio on 2021 MacBook Pro M1 Max with 32 GB RAM under Ventura 13.2.1<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>If anyone knows why this is the case, please contact me. How do you do this correctly in R?<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
