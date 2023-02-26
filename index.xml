@@ -102,16 +102,16 @@ end
 <p>Some may say R being more than 3 times slower that Julia is no big deal. Notice that this was just one <code>for</code> loop with a summation calculation.</p>
 <p>What else do you notice? By default, R gives the answer <code>5e+17</code> and Julia gives the answer <code>500000000500000000</code>. How big is this difference and which is correct?</p>
 <p>Let’s evaluate this difference in R:</p>
-<pre class="{julia}"><code>#| eval: false
-
-## difference should be 5.0e8
-&gt; 500000000500000000 - x
-[1] 432891008</code></pre>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><span class="co" style="color: #5E5E5E;">## difference should be 5.0e8</span></span>
+<span id="cb3-2"><span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fl" style="color: #AD0000;">500000000500000000</span> <span class="op" style="color: #5E5E5E;">-</span> x</span>
+<span id="cb3-3">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">432891008</span></span></code></pre></div>
+</div>
 <p>Now, let’s evaluate this difference in Julia</p>
-<pre class="{julia}"><code>#| eval: false
-
-julia&gt; 500000000500000000 - 5e+17
-5.0e8</code></pre>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1">julia<span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fl" style="color: #AD0000;">500000000500000000</span> <span class="op" style="color: #5E5E5E;">-</span> <span class="fl" style="color: #AD0000;">5e+17</span></span>
+<span id="cb4-2"><span class="fl" style="color: #AD0000;">5.0e8</span></span></code></pre></div>
+</div>
 <p>Wow! R is off by 67.1 million (5.0e8 - 432,891,008)!<sup>2</sup></p>
 <p>To see more benchmarks visit <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html">Which programming language is fastest?</a>.</p>
 </section>
