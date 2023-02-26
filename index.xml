@@ -44,12 +44,12 @@
 <li>Creating web services for sharing data analysis results</li>
 </ol>
 </section>
-<section id="highlights-to-follow" class="level2">
-<h2 class="anchored" data-anchor-id="highlights-to-follow">Highlights to follow</h2>
+<section id="book-highlights-work-in-progress" class="level2">
+<h2 class="anchored" data-anchor-id="book-highlights-work-in-progress">Book highlights (work in progress)</h2>
 <section id="introduction" class="level3">
-<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+<h3 class="anchored" data-anchor-id="introduction">1 Introduction</h3>
 <p>My blog posting “<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>” is a good summary of what is covered in the Introduction. I will cover just one item—execution speed, and compare it to R.</p>
-<p>Here is the R execution of a <code>for</code> loop of length 1 billion.<sup>1</sup> It took about 9.6 seconds.</p>
+<p>Here is the R execution of a <code>for</code> loop of length 1 billion.<sup>1</sup> It took about 9.5 seconds.</p>
 <!--
 sum_n = function(n){
     s = 0
@@ -61,18 +61,20 @@ sum_n = function(n){
 system.time(sum_n(1000000000))
 x
 -->
-<pre><code>&gt; sum_n = function(n){
-+     s = 0
-+     for (i in 1:n){
-+         s = s + i
-+     }
-+     s
-+ }
-&gt; system.time(x &lt;- sum_n(1000000000))
-   user  system elapsed 
-  9.456   0.083   9.540 
-&gt; x
-[1] 5e+17</code></pre>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="op" style="color: #5E5E5E;">&gt;</span> sum_n <span class="op" style="color: #5E5E5E;">=</span> <span class="kw" style="color: #003B4F;">function</span>(n){</span>
+<span id="cb1-2"><span class="op" style="color: #5E5E5E;">+</span>     s <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0</span></span>
+<span id="cb1-3"><span class="op" style="color: #5E5E5E;">+</span>     <span class="cf" style="color: #003B4F;">for</span> (i <span class="kw" style="color: #003B4F;">in</span> <span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span>n){</span>
+<span id="cb1-4"><span class="op" style="color: #5E5E5E;">+</span>         s <span class="op" style="color: #5E5E5E;">=</span> s <span class="op" style="color: #5E5E5E;">+</span> i</span>
+<span id="cb1-5"><span class="op" style="color: #5E5E5E;">+</span>     }</span>
+<span id="cb1-6"><span class="op" style="color: #5E5E5E;">+</span>     s</span>
+<span id="cb1-7"><span class="op" style="color: #5E5E5E;">+</span> }</span>
+<span id="cb1-8"><span class="op" style="color: #5E5E5E;">&gt;</span> system.<span class="fu" style="color: #4758AB;">time</span>(x <span class="op" style="color: #5E5E5E;">&lt;-</span> <span class="fu" style="color: #4758AB;">sum_n</span>(<span class="fl" style="color: #AD0000;">1000000000</span>))</span>
+<span id="cb1-9">   user  system elapsed </span>
+<span id="cb1-10">  <span class="fl" style="color: #AD0000;">9.456</span>   <span class="fl" style="color: #AD0000;">0.083</span>   <span class="fl" style="color: #AD0000;">9.540</span> </span>
+<span id="cb1-11"><span class="op" style="color: #5E5E5E;">&gt;</span> x</span>
+<span id="cb1-12">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">5e+17</span></span></code></pre></div>
+</div>
 <p>Okay, let’s do the execute the same function in Julia. In Julia, it took about 3 seconds. <!--
 function sum_n(n)
     s = 0
@@ -83,20 +85,26 @@ function sum_n(n)
 end
 @time sum_n(1_000_000_000)
 --></p>
-<pre><code>julia&gt; function sum_n(n)
-           s = 0
-               for i in 1:n
-                   s += i
-               end
-               return s
-       end
-sum_n (generic function with 1 method)
-
-julia&gt; @time sum_n(1_000_000_000)
-  3.011812 seconds
-500000000500000000</code></pre>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1">julia<span class="op" style="color: #5E5E5E;">&gt;</span> <span class="kw" style="color: #003B4F;">function</span> <span class="fu" style="color: #4758AB;">sum_n</span>(n)</span>
+<span id="cb2-2">           s <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0</span></span>
+<span id="cb2-3">               <span class="cf" style="color: #003B4F;">for</span> i <span class="kw" style="color: #003B4F;">in</span> <span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span>n</span>
+<span id="cb2-4">                   s <span class="op" style="color: #5E5E5E;">+=</span> i</span>
+<span id="cb2-5">               <span class="cf" style="color: #003B4F;">end</span></span>
+<span id="cb2-6">               <span class="cf" style="color: #003B4F;">return</span> s</span>
+<span id="cb2-7">       <span class="kw" style="color: #003B4F;">end</span></span>
+<span id="cb2-8">sum_n (generic <span class="kw" style="color: #003B4F;">function</span> with <span class="fl" style="color: #AD0000;">1</span> method)</span>
+<span id="cb2-9"></span>
+<span id="cb2-10">julia<span class="op" style="color: #5E5E5E;">&gt;</span> <span class="pp" style="color: #AD0000;">@time</span> <span class="fu" style="color: #4758AB;">sum_n</span>(<span class="fl" style="color: #AD0000;">1_000_000_000</span>)</span>
+<span id="cb2-11">  <span class="fl" style="color: #AD0000;">3.011812</span> seconds</span>
+<span id="cb2-12"><span class="fl" style="color: #AD0000;">500000000500000000</span></span></code></pre></div>
+</div>
 <p>Some may say R being more than 3 times slower that Julia is no big deal. Notice that this was just one <code>for</code> loop with a summation calculation.</p>
 <p>To see more benchmarks visit <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html">Which programming language is fastest?</a>.</p>
+</section>
+<section id="getting-started-with-julia" class="level3">
+<h3 class="anchored" data-anchor-id="getting-started-with-julia">2 Getting started with Julia</h3>
+<p>more to follow</p>
 
 
 </section>
@@ -106,7 +114,7 @@ julia&gt; @time sum_n(1_000_000_000)
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Use Rstudio on 2021 MacBook Pro M1 Max with 32 GB RAM under Ventura 13.2.1↩︎</p></li>
+<li id="fn1"><p>Used Rstudio on 2021 MacBook Pro M1 Max with 32 GB RAM under Ventura 13.2.1↩︎</p></li>
 </ol>
 </section></div> ]]></description>
   <category>Julia</category>
