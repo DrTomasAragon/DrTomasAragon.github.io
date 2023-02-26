@@ -51,8 +51,9 @@
 <p>My blog posting “<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>” is a good summary of what is covered in the Introduction. I will cover just one item—execution speed, and compare it to R.</p>
 <p>Here is the R execution of a <code>for</code> loop of length 1 billion.<sup>1</sup> It took about 9.5 seconds.</p>
 <!--
+require("Rmpfr")
 sum_n = function(n){
-    s = 0
+    s = mpfr(0, 64)
     for (i in 1:n){
         s = s + i
     }
@@ -61,7 +62,7 @@ sum_n = function(n){
 system.time(x <- sum_n(1000000000))
 x
 -->
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="op" style="color: #5E5E5E;">&gt;</span> sum_n <span class="op" style="color: #5E5E5E;">=</span> <span class="kw" style="color: #003B4F;">function</span>(n){</span>
 <span id="cb1-2"><span class="op" style="color: #5E5E5E;">+</span>     s <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0</span></span>
 <span id="cb1-3"><span class="op" style="color: #5E5E5E;">+</span>     <span class="cf" style="color: #003B4F;">for</span> (i <span class="kw" style="color: #003B4F;">in</span> <span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span>n){</span>
@@ -75,7 +76,8 @@ x
 <span id="cb1-11"><span class="op" style="color: #5E5E5E;">&gt;</span> x</span>
 <span id="cb1-12">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">5e+17</span></span></code></pre></div>
 </div>
-<p>Okay, let’s do the execute the same function in Julia. In Julia, it took about 3 seconds. <!--
+<p>Okay, let’s do the execute the same function in Julia. In Julia, it took about 3 seconds. Notice that in Julia I can use <code>1000000000</code> or <code>1_000_000_000</code> for the number 1 billion.</p>
+<!--
 function sum_n(n)
     s = 0
     for i in 1:n
@@ -84,8 +86,8 @@ function sum_n(n)
     return s
 end
 @time sum_n(1_000_000_000)
---></p>
-<div class="cell" data-execution_count="3">
+-->
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1">julia<span class="op" style="color: #5E5E5E;">&gt;</span> <span class="kw" style="color: #003B4F;">function</span> <span class="fu" style="color: #4758AB;">sum_n</span>(n)</span>
 <span id="cb2-2">           s <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0</span></span>
 <span id="cb2-3">               <span class="cf" style="color: #003B4F;">for</span> i <span class="kw" style="color: #003B4F;">in</span> <span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span>n</span>
@@ -101,18 +103,36 @@ end
 </div>
 <p>Some may say R being more than 3 times slower that Julia is no big deal. Notice that this was just one <code>for</code> loop with a summation calculation. This adds up quickly.</p>
 <p>What else do you notice? By default, R gives the answer <code>5e+17</code> and Julia gives the answer <code>500000000500000000</code>. How big is this difference and which is correct?</p>
-<p>Let’s evaluate this observed difference in R:</p>
-<div class="cell" data-execution_count="4">
+<p>In R, let’s calculate the observed difference:</p>
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><span class="co" style="color: #5E5E5E;">## difference should be 5.0e8</span></span>
 <span id="cb3-2"><span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fl" style="color: #AD0000;">500000000500000000</span> <span class="op" style="color: #5E5E5E;">-</span> x</span>
 <span id="cb3-3">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">432891008</span></span></code></pre></div>
 </div>
-<p>Now, let’s evaluate this expected difference in Julia</p>
-<div class="cell" data-execution_count="5">
+<p>Now, in Julia, let’s calculate the expected (correct) difference:</p>
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1">julia<span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fl" style="color: #AD0000;">500000000500000000</span> <span class="op" style="color: #5E5E5E;">-</span> <span class="fl" style="color: #AD0000;">5e+17</span></span>
 <span id="cb4-2"><span class="fl" style="color: #AD0000;">5.0e8</span></span></code></pre></div>
 </div>
 <p>Wow! R is off by 67.1 million (5.0e8 - 432,891,008)!<sup>2</sup></p>
+<p>Note: using the <code>Rmpfr</code> package in R, I was able to increase the precision to 64 bits and successfully execute a <code>for</code> loop for <code>n = 1,000,000</code> (1 million). The execution time was &gt; 100 seconds. But, I could not get R to execute a <code>for</code> loop of <code>n = 1,000,000,000</code> (1 billion).</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fu" style="color: #4758AB;">require</span>(<span class="st" style="color: #20794D;">"Rmpfr"</span>)</span>
+<span id="cb5-2"><span class="op" style="color: #5E5E5E;">&gt;</span> sum_n <span class="op" style="color: #5E5E5E;">=</span> <span class="kw" style="color: #003B4F;">function</span>(n){</span>
+<span id="cb5-3"><span class="op" style="color: #5E5E5E;">+</span>     s <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">mpfr</span>(<span class="fl" style="color: #AD0000;">0</span>, <span class="fl" style="color: #AD0000;">64</span>)</span>
+<span id="cb5-4"><span class="op" style="color: #5E5E5E;">+</span>     <span class="cf" style="color: #003B4F;">for</span> (i <span class="kw" style="color: #003B4F;">in</span> <span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span>n){</span>
+<span id="cb5-5"><span class="op" style="color: #5E5E5E;">+</span>         s <span class="op" style="color: #5E5E5E;">=</span> s <span class="op" style="color: #5E5E5E;">+</span> i</span>
+<span id="cb5-6"><span class="op" style="color: #5E5E5E;">+</span>     }</span>
+<span id="cb5-7"><span class="op" style="color: #5E5E5E;">+</span>     s</span>
+<span id="cb5-8"><span class="op" style="color: #5E5E5E;">+</span> }</span>
+<span id="cb5-9"><span class="op" style="color: #5E5E5E;">&gt;</span> system.<span class="fu" style="color: #4758AB;">time</span>(x <span class="op" style="color: #5E5E5E;">&lt;-</span> <span class="fu" style="color: #4758AB;">sum_n</span>(<span class="fl" style="color: #AD0000;">1000000</span>))</span>
+<span id="cb5-10">   user  system elapsed </span>
+<span id="cb5-11"><span class="fl" style="color: #AD0000;">103.702</span>   <span class="fl" style="color: #AD0000;">0.698</span> <span class="fl" style="color: #AD0000;">104.423</span> </span>
+<span id="cb5-12"><span class="op" style="color: #5E5E5E;">&gt;</span> x</span>
+<span id="cb5-13"><span class="fl" style="color: #AD0000;">1</span> <span class="ch" style="color: #20794D;">'mpfr'</span> number of precision  <span class="fl" style="color: #AD0000;">64</span>   bits </span>
+<span id="cb5-14">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">500000500000</span></span></code></pre></div>
+</div>
+<p>Conclusion: Compared to R, Julia is much faster and can handle accurately large <code>for</code> loops.</p>
 <p>To see more benchmarks visit <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html">Which programming language is fastest?</a>.</p>
 </section>
 <section id="getting-started-with-julia" class="level3">
