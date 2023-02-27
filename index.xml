@@ -50,7 +50,7 @@
 <h3 class="anchored" data-anchor-id="introduction">1 Introduction</h3>
 <p>My blog posting “<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>” is a good summary of what is covered in the Introduction. I will cover just one item—execution speed, and compare it to R.</p>
 <p>We will construct a <code>for</code> loop summation of the sequence of integers from 1 to 1,000,000,000 (1 billion).<sup>1</sup> Here is the correct answer:</p>
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="co" style="color: #5E5E5E;">## In Julia</span></span>
 <span id="cb1-2">julia<span class="op" style="color: #5E5E5E;">&gt;</span>  <span class="fu" style="color: #4758AB;">sum</span>(<span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span><span class="fl" style="color: #AD0000;">1_000_000_000</span>)</span>
 <span id="cb1-3"><span class="fl" style="color: #AD0000;">500000000500000000</span></span>
@@ -84,7 +84,7 @@ sum_n = function(n){
 system.time(x <- sum_n(1000000000))
 x
 -->
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fu" style="color: #4758AB;">require</span>(<span class="st" style="color: #20794D;">"bit64"</span>)</span>
 <span id="cb2-2"><span class="op" style="color: #5E5E5E;">&gt;</span> sum_n <span class="op" style="color: #5E5E5E;">=</span> <span class="kw" style="color: #003B4F;">function</span>(n){</span>
 <span id="cb2-3"><span class="op" style="color: #5E5E5E;">+</span>     s <span class="op" style="color: #5E5E5E;">=</span> as.<span class="fu" style="color: #4758AB;">integer64</span>(<span class="fl" style="color: #AD0000;">0</span>)</span>
@@ -100,7 +100,7 @@ x
 <span id="cb2-13">integer64</span>
 <span id="cb2-14">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">500000000500000000</span></span></code></pre></div>
 </div>
-<p>The R execution time to get the correct answer was 11,074 seconds. Okay, let’s do the execute the same function in Julia.</p>
+<p>To get the correct answer in R, the execution time was 11,074 seconds. Okay, let’s execute the same function in Julia.</p>
 <!--
 function sum_n(n)
     s = 0
@@ -111,7 +111,7 @@ function sum_n(n)
 end
 @time sum_n(1_000_000_000)
 -->
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1">julia<span class="op" style="color: #5E5E5E;">&gt;</span> <span class="kw" style="color: #003B4F;">function</span> <span class="fu" style="color: #4758AB;">sum_n</span>(n)</span>
 <span id="cb3-2">           s <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0</span></span>
 <span id="cb3-3">               <span class="cf" style="color: #003B4F;">for</span> i <span class="kw" style="color: #003B4F;">in</span> <span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span>n</span>
@@ -134,7 +134,7 @@ end
 <section id="basic-data-types" class="level4">
 <h4 class="anchored" data-anchor-id="basic-data-types">Basic data types</h4>
 <p>If you are familar with R or Python, you will feel comfortable with Julia. Here is a <strong>character</strong>:</p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><span class="co" style="color: #5E5E5E;">## character; notice single quotation marks</span></span>
 <span id="cb4-2"><span class="ch" style="color: #20794D;">'a'</span></span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -142,7 +142,7 @@ end
 </div>
 </div>
 <p>A <strong>string</strong> is a collection of characters:</p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><span class="co" style="color: #5E5E5E;">## string; notice double quotation marks</span></span>
 <span id="cb6-2"><span class="st" style="color: #20794D;">"Hello World"</span></span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -150,7 +150,7 @@ end
 </div>
 </div>
 <p>An <strong>array</strong> is a collection in brackets. Commas are used to create a <strong>vector</strong> (always as a column).</p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><span class="co" style="color: #5E5E5E;">## vector</span></span>
 <span id="cb8-2">[<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">3</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -161,7 +161,7 @@ end
 </div>
 </div>
 <p>Numbers separated by spaces create one row of a <strong>matrix</strong>:</p>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><span class="co" style="color: #5E5E5E;">## matrix</span></span>
 <span id="cb10-2">[<span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">2</span> <span class="fl" style="color: #AD0000;">3</span> <span class="fl" style="color: #AD0000;">4</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -170,7 +170,7 @@ end
 </div>
 </div>
 <p>Matrix rows separated by a semi-colon creates a multi-row matrix:</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><span class="co" style="color: #5E5E5E;">## matrix</span></span>
 <span id="cb12-2">[<span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">2</span> <span class="fl" style="color: #AD0000;">3</span> <span class="fl" style="color: #AD0000;">4</span>; <span class="fl" style="color: #AD0000;">6</span> <span class="fl" style="color: #AD0000;">7</span> <span class="fl" style="color: #AD0000;">8</span> <span class="fl" style="color: #AD0000;">9</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -180,7 +180,7 @@ end
 </div>
 </div>
 <p>A <strong>tuple</strong> is a collection in parentheses, and commas separate the elements. Tuples are immutable; their elements cannot be changed. Immutable objects increase computational speed.</p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><span class="co" style="color: #5E5E5E;">## tuple</span></span>
 <span id="cb14-2">(<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">3</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -188,7 +188,7 @@ end
 </div>
 </div>
 <p>Tuple elements can be named.</p>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><span class="co" style="color: #5E5E5E;">## named tuple</span></span>
 <span id="cb16-2">(four <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">4</span>, five <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">5</span>, six <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">6</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
@@ -196,7 +196,7 @@ end
 </div>
 </div>
 <p>The assigment operation (<code>=</code>) is used to <strong>bind</strong> data <em>values</em> to a <strong>variable</strong>. Binding in Julia is similar to binding in Python, but not R.</p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1">x <span class="op" style="color: #5E5E5E;">=</span> [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>]</span>
 <span id="cb18-2">y <span class="op" style="color: #5E5E5E;">=</span> x</span>
 <span id="cb18-3">y</span></code></pre></div>
@@ -207,7 +207,7 @@ end
 </div>
 </div>
 <p>If we change an element in <code>x</code>, the same change occurs in <code>y</code> because same array was binded to the variables <code>x</code> and <code>y</code>.</p>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1">x[<span class="fl" style="color: #AD0000;">2</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">99</span></span>
 <span id="cb20-2"><span class="co" style="color: #5E5E5E;">## notice that y changes also</span></span>
 <span id="cb20-3">y</span></code></pre></div>
@@ -218,7 +218,7 @@ end
 </div>
 </div>
 <p>This is not the case in R:</p>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><span class="op" style="color: #5E5E5E;">&gt;</span> x <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">c</span>(<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>)</span>
 <span id="cb22-2"><span class="op" style="color: #5E5E5E;">&gt;</span> y <span class="op" style="color: #5E5E5E;">=</span> x</span>
 <span id="cb22-3"><span class="op" style="color: #5E5E5E;">&gt;</span> x[<span class="fl" style="color: #AD0000;">2</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">99</span></span>
@@ -228,7 +228,7 @@ end
 <span id="cb22-7">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">2</span></span></code></pre></div>
 </div>
 <p>To replicate the R experience we assign a copy of <code>x</code> to <code>y</code>.</p>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1">x <span class="op" style="color: #5E5E5E;">=</span> [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>]</span>
 <span id="cb23-2">y <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">copy</span>(x)</span>
 <span id="cb23-3">x[<span class="fl" style="color: #AD0000;">2</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">99</span></span>
@@ -239,7 +239,7 @@ end
  99</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1">y</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>2-element Vector{Int64}:
