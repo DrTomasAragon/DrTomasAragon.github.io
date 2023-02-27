@@ -302,6 +302,16 @@ ga('send', {
 </div>
 <p>Let’s start with R. It took about 9.5 seconds.</p>
 <!--
+require("bit64")
+sum_n = function(n){
+    s = as.integer64(0)
+    for (i in 1:n){
+        s = s + i
+    }
+    s
+}
+system.time(x <- sum_n(10000000))
+x
 options(digits=20)
 sum_n = function(n){
     s = 0
@@ -377,12 +387,24 @@ end
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="fl">500000000500000000</span> <span class="op">-</span> <span class="fl">5e+17</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fl">5.0e8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Wow! R is off by 67.1 million (5.0e8 - 432,891,008)!<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Bottomline: R takes longer and gives an incorrect answer.</p>
-<p>Note: using the <code>Rmpfr</code> package in R, I was able to increase the precision to 64 bits and successfully execute a <code>for</code> loop for <code>n = 1,000,000</code> (1 million). The execution time was &gt; 100 seconds. But, I could not get R to execute a <code>for</code> loop of <code>n = 1,000,000,000</code> (1 billion).</p>
+<p>Wow! R is off by 67.1 million (5.0e8 - 432,891,008)! Bottomline: R takes longer and gives an incorrect answer.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using the <code>bit64</code> package in R, I was able to increase the integer precision to 64 bits and successfully execute a <code>for</code> loop summation for <code>n = 1,000,000</code> (1 million). The execution time was about 11 seconds. But, I could not get R to execute a <code>for</code> loop summation for <code>n = 1,000,000,000</code> (1 billion).</p>
+</div>
+</div>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="fu">require</span>(<span class="st">"Rmpfr"</span>)</span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="fu">require</span>(<span class="st">"bit64"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> sum_n <span class="op">=</span> <span class="kw">function</span>(n){</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>     s <span class="op">=</span> <span class="fu">mpfr</span>(<span class="fl">0</span>, <span class="fl">64</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>     s <span class="op">=</span> as.<span class="fu">integer64</span>(<span class="fl">0</span>)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>     <span class="cf">for</span> (i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>n){</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>         s <span class="op">=</span> s <span class="op">+</span> i</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>     }</span>
@@ -390,9 +412,9 @@ end
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> }</span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> system.<span class="fu">time</span>(x <span class="op">&lt;-</span> <span class="fu">sum_n</span>(<span class="fl">1000000</span>))</span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>   user  system elapsed </span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fl">103.702</span>   <span class="fl">0.698</span> <span class="fl">104.423</span> </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a> <span class="fl">10.859</span>   <span class="fl">0.076</span>  <span class="fl">10.932</span> </span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> x</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fl">1</span> <span class="ch">'mpfr'</span> number of precision  <span class="fl">64</span>   bits </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>integer64</span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>] <span class="fl">500000500000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Conclusion: Compared to R, Julia can handle large <code>for</code> loops for summation and give an accurate answer. R cannot handle large loops and gives an incorrect answer by default. With R, we are taught to avoid <code>for</code> loops, now you know why. However, a <code>for</code> loop is a workhorse tool that you want available to you.</p>
@@ -531,7 +553,7 @@ end
 
 <ol>
 <li id="fn1"><p>Used Rstudio on 2021 MacBook Pro M1 Max with 32 GB RAM under Ventura 13.2.1<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>If anyone knows why this is the case, please contact me. How do you do this correctly in R?<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>``The reason for the difference is that Julia uses 64-bit integers and R uses 64-bit floats by default to do these computations.’’ Source: https://twitter.com/BogumilKaminski/status/1629968902456311818<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
