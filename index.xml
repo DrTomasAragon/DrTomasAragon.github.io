@@ -60,7 +60,7 @@
 <span id="cb1-7"><span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fu" style="color: #4758AB;">sum</span>(<span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span><span class="fl" style="color: #AD0000;">1000000000</span>)</span>
 <span id="cb1-8">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">5.000000005e+17</span></span></code></pre></div>
 </div>
-<p>Let’s start with R. By default, R would give the wrong answer (by 432M!) because it uses 64-bit floating point numbers.<sup>2</sup> To get the correct answer in R we need to use 64-bit integers. For this I will use the <code>bit64</code> R package.</p>
+<p>Let’s start with R. By default, R would give the wrong answer because it uses 64-bit floating point numbers.<sup>2</sup> To get the correct answer in R we need 64-bit integers. For this I use the <code>bit64</code> R package.</p>
 <!--
 require("bit64")
 sum_n = function(n){
