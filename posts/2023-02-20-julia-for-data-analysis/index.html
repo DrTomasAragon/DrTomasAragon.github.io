@@ -139,6 +139,7 @@ ga('send', {
 });
 </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 <meta name="twitter:title" content="Dr.&nbsp;Tomás Aragón - Julia for Data Analysis">
@@ -300,7 +301,7 @@ ga('send', {
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="fu">sum</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">1000000000</span>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>] <span class="fl">5.000000005e+17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Let’s start with R. By default, R would give the wrong answer because it uses 64-bit floating point numbers.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> To get the correct answer in R we need 64-bit integers. For this I use the <code>bit64</code> R package.</p>
+<p>By default, R gives the wrong answer because it uses 64-bit floating point numbers.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> To get the correct answer we need 64-bit integers. For this use the <code>bit64</code> R package.</p>
 <!--
 require("bit64")
 sum_n = function(n){
@@ -310,7 +311,7 @@ sum_n = function(n){
     }
     s
 }
-system.time(x <- sum_n(10000000))
+system.time(x <- sum_n(100))
 x
 ####
 options(digits=20)
@@ -340,8 +341,9 @@ x
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>integer64</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>] <span class="fl">500000000500000000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>To get the correct answer in R, the execution time was 11,074 seconds. Okay, let’s execute the same function in Julia.</p>
+<p>To get the correct answer in R, the execution time was <strong>11,074 seconds</strong>. Okay, let’s try Julia.</p>
 <!--
+using BenchmarkTools
 function sum_n(n)
     s = 0
     for i in 1:n
@@ -349,23 +351,24 @@ function sum_n(n)
     end
     return s
 end
-@time sum_n(1_000_000_000)
+@btime sum_n(1_000_000_000)
 -->
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="kw">function</span> <span class="fu">sum_n</span>(n)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>           s <span class="op">=</span> <span class="fl">0</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>               <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>n</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                   s <span class="op">+=</span> i</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>               <span class="cf">end</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>               <span class="cf">return</span> s</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>       <span class="kw">end</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>sum_n (generic <span class="kw">function</span> with <span class="fl">1</span> method)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="pp">@time</span> <span class="fu">sum_n</span>(<span class="fl">1_000_000_000</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fl">3.011812</span> seconds</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fl">500000000500000000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="im">using</span> <span class="bu">BenchmarkTools</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="kw">function</span> <span class="fu">sum_n</span>(n)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>           s <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>               <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>n</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                   s <span class="op">=</span> s <span class="op">+</span> i</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>               <span class="cf">end</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>               <span class="cf">return</span> s</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>       <span class="kw">end</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>sum_n (generic <span class="kw">function</span> with <span class="fl">1</span> method)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="pp">@btime</span> <span class="fu">sum_n</span>(<span class="fl">1_000_000_000</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fl">2.083</span> ns (<span class="fl">0</span> allocations<span class="op">:</span> <span class="fl">0</span> bytes)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fl">500000000500000000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In Julia, it took about 3 seconds. R is about <strong>3700 times slower</strong> than Julia! (Notice that in Julia I can use <code>1000000000</code> or <code>1_000_000_000</code> for the number 1 billion.)</p>
+<p>In Julia, it took about <strong>2.1 nanoseconds</strong>. R is about <span class="math inline">\(5.3 \times 10^{12}\)</span> times slower than Julia!<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p>Conclusion: Compared to R, Julia can handle large <code>for</code> loops for summation and give an accurate answer fast. R cannot handle large loops and, by default, gives an incorrect answer. R can get the correct answer with the <code>bit64</code> package, but it is ~3700 times slower. With R, we are taught to avoid <code>for</code> loops—now you know why. However, a <code>for</code> loop is a workhorse tool that you want available to you; hence, a huge advantage for Julia.</p>
 <p>To see more benchmarks visit <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html">Which programming language is fastest?</a>.</p>
 </section>
@@ -503,6 +506,7 @@ end
 <ol>
 <li id="fn1"><p>Used Rstudio on 2021 MacBook Pro M1 Max with 32 GB RAM under Ventura 13.2.1<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>“The reason for the difference is that Julia uses 64-bit integers and R uses 64-bit floats by default to do these computations.” Source: https://twitter.com/BogumilKaminski/status/1629968902456311818<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Notice that in Julia I can use <code>1000000000</code> or <code>1_000_000_000</code> for the number 1 billion.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
