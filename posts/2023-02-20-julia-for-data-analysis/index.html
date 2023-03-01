@@ -290,7 +290,7 @@ ga('send', {
 <h3 class="anchored" data-anchor-id="introduction">1 Introduction</h3>
 <p>My blog posting “<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>” is a good summary of what is covered in the Introduction. I will cover just one item—execution speed, and compare it to R.</p>
 <p>We will construct a <code>for</code> loop summation of a random sequence of integers from 1 to 1,000,000,000 (1 billion) that are sampled without replacment.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Here is the correct answer as a reference:</p>
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## In Julia</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span>  <span class="fu">sum</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">1_000_000_000</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fl">500000000500000000</span></span>
@@ -326,7 +326,7 @@ sum_n = function(n){
 system.time(x <- sum_n(1000000000))
 x
 -->
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="fu">require</span>(<span class="st">"bit64"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> n <span class="op">=</span> <span class="fl">1000000000</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> samp <span class="op">=</span> <span class="fu">sample</span>(<span class="fl">1</span><span class="op">:</span>n, n, replace<span class="op">=</span>FALSE)</span>
@@ -358,7 +358,7 @@ function sum_n(x)
 end
 @btime sum_n(samp)
 -->
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="im">using</span> <span class="bu">StatsBase</span>, <span class="bu">BenchmarkTools</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> n <span class="op">=</span> <span class="fl">1_000_000_000</span>;</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> samp <span class="op">=</span> <span class="fu">sample</span>(<span class="fl">1</span><span class="op">:</span>n, n, replace<span class="op">=</span><span class="cn">false</span>);</span>
@@ -375,7 +375,7 @@ end
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fl">158.118</span> ms (<span class="fl">1</span> allocation<span class="op">:</span> <span class="fl">16</span> bytes)</span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fl">500000000500000000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In Julia, it took about <strong>159 milliseconds</strong>. R is about <strong>70,168 times slower</strong> than Julia!<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>In Julia, it took about <strong>158 milliseconds</strong>. R is about <strong>70,168 times slower</strong> than Julia!<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p>Conclusion: Compared to R, Julia can handle large <code>for</code> loops for summation and give an accurate answer fast. To add integers correctly using a <code>for</code> loop, R requires using the <code>bit64</code> package but is 70,168 time slower than Julia. With R, we are taught to avoid <code>for</code> loops — now you know why. However, a <code>for</code> loop is a workhorse tool that you want available to you; hence, this a huge advantage for Julia.</p>
 <p>To see more benchmarks visit <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html">Which programming language is fastest?</a>.</p>
 </section>
@@ -384,7 +384,7 @@ end
 <section id="basic-data-types" class="level4">
 <h4 class="anchored" data-anchor-id="basic-data-types">Basic data types</h4>
 <p>If you are familar with R or Python, you will feel comfortable with Julia. Here is a <strong>character</strong>:</p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">## character; notice single quotation marks</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ch">'a'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -392,7 +392,7 @@ end
 </div>
 </div>
 <p>A <strong>string</strong> is a collection of characters:</p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">## string; notice double quotation marks</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st">"Hello World"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -400,7 +400,7 @@ end
 </div>
 </div>
 <p>An <strong>array</strong> is a collection in brackets. Commas are used to create a <strong>vector</strong> (always as a column).</p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## vector</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -411,7 +411,7 @@ end
 </div>
 </div>
 <p>Numbers separated by spaces create one row of a <strong>matrix</strong>:</p>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">## matrix</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span> <span class="fl">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -420,7 +420,7 @@ end
 </div>
 </div>
 <p>Matrix rows separated by a semi-colon creates a multi-row matrix:</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">## matrix</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span> <span class="fl">4</span>; <span class="fl">6</span> <span class="fl">7</span> <span class="fl">8</span> <span class="fl">9</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -430,7 +430,7 @@ end
 </div>
 </div>
 <p>A <strong>tuple</strong> is a collection in parentheses, and commas separate the elements. Tuples are immutable; their elements cannot be changed. Immutable objects increase computational speed.</p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">## tuple</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>(<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -438,7 +438,7 @@ end
 </div>
 </div>
 <p>Tuple elements can be named.</p>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">## named tuple</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>(four <span class="op">=</span> <span class="fl">4</span>, five <span class="op">=</span> <span class="fl">5</span>, six <span class="op">=</span> <span class="fl">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
@@ -446,7 +446,7 @@ end
 </div>
 </div>
 <p>The assigment operation (<code>=</code>) is used to <strong>bind</strong> data <em>values</em> to a <strong>variable</strong>. Binding in Julia is similar to binding in Python, but not R.</p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>]</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -457,7 +457,7 @@ end
 </div>
 </div>
 <p>If we change an element in <code>x</code>, the same change occurs in <code>y</code> because same array was binded to the variables <code>x</code> and <code>y</code>.</p>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fl">2</span>] <span class="op">=</span> <span class="fl">99</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">## notice that y changes also</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -468,7 +468,7 @@ end
 </div>
 </div>
 <p>This is not the case in R:</p>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> x <span class="op">=</span> <span class="fu">c</span>(<span class="fl">1</span>, <span class="fl">2</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> y <span class="op">=</span> x</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> x[<span class="fl">2</span>] <span class="op">=</span> <span class="fl">99</span></span>
@@ -478,7 +478,7 @@ end
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>] <span class="fl">1</span> <span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To replicate the R experience we assign a copy of <code>x</code> to <code>y</code>.</p>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>]</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fu">copy</span>(x)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>x[<span class="fl">2</span>] <span class="op">=</span> <span class="fl">99</span></span>
@@ -489,7 +489,7 @@ end
  99</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>2-element Vector{Int64}:
