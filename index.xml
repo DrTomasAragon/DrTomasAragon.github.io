@@ -136,7 +136,7 @@ end
 <span id="cb3-15"><span class="fl" style="color: #AD0000;">500000000500000000</span></span></code></pre></div>
 </div>
 <p>In Julia, it took about <strong>158 milliseconds</strong>. R is about <strong>70,168 times slower</strong> than Julia!<sup>3</sup></p>
-<p>Conclusion: Compared to R, Julia can handle large <code>for</code> loops for summation and give an accurate answer fast. To add integers correctly using a <code>for</code> loop, R requires using the <code>bit64</code> package but is 70,168 time slower than Julia. With R, we are taught to avoid <code>for</code> loops — now you know why. However, a <code>for</code> loop is a workhorse tool that you want available to you; hence, this a huge advantage for Julia.</p>
+<p>Conclusion: Compared to R, Julia can handle large <code>for</code> loops for summation and give an accurate answer fast. To add integers correctly using a <code>for</code> loop, R requires using the <code>bit64</code> package but is 70,168 time slower than Julia. With R, we are taught to avoid <code>for</code> loops — now you know why. However, a <code>for</code> loop is a workhorse tool that you want available to you; hence, this a huge advantage of Julia.</p>
 <p>To see more benchmarks visit <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html">Which programming language is fastest?</a>.</p>
 </section>
 <section id="getting-started-with-julia" class="level3">
