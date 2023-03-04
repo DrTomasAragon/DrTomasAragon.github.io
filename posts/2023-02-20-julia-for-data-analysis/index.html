@@ -300,7 +300,7 @@ ga('send', {
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="fu">sum</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">1000000000</span>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>] <span class="fl">5.000000005e+17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>By default, R gives the wrong answer because it uses 64-bit floating point numbers.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> To get the correct answer we need 64-bit integers. For this I used the <code>bit64</code> R package.</p>
+<p>By default, R would give the wrong answer (not shown) because it uses 64-bit floating point numbers.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> To get the correct answer we need 64-bit integers. For this I used the <code>bit64</code> R package to get the correct answer (below).</p>
 <!--
 require("bit64")
 n = 100;
