@@ -264,8 +264,8 @@ end
 </section>
 </section>
 </section>
-<section id="author-updates" class="level2">
-<h2 class="anchored" data-anchor-id="author-updates">Author updates</h2>
+<section id="book-author-updates" class="level2">
+<h2 class="anchored" data-anchor-id="book-author-updates">Book author updates</h2>
 <ol type="1">
 <li>Hunting for bugs in Julia for Data Analysis. Medium. March 3, 2023. Available from <a href="https://medium.com/bkamins/hunting-for-bugs-in-julia-for-data-analysis-ed6f4d1ce6bd">https://medium.com/bkamins/hunting-for-bugs-in-julia-for-data-analysis-ed6f4d1ce6bd</a></li>
 <li>Errata and source code for book is available from <a href="https://github.com/bkamins/JuliaForDataAnalysis">https://github.com/bkamins/JuliaForDataAnalysis</a></li>
