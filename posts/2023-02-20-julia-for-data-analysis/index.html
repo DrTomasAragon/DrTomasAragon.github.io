@@ -264,7 +264,7 @@ ga('send', {
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>Julia is an open source, general purpose programming language for scientific computing and is well suited for data science. I taught R programming for several years at the UC Berkeley School of Public Health. I recently posted a blog entry on why I switched from R to Julia (“<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>”). In this blog entry I review the book “<a href="https://www.manning.com/books/julia-for-data-analysis">Julia for Data Analysis</a>” by Bogumit Kaminski. In short, this is an outstanding book that I highly recommend without any reservations (5/5 stars). This review is a working blog that I will be updating with highlights from the book.</p>
-<p>For data science, Julia is exploding in popularity and there are numerous outstanding <a href="https://julialang.org/learning/">resources for learning Julia</a>, including books, videos, and blog postings. I purchased the print and eBook option which includes an online “liveBook” which is easy to read. However, you cannot beat having a book in hand to read and markup. The author provides a GitHub <a href="https://github.com/bkamins/JuliaForDataAnalysis">repository</a> with code and data files.</p>
+<p>For data science, Julia is exploding in popularity and there are numerous outstanding <a href="https://julialang.org/learning/">resources for learning Julia</a>, including books, videos, and blog postings. I purchased the print and eBook option which includes an online “liveBook” which is easy to read. However, we cannot beat having a book in hand to read and markup. The author provides a GitHub <a href="https://github.com/bkamins/JuliaForDataAnalysis">repository</a> with code and data files.</p>
 <p>The author, Bogumit Kaminski, is a core developer of the <a href="https://dataframes.juliadata.org/stable/">DataFrames.jl</a> package. He is an associate professor and head of the Decision Support and Analysis Unit at the SGH Warsaw School of Economics, as well as adjunct professor at the data science laboratory, Ryerson University, Toronto.</p>
 <p>This book is perfect for population health data scientists already familiar with R or Python, or already have basic proficiency with Julia but need an in depth and systematic introduction to Julia for data science.</p>
 <p>Here is the table of contents.</p>
@@ -377,7 +377,7 @@ end
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fl">500000000500000000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In Julia, it took about <strong>158 milliseconds</strong>. R is about <strong>70,168 times slower</strong> than Julia!<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<p>Conclusion: Compared to R, Julia can handle large <code>for</code> loops for summation and give an accurate answer fast. To add integers correctly using a <code>for</code> loop, R requires using the <code>bit64</code> package but is 70,168 time slower than Julia. With R, we are taught to avoid <code>for</code> loops — now you know why. However, a <code>for</code> loop is a workhorse tool that you want available to you; hence, this a huge advantage of Julia.</p>
+<p>Conclusion: Compared to R, Julia can handle large <code>for</code> loops for summation and give an accurate answer fast. To add integers correctly using a <code>for</code> loop, R requires using the <code>bit64</code> package but is 70,168 time slower than Julia. With R, we are taught to avoid <code>for</code> loops — now you know why. However, a <code>for</code> loop is a workhorse tool that we want available to us; hence, this a huge advantage of Julia.</p>
 <p>To see more benchmarks visit <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html">Which programming language is fastest?</a>.</p>
 </section>
 <section id="getting-started-with-julia" class="level3">
@@ -610,6 +610,69 @@ OR = \frac{a d}{b c}
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>results.confint</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>(2.9619778898301936, 283.93189661797715)</code></pre>
+</div>
+</div>
+</section>
+<section id="anonymous-functions" class="level4">
+<h4 class="anchored" data-anchor-id="anonymous-functions">Anonymous functions</h4>
+<p>Functions can be arguments to functions. For example, we will create a <code>times_two</code> function and past it to other functions.</p>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">times_two</span>(x) <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> x</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(times_two, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>3-element Vector{Int64}:
+  2
+  4
+ 16</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(times_two, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>22</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsBase</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(times_two, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>7.333333333333333</code></pre>
+</div>
+</div>
+<p>Alternatively, we can pass the <code>times_two</code> function as an anonymous function; that is, a function without a name.</p>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(x <span class="op">-&gt;</span> <span class="fl">2</span> <span class="op">*</span> x, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>3-element Vector{Int64}:
+  2
+  4
+ 16</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x <span class="op">-&gt;</span> <span class="fl">2</span> <span class="op">*</span> x, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>22</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x <span class="op">-&gt;</span> <span class="fl">2</span> <span class="op">*</span> x, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>7.333333333333333</code></pre>
+</div>
+</div>
+<p>We can even calculate the odds ratio as an anonymous function.</p>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>((a, b, c, d) <span class="op">-&gt;</span> (a <span class="op">*</span> d)<span class="op">/</span>(b <span class="op">*</span> c), (<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>)<span class="op">...</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>29.0</code></pre>
+</div>
+</div>
+<p>Notice I used a trick. By default, the <code>map</code> function maps and executes a function with elements of a collection (eg, <code>[1 ,2, 8]</code>). However, for the odds ratio calcuation, I need to map the arguments <code>(a, b, c, d)</code> to their values <code>(12, 6, 2, 29)</code>, <em>then</em> calculate the odds ratio. Therefore, I used the splat operator (<code>...</code>) to break up the collection of values so that they could be mapped to their arguments first. Although I used a tuple <code>(12, 6, 2, 29)</code>, an array also works <code>[12, 6, 2, 29]</code>.</p>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>((a, b, c, d) <span class="op">-&gt;</span> (a <span class="op">*</span> d)<span class="op">/</span>(b <span class="op">*</span> c), [<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>]<span class="op">...</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>29.0</code></pre>
 </div>
 </div>
 <p>Chapter 1 also covers other topics including loops, conditional expressions, and scoping. Chapters 3 to 7 cover practical tools for processing and managing data in Julia. I will focus the remainder of this book review on data frames.</p>
