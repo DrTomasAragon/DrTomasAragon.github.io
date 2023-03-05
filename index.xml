@@ -302,7 +302,7 @@ end
 <pre><code>oddsratio (generic function with 1 method)</code></pre>
 </div>
 </div>
-<p>Here is data from a case-control study:</p>
+<p>Here is data from a case-control study <span class="citation" data-cites="Aragon2003_pmid12515584">[1]</span>:</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -331,8 +331,8 @@ end
 <pre><code>29.0</code></pre>
 </div>
 </div>
-<p>The function <em>arguments</em>, <code>a</code>, <code>b</code>, <code>c</code>, and <code>d</code> are called <em>positional</em> arguments and are always required in the correct order.</p>
-<p>We now add a <em>keyword</em> argument which is optional. Keyword arguments are separated from the positional arguments by a semicolon (;). Any argument, positional or keyword, can be assigned a default value. We’ll create <code>oddsratio2</code>function to calculate a confidence interval using the Normal approximation. The keyword argument will have a default confidence level of 0.95.</p>
+<p>The function <em>arguments</em>, <code>a</code>, <code>b</code>, <code>c</code>, and <code>d</code> are called <strong>positional</strong> arguments and are always required in the correct order.</p>
+<p>We now add a <strong>keyword</strong> argument which is optional. Keyword arguments are separated from the positional arguments by a semicolon (;). Any argument, positional or keyword, can be assigned a default value. We’ll create <code>oddsratio2</code>function to calculate a confidence interval using the Normal approximation. The keyword argument will have a default confidence level of 0.95.</p>
 <div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><span class="im" style="color: #00769E;">using</span> <span class="bu" style="color: null;">Distributions </span><span class="co" style="color: #5E5E5E;"># to access standard normal distribution </span></span>
 <span id="cb33-2"><span class="kw" style="color: #003B4F;">function</span> <span class="fu" style="color: #4758AB;">oddsratio2</span>(a, b, c, d; level <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0.95</span>)</span>
@@ -355,7 +355,7 @@ end
 <pre><code>(or = 29.0, confint = (5.110695577009899, 164.55685675804662), level = 0.95)</code></pre>
 </div>
 </div>
-<p>I can now calculate 99% confidence intervals:</p>
+<p>I can also calculate 99% confidence intervals:</p>
 <div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1">results <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">oddsratio2</span>(<span class="fl" style="color: #AD0000;">12</span>, <span class="fl" style="color: #AD0000;">6</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">29</span>; level <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0.99</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
@@ -448,10 +448,15 @@ end
 </ol>
 
 
+
 </section>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body">
+<div id="ref-Aragon2003_pmid12515584" class="csl-entry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Aragón TJ, Novotny S, Enanoria W, Vugia DJ, Khalakdina A, Katz MH. Endemic cryptosporidiosis and exposure to municipal tap water in persons with acquired immunodeficiency syndrome (<span>AIDS</span>): A case-control study. <span>BMC</span> Public Health [Internet]. 2003 Jan;3(1). Available from: <a href="https://doi.org/10.1186/1471-2458-3-2">https://doi.org/10.1186/1471-2458-3-2</a></div>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>Used Rstudio on 2021 MacBook Pro M1 Max with 32 GB RAM under Ventura 13.2.1↩︎</p></li>
@@ -1086,7 +1091,7 @@ Send me examples of public health OKRs
 <p>Please <a href="mailto:taragonmd@gmail.com">send me</a> your favorite decision book recommendations and why you like them.</p>
 <section id="prerequisites" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
-<p>These foundational books are about improving how we process information from the external world (exteroception) and our bodies (interoception), how we think and feel (cognition and emotions), and how we behave. Without awareness of human beings’ limitations and pitfalls in these areas, we are bound to make poor decisions, even against our best interests.</p>
+<p>These foundational books are about improving how we process information from the external world (exteroception) and our bodies (interoception), how we think and feel (cognition and emotions), and how we believe and behave. Without awareness of human beings’ limitations and pitfalls in these areas, we are bound to make poor decisions, even against our best interests.</p>
 <ol type="1">
 <li>Hess E and Ludwig K. <a href="https://www.amazon.com/Humility-New-Smart-Rethinking-Excellence/dp/1626568758/">Humility is the New Smart: Rethinking Human Excellence in the Smart Machine Age</a>. Berrett-Koehler Publishers, a BK Business Book; 2017. <em>Introduction to the critical importance of humility, especially intellectual humility, having self-awareness, receiving accurate feedback, listening, learning, improving, and building trust</em>.</li>
 <li>Grant A. <a href="https://www.amazon.com/Think-Again-Power-Knowing-What/dp/1984878107/">Think Again: The Power of Knowing What You Don’t Know</a>. Viking (February 2, 2021) <em>“Think Again is a must-read for anyone who wants to create a culture of learning and exploration, whether at home, at work, or at school… In an increasingly divided world, the lessons in this book are more important than ever.” —Bill and Melinda Gates</em></li>
