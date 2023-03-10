@@ -159,7 +159,7 @@ end
 <pre><code>"Hello World"</code></pre>
 </div>
 </div>
-<p>An <strong>array</strong> is a collection in brackets. Commas are used to create a <strong>vector</strong> (always as a column).</p>
+<p>An <strong>array</strong> is a collection in brackets. A <strong>vector</strong> is a one-dimensional array. Commas are used to create a vector. By default, the vector is displayed vertically, but it is not a column.<sup>4</sup></p>
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><span class="co" style="color: #5E5E5E;">## vector</span></span>
 <span id="cb8-2">[<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">3</span>]</span></code></pre></div>
@@ -170,7 +170,7 @@ end
  3</code></pre>
 </div>
 </div>
-<p>Numbers separated by spaces create one row of a <strong>matrix</strong>:</p>
+<p>A <strong>matrix</strong> is a two-dimensional array. Numbers separated by spaces create one row of a <strong>matrix</strong>. This is not a vector.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><span class="co" style="color: #5E5E5E;">## matrix</span></span>
 <span id="cb10-2">[<span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">2</span> <span class="fl" style="color: #AD0000;">3</span> <span class="fl" style="color: #AD0000;">4</span>]</span></code></pre></div>
@@ -205,7 +205,7 @@ end
 <pre><code>(four = 4, five = 5, six = 6)</code></pre>
 </div>
 </div>
-<p>The assigment operation (<code>=</code>) is used to <strong>bind</strong> data <em>values</em> to a <strong>variable</strong>. Binding in Julia is similar to binding in Python, but not R.</p>
+<p>The assigment operation (<code>=</code>) is used to <strong>bind</strong> data <em>values</em> to a <strong>variable</strong>. Binding in Julia is similar to binding in Python, but not in R.</p>
 <div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1">x <span class="op" style="color: #5E5E5E;">=</span> [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>]</span>
 <span id="cb18-2">y <span class="op" style="color: #5E5E5E;">=</span> x</span>
@@ -260,7 +260,7 @@ end
 </section>
 <section id="basic-functions" class="level4">
 <h4 class="anchored" data-anchor-id="basic-functions">Basic functions</h4>
-<p>In my blog posting “<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>” I demonstrated how to create a simple function to calculate the odds ratio using 3 methods with multiple dispatch.<sup>4</sup> I will use the function that calculates the odds ratio using the cross-product of 4 integers, and build a more useful function to illustrate some features of Julia.</p>
+<p>In my blog posting “<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>” I demonstrated how to create a simple function to calculate the odds ratio using 3 methods with multiple dispatch.<sup>5</sup> I will use the function that calculates the odds ratio using the cross-product of 4 integers, and build a more useful function to illustrate some features of Julia.</p>
 <p>For an appropriately structured table, for example,</p>
 <table class="table">
 <thead>
@@ -462,7 +462,8 @@ end
 <li id="fn1"><p>Used Rstudio on 2021 MacBook Pro M1 Max with 32 GB RAM under Ventura 13.2.1↩︎</p></li>
 <li id="fn2"><p>“The reason for the difference is that Julia uses 64-bit integers and R uses 64-bit floats by default to do these computations.” Source: https://twitter.com/BogumilKaminski/status/1629968902456311818↩︎</p></li>
 <li id="fn3"><p>Notice that in Julia I can use <code>1000000000</code> or <code>1_000_000_000</code> for the number 1 billion.↩︎</p></li>
-<li id="fn4"><p>To learn more visit <a href="https://freecontent.manning.com/using-multiple-dispatch-in-julia/">https://freecontent.manning.com/using-multiple-dispatch-in-julia/</a>.↩︎</p></li>
+<li id="fn4"><p>In the Pluto.jl package, vectors are displayed horizontally.↩︎</p></li>
+<li id="fn5"><p>To learn more visit <a href="https://freecontent.manning.com/using-multiple-dispatch-in-julia/">https://freecontent.manning.com/using-multiple-dispatch-in-julia/</a>.↩︎</p></li>
 </ol>
 </section></div> ]]></description>
   <category>Julia</category>

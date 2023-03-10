@@ -419,7 +419,7 @@ end
 <pre><code>"Hello World"</code></pre>
 </div>
 </div>
-<p>An <strong>array</strong> is a collection in brackets. Commas are used to create a <strong>vector</strong> (always as a column).</p>
+<p>An <strong>array</strong> is a collection in brackets. A <strong>vector</strong> is a one-dimensional array. Commas are used to create a vector. By default, the vector is displayed vertically, but it is not a column.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## vector</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -430,7 +430,7 @@ end
  3</code></pre>
 </div>
 </div>
-<p>Numbers separated by spaces create one row of a <strong>matrix</strong>:</p>
+<p>A <strong>matrix</strong> is a two-dimensional array. Numbers separated by spaces create one row of a <strong>matrix</strong>. This is not a vector.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">## matrix</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span> <span class="fl">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -465,7 +465,7 @@ end
 <pre><code>(four = 4, five = 5, six = 6)</code></pre>
 </div>
 </div>
-<p>The assigment operation (<code>=</code>) is used to <strong>bind</strong> data <em>values</em> to a <strong>variable</strong>. Binding in Julia is similar to binding in Python, but not R.</p>
+<p>The assigment operation (<code>=</code>) is used to <strong>bind</strong> data <em>values</em> to a <strong>variable</strong>. Binding in Julia is similar to binding in Python, but not in R.</p>
 <div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>]</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x</span>
@@ -520,7 +520,7 @@ end
 </section>
 <section id="basic-functions" class="level4">
 <h4 class="anchored" data-anchor-id="basic-functions">Basic functions</h4>
-<p>In my blog posting “<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>” I demonstrated how to create a simple function to calculate the odds ratio using 3 methods with multiple dispatch.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> I will use the function that calculates the odds ratio using the cross-product of 4 integers, and build a more useful function to illustrate some features of Julia.</p>
+<p>In my blog posting “<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>” I demonstrated how to create a simple function to calculate the odds ratio using 3 methods with multiple dispatch.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> I will use the function that calculates the odds ratio using the cross-product of 4 integers, and build a more useful function to illustrate some features of Julia.</p>
 <p>For an appropriately structured table, for example,</p>
 <table class="table">
 <thead>
@@ -724,7 +724,8 @@ OR = \frac{a d}{b c}
 <li id="fn1"><p>Used Rstudio on 2021 MacBook Pro M1 Max with 32 GB RAM under Ventura 13.2.1<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>“The reason for the difference is that Julia uses 64-bit integers and R uses 64-bit floats by default to do these computations.” Source: https://twitter.com/BogumilKaminski/status/1629968902456311818<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Notice that in Julia I can use <code>1000000000</code> or <code>1_000_000_000</code> for the number 1 billion.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>To learn more visit <a href="https://freecontent.manning.com/using-multiple-dispatch-in-julia/">https://freecontent.manning.com/using-multiple-dispatch-in-julia/</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>In the Pluto.jl package, vectors are displayed horizontally.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>To learn more visit <a href="https://freecontent.manning.com/using-multiple-dispatch-in-julia/">https://freecontent.manning.com/using-multiple-dispatch-in-julia/</a>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
