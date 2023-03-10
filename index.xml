@@ -159,7 +159,7 @@ end
 <pre><code>"Hello World"</code></pre>
 </div>
 </div>
-<p>An <strong>array</strong> is a collection in brackets. A <strong>vector</strong> is a one-dimensional array. Commas are used to create a vector. By default, the vector is displayed vertically, but it is not a column.<sup>4</sup></p>
+<p>An <strong>array</strong> is a collection in brackets. A <strong>vector</strong> is a one-dimensional array. Commas are used to create a vector. By default, the vector is displayed vertically, but it is not a “column vector”.<sup>4</sup></p>
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><span class="co" style="color: #5E5E5E;">## vector</span></span>
 <span id="cb8-2">[<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">3</span>]</span></code></pre></div>
@@ -429,6 +429,13 @@ end
 <div class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb55" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb55-1"><span class="fu" style="color: #4758AB;">map</span>((a, b, c, d) <span class="op" style="color: #5E5E5E;">-&gt;</span> (a <span class="op" style="color: #5E5E5E;">*</span> d)<span class="op" style="color: #5E5E5E;">/</span>(b <span class="op" style="color: #5E5E5E;">*</span> c), [<span class="fl" style="color: #AD0000;">12</span>, <span class="fl" style="color: #AD0000;">6</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">29</span>]<span class="op" style="color: #5E5E5E;">...</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>29.0</code></pre>
+</div>
+</div>
+<p>The splat operator (<code>...</code>) converts <code>[12, 6, 2, 29]</code> to <code>12, 6, 2, 29</code> which is very convenient if the vector is very large. In this case, with only four integers, I could have passed the integers without the splat operator.</p>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb57" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb57-1"><span class="fu" style="color: #4758AB;">map</span>((a, b, c, d) <span class="op" style="color: #5E5E5E;">-&gt;</span> (a <span class="op" style="color: #5E5E5E;">*</span> d)<span class="op" style="color: #5E5E5E;">/</span>(b <span class="op" style="color: #5E5E5E;">*</span> c), <span class="fl" style="color: #AD0000;">12</span>, <span class="fl" style="color: #AD0000;">6</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">29</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>29.0</code></pre>
 </div>
 </div>
