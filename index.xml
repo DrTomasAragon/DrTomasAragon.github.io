@@ -20,8 +20,8 @@
 
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<section id="overview" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
 <p>Julia is an open source, general purpose programming language for scientific computing and is well suited for data science. I taught R programming for several years at the UC Berkeley School of Public Health. I recently posted a blog entry on why I switched from R to Julia (“<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>”). In this blog entry I review the book “<a href="https://www.manning.com/books/julia-for-data-analysis">Julia for Data Analysis</a>” by Bogumit Kaminski. In short, this is an outstanding book that I highly recommend without any reservations (5/5 stars). This review is a working blog that I will be updating with highlights from the book.</p>
 <p>For data science, Julia is exploding in popularity and there are numerous outstanding <a href="https://julialang.org/learning/">resources for learning Julia</a>, including books, videos, and blog postings. I purchased the print and eBook option which includes an online “liveBook” which is easy to read. However, we cannot beat having a book in hand to read and markup. The author provides a GitHub <a href="https://github.com/bkamins/JuliaForDataAnalysis">repository</a> with code and data files.</p>
 <p>The author, Bogumit Kaminski, is a core developer of the <a href="https://dataframes.juliadata.org/stable/">DataFrames.jl</a> package. He is an associate professor and head of the Decision Support and Analysis Unit at the SGH Warsaw School of Economics, as well as adjunct professor at the data science laboratory, Ryerson University, Toronto.</p>
@@ -44,13 +44,13 @@
 <li>Creating web services for sharing data analysis results</li>
 </ol>
 </section>
-<section id="book-highlights-work-in-progress" class="level2">
-<h2 class="anchored" data-anchor-id="book-highlights-work-in-progress">Book highlights (work in progress)</h2>
-<section id="chapter-1-introduction" class="level3">
-<h3 class="anchored" data-anchor-id="chapter-1-introduction">Chapter 1 Introduction</h3>
+<section id="book-highlights" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="book-highlights"><span class="header-section-number">2</span> Book highlights</h2>
+<section id="chapter-1-introduction" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="chapter-1-introduction"><span class="header-section-number">2.1</span> Chapter 1 Introduction</h3>
 <p>My blog posting “<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>” is a good summary of what is covered in the Introduction. I will cover just one item—execution speed, and compare it to R.</p>
 <p>We will construct a <code>for</code> loop summation of a random sequence of integers from 1 to 1,000,000,000 (1 billion) that are sampled without replacment.<sup>1</sup> Here is the correct answer as a reference:</p>
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="co" style="color: #5E5E5E;">## In Julia</span></span>
 <span id="cb1-2">julia<span class="op" style="color: #5E5E5E;">&gt;</span>  <span class="fu" style="color: #4758AB;">sum</span>(<span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span><span class="fl" style="color: #AD0000;">1_000_000_000</span>)</span>
 <span id="cb1-3"><span class="fl" style="color: #AD0000;">500000000500000000</span></span>
@@ -86,7 +86,7 @@ sum_n = function(n){
 system.time(x <- sum_n(1000000000))
 x
 -->
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><span class="op" style="color: #5E5E5E;">&gt;</span> <span class="fu" style="color: #4758AB;">require</span>(<span class="st" style="color: #20794D;">"bit64"</span>)</span>
 <span id="cb2-2"><span class="op" style="color: #5E5E5E;">&gt;</span> n <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">1000000000</span></span>
 <span id="cb2-3"><span class="op" style="color: #5E5E5E;">&gt;</span> samp <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">sample</span>(<span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span>n, n, replace<span class="op" style="color: #5E5E5E;">=</span>FALSE)</span>
@@ -118,7 +118,7 @@ function sum_n(x)
 end
 @btime sum_n(samp)
 -->
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1">julia<span class="op" style="color: #5E5E5E;">&gt;</span> <span class="im" style="color: #00769E;">using</span> <span class="bu" style="color: null;">StatsBase</span>, <span class="bu" style="color: null;">BenchmarkTools</span></span>
 <span id="cb3-2">julia<span class="op" style="color: #5E5E5E;">&gt;</span> n <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">1_000_000_000</span>;</span>
 <span id="cb3-3">julia<span class="op" style="color: #5E5E5E;">&gt;</span> samp <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">sample</span>(<span class="fl" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">:</span>n, n, replace<span class="op" style="color: #5E5E5E;">=</span><span class="cn" style="color: #8f5902;">false</span>);</span>
@@ -139,12 +139,12 @@ end
 <p>Conclusion: Compared to R, Julia can handle large <code>for</code> loops for summation and give an accurate answer fast. To add integers correctly using a <code>for</code> loop, R requires using the <code>bit64</code> package but is 70,168 time slower than Julia. With R, we are taught to avoid <code>for</code> loops — now you know why. However, a <code>for</code> loop is a workhorse tool that we want available to us; hence, this a huge advantage of Julia.</p>
 <p>To see more benchmarks visit <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html">Which programming language is fastest?</a>.</p>
 </section>
-<section id="getting-started-with-julia" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started-with-julia">2 Getting started with Julia</h3>
-<section id="basic-data-types" class="level4">
-<h4 class="anchored" data-anchor-id="basic-data-types">Basic data types</h4>
+<section id="getting-started-with-julia" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="getting-started-with-julia"><span class="header-section-number">2.2</span> 2 Getting started with Julia</h3>
+<section id="basic-data-types" class="level4" data-number="2.2.1">
+<h4 data-number="2.2.1" class="anchored" data-anchor-id="basic-data-types"><span class="header-section-number">2.2.1</span> Basic data types</h4>
 <p>If you are familar with R or Python, you will feel comfortable with Julia. Here is a <strong>character</strong>:</p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><span class="co" style="color: #5E5E5E;">## character; notice single quotation marks</span></span>
 <span id="cb4-2"><span class="ch" style="color: #20794D;">'a'</span></span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -152,7 +152,7 @@ end
 </div>
 </div>
 <p>A <strong>string</strong> is a collection of characters:</p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><span class="co" style="color: #5E5E5E;">## string; notice double quotation marks</span></span>
 <span id="cb6-2"><span class="st" style="color: #20794D;">"Hello World"</span></span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -160,7 +160,7 @@ end
 </div>
 </div>
 <p>An <strong>array</strong> is a collection in brackets. A <strong>vector</strong> is a one-dimensional array. Commas are used to create a vector. By default, the vector is displayed vertically, but it is not a “column vector”.<sup>4</sup></p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><span class="co" style="color: #5E5E5E;">## vector</span></span>
 <span id="cb8-2">[<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">3</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -171,7 +171,7 @@ end
 </div>
 </div>
 <p>A <strong>matrix</strong> is a two-dimensional array. Numbers separated by spaces create one row of a <strong>matrix</strong>. This is not a vector.</p>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><span class="co" style="color: #5E5E5E;">## matrix</span></span>
 <span id="cb10-2">[<span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">2</span> <span class="fl" style="color: #AD0000;">3</span> <span class="fl" style="color: #AD0000;">4</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -180,7 +180,7 @@ end
 </div>
 </div>
 <p>Matrix rows separated by a semi-colon creates a multi-row matrix:</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><span class="co" style="color: #5E5E5E;">## matrix</span></span>
 <span id="cb12-2">[<span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">2</span> <span class="fl" style="color: #AD0000;">3</span> <span class="fl" style="color: #AD0000;">4</span>; <span class="fl" style="color: #AD0000;">6</span> <span class="fl" style="color: #AD0000;">7</span> <span class="fl" style="color: #AD0000;">8</span> <span class="fl" style="color: #AD0000;">9</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -190,7 +190,7 @@ end
 </div>
 </div>
 <p>A <strong>tuple</strong> is a collection in parentheses, and commas separate the elements. Tuples are immutable; their elements cannot be changed. Immutable objects increase computational speed.</p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><span class="co" style="color: #5E5E5E;">## tuple</span></span>
 <span id="cb14-2">(<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">3</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -198,7 +198,7 @@ end
 </div>
 </div>
 <p>Tuple elements can be named.</p>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><span class="co" style="color: #5E5E5E;">## named tuple</span></span>
 <span id="cb16-2">(four <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">4</span>, five <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">5</span>, six <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">6</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
@@ -206,7 +206,7 @@ end
 </div>
 </div>
 <p>The assigment operation (<code>=</code>) is used to <strong>bind</strong> data <em>values</em> to a <strong>variable</strong>. Binding in Julia is similar to binding in Python, but not in R.</p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1">x <span class="op" style="color: #5E5E5E;">=</span> [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>]</span>
 <span id="cb18-2">y <span class="op" style="color: #5E5E5E;">=</span> x</span>
 <span id="cb18-3">y</span></code></pre></div>
@@ -217,7 +217,7 @@ end
 </div>
 </div>
 <p>If we change an element in <code>x</code>, the same change occurs in <code>y</code> because same array was binded to the variables <code>x</code> and <code>y</code>.</p>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1">x[<span class="fl" style="color: #AD0000;">2</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">99</span></span>
 <span id="cb20-2"><span class="co" style="color: #5E5E5E;">## notice that y changes also</span></span>
 <span id="cb20-3">y</span></code></pre></div>
@@ -228,7 +228,7 @@ end
 </div>
 </div>
 <p>This is not the case in R:</p>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><span class="op" style="color: #5E5E5E;">&gt;</span> x <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">c</span>(<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>)</span>
 <span id="cb22-2"><span class="op" style="color: #5E5E5E;">&gt;</span> y <span class="op" style="color: #5E5E5E;">=</span> x</span>
 <span id="cb22-3"><span class="op" style="color: #5E5E5E;">&gt;</span> x[<span class="fl" style="color: #AD0000;">2</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">99</span></span>
@@ -238,7 +238,7 @@ end
 <span id="cb22-7">[<span class="fl" style="color: #AD0000;">1</span>] <span class="fl" style="color: #AD0000;">1</span> <span class="fl" style="color: #AD0000;">2</span></span></code></pre></div>
 </div>
 <p>To replicate the R experience in Julia we assign a copy of <code>x</code> to <code>y</code>.</p>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1">x <span class="op" style="color: #5E5E5E;">=</span> [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>]</span>
 <span id="cb23-2">y <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">copy</span>(x)</span>
 <span id="cb23-3">x[<span class="fl" style="color: #AD0000;">2</span>] <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">99</span></span>
@@ -249,7 +249,7 @@ end
  99</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1">y</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>2-element Vector{Int64}:
@@ -258,8 +258,8 @@ end
 </div>
 </div>
 </section>
-<section id="basic-functions" class="level4">
-<h4 class="anchored" data-anchor-id="basic-functions">Basic functions</h4>
+<section id="basic-functions" class="level4" data-number="2.2.2">
+<h4 data-number="2.2.2" class="anchored" data-anchor-id="basic-functions"><span class="header-section-number">2.2.2</span> Basic functions</h4>
 <p>In my blog posting “<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>” I demonstrated how to create a simple function to calculate the odds ratio using 3 methods with multiple dispatch.<sup>5</sup> I will use the function that calculates the odds ratio using the cross-product of 4 integers, and build a more useful function to illustrate some features of Julia.</p>
 <p>For an appropriately structured table, for example,</p>
 <table class="table">
@@ -286,7 +286,7 @@ end
 <p>the odds ratio is the cross-product:</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0AOR%20=%20%5Cfrac%7Ba%20d%7D%7Bb%20c%7D%0A"></p>
 <p>Here is a simple Julia function to calculate the odds ratio:</p>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><span class="kw" style="color: #003B4F;">function</span> <span class="fu" style="color: #4758AB;">oddsratio</span>(a, b, c, d)</span>
 <span id="cb27-2">    or <span class="op" style="color: #5E5E5E;">=</span> (a <span class="op" style="color: #5E5E5E;">*</span> d) <span class="op" style="color: #5E5E5E;">/</span> (b <span class="op" style="color: #5E5E5E;">*</span> c)</span>
 <span id="cb27-3">    <span class="cf" style="color: #003B4F;">return</span> or</span>
@@ -296,7 +296,7 @@ end
 </div>
 </div>
 <p>Because this is a simple function, it can also be created in an abbreviated form:</p>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><span class="fu" style="color: #4758AB;">oddsratio</span>(a, b, c, d) <span class="op" style="color: #5E5E5E;">=</span> (a <span class="op" style="color: #5E5E5E;">*</span> d) <span class="op" style="color: #5E5E5E;">/</span> (b <span class="op" style="color: #5E5E5E;">*</span> c)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>oddsratio (generic function with 1 method)</code></pre>
@@ -325,7 +325,7 @@ end
 </tbody>
 </table>
 <p>Let’s test the <code>oddsratio</code> function by passing four integers from our 2x2 table.</p>
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1"><span class="fu" style="color: #4758AB;">oddsratio</span>(<span class="fl" style="color: #AD0000;">12</span>, <span class="fl" style="color: #AD0000;">6</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">29</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>29.0</code></pre>
@@ -333,7 +333,7 @@ end
 </div>
 <p>The function <em>arguments</em>, <code>a</code>, <code>b</code>, <code>c</code>, and <code>d</code> are called <strong>positional</strong> arguments and are always required in the correct order.</p>
 <p>We now add a <strong>keyword</strong> argument which is optional. Keyword arguments are separated from the positional arguments by a semicolon (;). Any argument, positional or keyword, can be assigned a default value. We’ll create <code>oddsratio2</code>function to calculate a confidence interval using the Normal approximation. The keyword argument will have a default confidence level of 0.95.</p>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><span class="im" style="color: #00769E;">using</span> <span class="bu" style="color: null;">Distributions </span><span class="co" style="color: #5E5E5E;"># to access standard normal distribution </span></span>
 <span id="cb33-2"><span class="kw" style="color: #003B4F;">function</span> <span class="fu" style="color: #4758AB;">oddsratio2</span>(a, b, c, d; level <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0.95</span>)</span>
 <span id="cb33-3">    zv <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">quantile</span>(<span class="fu" style="color: #4758AB;">Normal</span>(), <span class="fl" style="color: #AD0000;">0.5</span><span class="fu" style="color: #4758AB;">*</span>(<span class="fl" style="color: #AD0000;">1</span> <span class="op" style="color: #5E5E5E;">+</span> level))</span>
@@ -349,31 +349,31 @@ end
 </div>
 </div>
 <p>By default, <code>oddsratio2</code> will calculate the 95% confidence interval:</p>
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><span class="fu" style="color: #4758AB;">oddsratio2</span>(<span class="fl" style="color: #AD0000;">12</span>, <span class="fl" style="color: #AD0000;">6</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">29</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>(or = 29.0, confint = (5.110695577009899, 164.55685675804662), level = 0.95)</code></pre>
 </div>
 </div>
 <p>I can also calculate 99% confidence intervals:</p>
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1">results <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">oddsratio2</span>(<span class="fl" style="color: #AD0000;">12</span>, <span class="fl" style="color: #AD0000;">6</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">29</span>; level <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">0.99</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>(or = 29.0, confint = (2.9619778898301936, 283.93189661797715), level = 0.99)</code></pre>
 </div>
 </div>
 <p>And we can index elements of the named tuple.</p>
-<div class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb39-1">results.confint</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>(2.9619778898301936, 283.93189661797715)</code></pre>
 </div>
 </div>
 </section>
-<section id="anonymous-functions" class="level4">
-<h4 class="anchored" data-anchor-id="anonymous-functions">Anonymous functions</h4>
+<section id="anonymous-functions" class="level4" data-number="2.2.3">
+<h4 data-number="2.2.3" class="anchored" data-anchor-id="anonymous-functions"><span class="header-section-number">2.2.3</span> Anonymous functions</h4>
 <p>Functions can be arguments to functions. For example, we will create a <code>times_two</code> function and past it to other functions.</p>
-<div class="cell" data-execution_count="23">
+<div class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb41-1"><span class="fu" style="color: #4758AB;">times_two</span>(x) <span class="op" style="color: #5E5E5E;">=</span> <span class="fl" style="color: #AD0000;">2</span> <span class="op" style="color: #5E5E5E;">*</span> x</span>
 <span id="cb41-2"><span class="fu" style="color: #4758AB;">map</span>(times_two, [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">8</span>])</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
@@ -383,13 +383,13 @@ end
  16</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="24">
+<div class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb43" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb43-1"><span class="fu" style="color: #4758AB;">sum</span>(times_two, [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">8</span>])</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>22</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="25">
+<div class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb45" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb45-1"><span class="im" style="color: #00769E;">using</span> <span class="bu" style="color: null;">StatsBase</span></span>
 <span id="cb45-2"><span class="fu" style="color: #4758AB;">mean</span>(times_two, [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">8</span>])</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
@@ -397,7 +397,7 @@ end
 </div>
 </div>
 <p>Alternatively, we can pass the <code>times_two</code> function as an anonymous function; that is, a function without a name.</p>
-<div class="cell" data-execution_count="26">
+<div class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb47" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb47-1"><span class="fu" style="color: #4758AB;">map</span>(x <span class="op" style="color: #5E5E5E;">-&gt;</span> <span class="fl" style="color: #AD0000;">2</span> <span class="op" style="color: #5E5E5E;">*</span> x, [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">8</span>])</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>3-element Vector{Int64}:
@@ -406,34 +406,34 @@ end
  16</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="27">
+<div class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb49" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb49-1"><span class="fu" style="color: #4758AB;">sum</span>(x <span class="op" style="color: #5E5E5E;">-&gt;</span> <span class="fl" style="color: #AD0000;">2</span> <span class="op" style="color: #5E5E5E;">*</span> x, [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">8</span>])</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>22</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="28">
+<div class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb51" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb51-1"><span class="fu" style="color: #4758AB;">mean</span>(x <span class="op" style="color: #5E5E5E;">-&gt;</span> <span class="fl" style="color: #AD0000;">2</span> <span class="op" style="color: #5E5E5E;">*</span> x, [<span class="fl" style="color: #AD0000;">1</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">8</span>])</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>7.333333333333333</code></pre>
 </div>
 </div>
 <p>We can even calculate the odds ratio as an anonymous function.</p>
-<div class="cell" data-execution_count="29">
+<div class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb53" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb53-1"><span class="fu" style="color: #4758AB;">map</span>((a, b, c, d) <span class="op" style="color: #5E5E5E;">-&gt;</span> (a <span class="op" style="color: #5E5E5E;">*</span> d)<span class="op" style="color: #5E5E5E;">/</span>(b <span class="op" style="color: #5E5E5E;">*</span> c), (<span class="fl" style="color: #AD0000;">12</span>, <span class="fl" style="color: #AD0000;">6</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">29</span>)<span class="op" style="color: #5E5E5E;">...</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>29.0</code></pre>
 </div>
 </div>
 <p>Notice I used a trick. By default, the <code>map</code> function maps and executes a function with elements of a collection (eg, <code>[1 ,2, 8]</code>). However, for the odds ratio calcuation, I need to map the arguments <code>(a, b, c, d)</code> to their values <code>(12, 6, 2, 29)</code>, <em>then</em> calculate the odds ratio. Therefore, I used the splat operator (<code>...</code>) to break up the collection of values so that they could be mapped to their arguments first. Although I used a tuple <code>(12, 6, 2, 29)</code>, an array also works <code>[12, 6, 2, 29]</code>.</p>
-<div class="cell" data-execution_count="30">
+<div class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb55" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb55-1"><span class="fu" style="color: #4758AB;">map</span>((a, b, c, d) <span class="op" style="color: #5E5E5E;">-&gt;</span> (a <span class="op" style="color: #5E5E5E;">*</span> d)<span class="op" style="color: #5E5E5E;">/</span>(b <span class="op" style="color: #5E5E5E;">*</span> c), [<span class="fl" style="color: #AD0000;">12</span>, <span class="fl" style="color: #AD0000;">6</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">29</span>]<span class="op" style="color: #5E5E5E;">...</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>29.0</code></pre>
 </div>
 </div>
 <p>The splat operator (<code>...</code>) converts <code>[12, 6, 2, 29]</code> to <code>12, 6, 2, 29</code> which is very convenient if the vector is very large. In this case, with only four integers, I could have passed the integers without the splat operator.</p>
-<div class="cell" data-execution_count="31">
+<div class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb57" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb57-1"><span class="fu" style="color: #4758AB;">map</span>((a, b, c, d) <span class="op" style="color: #5E5E5E;">-&gt;</span> (a <span class="op" style="color: #5E5E5E;">*</span> d)<span class="op" style="color: #5E5E5E;">/</span>(b <span class="op" style="color: #5E5E5E;">*</span> c), <span class="fl" style="color: #AD0000;">12</span>, <span class="fl" style="color: #AD0000;">6</span>, <span class="fl" style="color: #AD0000;">2</span>, <span class="fl" style="color: #AD0000;">29</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>29.0</code></pre>
@@ -442,10 +442,17 @@ end
 <p>Chapter 1 also covers other topics including loops, conditional expressions, and scoping. Chapters 3 to 7 cover practical tools for processing and managing data in Julia. I will focus the remainder of this book review on data frames.</p>
 </section>
 </section>
-<section id="chapters-813-working-with-data-frames" class="level3">
-<h3 class="anchored" data-anchor-id="chapters-813-working-with-data-frames">Chapters 8–13: Working with data frames</h3>
-<p>Writing In PROGRESS</p>
-<div class="cell" data-execution_count="32">
+<section id="chapters-813-working-with-data-frames" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="chapters-813-working-with-data-frames"><span class="header-section-number">2.3</span> Chapters 8–13: Working with data frames</h3>
+<p>[WORK IN PROGRESS]</p>
+<p>The author is a lead developer of the <code>DataFrames.jl</code> Julia package. So in these chapters he covers this package thoroughly and you will not be disappointed. I will over cover the following:</p>
+<ul>
+<li>Downloading a CSV data file from a website</li>
+<li>Reading a CSV file into a data frame</li>
+<li>Conducting some common analytic workflows</li>
+</ul>
+<p>The data set we will use is from National Health and Nutrition Examination Survey Data I Epidemiologic Follow-up Study (NHEFS). The version of the NHEFS data set we will use in from Professor Migual Hernan’s textbook “<a href="https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/">Causal Inference — What if</a>.”</p>
+<div class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb59" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb59-1"><span class="im" style="color: #00769E;">import</span> <span class="bu" style="color: null;">Downloads</span></span>
 <span id="cb59-2"><span class="im" style="color: #00769E;">using</span> <span class="bu" style="color: null;">CSV</span>, <span class="bu" style="color: null;">DataFrames</span></span>
 <span id="cb59-3"><span class="bu" style="color: null;">Downloads</span>.<span class="fu" style="color: #4758AB;">download</span>(<span class="st" style="color: #20794D;">"https://www.hsph.harvard.edu/miguel-hernan/wp-content"</span> <span class="op" style="color: #5E5E5E;">*</span></span>
@@ -462,15 +469,16 @@ end
  "252,0,0,,,,118,77,0,40,0,18,2,1" ⋯ 168 bytes ⋯ "994141,0.5493164063,0.79296875"</code></pre>
 </div>
 </div>
+<p>We used the <code>Download</code>, <code>CSV</code>, and <code>Dataframes</code> packages.</p>
 <p>has headers, if no header see p.&nbsp;191</p>
-<div class="cell" data-execution_count="33">
+<div class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb61" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb61-1">nhefs_df <span class="op" style="color: #5E5E5E;">=</span> CSV.<span class="fu" style="color: #4758AB;">read</span>(<span class="st" style="color: #20794D;">"nhefs.csv"</span>, DataFrame)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
 
 <div class="data-frame"><p>1,629 rows × 64 columns (omitted printing of 53 columns)</p><table class="data-frame table table-sm table-striped"><thead><tr><th></th><th>seqn</th><th>qsmk</th><th>death</th><th>yrdth</th><th>modth</th><th>dadth</th><th>sbp</th><th>dbp</th><th>sex</th><th>age</th><th>race</th></tr><tr><th></th><th title="Int64">Int64</th><th title="Int64">Int64</th><th title="Int64">Int64</th><th title="Union{Missing, Int64}">Int64?</th><th title="Union{Missing, Int64}">Int64?</th><th title="Union{Missing, Int64}">Int64?</th><th title="Union{Missing, Int64}">Int64?</th><th title="Union{Missing, Int64}">Int64?</th><th title="Int64">Int64</th><th title="Int64">Int64</th><th title="Int64">Int64</th></tr></thead><tbody><tr><th>1</th><td>233</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>175</td><td>96</td><td>0</td><td>42</td><td>1</td></tr><tr><th>2</th><td>235</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>123</td><td>80</td><td>0</td><td>36</td><td>0</td></tr><tr><th>3</th><td>244</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>115</td><td>75</td><td>1</td><td>56</td><td>1</td></tr><tr><th>4</th><td>245</td><td>0</td><td>1</td><td>85</td><td>2</td><td>14</td><td>148</td><td>78</td><td>0</td><td>68</td><td>1</td></tr><tr><th>5</th><td>252</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>118</td><td>77</td><td>0</td><td>40</td><td>0</td></tr><tr><th>6</th><td>257</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>141</td><td>83</td><td>1</td><td>43</td><td>1</td></tr><tr><th>7</th><td>262</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>132</td><td>69</td><td>1</td><td>56</td><td>0</td></tr><tr><th>8</th><td>266</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>100</td><td>53</td><td>1</td><td>29</td><td>0</td></tr><tr><th>9</th><td>419</td><td>0</td><td>1</td><td>84</td><td>10</td><td>13</td><td>163</td><td>79</td><td>0</td><td>51</td><td>0</td></tr><tr><th>10</th><td>420</td><td>0</td><td>1</td><td>86</td><td>10</td><td>17</td><td>184</td><td>106</td><td>0</td><td>43</td><td>0</td></tr><tr><th>11</th><td>428</td><td>1</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>135</td><td>89</td><td>0</td><td>43</td><td>0</td></tr><tr><th>12</th><td>431</td><td>0</td><td>1</td><td>92</td><td>11</td><td>28</td><td>118</td><td>69</td><td>0</td><td>34</td><td>0</td></tr><tr><th>13</th><td>434</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>127</td><td>80</td><td>1</td><td>54</td><td>0</td></tr><tr><th>14</th><td>443</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>168</td><td>105</td><td>1</td><td>51</td><td>1</td></tr><tr><th>15</th><td>446</td><td>1</td><td>1</td><td>88</td><td>1</td><td>3</td><td>141</td><td>79</td><td>1</td><td>71</td><td>0</td></tr><tr><th>16</th><td>455</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>128</td><td>71</td><td>1</td><td>47</td><td>0</td></tr><tr><th>17</th><td>457</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>126</td><td>68</td><td>0</td><td>56</td><td>0</td></tr><tr><th>18</th><td>596</td><td>1</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>151</td><td>80</td><td>1</td><td>48</td><td>0</td></tr><tr><th>19</th><td>603</td><td>0</td><td>1</td><td>89</td><td>9</td><td>1</td><td>166</td><td>74</td><td>0</td><td>47</td><td>0</td></tr><tr><th>20</th><td>604</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>129</td><td>81</td><td>1</td><td>47</td><td>0</td></tr><tr><th>21</th><td>605</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>114</td><td>63</td><td>0</td><td>25</td><td>0</td></tr><tr><th>22</th><td>616</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>131</td><td>79</td><td>1</td><td>38</td><td>0</td></tr><tr><th>23</th><td>618</td><td>1</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>125</td><td>71</td><td>1</td><td>56</td><td>1</td></tr><tr><th>24</th><td>619</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>122</td><td>86</td><td>0</td><td>28</td><td>0</td></tr><tr><th>25</th><td>620</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>142</td><td>48</td><td>0</td><td>60</td><td>0</td></tr><tr><th>26</th><td>804</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>119</td><td>72</td><td>1</td><td>27</td><td>0</td></tr><tr><th>27</th><td>806</td><td>1</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>144</td><td>76</td><td>0</td><td>47</td><td>0</td></tr><tr><th>28</th><td>813</td><td>0</td><td>1</td><td>85</td><td>12</td><td>5</td><td>161</td><td>84</td><td>0</td><td>53</td><td>0</td></tr><tr><th>29</th><td>816</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>125</td><td>87</td><td>0</td><td>33</td><td>0</td></tr><tr><th>30</th><td>818</td><td>0</td><td>0</td><td><em>missing</em></td><td><em>missing</em></td><td><em>missing</em></td><td>131</td><td>82</td><td>0</td><td>41</td><td>0</td></tr><tr><th>⋮</th><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr></tbody></table></div>
 </div>
 </div>
-<div class="cell" data-execution_count="34">
+<div class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb62" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb62-1">nhefs_desc <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">describe</span>(nhefs_df)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
 
@@ -479,8 +487,8 @@ end
 </div>
 </section>
 </section>
-<section id="book-author-updates" class="level2">
-<h2 class="anchored" data-anchor-id="book-author-updates">Book author updates</h2>
+<section id="book-updates" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="book-updates"><span class="header-section-number">3</span> Book updates</h2>
 <ol type="1">
 <li>Hunting for bugs in Julia for Data Analysis. Medium. March 3, 2023. Available from <a href="https://medium.com/bkamins/hunting-for-bugs-in-julia-for-data-analysis-ed6f4d1ce6bd">https://medium.com/bkamins/hunting-for-bugs-in-julia-for-data-analysis-ed6f4d1ce6bd</a></li>
 <li>Errata and source code for book is available from <a href="https://github.com/bkamins/JuliaForDataAnalysis">https://github.com/bkamins/JuliaForDataAnalysis</a></li>
