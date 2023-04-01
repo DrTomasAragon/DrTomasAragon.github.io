@@ -9,8 +9,1190 @@
 <link>https://drtomasaragon.github.io/index.html</link>
 <atom:link href="https://drtomasaragon.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>A population health blog</description>
-<generator>quarto-1.3.290</generator>
-<lastBuildDate>Fri, 24 Mar 2023 07:00:00 GMT</lastBuildDate>
+<generator>quarto-1.3.296</generator>
+<lastBuildDate>Fri, 31 Mar 2023 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Criteria weights for decision making—The easy way!</title>
+  <dc:creator>Tomás Aragón</dc:creator>
+  <link>https://drtomasaragon.github.io/posts/2023-03-31-criteria-weights-for-decisions/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>At the California Department of Public Health, we promote <a href="../2021-03-13-decision-intelligence01/index.html">decision intelligence</a> (DI)—improving how we make team decisions to find, select, and solve problems and to improve outcomes. A foundational component of DI is decision quality—the six requirements of good decision making. At a minimum, a decision quality checklist (Table&nbsp;1) improves the quality of decisions at any stage of problem solving. A good decision is only as strong as its weakest link.</p>
+<div id="tbl-dqr1" class="anchored">
+<table class="table">
+<caption>Table&nbsp;1: Decision quality requirements engages multiple disciplines and skillsets</caption>
+<colgroup>
+<col style="width: 6%">
+<col style="width: 18%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>No.</th>
+<th>Requirement</th>
+<th>Key questions to ask</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Frame</td>
+<td>What are we deciding and why?</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Information</td>
+<td>What do we need to know?</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Alternatives</td>
+<td>What creative choices do we have?</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Reasoning</td>
+<td>Are we thinking straight?</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Commitment</td>
+<td>Is there commitment to action? Are we thinking straight?</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Prospects</td>
+<td>What future states do we care about?</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Making higher quality decisions as a group can be challenging. Our brains prefer intuitive decision making. Deliberations are cognitively exhausting, especially in the face of competing objectives, uncertainty, and time constraints. That is why, unfortunately, decision-making is often deferred to an authority figure. It’s better to embrace team decision making but practice with simple tools and methods that promote group engagement, deliberation, and decision quality.</p>
+</section>
+<section id="making-single-and-multi-attribute-decisions" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="making-single-and-multi-attribute-decisions"><span class="header-section-number">2</span> Making single and multi-attribute decisions</h2>
+<section id="single-attribute-decision" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="single-attribute-decision"><span class="header-section-number">2.1</span> Single-attribute decision</h3>
+<p>Suppose our team needs to select from several alternatives and it will be based on a <strong>single attribute</strong>; for example, choosing one of five available colors to paint our office. That attribute—color—becomes our single criterion and we apply the ranking method illustrated below. In this example the single attribute (color) represents the alternatives (five colors to choose from).</p>
+</section>
+<section id="multi-attribute-decision" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="multi-attribute-decision"><span class="header-section-number">2.2</span> Multi-attribute decision</h3>
+<p>However, more commonly, based on our <strong>frame</strong> (values, objectives, and key results), our team needs to select from among several <strong>alternatives</strong>, each of which has <strong>mutliple attributes</strong>. Selection examples include buying a smartphone, hiring an employee, or selecting a vendor. As individuals and as a group, we have preferences for these attributes based on what we know (<strong>information</strong>) and what consequences and impacts we care about (<strong>prospects</strong>). We need sound <strong>reasoning</strong> but it will not require a complex decision analysis. Engaging the team in fair and transparent deliberative decision making builds trust, consensus, and <strong>commitment</strong>.</p>
+<p>Our main task is to (a) <strong>develop criteria</strong> based on these attributes, (b) <strong>weight the criteria</strong> based on importance to us (preference), and (c) <strong>rate the alternatives</strong> based on the criteria and evidence (data, community, experts, analysis). Ideally, the criteria should be weighted without any knowledge of the alternatives. This is to prevent evaluators from biasing the criteria weights in favor of their favorite alternative.</p>
+<p>In this blog posting I show how to weight criteria using a simple ranking method. In a future blog post, I will show how to apply weighted criteria to rank and select alternatives. This first step, weighting criteria, is very powerful and practical. We will use a trivial example to nail down the concepts.</p>
+<p>Now, suppose we wish to buy a car and our choices are a Honda Civic, and Subaru Impreza, or Toyota Corolla. We have data on the following attributes: safety (S), mileage (M), reliability (R), color (C), price (P), and resale value (V). Table&nbsp;2 summarizes the DQ requirements for buying our car.</p>
+<div id="tbl-car" class="anchored">
+<table class="table">
+<caption>Table&nbsp;2: Decision quality requirements for buying a car</caption>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 28%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Key question</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Frame</td>
+<td>What are we deciding and why?</td>
+<td>Buy a car we need (vs.&nbsp;want)</td>
+</tr>
+<tr class="even">
+<td>Choices</td>
+<td>What choices do we have?</td>
+<td>Civic, Corolla, or Impreza</td>
+</tr>
+<tr class="odd">
+<td>Results</td>
+<td>What consequences do we care about?</td>
+<td>Car with combination of attributes that best meets our needs, given trade-offs</td>
+</tr>
+<tr class="even">
+<td>Data</td>
+<td>What do we need to know?</td>
+<td>Data and/or expert knowledge</td>
+</tr>
+<tr class="odd">
+<td>Reasoning</td>
+<td>Are we thinking straight?</td>
+<td>Multi-criteria decision method</td>
+</tr>
+<tr class="even">
+<td>Commitment</td>
+<td>Is there commitment to action?</td>
+<td>Participatory, fair, transparent, objective</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="calculating-criteria-weightsthe-easy-way" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="calculating-criteria-weightsthe-easy-way"><span class="header-section-number">3</span> Calculating criteria weights—the easy way</h2>
+<p>Group deliberative decision-making is cognitively exhausting. So, anything you can do to make the process easier will keep team members engaged. Do not let “perfection become the enemy of the good”. The easiest way to generate criteria weights from a team of evaluators is to use a rank ordinal method <span class="citation" data-cites="Danielson2017_doi10.1007/978-3-319-52624-9_2">[1]</span>.</p>
+<p>Give evaluators small pieces of paper with one criterion printed on on each. If we have five criteria, they get five small pieces of paper. Have them rank them from top to bottom. Once they have ranked them, tape their ranking onto an 8.5in x 11in paper and hand to the facilitator. This ranking is entered into the computer for analysis (see below).</p>
+<section id="ratio-ordinal-method-in-julia" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="ratio-ordinal-method-in-julia"><span class="header-section-number">3.1</span> Ratio ordinal method in Julia</h3>
+<p>I will demonstrate this method using the Julia language. This method can also be implemented using R, Python, or Microsoft Excel.</p>
+<p>For rating the cars we have six criteria (attributes) for which we need to calculate weights:</p>
+<ol type="1">
+<li>Color (C)</li>
+<li>Mileage (M)</li>
+<li>Price (P)</li>
+<li>Reliability (R)</li>
+<li>Safety (S)</li>
+<li>Value, resale (V)</li>
+</ol>
+<p>We have five evaluators that will rank the criteria based on their knowledge, experience, expertise, and wisdom. It is much better for them to rank the criteria independently and without thinking about specific cars, otherwise they may game (bias) the weighting.</p>
+<p>Here are the steps:</p>
+<ol type="1">
+<li>Select a ranking method to calculate weights for a specific number of criteria, in this case we have six. We will write and use a Julia function that implements the rank ordinal method from <span class="citation" data-cites="Danielson2017_doi10.1007/978-3-319-52624-9_2">[1]</span>.</li>
+<li>Have each evaluator independently rank the criteria.</li>
+<li>Use Julia to calculate the final criteria weights. We will use the <em>split-apply-combine</em> workflow that I introduced in a previous <a href="../2023-02-20-julia-for-data-analysis/index.html">blog post</a> and book review <span class="citation" data-cites="Kaminski2023-isbn978-1633439368">[2]</span>.</li>
+</ol>
+<section id="step-1-the-sr-method-for-generating-criteria-weights" class="level4" data-number="3.1.1">
+<h4 data-number="3.1.1" class="anchored" data-anchor-id="step-1-the-sr-method-for-generating-criteria-weights"><span class="header-section-number">3.1.1</span> Step 1: The SR method for generating criteria weights</h4>
+<p>Here is the formula where <img src="https://latex.codecogs.com/png.latex?N"> is the number of criteria, and <img src="https://latex.codecogs.com/png.latex?w_i%5E%7BSR%7D"> is the weight for the <img src="https://latex.codecogs.com/png.latex?i%5E%7Bth%7D"> criterion.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Aw_i%5E%7BSR%7D%20=%20%5Cfrac%7B1/i%20+%20%5Cfrac%7BN+1-i%7D%7BN%7D%7D%7B%5Csum_%7Bj=1%7D%5EN%20(1/i%20+%20%5Cfrac%7BN+1-i%7D%7BN%7D)%7D%0A"></p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">using</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">DataFrames</span></span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">using</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">StatsBase</span></span>
+<span id="cb1-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calculate_rank_weights</span>(n<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">Int64</span>)</span>
+<span id="cb1-4">    num <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">zeros</span>(n)</span>
+<span id="cb1-5">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span>n</span>
+<span id="cb1-6">        num[i] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> (<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>i) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> ( (n <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> i) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> n )</span>
+<span id="cb1-7">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">end</span></span>
+<span id="cb1-8">    wi <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> num <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(num)</span>
+<span id="cb1-9">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">return</span> wi</span>
+<span id="cb1-10"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">end</span></span>
+<span id="cb1-11">wi <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calculate_rank_weights</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>6-element Vector{Float64}:
+ 0.3361344537815126
+ 0.22408963585434175
+ 0.1680672268907563
+ 0.12605042016806722
+ 0.0896358543417367
+ 0.05602240896358543</code></pre>
+</div>
+</div>
+<p>The weights sum to 1, as expected.</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">round</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(wi))</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>1.0</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="step-2-evaluators-rank-the-criteria" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="step-2-evaluators-rank-the-criteria"><span class="header-section-number">3.2</span> Step 2: Evaluators rank the criteria</h3>
+<p>Five evaluators rank the criteria based on their expertise.</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1">eval1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"M"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"C"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"S"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"R"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"V"</span>]</span>
+<span id="cb5-2">eval2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"M"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"C"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"S"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"R"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"V"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>]</span>
+<span id="cb5-3">eval3 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"C"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"V"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"M"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"R"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"S"</span>]</span>
+<span id="cb5-4">eval4 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"M"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"V"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"C"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"S"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"R"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>]</span>
+<span id="cb5-5">eval5 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"S"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"C"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"R"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"M"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"V"</span>]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>6-element Vector{String}:
+ "S"
+ "P"
+ "C"
+ "R"
+ "M"
+ "V"</code></pre>
+</div>
+</div>
+<p>Next, we organize the evaluator criteria rankings and the SR method criteria weights into a data frame with three columns:</p>
+<ul>
+<li>evaluators (optional)</li>
+<li>evaluator_rankings (required)</li>
+<li>weights (required)</li>
+</ul>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1">ne <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>; <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># number of evaluators</span></span>
+<span id="cb7-2">nc <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>; <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># number for criteria</span></span>
+<span id="cb7-3">evaluators <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">repeat</span>([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"eval"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.*</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">string</span>.(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span>ne)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">...</span>], inner<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">repeat</span>([nc]))</span>
+<span id="cb7-4">evaluator_rankings <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">vcat</span>( eval1, eval2, eval3, eval4, eval5 )</span>
+<span id="cb7-5">weights <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">repeat</span>( wi, ne )</span>
+<span id="cb7-6">df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">DataFrame</span>( <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">hcat</span>(evaluators, evaluator_rankings, weights), </span>
+<span id="cb7-7">    [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"evaluator"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"criteria"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"weight"</span>])</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="data-frame"><p>30 rows × 3 columns</p>
+<table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">evaluator</th>
+<th data-quarto-table-cell-role="th">criteria</th>
+<th data-quarto-table-cell-role="th">weight</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>eval1</td>
+<td>M</td>
+<td>0.336134</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>eval1</td>
+<td>C</td>
+<td>0.22409</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>eval1</td>
+<td>P</td>
+<td>0.168067</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4</td>
+<td>eval1</td>
+<td>S</td>
+<td>0.12605</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5</td>
+<td>eval1</td>
+<td>R</td>
+<td>0.0896359</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6</td>
+<td>eval1</td>
+<td>V</td>
+<td>0.0560224</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7</td>
+<td>eval2</td>
+<td>M</td>
+<td>0.336134</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">8</td>
+<td>eval2</td>
+<td>C</td>
+<td>0.22409</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">9</td>
+<td>eval2</td>
+<td>S</td>
+<td>0.168067</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">10</td>
+<td>eval2</td>
+<td>R</td>
+<td>0.12605</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">11</td>
+<td>eval2</td>
+<td>V</td>
+<td>0.0896359</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">12</td>
+<td>eval2</td>
+<td>P</td>
+<td>0.0560224</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">13</td>
+<td>eval3</td>
+<td>C</td>
+<td>0.336134</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">14</td>
+<td>eval3</td>
+<td>V</td>
+<td>0.22409</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">15</td>
+<td>eval3</td>
+<td>P</td>
+<td>0.168067</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">16</td>
+<td>eval3</td>
+<td>M</td>
+<td>0.12605</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">17</td>
+<td>eval3</td>
+<td>R</td>
+<td>0.0896359</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">18</td>
+<td>eval3</td>
+<td>S</td>
+<td>0.0560224</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">19</td>
+<td>eval4</td>
+<td>M</td>
+<td>0.336134</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">20</td>
+<td>eval4</td>
+<td>V</td>
+<td>0.22409</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">21</td>
+<td>eval4</td>
+<td>C</td>
+<td>0.168067</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">22</td>
+<td>eval4</td>
+<td>S</td>
+<td>0.12605</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">23</td>
+<td>eval4</td>
+<td>R</td>
+<td>0.0896359</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">24</td>
+<td>eval4</td>
+<td>P</td>
+<td>0.0560224</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25</td>
+<td>eval5</td>
+<td>S</td>
+<td>0.336134</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">26</td>
+<td>eval5</td>
+<td>P</td>
+<td>0.22409</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">27</td>
+<td>eval5</td>
+<td>C</td>
+<td>0.168067</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">28</td>
+<td>eval5</td>
+<td>R</td>
+<td>0.12605</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">29</td>
+<td>eval5</td>
+<td>M</td>
+<td>0.0896359</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">30</td>
+<td>eval5</td>
+<td>V</td>
+<td>0.0560224</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-calculate-mean-criteria-weights" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="step-3-calculate-mean-criteria-weights"><span class="header-section-number">3.3</span> Step 3: Calculate mean criteria weights</h3>
+<p>Calculate mean criteria weights using split-apply-combine workflow. In other words, stratifying by criterion, what is the mean weight for each criterion (attribute)?</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">## split</span></span>
+<span id="cb8-2">gdf <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">groupby</span>(df, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span>criteria)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<p><b>GroupedDataFrame with 6 groups based on key: criteria</b></p><p><i>First Group (5 rows): criteria = "M"</i></p><div class="data-frame">
+<table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">evaluator</th>
+<th data-quarto-table-cell-role="th">criteria</th>
+<th data-quarto-table-cell-role="th">weight</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>eval1</td>
+<td>M</td>
+<td>0.336134</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>eval2</td>
+<td>M</td>
+<td>0.336134</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>eval3</td>
+<td>M</td>
+<td>0.12605</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4</td>
+<td>eval4</td>
+<td>M</td>
+<td>0.336134</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5</td>
+<td>eval5</td>
+<td>M</td>
+<td>0.0896359</td>
+</tr>
+</tbody>
+</table>
+<p>⋮</p>
+<p><em>Last Group (5 rows): criteria = "V"</em></p>
+<div class="data-frame">
+<table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">evaluator</th>
+<th data-quarto-table-cell-role="th">criteria</th>
+<th data-quarto-table-cell-role="th">weight</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>eval1</td>
+<td>V</td>
+<td>0.0560224</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>eval2</td>
+<td>V</td>
+<td>0.0896359</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>eval3</td>
+<td>V</td>
+<td>0.22409</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4</td>
+<td>eval4</td>
+<td>V</td>
+<td>0.22409</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5</td>
+<td>eval5</td>
+<td>V</td>
+<td>0.0560224</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">## combine and apply </span></span>
+<span id="cb9-2">crit_weights <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">combine</span>(gdf, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span>weight <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=&gt;</span> mean)</span>
+<span id="cb9-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sort!</span>(crit_weights, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span>weight_mean, rev <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">true</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="data-frame"><p>6 rows × 2 columns</p>
+<table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">criteria</th>
+<th data-quarto-table-cell-role="th">weight_mean</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Float64">Float64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>M</td>
+<td>0.244818</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>C</td>
+<td>0.22409</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>S</td>
+<td>0.162465</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4</td>
+<td>P</td>
+<td>0.134454</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5</td>
+<td>V</td>
+<td>0.129972</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6</td>
+<td>R</td>
+<td>0.104202</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>These are the final criteria weights and, as expected, they sum to 1.</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">round</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(crit_weights.weight_mean))</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>1.0</code></pre>
+</div>
+</div>
+<p>In this example, mileage (M) has the highest weight (24.5%) and reliability (R) has the lowest weight (10.4%).</p>
+<p>In a future blog, I will show how to score the alternatives (Honda Civic, Toyota Corolla, and Subaru Impreza) with these weighted criteria, and then making a final ranking of which car to select.</p>
+</section>
+</section>
+<section id="appendix" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="appendix"><span class="header-section-number">4</span> Appendix</h2>
+<p>Prefilling arrays:</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">zeros</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>2×3 Matrix{Float64}:
+ 0.0  0.0  0.0
+ 0.0  0.0  0.0</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ones</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>2×3 Matrix{Float64}:
+ 1.0  1.0  1.0
+ 1.0  1.0  1.0</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fill</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, (<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>))</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>2×3 Matrix{Int64}:
+ 1  1  1
+ 1  1  1</code></pre>
+</div>
+</div>
+<p>Vertical concatenation (<code>vcat</code>) and Horizontal concatenation (<code>hcat</code>):</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>]</span>
+<span id="cb18-2">y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>]</span>
+<span id="cb18-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">vcat</span>(x, y)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>6-element Vector{Int64}:
+ 1
+ 2
+ 4
+ 4
+ 5
+ 6</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">hcat</span>(x, y)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>3×2 Matrix{Int64}:
+ 1  4
+ 2  5
+ 4  6</code></pre>
+</div>
+</div>
+<p><code>!</code> operator to signify mutating (permanently changing) an object:</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">## combine and apply </span></span>
+<span id="cb22-2">crit_weights <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">combine</span>(gdf, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span>weight <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=&gt;</span> mean)</span>
+<span id="cb22-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sort!</span>(crit_weights, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span>weight_mean, rev <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">true</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="data-frame"><p>6 rows × 2 columns</p>
+<table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">criteria</th>
+<th data-quarto-table-cell-role="th">weight_mean</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Float64">Float64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>M</td>
+<td>0.244818</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>C</td>
+<td>0.22409</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>S</td>
+<td>0.162465</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4</td>
+<td>P</td>
+<td>0.134454</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5</td>
+<td>V</td>
+<td>0.129972</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6</td>
+<td>R</td>
+<td>0.104202</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The <code>repeat</code> function:</p>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">repeat</span>([<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>], <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>6-element Vector{Int64}:
+ 2
+ 5
+ 2
+ 5
+ 2
+ 5</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">## equivalent to above</span></span>
+<span id="cb25-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">repeat</span>([<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>], outer<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">repeat</span>([<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]))</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>6-element Vector{Int64}:
+ 2
+ 5
+ 2
+ 5
+ 2
+ 5</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">repeat</span>([<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>], inner<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">repeat</span>([<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]))</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>6-element Vector{Int64}:
+ 2
+ 2
+ 2
+ 5
+ 5
+ 5</code></pre>
+</div>
+</div>
+<p>Generating array of strings. Note how the splat (<code>...</code>) operator works.</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1">[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"eval"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.*</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">string</span>.(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>1-element Vector{Vector{String}}:
+ ["eval1", "eval2", "eval3"]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1">[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"eval"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.*</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">string</span>.(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">...</span>]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>3-element Vector{String}:
+ "eval1"
+ "eval2"
+ "eval3"</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">repeat</span>([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"eval"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.*</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">string</span>.(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)], inner<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">repeat</span>([<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>]))</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>2-element Vector{Vector{String}}:
+ ["eval1", "eval2", "eval3"]
+ ["eval1", "eval2", "eval3"]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">repeat</span>([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"eval"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.*</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">string</span>.(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">...</span>], inner<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">repeat</span>([<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>]))</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>6-element Vector{String}:
+ "eval1"
+ "eval1"
+ "eval2"
+ "eval2"
+ "eval3"
+ "eval3"</code></pre>
+</div>
+</div>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body">
+<div id="ref-Danielson2017_doi10.1007/978-3-319-52624-9_2" class="csl-entry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Danielson M, Ekenberg L. Trade-offs for ordinal ranking methods in multi-criteria decisions. In: Bajwa D, Koeszegi ST, Vetschera R, editors. Group decision and negotiation Theory, empirical evidence, and application [Internet]. Cham: Springer International Publishing; 2017. p. 16–27. Available from: <a href="https://doi.org/10.1007/978-3-319-52624-9_2">https://doi.org/10.1007/978-3-319-52624-9_2</a></div>
+</div>
+<div id="ref-Kaminski2023-isbn978-1633439368" class="csl-entry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Kaminski B. Julia for data analysis. New York, NY: Manning Publications; 2023. </div>
+</div>
+</div></section></div> ]]></description>
+  <category>Julia</category>
+  <category>R</category>
+  <category>Python</category>
+  <category>Data science</category>
+  <category>Programming</category>
+  <category>Decision intelligence</category>
+  <category>Scientific computing</category>
+  <guid>https://drtomasaragon.github.io/posts/2023-03-31-criteria-weights-for-decisions/index.html</guid>
+  <pubDate>Fri, 31 Mar 2023 07:00:00 GMT</pubDate>
+  <media:content url="https://drtomasaragon.github.io/posts/2023-03-31-criteria-weights-for-decisions/images/book_cover_julia_for_data_analysis_1400x865.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Showing “respect for people”</title>
   <dc:creator>Tomás Aragón</dc:creator>
@@ -316,7 +1498,7 @@ Note
 
 <section id="overview" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
-<p>Julia is an open source, general purpose programming language for scientific computing and is well suited for data science. I taught R programming for several years at the UC Berkeley School of Public Health. I recently posted a blog entry on why I switched from R to Julia (“<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>”). In this blog entry I review the book “<a href="https://www.manning.com/books/julia-for-data-analysis">Julia for Data Analysis</a>” by Bogumit Kaminski. In short, this is an outstanding book that I highly recommend without any reservations (5/5 stars). This review is a working blog that I will be updating with highlights from the book.</p>
+<p>Julia is an open source, general purpose programming language for scientific computing and is well suited for data science. I taught R programming for several years at the UC Berkeley School of Public Health. I recently posted a blog entry on why I switched from R to Julia (“<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>”). In this blog entry I review the book “<a href="https://www.manning.com/books/julia-for-data-analysis">Julia for Data Analysis</a>” by Bogumit Kaminski <span class="citation" data-cites="Kaminski2023-isbn978-1633439368">[1]</span>. In short, this is an outstanding book that I highly recommend without any reservations (5/5 stars). This review is a working blog that I will be updating with highlights from the book.</p>
 <p>For data science, Julia is exploding in popularity and there are numerous outstanding <a href="https://julialang.org/learning/">resources for learning Julia</a>, including books, videos, and blog postings. I purchased the print and eBook option which includes an online “liveBook” which is easy to read. However, we cannot beat having a book in hand to read and markup. The author provides a GitHub <a href="https://github.com/bkamins/JuliaForDataAnalysis">repository</a> with code and data files.</p>
 <p>The author, Bogumit Kaminski, is a core developer of the <a href="https://dataframes.juliadata.org/stable/">DataFrames.jl</a> package. He is an associate professor and head of the Decision Support and Analysis Unit at the SGH Warsaw School of Economics, as well as adjunct professor at the data science laboratory, Ryerson University, Toronto.</p>
 <p>This book is perfect for population health data scientists already familiar with R or Python, or already have basic proficiency with Julia but need an in depth and systematic introduction to Julia for data science.</p>
@@ -962,7 +2144,7 @@ font-style: inherit;">*</span> c)</span></code></pre></div>
 <pre><code>oddsratio (generic function with 1 method)</code></pre>
 </div>
 </div>
-<p>Here is data from a case-control study <span class="citation" data-cites="Aragon2003_pmid12515584">[1]</span>:</p>
+<p>Here is data from a case-control study <span class="citation" data-cites="Aragon2003_pmid12515584">[2]</span>:</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -2361,8 +3543,11 @@ font-style: inherit;">:</span>]</span></code></pre></div>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body">
+<div id="ref-Kaminski2023-isbn978-1633439368" class="csl-entry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Kaminski B. Julia for data analysis. New York, NY: Manning Publications; 2023. </div>
+</div>
 <div id="ref-Aragon2003_pmid12515584" class="csl-entry">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Aragón TJ, Novotny S, Enanoria W, Vugia DJ, Khalakdina A, Katz MH. Endemic cryptosporidiosis and exposure to municipal tap water in persons with acquired immunodeficiency syndrome (<span>AIDS</span>): A case-control study. <span>BMC</span> Public Health [Internet]. 2003 Jan;3(1). Available from: <a href="https://doi.org/10.1186/1471-2458-3-2">https://doi.org/10.1186/1471-2458-3-2</a></div>
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Aragón TJ, Novotny S, Enanoria W, Vugia DJ, Khalakdina A, Katz MH. Endemic cryptosporidiosis and exposure to municipal tap water in persons with acquired immunodeficiency syndrome (<span>AIDS</span>): A case-control study. <span>BMC</span> Public Health [Internet]. 2003 Jan;3(1). Available from: <a href="https://doi.org/10.1186/1471-2458-3-2">https://doi.org/10.1186/1471-2458-3-2</a></div>
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
