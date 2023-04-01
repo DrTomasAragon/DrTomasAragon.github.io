@@ -156,13 +156,13 @@
 <p>We have five evaluators that will rank the criteria based on their knowledge, experience, expertise, and wisdom. It is much better for them to rank the criteria independently and without thinking about specific cars, otherwise they may game (bias) the weighting.</p>
 <p>Here are the steps:</p>
 <ol type="1">
-<li>Select a ranking method to calculate weights for a specific number of criteria, in this case we have six. We will write and use a Julia function that implements the rank ordinal method from <span class="citation" data-cites="Danielson2017_doi10.1007/978-3-319-52624-9_2">[1]</span>.</li>
+<li>Select a ranking method to calculate weights for a specific number of criteria, in this case we have six. We will write and use a Julia function that implements the SR method from <span class="citation" data-cites="Danielson2017_doi10.1007/978-3-319-52624-9_2">[1]</span>.</li>
 <li>Have each evaluator independently rank the criteria.</li>
 <li>Use Julia to calculate the final criteria weights. We will use the <em>split-apply-combine</em> workflow that I introduced in a previous <a href="../2023-02-20-julia-for-data-analysis/index.html">blog post</a> and book review <span class="citation" data-cites="Kaminski2023-isbn978-1633439368">[2]</span>.</li>
 </ol>
 <section id="step-1-the-sr-method-for-generating-criteria-weights" class="level4" data-number="3.1.1">
 <h4 data-number="3.1.1" class="anchored" data-anchor-id="step-1-the-sr-method-for-generating-criteria-weights"><span class="header-section-number">3.1.1</span> Step 1: The SR method for generating criteria weights</h4>
-<p>Here is the formula where <img src="https://latex.codecogs.com/png.latex?N"> is the number of criteria, and <img src="https://latex.codecogs.com/png.latex?w_i%5E%7BSR%7D"> is the weight for the <img src="https://latex.codecogs.com/png.latex?i%5E%7Bth%7D"> criterion.</p>
+<p>Here is the formula where <img src="https://latex.codecogs.com/png.latex?N"> is the number of criteria, and <img src="https://latex.codecogs.com/png.latex?w_i%5E%7BSR%7D"> is the weight for the <img src="https://latex.codecogs.com/png.latex?i%5E%7Bth%7D"> criterion <span class="citation" data-cites="Danielson2017_doi10.1007/978-3-319-52624-9_2">[1]</span>.<sup>1</sup></p>
 <p><img src="https://latex.codecogs.com/png.latex?%0Aw_i%5E%7BSR%7D%20=%20%5Cfrac%7B1/i%20+%20%5Cfrac%7BN+1-i%7D%7BN%7D%7D%7B%5Csum_%7Bj=1%7D%5EN%20(1/i%20+%20%5Cfrac%7BN+1-i%7D%7BN%7D)%7D%0A"></p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="im" style="color: #00769E;
@@ -1174,6 +1174,7 @@ font-style: inherit;">2</span>]))</span></code></pre></div>
 
 </section>
 
+
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body">
 <div id="ref-Danielson2017_doi10.1007/978-3-319-52624-9_2" class="csl-entry">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Danielson M, Ekenberg L. Trade-offs for ordinal ranking methods in multi-criteria decisions. In: Bajwa D, Koeszegi ST, Vetschera R, editors. Group decision and negotiation Theory, empirical evidence, and application [Internet]. Cham: Springer International Publishing; 2017. p. 16–27. Available from: <a href="https://doi.org/10.1007/978-3-319-52624-9_2">https://doi.org/10.1007/978-3-319-52624-9_2</a></div>
@@ -1181,7 +1182,12 @@ font-style: inherit;">2</span>]))</span></code></pre></div>
 <div id="ref-Kaminski2023-isbn978-1633439368" class="csl-entry">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline">Kaminski B. Julia for data analysis. New York, NY: Manning Publications; 2023. </div>
 </div>
-</div></section></div> ]]></description>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The SR method was selected because it was the best performing.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
   <category>Julia</category>
   <category>R</category>
   <category>Python</category>
