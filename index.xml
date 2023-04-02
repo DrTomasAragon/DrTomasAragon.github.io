@@ -156,7 +156,7 @@
 <p>We have five evaluators that will rank the criteria based on their knowledge, experience, expertise, and wisdom. It is much better for them to rank the criteria independently and without thinking about specific cars, otherwise they may game (bias) the weighting.</p>
 <p>Here are the steps:</p>
 <ol type="1">
-<li>Select a ranking method to calculate weights for a specific number of criteria, in this case we have six. We will write and use a Julia function that implements the SR method from <span class="citation" data-cites="Danielson2017_doi10.1007/978-3-319-52624-9_2">[1]</span>.</li>
+<li>Select a ranking method to calculate weights for a specific number of criteria, in this case we have six criteria. We will write and use a Julia function that implements the SR method from <span class="citation" data-cites="Danielson2017_doi10.1007/978-3-319-52624-9_2">[1]</span>.</li>
 <li>Have each evaluator independently rank the criteria.</li>
 <li>Use Julia to calculate the final criteria weights. We will use the <em>split-apply-combine</em> workflow that I introduced in a previous <a href="../2023-02-20-julia-for-data-analysis/index.html">blog post</a> and book review <span class="citation" data-cites="Kaminski2023-isbn978-1633439368">[2]</span>.</li>
 </ol>
@@ -1227,9 +1227,9 @@ Note
 <li><strong>Respect for people</strong> (staff, community, client, patient, customer)</li>
 <li><strong>Continuous improvement</strong> (<a href="https://www.lean.org/lexicon-terms/kata/">improvement kata</a>)</li>
 <li><strong>Scientific thinking</strong>, <strong>problem solving</strong>, and <strong>innovation</strong> (<a href="https://www.lean.org/?s=a3+thinking">A3 thinking</a>)</li>
-<li>Management by <strong>Objectives</strong> and <strong>Key Results</strong> (<a href="https://www.whatmatters.com/faqs/okr-meaning-definition-example">OKRs</a>)</li>
-<li>Elimination of <strong>waste</strong> and <strong>undesired variability</strong> in inputs, processes, outputs, and outcomes</li>
+<li>Management by <strong>Objectives</strong> (goals) and <strong>Key Results</strong> (measures) (<a href="https://www.whatmatters.com/faqs/okr-meaning-definition-example">OKRs</a>)</li>
 <li>Being <strong>agile</strong>, <strong>adaptive</strong>, and <strong>responsive</strong> to meet challenges and opportunities</li>
+<li>Elimination of <strong>waste</strong> and <strong>undesired variability</strong> in inputs, processes, outputs, and outcomes</li>
 </ol>
 <p>To be a lean organization, these six components are required, and if one is missing, organizational effectiveness and mission will suffer. Every health organization should strive to be a lean organization, and it starts with “respect for people.”</p>
 <p>However, what does it mean to respect people? What does it mean to give respect and to feel respected?<sup>2</sup></p>
@@ -4139,9 +4139,9 @@ Note
 <li><strong>Respect for people</strong> (staff, community, client, patient, customer)</li>
 <li><strong>Continuous improvement</strong> (<a href="https://www.lean.org/lexicon-terms/kata/">improvement kata</a>)</li>
 <li><strong>Scientific thinking</strong>, <strong>problem solving</strong>, and <strong>innovation</strong> (<a href="https://www.lean.org/?s=a3+thinking">A3 thinking</a>)</li>
-<li>Management by <strong>Objectives</strong> and <strong>Key Results</strong> (OKRs) (Figure&nbsp;1)</li>
-<li>Elimination of <strong>waste</strong> and <strong>undesired variability</strong> in inputs, processes, outputs, and outcomes</li>
+<li>Management by <strong>Objectives</strong> (goals) and <strong>Key Results</strong> (measures) (<a href="https://www.whatmatters.com/faqs/okr-meaning-definition-example">OKRs</a>)</li>
 <li>Being <strong>agile</strong>, <strong>adaptive</strong>, and <strong>responsive</strong> to meet challenges and opportunities</li>
+<li>Elimination of <strong>waste</strong> and <strong>undesired variability</strong> in inputs, processes, outputs, and outcomes</li>
 </ol>
 <p>These six components are required and if one is missing organizational effectiveness and mission will suffer.</p>
 <div class="callout callout-style-default callout-important callout-titled">
