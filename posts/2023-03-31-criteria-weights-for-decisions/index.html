@@ -423,7 +423,7 @@ ga('send', {
 <p><span class="math display">\[
 w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 \]</span></p>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsBase</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">calculate_rank_weights</span>(n<span class="op">::</span><span class="dt">Int64</span>)</span>
@@ -446,7 +446,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>The weights sum to 1, as expected.</p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>(wi))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>1.0</code></pre>
@@ -457,20 +457,20 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <section id="step-2-evaluators-rank-the-criteria" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="step-2-evaluators-rank-the-criteria"><span class="header-section-number">3.2</span> Step 2: Evaluators rank the criteria</h3>
 <p>Five evaluators rank the criteria based on their expertise.</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>eval1 <span class="op">=</span> [<span class="st">"M"</span>, <span class="st">"C"</span>, <span class="st">"P"</span>, <span class="st">"S"</span>, <span class="st">"R"</span>, <span class="st">"V"</span>]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>eval2 <span class="op">=</span> [<span class="st">"M"</span>, <span class="st">"C"</span>, <span class="st">"S"</span>, <span class="st">"R"</span>, <span class="st">"V"</span>, <span class="st">"P"</span>]</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>eval3 <span class="op">=</span> [<span class="st">"C"</span>, <span class="st">"V"</span>, <span class="st">"P"</span>, <span class="st">"M"</span>, <span class="st">"R"</span>, <span class="st">"S"</span>]</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>eval4 <span class="op">=</span> [<span class="st">"M"</span>, <span class="st">"V"</span>, <span class="st">"C"</span>, <span class="st">"S"</span>, <span class="st">"R"</span>, <span class="st">"P"</span>]</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>eval5 <span class="op">=</span> [<span class="st">"S"</span>, <span class="st">"P"</span>, <span class="st">"C"</span>, <span class="st">"R"</span>, <span class="st">"M"</span>, <span class="st">"V"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>eval1 <span class="op">=</span> [<span class="st">"Mileage"</span>, <span class="st">"Color"</span>, <span class="st">"Price"</span>, <span class="st">"Safety"</span>, <span class="st">"Reliability"</span>, <span class="st">"Value"</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>eval2 <span class="op">=</span> [<span class="st">"Mileage"</span>, <span class="st">"Color"</span>, <span class="st">"Safety"</span>, <span class="st">"Reliability"</span>, <span class="st">"Value"</span>, <span class="st">"Price"</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>eval3 <span class="op">=</span> [<span class="st">"Color"</span>, <span class="st">"Value"</span>, <span class="st">"Price"</span>, <span class="st">"Mileage"</span>, <span class="st">"Reliability"</span>, <span class="st">"Safety"</span>]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>eval4 <span class="op">=</span> [<span class="st">"Mileage"</span>, <span class="st">"Value"</span>, <span class="st">"Color"</span>, <span class="st">"Safety"</span>, <span class="st">"Reliability"</span>, <span class="st">"Price"</span>]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>eval5 <span class="op">=</span> [<span class="st">"Safety"</span>, <span class="st">"Price"</span>, <span class="st">"Color"</span>, <span class="st">"Reliability"</span>, <span class="st">"Mileage"</span>, <span class="st">"Value"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>6-element Vector{String}:
- "S"
- "P"
- "C"
- "R"
- "M"
- "V"</code></pre>
+ "Safety"
+ "Price"
+ "Color"
+ "Reliability"
+ "Mileage"
+ "Value"</code></pre>
 </div>
 </div>
 <p>Next, we organize the evaluator criteria rankings and the SR method criteria weights into a data frame with three columns:</p>
@@ -479,7 +479,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <li>evaluator_rankings (required)</li>
 <li>weights (required)</li>
 </ul>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ne <span class="op">=</span> <span class="fl">5</span>; <span class="co"># number of evaluators</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>nc <span class="op">=</span> <span class="fl">6</span>; <span class="co"># number for criteria</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>evaluators <span class="op">=</span> <span class="fu">repeat</span>([<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span>ne)<span class="op">...</span>], inner<span class="op">=</span><span class="fu">repeat</span>([nc]))</span>
@@ -508,181 +508,181 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <tr class="odd">
 <td data-quarto-table-cell-role="th">1</td>
 <td>eval1</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.336134</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2</td>
 <td>eval1</td>
-<td>C</td>
+<td>Color</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">3</td>
 <td>eval1</td>
-<td>P</td>
+<td>Price</td>
 <td>0.168067</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">4</td>
 <td>eval1</td>
-<td>S</td>
+<td>Safety</td>
 <td>0.12605</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
 <td>eval1</td>
-<td>R</td>
+<td>Reliability</td>
 <td>0.0896359</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">6</td>
 <td>eval1</td>
-<td>V</td>
+<td>Value</td>
 <td>0.0560224</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">7</td>
 <td>eval2</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.336134</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">8</td>
 <td>eval2</td>
-<td>C</td>
+<td>Color</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">9</td>
 <td>eval2</td>
-<td>S</td>
+<td>Safety</td>
 <td>0.168067</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">10</td>
 <td>eval2</td>
-<td>R</td>
+<td>Reliability</td>
 <td>0.12605</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">11</td>
 <td>eval2</td>
-<td>V</td>
+<td>Value</td>
 <td>0.0896359</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">12</td>
 <td>eval2</td>
-<td>P</td>
+<td>Price</td>
 <td>0.0560224</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">13</td>
 <td>eval3</td>
-<td>C</td>
+<td>Color</td>
 <td>0.336134</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">14</td>
 <td>eval3</td>
-<td>V</td>
+<td>Value</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">15</td>
 <td>eval3</td>
-<td>P</td>
+<td>Price</td>
 <td>0.168067</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">16</td>
 <td>eval3</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.12605</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">17</td>
 <td>eval3</td>
-<td>R</td>
+<td>Reliability</td>
 <td>0.0896359</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">18</td>
 <td>eval3</td>
-<td>S</td>
+<td>Safety</td>
 <td>0.0560224</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">19</td>
 <td>eval4</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.336134</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">20</td>
 <td>eval4</td>
-<td>V</td>
+<td>Value</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">21</td>
 <td>eval4</td>
-<td>C</td>
+<td>Color</td>
 <td>0.168067</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">22</td>
 <td>eval4</td>
-<td>S</td>
+<td>Safety</td>
 <td>0.12605</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">23</td>
 <td>eval4</td>
-<td>R</td>
+<td>Reliability</td>
 <td>0.0896359</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">24</td>
 <td>eval4</td>
-<td>P</td>
+<td>Price</td>
 <td>0.0560224</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">25</td>
 <td>eval5</td>
-<td>S</td>
+<td>Safety</td>
 <td>0.336134</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">26</td>
 <td>eval5</td>
-<td>P</td>
+<td>Price</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">27</td>
 <td>eval5</td>
-<td>C</td>
+<td>Color</td>
 <td>0.168067</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">28</td>
 <td>eval5</td>
-<td>R</td>
+<td>Reliability</td>
 <td>0.12605</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">29</td>
 <td>eval5</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.0896359</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">30</td>
 <td>eval5</td>
-<td>V</td>
+<td>Value</td>
 <td>0.0560224</td>
 </tr>
 </tbody>
@@ -694,11 +694,11 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <section id="step-3-calculate-mean-criteria-weights" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="step-3-calculate-mean-criteria-weights"><span class="header-section-number">3.3</span> Step 3: Calculate mean criteria weights</h3>
 <p>Calculate mean criteria weights using split-apply-combine workflow. In other words, stratifying by criterion, what is the mean weight for each criterion (attribute)?</p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## split</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> <span class="fu">groupby</span>(df, <span class="op">:</span>criteria)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<p><b>GroupedDataFrame with 6 groups based on key: criteria</b></p><p><i>First Group (5 rows): criteria = "M"</i></p><div class="data-frame">
+<p><b>GroupedDataFrame with 6 groups based on key: criteria</b></p><p><i>First Group (5 rows): criteria = "Mileage"</i></p><div class="data-frame">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
@@ -718,37 +718,37 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <tr class="odd">
 <td data-quarto-table-cell-role="th">1</td>
 <td>eval1</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.336134</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2</td>
 <td>eval2</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.336134</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">3</td>
 <td>eval3</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.12605</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">4</td>
 <td>eval4</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.336134</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
 <td>eval5</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.0896359</td>
 </tr>
 </tbody>
 </table>
 <p>⋮</p>
-<p><em>Last Group (5 rows): criteria = "V"</em></p>
+<p><em>Last Group (5 rows): criteria = "Value"</em></p>
 <div class="data-frame">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -769,31 +769,31 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <tr class="odd">
 <td data-quarto-table-cell-role="th">1</td>
 <td>eval1</td>
-<td>V</td>
+<td>Value</td>
 <td>0.0560224</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2</td>
 <td>eval2</td>
-<td>V</td>
+<td>Value</td>
 <td>0.0896359</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">3</td>
 <td>eval3</td>
-<td>V</td>
+<td>Value</td>
 <td>0.22409</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">4</td>
 <td>eval4</td>
-<td>V</td>
+<td>Value</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
 <td>eval5</td>
-<td>V</td>
+<td>Value</td>
 <td>0.0560224</td>
 </tr>
 </tbody>
@@ -802,7 +802,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">## combine and apply </span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>crit_weights <span class="op">=</span> <span class="fu">combine</span>(gdf, <span class="op">:</span>weight <span class="op">=&gt;</span> mean)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort!</span>(crit_weights, <span class="op">:</span>weight_mean, rev <span class="op">=</span> <span class="cn">true</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -824,32 +824,32 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">1</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.244818</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2</td>
-<td>C</td>
+<td>Color</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">3</td>
-<td>S</td>
+<td>Safety</td>
 <td>0.162465</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">4</td>
-<td>P</td>
+<td>Price</td>
 <td>0.134454</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>V</td>
+<td>Value</td>
 <td>0.129972</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">6</td>
-<td>R</td>
+<td>Reliability</td>
 <td>0.104202</td>
 </tr>
 </tbody>
@@ -858,7 +858,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>These are the final criteria weights and, as expected, they sum to 1.</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>(crit_weights.weight_mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>1.0</code></pre>
@@ -871,7 +871,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <section id="appendix" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="appendix"><span class="header-section-number">4</span> Appendix</h2>
 <p>Prefilling arrays:</p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zeros</span>(<span class="fl">2</span>, <span class="fl">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>2×3 Matrix{Float64}:
@@ -879,7 +879,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  0.0  0.0  0.0</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ones</span>(<span class="fl">2</span>, <span class="fl">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>2×3 Matrix{Float64}:
@@ -887,7 +887,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  1.0  1.0  1.0</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fill</span>(<span class="fl">1</span>, (<span class="fl">2</span>, <span class="fl">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>2×3 Matrix{Int64}:
@@ -896,7 +896,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>Vertical concatenation (<code>vcat</code>) and Horizontal concatenation (<code>hcat</code>):</p>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">4</span>]</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span>]</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vcat</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -910,7 +910,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  6</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hcat</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>3×2 Matrix{Int64}:
@@ -920,7 +920,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p><code>!</code> operator to signify mutating (permanently changing) an object:</p>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">## combine and apply </span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>crit_weights <span class="op">=</span> <span class="fu">combine</span>(gdf, <span class="op">:</span>weight <span class="op">=&gt;</span> mean)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort!</span>(crit_weights, <span class="op">:</span>weight_mean, rev <span class="op">=</span> <span class="cn">true</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -942,32 +942,32 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">1</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.244818</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2</td>
-<td>C</td>
+<td>Color</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">3</td>
-<td>S</td>
+<td>Safety</td>
 <td>0.162465</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">4</td>
-<td>P</td>
+<td>Price</td>
 <td>0.134454</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>V</td>
+<td>Value</td>
 <td>0.129972</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">6</td>
-<td>R</td>
+<td>Reliability</td>
 <td>0.104202</td>
 </tr>
 </tbody>
@@ -976,7 +976,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>The <code>repeat</code> function:</p>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="fl">2</span>, <span class="fl">5</span>], <span class="fl">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>6-element Vector{Int64}:
@@ -988,7 +988,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  5</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">## equivalent to above</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="fl">2</span>, <span class="fl">5</span>], outer<span class="op">=</span><span class="fu">repeat</span>([<span class="fl">3</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
@@ -1001,7 +1001,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  5</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="fl">2</span>, <span class="fl">5</span>], inner<span class="op">=</span><span class="fu">repeat</span>([<span class="fl">3</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>6-element Vector{Int64}:
@@ -1014,14 +1014,14 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>Generating array of strings. Note how the splat (<code>...</code>) operator works.</p>
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>1-element Vector{Vector{String}}:
  ["eval1", "eval2", "eval3"]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)<span class="op">...</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>3-element Vector{String}:
@@ -1030,7 +1030,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  "eval3"</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)], inner<span class="op">=</span><span class="fu">repeat</span>([<span class="fl">2</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>2-element Vector{Vector{String}}:
@@ -1038,7 +1038,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  ["eval1", "eval2", "eval3"]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)<span class="op">...</span>], inner<span class="op">=</span><span class="fu">repeat</span>([<span class="fl">2</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>6-element Vector{String}:

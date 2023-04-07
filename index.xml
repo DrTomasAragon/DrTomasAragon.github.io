@@ -164,7 +164,7 @@
 <h4 data-number="3.1.1" class="anchored" data-anchor-id="step-1-the-sr-method-for-generating-criteria-weights"><span class="header-section-number">3.1.1</span> Step 1: The SR method for generating criteria weights</h4>
 <p>Here is the formula where <img src="https://latex.codecogs.com/png.latex?N"> is the number of criteria, and <img src="https://latex.codecogs.com/png.latex?w_i%5E%7BSR%7D"> is the weight for the <img src="https://latex.codecogs.com/png.latex?i%5E%7Bth%7D"> criterion <span class="citation" data-cites="Danielson2017_doi10.1007/978-3-319-52624-9_2">[1]</span>.<sup>1</sup></p>
 <p><img src="https://latex.codecogs.com/png.latex?%0Aw_i%5E%7BSR%7D%20=%20%5Cfrac%7B1/i%20+%20%5Cfrac%7BN+1-i%7D%7BN%7D%7D%7B%5Csum_%7Bj=1%7D%5EN%20(1/i%20+%20%5Cfrac%7BN+1-i%7D%7BN%7D)%7D%0A"></p>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">using</span> <span class="bu" style="color: null;
@@ -249,7 +249,7 @@ font-style: inherit;">6</span>)</span></code></pre></div>
 </div>
 </div>
 <p>The weights sum to 1, as expected.</p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>(<span class="fu" style="color: #4758AB;
@@ -264,90 +264,90 @@ font-style: inherit;">sum</span>(wi))</span></code></pre></div>
 <section id="step-2-evaluators-rank-the-criteria" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="step-2-evaluators-rank-the-criteria"><span class="header-section-number">3.2</span> Step 2: Evaluators rank the criteria</h3>
 <p>Five evaluators rank the criteria based on their expertise.</p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1">eval1 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"M"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Mileage"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"C"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Color"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"P"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Price"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"S"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Safety"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"R"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Reliability"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"V"</span>]</span>
+font-style: inherit;">"Value"</span>]</span>
 <span id="cb5-2">eval2 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"M"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Mileage"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"C"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Color"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"S"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Safety"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"R"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Reliability"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"V"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Value"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"P"</span>]</span>
+font-style: inherit;">"Price"</span>]</span>
 <span id="cb5-3">eval3 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"C"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Color"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"V"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Value"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"P"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Price"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"M"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Mileage"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"R"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Reliability"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"S"</span>]</span>
+font-style: inherit;">"Safety"</span>]</span>
 <span id="cb5-4">eval4 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"M"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Mileage"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"V"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Value"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"C"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Color"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"S"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Safety"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"R"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Reliability"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"P"</span>]</span>
+font-style: inherit;">"Price"</span>]</span>
 <span id="cb5-5">eval5 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"S"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Safety"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"P"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Price"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"C"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Color"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"R"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Reliability"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"M"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Mileage"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"V"</span>]</span></code></pre></div>
+font-style: inherit;">"Value"</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>6-element Vector{String}:
- "S"
- "P"
- "C"
- "R"
- "M"
- "V"</code></pre>
+ "Safety"
+ "Price"
+ "Color"
+ "Reliability"
+ "Mileage"
+ "Value"</code></pre>
 </div>
 </div>
 <p>Next, we organize the evaluator criteria rankings and the SR method criteria weights into a data frame with three columns:</p>
@@ -356,7 +356,7 @@ font-style: inherit;">"V"</span>]</span></code></pre></div>
 <li>evaluator_rankings (required)</li>
 <li>weights (required)</li>
 </ul>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1">ne <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
@@ -437,181 +437,181 @@ font-style: inherit;">"weight"</span>])</span></code></pre></div>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">1</td>
 <td>eval1</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.336134</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2</td>
 <td>eval1</td>
-<td>C</td>
+<td>Color</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">3</td>
 <td>eval1</td>
-<td>P</td>
+<td>Price</td>
 <td>0.168067</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">4</td>
 <td>eval1</td>
-<td>S</td>
+<td>Safety</td>
 <td>0.12605</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
 <td>eval1</td>
-<td>R</td>
+<td>Reliability</td>
 <td>0.0896359</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">6</td>
 <td>eval1</td>
-<td>V</td>
+<td>Value</td>
 <td>0.0560224</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">7</td>
 <td>eval2</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.336134</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">8</td>
 <td>eval2</td>
-<td>C</td>
+<td>Color</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">9</td>
 <td>eval2</td>
-<td>S</td>
+<td>Safety</td>
 <td>0.168067</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">10</td>
 <td>eval2</td>
-<td>R</td>
+<td>Reliability</td>
 <td>0.12605</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">11</td>
 <td>eval2</td>
-<td>V</td>
+<td>Value</td>
 <td>0.0896359</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">12</td>
 <td>eval2</td>
-<td>P</td>
+<td>Price</td>
 <td>0.0560224</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">13</td>
 <td>eval3</td>
-<td>C</td>
+<td>Color</td>
 <td>0.336134</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">14</td>
 <td>eval3</td>
-<td>V</td>
+<td>Value</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">15</td>
 <td>eval3</td>
-<td>P</td>
+<td>Price</td>
 <td>0.168067</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">16</td>
 <td>eval3</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.12605</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">17</td>
 <td>eval3</td>
-<td>R</td>
+<td>Reliability</td>
 <td>0.0896359</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">18</td>
 <td>eval3</td>
-<td>S</td>
+<td>Safety</td>
 <td>0.0560224</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">19</td>
 <td>eval4</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.336134</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">20</td>
 <td>eval4</td>
-<td>V</td>
+<td>Value</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">21</td>
 <td>eval4</td>
-<td>C</td>
+<td>Color</td>
 <td>0.168067</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">22</td>
 <td>eval4</td>
-<td>S</td>
+<td>Safety</td>
 <td>0.12605</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">23</td>
 <td>eval4</td>
-<td>R</td>
+<td>Reliability</td>
 <td>0.0896359</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">24</td>
 <td>eval4</td>
-<td>P</td>
+<td>Price</td>
 <td>0.0560224</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">25</td>
 <td>eval5</td>
-<td>S</td>
+<td>Safety</td>
 <td>0.336134</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">26</td>
 <td>eval5</td>
-<td>P</td>
+<td>Price</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">27</td>
 <td>eval5</td>
-<td>C</td>
+<td>Color</td>
 <td>0.168067</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">28</td>
 <td>eval5</td>
-<td>R</td>
+<td>Reliability</td>
 <td>0.12605</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">29</td>
 <td>eval5</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.0896359</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">30</td>
 <td>eval5</td>
-<td>V</td>
+<td>Value</td>
 <td>0.0560224</td>
 </tr>
 </tbody>
@@ -623,7 +623,7 @@ font-style: inherit;">"weight"</span>])</span></code></pre></div>
 <section id="step-3-calculate-mean-criteria-weights" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="step-3-calculate-mean-criteria-weights"><span class="header-section-number">3.3</span> Step 3: Calculate mean criteria weights</h3>
 <p>Calculate mean criteria weights using split-apply-combine workflow. In other words, stratifying by criterion, what is the mean weight for each criterion (attribute)?</p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## split</span></span>
@@ -635,7 +635,7 @@ font-style: inherit;">groupby</span>(df, <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span>criteria)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<p><b>GroupedDataFrame with 6 groups based on key: criteria</b></p><p><i>First Group (5 rows): criteria = "M"</i></p><div class="data-frame">
+<p><b>GroupedDataFrame with 6 groups based on key: criteria</b></p><p><i>First Group (5 rows): criteria = "Mileage"</i></p><div class="data-frame">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
@@ -655,37 +655,37 @@ font-style: inherit;">:</span>criteria)</span></code></pre></div>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">1</td>
 <td>eval1</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.336134</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2</td>
 <td>eval2</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.336134</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">3</td>
 <td>eval3</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.12605</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">4</td>
 <td>eval4</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.336134</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
 <td>eval5</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.0896359</td>
 </tr>
 </tbody>
 </table>
 <p>⋮</p>
-<p><em>Last Group (5 rows): criteria = "V"</em></p>
+<p><em>Last Group (5 rows): criteria = "Value"</em></p>
 <div class="data-frame">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -706,31 +706,31 @@ font-style: inherit;">:</span>criteria)</span></code></pre></div>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">1</td>
 <td>eval1</td>
-<td>V</td>
+<td>Value</td>
 <td>0.0560224</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2</td>
 <td>eval2</td>
-<td>V</td>
+<td>Value</td>
 <td>0.0896359</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">3</td>
 <td>eval3</td>
-<td>V</td>
+<td>Value</td>
 <td>0.22409</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">4</td>
 <td>eval4</td>
-<td>V</td>
+<td>Value</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
 <td>eval5</td>
-<td>V</td>
+<td>Value</td>
 <td>0.0560224</td>
 </tr>
 </tbody>
@@ -739,7 +739,7 @@ font-style: inherit;">:</span>criteria)</span></code></pre></div>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## combine and apply </span></span>
@@ -779,32 +779,32 @@ font-style: inherit;">true</span>)</span></code></pre></div>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">1</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.244818</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2</td>
-<td>C</td>
+<td>Color</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">3</td>
-<td>S</td>
+<td>Safety</td>
 <td>0.162465</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">4</td>
-<td>P</td>
+<td>Price</td>
 <td>0.134454</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>V</td>
+<td>Value</td>
 <td>0.129972</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">6</td>
-<td>R</td>
+<td>Reliability</td>
 <td>0.104202</td>
 </tr>
 </tbody>
@@ -813,7 +813,7 @@ font-style: inherit;">true</span>)</span></code></pre></div>
 </div>
 </div>
 <p>These are the final criteria weights and, as expected, they sum to 1.</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>(<span class="fu" style="color: #4758AB;
@@ -830,7 +830,7 @@ font-style: inherit;">sum</span>(crit_weights.weight_mean))</span></code></pre><
 <section id="appendix" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="appendix"><span class="header-section-number">4</span> Appendix</h2>
 <p>Prefilling arrays:</p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">zeros</span>(<span class="fl" style="color: #AD0000;
@@ -844,7 +844,7 @@ font-style: inherit;">3</span>)</span></code></pre></div>
  0.0  0.0  0.0</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ones</span>(<span class="fl" style="color: #AD0000;
@@ -858,7 +858,7 @@ font-style: inherit;">3</span>)</span></code></pre></div>
  1.0  1.0  1.0</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">fill</span>(<span class="fl" style="color: #AD0000;
@@ -875,7 +875,7 @@ font-style: inherit;">3</span>))</span></code></pre></div>
 </div>
 </div>
 <p>Vertical concatenation (<code>vcat</code>) and Horizontal concatenation (<code>hcat</code>):</p>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
@@ -907,7 +907,7 @@ font-style: inherit;">vcat</span>(x, y)</span></code></pre></div>
  6</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">hcat</span>(x, y)</span></code></pre></div>
@@ -919,7 +919,7 @@ font-style: inherit;">hcat</span>(x, y)</span></code></pre></div>
 </div>
 </div>
 <p><code>!</code> operator to signify mutating (permanently changing) an object:</p>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## combine and apply </span></span>
@@ -959,32 +959,32 @@ font-style: inherit;">true</span>)</span></code></pre></div>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">1</td>
-<td>M</td>
+<td>Mileage</td>
 <td>0.244818</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2</td>
-<td>C</td>
+<td>Color</td>
 <td>0.22409</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">3</td>
-<td>S</td>
+<td>Safety</td>
 <td>0.162465</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">4</td>
-<td>P</td>
+<td>Price</td>
 <td>0.134454</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>V</td>
+<td>Value</td>
 <td>0.129972</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">6</td>
-<td>R</td>
+<td>Reliability</td>
 <td>0.104202</td>
 </tr>
 </tbody>
@@ -993,7 +993,7 @@ font-style: inherit;">true</span>)</span></code></pre></div>
 </div>
 </div>
 <p>The <code>repeat</code> function:</p>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">repeat</span>([<span class="fl" style="color: #AD0000;
@@ -1013,7 +1013,7 @@ font-style: inherit;">3</span>)</span></code></pre></div>
  5</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## equivalent to above</span></span>
@@ -1040,7 +1040,7 @@ font-style: inherit;">3</span>]))</span></code></pre></div>
  5</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">repeat</span>([<span class="fl" style="color: #AD0000;
@@ -1065,7 +1065,7 @@ font-style: inherit;">3</span>]))</span></code></pre></div>
 </div>
 </div>
 <p>Generating array of strings. Note how the splat (<code>...</code>) operator works.</p>
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1">[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"eval"</span> <span class="op" style="color: #5E5E5E;
@@ -1084,7 +1084,7 @@ font-style: inherit;">3</span>)]</span></code></pre></div>
  ["eval1", "eval2", "eval3"]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1">[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"eval"</span> <span class="op" style="color: #5E5E5E;
@@ -1107,7 +1107,7 @@ font-style: inherit;">...</span>]</span></code></pre></div>
  "eval3"</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">repeat</span>([<span class="st" style="color: #20794D;
@@ -1135,7 +1135,7 @@ font-style: inherit;">2</span>]))</span></code></pre></div>
  ["eval1", "eval2", "eval3"]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">repeat</span>([<span class="st" style="color: #20794D;
