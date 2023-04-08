@@ -606,8 +606,12 @@ OR = \frac{a d}{b c}
 <span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    se_log_or <span class="op">=</span> <span class="fu">sqrt</span>((<span class="fl">1</span><span class="op">/</span>a) <span class="op">+</span> (<span class="fl">1</span><span class="op">/</span>b) <span class="op">+</span> (<span class="fl">1</span><span class="op">/</span>c) <span class="op">+</span> (<span class="fl">1</span><span class="op">/</span>d))</span>
 <span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    lcl <span class="op">=</span> <span class="fu">exp</span>(log_or <span class="op">-</span> zv <span class="op">*</span> se_log_or)</span>
 <span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    ucl <span class="op">=</span> <span class="fu">exp</span>(log_or <span class="op">+</span> zv <span class="op">*</span> se_log_or)</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (or <span class="op">=</span> est, confint <span class="op">=</span> (lcl, ucl), level <span class="op">=</span> level)</span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>        or <span class="op">=</span> est, </span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>        confint <span class="op">=</span> (lcl, ucl), </span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>        level <span class="op">=</span> level</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>oddsratio2 (generic function with 1 method)</code></pre>
 </div>
