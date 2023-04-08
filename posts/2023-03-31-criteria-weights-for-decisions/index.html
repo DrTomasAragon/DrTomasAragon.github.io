@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.296">
+<meta name="generator" content="quarto-1.3.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -288,9 +288,9 @@ ga('send', {
 <table class="table">
 <caption>Table&nbsp;1: Decision quality requirements engages multiple disciplines and skillsets</caption>
 <colgroup>
-<col style="width: 6%">
-<col style="width: 18%">
-<col style="width: 75%">
+<col style="width: 4%">
+<col style="width: 11%">
+<col style="width: 84%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -303,32 +303,32 @@ ga('send', {
 <tr class="odd">
 <td>1</td>
 <td>Frame</td>
-<td>What are we deciding and why? values, scope, objectives</td>
+<td>Am we clear on the problem we are solving?</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>Information</td>
-<td>What do we need to know?</td>
+<td>Values</td>
+<td>Have we identified what we truly want?</td>
 </tr>
 <tr class="odd">
 <td>3</td>
 <td>Alternatives</td>
-<td>What creative choices do we have?</td>
+<td>Do we have a good set of alternatives?</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>Reasoning</td>
-<td>Are we thinking straight? How will we narrow choices?</td>
+<td>Information</td>
+<td>Have we gathered the relevant information?</td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td>Commitment</td>
-<td>Is there commitment to action? Do we have consensus?</td>
+<td>Reasoning</td>
+<td>How will we evaluate alternatives to find the one that gets us the most of what what we truly want?</td>
 </tr>
 <tr class="even">
 <td>6</td>
-<td>Prospects</td>
-<td>What future states do we care about? unintended consequences, etc.</td>
+<td>Commitment</td>
+<td>Are we committed to follow through on our choice.</td>
 </tr>
 </tbody>
 </table>
@@ -351,47 +351,55 @@ ga('send', {
 <table class="table">
 <caption>Table&nbsp;2: Decision quality requirements for buying a car</caption>
 <colgroup>
-<col style="width: 9%">
-<col style="width: 28%">
-<col style="width: 62%">
+<col style="width: 2%">
+<col style="width: 7%">
+<col style="width: 56%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Name</th>
-<th>Key question</th>
-<th>Answer</th>
+<th>No.</th>
+<th>Requirement</th>
+<th>Key questions to ask</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td>1</td>
 <td>Frame</td>
-<td>What are we deciding and why?</td>
-<td>Buy a car we need (or want)</td>
+<td>Am we clear on the problem we are solving?</td>
+<td>Need personal transportion.</td>
 </tr>
 <tr class="even">
-<td>Choices</td>
-<td>What choices do we have?</td>
+<td>2</td>
+<td>Values</td>
+<td>Have we identified what we truly want?</td>
+<td>Car within my budget.</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Alternatives</td>
+<td>Do we have a good set of alternatives?</td>
 <td>Civic, Corolla, or Impreza</td>
 </tr>
-<tr class="odd">
-<td>Results</td>
-<td>What consequences do we care about?</td>
-<td>Car with combination of attributes that best meets our needs, given trade-offs</td>
-</tr>
 <tr class="even">
-<td>Data</td>
-<td>What do we need to know?</td>
-<td>Data and/or expert knowledge</td>
+<td>4</td>
+<td>Information</td>
+<td>Have we gathered the relevant information?</td>
+<td>Color, mileage, price, reliability, safety, resale value</td>
 </tr>
 <tr class="odd">
+<td>5</td>
 <td>Reasoning</td>
-<td>Are we thinking straight?</td>
-<td>Multi-criteria decision method</td>
+<td>How will we evaluate alternatives to find the one that gets us the most of what what we truly want?</td>
+<td>Ranking algorithm using weight calculations</td>
 </tr>
 <tr class="even">
+<td>6</td>
 <td>Commitment</td>
-<td>Is there commitment to action?</td>
-<td>Participatory, fair, transparent, objective</td>
+<td>Are we committed to follow through on our choice.</td>
+<td>Yes, my spouse approves.</td>
 </tr>
 </tbody>
 </table>
@@ -427,7 +435,7 @@ ga('send', {
 <p><span class="math display">\[
 w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 \]</span></p>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsBase</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">calculate_rank_weights</span>(n<span class="op">::</span><span class="dt">Int64</span>)</span>
@@ -450,7 +458,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>The weights sum to 1, as expected.</p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>(wi))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>1.0</code></pre>
@@ -461,7 +469,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <section id="step-2-evaluators-rank-the-criteria" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="step-2-evaluators-rank-the-criteria"><span class="header-section-number">3.2</span> Step 2: Evaluators rank the criteria</h3>
 <p>Five evaluators rank the criteria based on their expertise.</p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>eval1 <span class="op">=</span> [<span class="st">"Mileage"</span>, <span class="st">"Color"</span>, <span class="st">"Price"</span>, <span class="st">"Safety"</span>, <span class="st">"Reliability"</span>, <span class="st">"Value"</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>eval2 <span class="op">=</span> [<span class="st">"Mileage"</span>, <span class="st">"Color"</span>, <span class="st">"Safety"</span>, <span class="st">"Reliability"</span>, <span class="st">"Value"</span>, <span class="st">"Price"</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>eval3 <span class="op">=</span> [<span class="st">"Color"</span>, <span class="st">"Value"</span>, <span class="st">"Price"</span>, <span class="st">"Mileage"</span>, <span class="st">"Reliability"</span>, <span class="st">"Safety"</span>]</span>
@@ -483,7 +491,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <li>evaluator_rankings (required)</li>
 <li>weights (required)</li>
 </ul>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ne <span class="op">=</span> <span class="fl">5</span>; <span class="co"># number of evaluators</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>nc <span class="op">=</span> <span class="fl">6</span>; <span class="co"># number for criteria</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>evaluators <span class="op">=</span> <span class="fu">repeat</span>([<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span>ne)<span class="op">...</span>], inner<span class="op">=</span><span class="fu">repeat</span>([nc]))</span>
@@ -698,7 +706,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <section id="step-3-calculate-mean-criteria-weights" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="step-3-calculate-mean-criteria-weights"><span class="header-section-number">3.3</span> Step 3: Calculate mean criteria weights</h3>
 <p>Calculate mean criteria weights using split-apply-combine workflow. In other words, stratifying by criterion, what is the mean weight for each criterion (attribute)?</p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## split</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> <span class="fu">groupby</span>(df, <span class="op">:</span>criteria)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -806,7 +814,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">## combine and apply </span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>crit_weights <span class="op">=</span> <span class="fu">combine</span>(gdf, <span class="op">:</span>weight <span class="op">=&gt;</span> mean)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort!</span>(crit_weights, <span class="op">:</span>weight_mean, rev <span class="op">=</span> <span class="cn">true</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -862,7 +870,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>These are the final criteria weights and, as expected, they sum to 1.</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>(crit_weights.weight_mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>1.0</code></pre>
@@ -878,49 +886,48 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <h3 data-number="4.1" class="anchored" data-anchor-id="function-to-automate-calculating-mean-weights"><span class="header-section-number">4.1</span> Function to automate calculating mean weights</h3>
 <p>We created the <code>calculate_rank_weights</code> function to calculate the weights for <span class="math inline">\(n\)</span> criteria using the SR method. Then we used Julia to calculate the mean weights for five evaluators.</p>
 <p>Now we create a final function to automate calculating the mean weights. For this function we will provide a matrix where each column contains the criteria ranking for each evaluator.</p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">calculate_mean_weights</span>(x<span class="op">::</span><span class="dt">Matrix{String}</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    ncrit <span class="op">=</span> <span class="fu">size</span>(x, <span class="fl">1</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    neval <span class="op">=</span> <span class="fu">size</span>(x, <span class="fl">2</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    wts_i <span class="op">=</span> <span class="fu">calculate_rank_weights</span>(ncrit)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    weights <span class="op">=</span> <span class="fu">repeat</span>( wts_i, neval )</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    evaluators <span class="op">=</span> <span class="fu">repeat</span>( </span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        [<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span>neval)<span class="op">...</span>], </span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        inner <span class="op">=</span> <span class="fu">repeat</span>([ncrit])</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    evalvator_rankings <span class="op">=</span> <span class="fu">reshape</span>(x, ncrit <span class="op">*</span> neval)</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> <span class="fu">DataFrame</span>( </span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">hcat</span>(evaluators, evaluator_rankings, weights), </span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        [<span class="st">"evaluator"</span>, <span class="st">"criteria"</span>, <span class="st">"weight"</span>] </span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    gdf <span class="op">=</span> <span class="fu">groupby</span>(df, <span class="op">:</span>criteria)</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    mean_wts <span class="op">=</span> <span class="fu">sort!</span>(</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">combine</span>(gdf, <span class="op">:</span>weight <span class="op">=&gt;</span> mean), </span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>        <span class="op">:</span>weight_mean, rev <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    )   </span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>        weights <span class="op">=</span> mean_wts,</span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> df</span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    ncrit, neval <span class="op">=</span> <span class="fu">size</span>(x, <span class="fl">1</span>), <span class="fu">size</span>(x, <span class="fl">2</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    wts_i <span class="op">=</span> <span class="fu">calculate_rank_weights</span>(ncrit)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    weights <span class="op">=</span> <span class="fu">repeat</span>( wts_i, neval )</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    evaluators <span class="op">=</span> <span class="fu">repeat</span>( </span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        [<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span>neval)<span class="op">...</span>], </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        inner <span class="op">=</span> <span class="fu">repeat</span>([ncrit])</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    evalvator_rankings <span class="op">=</span> <span class="fu">reshape</span>(x, ncrit <span class="op">*</span> neval)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> <span class="fu">DataFrame</span>( </span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">hcat</span>(evaluators, evaluator_rankings, weights), </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        [<span class="st">"evaluator"</span>, <span class="st">"criteria"</span>, <span class="st">"weight"</span>] </span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    gdf <span class="op">=</span> <span class="fu">groupby</span>(df, <span class="op">:</span>criteria)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    mean_wts <span class="op">=</span> <span class="fu">sort!</span>(</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">combine</span>(gdf, <span class="op">:</span>weight <span class="op">=&gt;</span> mean), </span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>        <span class="op">:</span>weight_mean, rev <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    )   </span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>        weights <span class="op">=</span> mean_wts,</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> df</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>calculate_mean_weights (generic function with 1 method)</code></pre>
 </div>
 </div>
 <p>Next, we create the matrix of evaluator data and then pass it to the <code>calculate_mean_weights</code> function. Notice that this new function calls our previous <code>calculate_rank_weights</code> function.</p>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>eval_rankings_tab <span class="op">=</span> <span class="fu">hcat</span>(eval1, eval2, eval3, eval4, eval5)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="fu">calculate_mean_weights</span>(eval_rankings_tab);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The results are saved in <code>r</code> and the semi-colon (<code>;</code>) suppresses the output. We use <code>typeof</code> function to evaluate the type of <code>x</code>.</p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>NamedTuple{(:weights, :data), Tuple{DataFrame, DataFrame}}</code></pre>
 </div>
 </div>
 <p>We see that <code>r</code> is a NamedTuple and it contains two data frames named <code>weights</code> and <code>data</code>. We can index each separately.</p>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>r.weights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <div class="data-frame"><p>6 rows × 2 columns</p>
@@ -973,7 +980,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>r.data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div class="data-frame"><p>30 rows × 3 columns</p>
@@ -1182,7 +1189,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <section id="review-of-selected-julia-code" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="review-of-selected-julia-code"><span class="header-section-number">4.2</span> Review of selected Julia code</h3>
 <p>Prefilling arrays:</p>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zeros</span>(<span class="fl">2</span>, <span class="fl">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>2×3 Matrix{Float64}:
@@ -1190,7 +1197,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  0.0  0.0  0.0</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ones</span>(<span class="fl">2</span>, <span class="fl">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>2×3 Matrix{Float64}:
@@ -1198,7 +1205,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  1.0  1.0  1.0</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fill</span>(<span class="fl">1</span>, (<span class="fl">2</span>, <span class="fl">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>2×3 Matrix{Int64}:
@@ -1207,7 +1214,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>The <code>reshape</code> function reshapes an array.</p>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fu">Vector</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>16-element Vector{Int64}:
@@ -1229,7 +1236,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  16</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">reshape</span>(A, (<span class="fl">4</span>, <span class="fl">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>4×4 Matrix{Int64}:
@@ -1239,7 +1246,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  4  8  12  16</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">reshape</span>(A, <span class="fl">2</span>, <span class="op">:</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>2×8 Matrix{Int64}:
@@ -1248,7 +1255,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>Her is vertical concatenation (<code>vcat</code>): (<code>hcat</code>):</p>
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">4</span>]</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span>]</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vcat</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1263,7 +1270,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>Here is horizontal concatenation (<code>hcat</code>):</p>
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hcat</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>3×2 Matrix{Int64}:
@@ -1273,7 +1280,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>The <code>!</code> operator signifies mutating (permanently changing) an object:</p>
-<div class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">## combine and apply </span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>crit_weights <span class="op">=</span> <span class="fu">combine</span>(gdf, <span class="op">:</span>weight <span class="op">=&gt;</span> mean)</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort!</span>(crit_weights, <span class="op">:</span>weight_mean, rev <span class="op">=</span> <span class="cn">true</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1329,7 +1336,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>The <code>repeat</code> function repeat a pattern.</p>
-<div class="cell" data-execution_count="23">
+<div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="fl">2</span>, <span class="fl">5</span>], <span class="fl">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>6-element Vector{Int64}:
@@ -1341,7 +1348,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  5</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="24">
+<div class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">## equivalent to above</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="fl">2</span>, <span class="fl">5</span>], outer<span class="op">=</span><span class="fu">repeat</span>([<span class="fl">3</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
@@ -1354,7 +1361,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  5</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="25">
+<div class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="fl">2</span>, <span class="fl">5</span>], inner<span class="op">=</span><span class="fu">repeat</span>([<span class="fl">3</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>6-element Vector{Int64}:
@@ -1367,14 +1374,14 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>Generating array of strings. Note how the splat (<code>...</code>) operator works.</p>
-<div class="cell" data-execution_count="26">
+<div class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>1-element Vector{Vector{String}}:
  ["eval1", "eval2", "eval3"]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="27">
+<div class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)<span class="op">...</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>3-element Vector{String}:
@@ -1383,7 +1390,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  "eval3"</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="28">
+<div class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)], inner<span class="op">=</span><span class="fu">repeat</span>([<span class="fl">2</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>2-element Vector{Vector{String}}:
@@ -1391,7 +1398,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  ["eval1", "eval2", "eval3"]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="29">
+<div class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)<span class="op">...</span>], inner<span class="op">=</span><span class="fu">repeat</span>([<span class="fl">2</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>6-element Vector{String}:
