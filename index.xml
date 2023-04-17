@@ -172,7 +172,7 @@
 <h4 data-number="3.1.1" class="anchored" data-anchor-id="step-1-the-sr-method-for-generating-criteria-weights"><span class="header-section-number">3.1.1</span> Step 1: The SR method for generating criteria weights</h4>
 <p>Here is the formula where <img src="https://latex.codecogs.com/png.latex?N"> is the number of criteria, and <img src="https://latex.codecogs.com/png.latex?w_i%5E%7BSR%7D"> is the weight for the <img src="https://latex.codecogs.com/png.latex?i%5E%7Bth%7D"> criterion <span class="citation" data-cites="Danielson2017_doi10.1007/978-3-319-52624-9_2">[1]</span>.<sup>1</sup></p>
 <p><img src="https://latex.codecogs.com/png.latex?%0Aw_i%5E%7BSR%7D%20=%20%5Cfrac%7B1/i%20+%20%5Cfrac%7BN+1-i%7D%7BN%7D%7D%7B%5Csum_%7Bj=1%7D%5EN%20(1/i%20+%20%5Cfrac%7BN+1-i%7D%7BN%7D)%7D%0A"></p>
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">using</span> <span class="bu" style="color: null;
@@ -257,7 +257,7 @@ font-style: inherit;">6</span>)</span></code></pre></div>
 </div>
 </div>
 <p>The weights sum to 1, as expected.</p>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>(<span class="fu" style="color: #4758AB;
@@ -272,7 +272,7 @@ font-style: inherit;">sum</span>(wi))</span></code></pre></div>
 <section id="step-2-evaluators-rank-the-criteria" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="step-2-evaluators-rank-the-criteria"><span class="header-section-number">3.2</span> Step 2: Evaluators rank the criteria</h3>
 <p>Five evaluators rank the criteria based on their expertise.</p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1">eval1 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
@@ -364,7 +364,7 @@ font-style: inherit;">"Value"</span>]</span></code></pre></div>
 <li>evaluator_rankings (required)</li>
 <li>weights (required)</li>
 </ul>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1">ne <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
@@ -633,7 +633,7 @@ font-style: inherit;">"weight"</span>]</span>
 <section id="step-3-calculate-mean-criteria-weights" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="step-3-calculate-mean-criteria-weights"><span class="header-section-number">3.3</span> Step 3: Calculate mean criteria weights</h3>
 <p>Calculate mean criteria weights using split-apply-combine workflow. In other words, stratifying by criterion, what is the mean weight for each criterion (attribute)?</p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## split</span></span>
@@ -749,7 +749,7 @@ font-style: inherit;">:</span>criteria)</span></code></pre></div>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## combine and apply </span></span>
@@ -823,7 +823,7 @@ font-style: inherit;">true</span>)</span></code></pre></div>
 </div>
 </div>
 <p>These are the final criteria weights and, as expected, they sum to 1.</p>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>(<span class="fu" style="color: #4758AB;
@@ -843,7 +843,7 @@ font-style: inherit;">sum</span>(crit_weights.weight_mean))</span></code></pre><
 <h3 data-number="4.1" class="anchored" data-anchor-id="function-to-automate-calculating-mean-weights"><span class="header-section-number">4.1</span> Function to automate calculating mean weights</h3>
 <p>We created the <code>calculate_rank_weights</code> function to calculate the weights for <img src="https://latex.codecogs.com/png.latex?n"> criteria using the SR method. Then we used Julia to calculate the mean weights for five evaluators.</p>
 <p>Now we create a final function to automate calculating the mean weights. This function will handle an arbitrary number of vectors with rankings, or a matrix created from those vectors beforehand. Notice that this new function will call our previous <code>calculate_rank_weights</code> function.</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">function</span> <span class="fu" style="color: #4758AB;
@@ -971,7 +971,7 @@ font-style: inherit;">end</span></span></code></pre></div>
 </div>
 </div>
 <p>Here we test passing vectors as arguments to the <code>calculate_mean_weights</code> function.</p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1">r1 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
@@ -979,7 +979,7 @@ background-color: null;
 font-style: inherit;">calculate_mean_weights</span>(eval1, eval2, eval3, eval4, eval5);</span></code></pre></div>
 </div>
 <p>The results are saved in <code>r1</code> and the semi-colon (<code>;</code>) suppresses the output. We use <code>typeof</code> function to evaluate the type of <code>r1</code>.</p>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">typeof</span>(r1)</span></code></pre></div>
@@ -988,7 +988,7 @@ font-style: inherit;">typeof</span>(r1)</span></code></pre></div>
 </div>
 </div>
 <p>We see that <code>r1</code> is a NamedTuple and it contains two data frames named <code>weights</code> and <code>data</code>. We can index each separately.</p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1">r1.weights</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <div class="data-frame"><p>6 rows × 2 columns</p>
@@ -1041,7 +1041,7 @@ font-style: inherit;">typeof</span>(r1)</span></code></pre></div>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1">r1.data</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div class="data-frame"><p>30 rows × 3 columns</p>
@@ -1247,7 +1247,7 @@ font-style: inherit;">typeof</span>(r1)</span></code></pre></div>
 </div>
 </div>
 <p>Next, we create the matrix of evaluator data and then pass it to the <code>calculate_mean_weights</code> function.</p>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb19-1">eval_rankings_tab <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
@@ -1260,7 +1260,7 @@ background-color: null;
 font-style: inherit;">calculate_mean_weights</span>(eval_rankings_tab);</span></code></pre></div>
 </div>
 <p>The results are saved in <code>r</code> and the semi-colon (<code>;</code>) suppresses the output. We use <code>typeof</code> function to evaluate the type of <code>r2</code>.</p>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">typeof</span>(r2)</span></code></pre></div>
@@ -1269,7 +1269,7 @@ font-style: inherit;">typeof</span>(r2)</span></code></pre></div>
 </div>
 </div>
 <p>We see that <code>r2</code> is a NamedTuple and it contains two data frames named <code>weights</code> and <code>data</code>. We can index each separately.</p>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1">r2.weights</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div class="data-frame"><p>6 rows × 2 columns</p>
@@ -1322,7 +1322,7 @@ font-style: inherit;">typeof</span>(r2)</span></code></pre></div>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1">r2.data</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <div class="data-frame"><p>30 rows × 3 columns</p>
@@ -1528,7 +1528,7 @@ font-style: inherit;">typeof</span>(r2)</span></code></pre></div>
 </div>
 </div>
 <p>The <code>calculate_mean_weights</code> function worked for both vectors or a matrix. This was possible because of the splat operator (<code>...</code>) as in the two lines below.</p>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">function</span> <span class="fu" style="color: #4758AB;
@@ -1548,7 +1548,7 @@ font-style: inherit;">...</span>)</span></code></pre></div>
 <section id="review-of-selected-julia-code" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="review-of-selected-julia-code"><span class="header-section-number">4.2</span> Review of selected Julia code</h3>
 <p>Did you know you can use tuples to bind variable names to values?</p>
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1">x, y <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
@@ -1560,20 +1560,20 @@ font-style: inherit;">99</span></span></code></pre></div>
 <pre><code>(33, 99)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1">x</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>33</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1">y</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>99</code></pre>
 </div>
 </div>
 <p>This is super handy when we want to swap values between variables in one step.</p>
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1">x, y <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> y, x</span></code></pre></div>
@@ -1581,20 +1581,20 @@ font-style: inherit;">=</span> y, x</span></code></pre></div>
 <pre><code>(99, 33)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1">x</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>99</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="23">
+<div class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1">y</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>33</code></pre>
 </div>
 </div>
 <p>Here is how to prefill arrays:</p>
-<div class="cell" data-execution_count="24">
+<div class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">zeros</span>(<span class="fl" style="color: #AD0000;
@@ -1608,7 +1608,7 @@ font-style: inherit;">3</span>)</span></code></pre></div>
  0.0  0.0  0.0</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="25">
+<div class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb39-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ones</span>(<span class="fl" style="color: #AD0000;
@@ -1622,7 +1622,7 @@ font-style: inherit;">3</span>)</span></code></pre></div>
  1.0  1.0  1.0</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="26">
+<div class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb41-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">fill</span>(<span class="fl" style="color: #AD0000;
@@ -1639,7 +1639,7 @@ font-style: inherit;">3</span>))</span></code></pre></div>
 </div>
 </div>
 <p>The <code>reshape</code> function reshapes an array.</p>
-<div class="cell" data-execution_count="27">
+<div class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb43" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb43-1">A <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
@@ -1671,7 +1671,7 @@ font-style: inherit;">16</span>)</span></code></pre></div>
  16</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="28">
+<div class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb45" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb45-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">reshape</span>(A, (<span class="fl" style="color: #AD0000;
@@ -1687,7 +1687,7 @@ font-style: inherit;">4</span>))</span></code></pre></div>
  4  8  12  16</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="29">
+<div class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb47" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb47-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">reshape</span>(A, <span class="fl" style="color: #AD0000;
@@ -1702,7 +1702,7 @@ font-style: inherit;">:</span>)</span></code></pre></div>
 </div>
 </div>
 <p>Her is vertical concatenation (<code>vcat</code>): (<code>hcat</code>):</p>
-<div class="cell" data-execution_count="30">
+<div class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb49" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb49-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
@@ -1735,7 +1735,7 @@ font-style: inherit;">vcat</span>(x, y)</span></code></pre></div>
 </div>
 </div>
 <p>Here is horizontal concatenation (<code>hcat</code>):</p>
-<div class="cell" data-execution_count="31">
+<div class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb51" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb51-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">hcat</span>(x, y)</span></code></pre></div>
@@ -1747,7 +1747,7 @@ font-style: inherit;">hcat</span>(x, y)</span></code></pre></div>
 </div>
 </div>
 <p>The <code>!</code> operator signifies mutating (permanently changing) an object:</p>
-<div class="cell" data-execution_count="32">
+<div class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb53" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb53-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## combine and apply </span></span>
@@ -1821,7 +1821,7 @@ font-style: inherit;">true</span>)</span></code></pre></div>
 </div>
 </div>
 <p>The <code>repeat</code> function repeat a pattern.</p>
-<div class="cell" data-execution_count="33">
+<div class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb54" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb54-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">repeat</span>([<span class="fl" style="color: #AD0000;
@@ -1841,7 +1841,7 @@ font-style: inherit;">3</span>)</span></code></pre></div>
  5</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="34">
+<div class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb56" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb56-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## equivalent to above</span></span>
@@ -1868,7 +1868,7 @@ font-style: inherit;">3</span>]))</span></code></pre></div>
  5</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="35">
+<div class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb58" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb58-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">repeat</span>([<span class="fl" style="color: #AD0000;
@@ -1893,7 +1893,7 @@ font-style: inherit;">3</span>]))</span></code></pre></div>
 </div>
 </div>
 <p>Generating array of strings. Note how the splat (<code>...</code>) operator works.</p>
-<div class="cell" data-execution_count="36">
+<div class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb60" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb60-1">[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"eval"</span> <span class="op" style="color: #5E5E5E;
@@ -1912,7 +1912,7 @@ font-style: inherit;">3</span>)]</span></code></pre></div>
  ["eval1", "eval2", "eval3"]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="37">
+<div class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb62" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb62-1">[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"eval"</span> <span class="op" style="color: #5E5E5E;
@@ -1935,7 +1935,7 @@ font-style: inherit;">...</span>]</span></code></pre></div>
  "eval3"</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="38">
+<div class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb64" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb64-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">repeat</span>([<span class="st" style="color: #20794D;
@@ -1963,7 +1963,7 @@ font-style: inherit;">2</span>]))</span></code></pre></div>
  ["eval1", "eval2", "eval3"]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="39">
+<div class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb66" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb66-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">repeat</span>([<span class="st" style="color: #20794D;
@@ -2066,11 +2066,11 @@ Note
 <p>In tackling complex public health problems around the world, Dr.&nbsp;Sharma discovered that universal values enabled stakeholders to transcend differences, find common ground, and solve problems together. The universal values she discovered to be the most effective and robust are dignity, equity, and compassion. To this short list I added humility. With authenticity and integrity, we should strive to embody and promote universal values in every interaction and in every conversation.</p>
 <p>The first universal value is <strong>humility</strong>. To be humble is to believe genuinely that you are not better or more important than any person you are engaging with regardless of their social or occupational status, wealth, or ability.</p>
 <p>The second universal value is <strong>compassion</strong>. To understand compassion, we must distinguish it from sympathy and empathy. With sympathy I care about your suffering. With empathy I feel your suffering. With compassion I want to relieve your suffering. Be aware and mindful: because of our implicit (nonconscious) biases we are more likely to empathize with people “like us” (eg, tribalism). Instead, we endeavor to have empathy for those unlike us, and to have compassion towards those who are vulnerable or suffering even if we do not share values.</p>
-<p>The third university value is <strong>equity</strong>; that is, to treat everyone with fairness regardless of their social or occupational status, wealth, or ability. Fairness does not mean everyone is treated equally, but rather we are responsive to their needs. When we are humble, compassionate, and fair with others, especially when we differ by social or occupational status, wealth, or ability, then they will feel dignity — “the quality or state of being worthy, honored, or esteemed.”<sup>3</sup></p>
-<p>The fourth universal value is <strong>dignity</strong>. When we engage others, and we embody and promote the universal values of humility, compassion, and equity (fairness), then they are more likely to experience dignity—and to feeled respected. Dignity is also “the right of a person to be valued and respected for their own sake, and to be treated ethically.”<sup>4</sup></p>
+<p>The third universal value is <strong>equity</strong>; that is, to treat everyone with fairness regardless of their social or occupational status, wealth, or ability. Fairness does not mean everyone is treated equally, but rather we are responsive to their needs. When we are humble, compassionate, and fair with others, especially when we differ by social or occupational status, wealth, or ability, then they will feel dignity — “the quality or state of being worthy, honored, or esteemed.”<sup>3</sup></p>
+<p>The fourth universal value is <strong>dignity</strong>. When we engage others, and we embody and promote the universal values of humility, compassion, and equity (fairness), then they are more likely to experience dignity—and to feel respected. Dignity is also “the right of a person to be valued and respected for their own sake, and to be treated ethically.”<sup>4</sup></p>
 <p>The universal values of humility, compassion, equity (fairness), and dignity apply to everyone, everywhere, including your adversaries. Universal values apply where you live, learn, work, play, and pray.</p>
 <p>I started with humility because it is a very deep and powerful concept. There are different types of humility we should cultivate.</p>
-<p><strong>General humility</strong> is “is the noble choice to forgo your status, deploy your resources or use your influence for the good of others before yourself” <span class="citation" data-cites="Dickson2011_isbn978-0310328629">[2]</span>.</p>
+<p><strong>General humility</strong> “is the noble choice to forgo your status, deploy your resources or use your influence for the good of others before yourself” <span class="citation" data-cites="Dickson2011_isbn978-0310328629">[2]</span>.</p>
 <p><strong>Intellectual humility</strong> is a mindset<sup>5</sup> that involves recognizing and owning our intellectual limitations in service of pursuing deeper knowledge, truth, and understanding <span class="citation" data-cites="Porter2022_PMID35789951">[3]</span>.</p>
 <p><strong>Cultural humility</strong> is committing to lifelong learning and critical self-reflection; realizing our power, privilege, and biases; redressing power imbalances for respectful partnerships; and for promoting institutional accountability (<a href="https://inclusion.uoregon.edu/what-cultural-humility-basics">learn more</a>).</p>
 <p>Discovering and cultivating your ability to be humble will supercharge your learning, your relationships, and your effectiveness.</p>
