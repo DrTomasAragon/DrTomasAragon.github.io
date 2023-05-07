@@ -9,7 +9,7 @@
 <link>https://drtomasaragon.github.io/index.html</link>
 <atom:link href="https://drtomasaragon.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>A population health blog</description>
-<generator>quarto-1.3.313</generator>
+<generator>quarto-1.3.340</generator>
 <lastBuildDate>Fri, 31 Mar 2023 07:00:00 GMT</lastBuildDate>
 <item>
   <title>Simple method to get criteria weights for decision making</title>
@@ -3664,7 +3664,7 @@ font-style: inherit;">4</span>)</span></code></pre></div>
 <div id="fig-split" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2023-02-20-julia-for-data-analysis/images/phds_split_apply_combine_workflow.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: The split-apply-combine is a common workflow in data science.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: The split-apply-combine is a common workflow in data science.</figcaption>
 </figure>
 </div>
 <p>For split-apply-combine we will conduct the following analysis:</p>
@@ -5026,7 +5026,7 @@ Important
 <div id="fig-okrs" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2022-12-10-becoming-the-best-at-getting-better/images/okrs_coursera_what-are-okrs-okr-definition-with-diagram_orig_cropped.jpg" class="img-fluid figure-img" style="width:95.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: OKRs or Objectives and Key Results is a best practice for setting, tracking, and achieving audacious goals. OKRs was popularized by John Doerr’s best-selling book “Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs.”</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: OKRs or Objectives and Key Results is a best practice for setting, tracking, and achieving audacious goals. OKRs was popularized by John Doerr’s best-selling book “Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs.”</figcaption>
 </figure>
 </div>
 </section>
@@ -5091,7 +5091,7 @@ Note
 <div id="fig-leanrba" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2022-12-10-becoming-the-best-at-getting-better/images/okrs_how_it_relates_to_lean_rba_etc.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Goal setting is core to all planning, implementation, and improvement frameworks. OKRs or Objectives and Key Results is a best practice for setting, tracking, and achieving audacious goals. OKRs was popularized by John Doerr’s best-selling book “Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs.”</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Goal setting is core to all planning, implementation, and improvement frameworks. OKRs or Objectives and Key Results is a best practice for setting, tracking, and achieving audacious goals. OKRs was popularized by John Doerr’s best-selling book “Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs.”</figcaption>
 </figure>
 </div>
 <p>OKRs supercharge your ability to set and achieve audacious goals by accelerating your <strong>FACTS</strong>:</p>
@@ -5160,7 +5160,7 @@ Note
 <div id="fig-okrstable" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2022-12-10-becoming-the-best-at-getting-better/images/okrs_lean_rba_table_capto.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Key Results are metrics that are specific and time-bound, aggressive yet realistic, and measurable and verifiable.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Key Results are metrics that are specific and time-bound, aggressive yet realistic, and measurable and verifiable.</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -5295,7 +5295,7 @@ Send me examples of public health OKRs
 <div id="fig-decintell" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2022-08-20-decision-intelligence-books/images/tja_book_decision_intelligence_venn_V04.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Decision intelligence is using ethics, science, and technology to improve individual and team decisions for finding and solving problems, and achieving objectives and key results in challenging, environments, including volatile, uncertain, complex, or ambiguous (VUCA) environments.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Decision intelligence is using ethics, science, and technology to improve individual and team decisions for finding and solving problems, and achieving objectives and key results in challenging, environments, including volatile, uncertain, complex, or ambiguous (VUCA) environments.</figcaption>
 </figure>
 </div>
 <p><strong>Decision-making</strong> is our most important activity. “A decision is a choice between two or more alternatives that involves an irrevocable allocation of resources” <span class="citation" data-cites="Howard2015_isbn978-0132336246">[1]</span>. Decisions drive vision, strategy, policy, and transformational change. Every decision has causal assumptions, predictions, trade-offs, and an opportunity cost—the lost benefit of the better option(s) not chosen or not considered.</p>
@@ -5661,7 +5661,7 @@ Note
 <div id="fig-decintell" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2021-03-13-decision-intelligence01/images/tja_book_decision_intelligence_venn_V04.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Decision intelligence is using science and technology to support teams and individuals to improve decision making for finding and solving problems, and for improving performance in novel, challenging environments, including volatile, uncertain, complex, or ambiguous (VUCA) environments.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Decision intelligence is using science and technology to support teams and individuals to improve decision making for finding and solving problems, and for improving performance in novel, challenging environments, including volatile, uncertain, complex, or ambiguous (VUCA) environments.</figcaption>
 </figure>
 </div>
 <p>In February, 2021, Bay Area health officers published an article <a href="https://journals.lww.com/jphmp/fulltext/2021/01001/crisis_decision_making_at_the_speed_of_covid_19_.5.aspx">“Crisis Decision-Making at the Speed of COVID-19: Field Report on Issuing the First Regional Shelter-in-Place Orders in the United States”</a>. In this article we discussed the application of decision intelligence (DI) to a public health crisis.</p>
@@ -5691,7 +5691,7 @@ Note
 <div id="fig-psolve" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2021-03-13-decision-intelligence01/images/FIG5_Problem-Solving_causal-graph.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Causal graph to guide problem solving</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Causal graph to guide problem solving</figcaption>
 </figure>
 </div>
 <p>The easiest example to understand is clinical diagnosis and treatment. When a patient presents to an emergency room with chest pain (<strong>problem</strong>), the clinician considers and prioritizes <strong>consequences</strong> (death, discomfort, etc.) and <strong>causes</strong> (myocardial infarction, esophageal reflux, anxiety, etc.), tests hypotheses by collecting data (history, physical examination, and diagnostic tests), and then uses the results to select and implement a treatment plan (<strong>countermeasures</strong>). The patient’s response to treatment is more data for learning, and for adjusting hypotheses and treatments. This whole process is a series of problem solving decisions, learning, and continuous improvement. The seasoned clinical is an expert in clinician decision intelligence.</p>
@@ -5703,7 +5703,7 @@ Note
 <div id="fig-dqchain" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2021-03-13-decision-intelligence01/images/decision_quality_decisioneducation_dot_org.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Decision quality (DQ) has six requirements. A good decision is only as strong as its weakest link.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Decision quality (DQ) has six requirements. A good decision is only as strong as its weakest link.</figcaption>
 </figure>
 </div>
 <p>At a minimum, a decision quality checklist (Table&nbsp;1) improves the quality of decisions at any stage of problem solving. A good decision is only as strong as its weakest link.</p>
@@ -5759,7 +5759,7 @@ Note
 <div id="fig-dqr" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2021-03-13-decision-intelligence01/images/FIG4_Decision-Quality_diverg-converg2.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: Decision quality requirements and work flow</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4: Decision quality requirements and work flow</figcaption>
 </figure>
 </div>
 <p>Based on Figure&nbsp;4, Table&nbsp;2 summarizes specific areas of professional and systems developement to improve decision quality.</p>
@@ -5875,7 +5875,7 @@ Note
 <div id="fig-pdsa" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2021-03-13-decision-intelligence01/images/decision-quality-divergence-convergence-triangles.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: PDSA problem solving is a series of decisions</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;5: PDSA problem solving is a series of decisions</figcaption>
 </figure>
 </div>
 </section>
@@ -5970,7 +5970,7 @@ Note
 <div id="fig-ladder" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2018-06-11-the-book-of-why/images/Pearl2018_The-Book-of-Why_Ladder-of-Causation_680x950.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: “The Ladder of Causation”</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: “The Ladder of Causation”</figcaption>
 </figure>
 </div>
 
@@ -6027,7 +6027,7 @@ Note
 <h3 class="anchored" data-anchor-id="this-is-why-you-feel-the-way-you-feel">1: This is why you feel the way you feel</h3>
 <p>This is an outstanding 5-minute summary of construction of emotions:</p>
 <div data-align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/M1OdhdI_3eI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M1OdhdI_3eI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
 </iframe>
 </div>
 </section>
@@ -6035,17 +6035,25 @@ Note
 <h3 class="anchored" data-anchor-id="ted-you-arent-at-the-mercy-of-your-emotions-your-brain-creates-them">2 (TED): You aren’t at the mercy of your emotions: Your brain creates them</h3>
 <p>“Can you look at someone’s face and know what they’re feeling? Does everyone experience happiness, sadness and anxiety the same way? What are emotions anyway? For the past 25 years, psychology professor Lisa Feldman Barrett has mapped facial expressions, scanned brains and analyzed hundreds of physiology studies to understand what emotions really are. She shares the results of her exhaustive research—and explains how we may have more control over our emotions than we think.”</p>
 <div data-align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0gks6ceq4eQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0gks6ceq4eQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
 </iframe>
 </div>
 <p>See <a href="https://www.ted.com/talks/lisa_feldman_barrett_you_aren_t_at_the_mercy_of_your_emotions_your_brain_creates_them/reading-list">reading list</a> for above TED talk.</p>
 </section>
 <section id="ted-cultivating-wisdom-the-power-of-mood" class="level3">
-<h3 class="anchored" data-anchor-id="ted-cultivating-wisdom-the-power-of-mood">3 (TED): Cultivating Wisdom: The Power Of Mood</h3>
+<h3 class="anchored" data-anchor-id="ted-cultivating-wisdom-the-power-of-mood">3 (TED): Cultivating Wisdom: The Power of Mood</h3>
 <p>“Do you believe that what you see influences how you feel? Actually, the opposite is true: What you feel—your <em>affect</em>—influences what you see, hear, smell, taste, and touch. Psychologist and neuroscientist Lisa Feldman Barrett shares the groundbreaking discovery that you experience the world through affect-colored glasses. She also reveals how affect can be a source of wisdom that helps you to make better, wiser choices”</p>
 <div data-align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZYAEh3T5a80" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZYAEh3T5a80" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
 </iframe>
+</div>
+</section>
+<section id="how-emotions-are-made-cinematic-lecture" class="level3">
+<h3 class="anchored" data-anchor-id="how-emotions-are-made-cinematic-lecture">4 How Emotions are Made (Cinematic Lecture)</h3>
+<p>Emotions don’t happen to you. They are made by your predictive brain, in specific situations: a brain that feels affect and makes concepts absorbed from your life experience while conversing with your body + the world around you.</p>
+<p>This cinematic lecture by Professor Lisa Feldman Barrett is based off her book of the same name.</p>
+<div data-align="center">
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/0rbyC5m557I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe></p>
 </div>
 </section>
 <section id="lfbs-website-includes-numerous-academic-lectures" class="level3">
