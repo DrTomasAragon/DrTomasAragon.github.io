@@ -22,8 +22,9 @@
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This is a book review in progress, and feedback is welcomed and appreciated.</p>
 <p><a href="https://www.hachettebookgroup.com/titles/covid-crisis-group/lessons-from-the-covid-war/9781541703803/">Lessons from the Covid Wars: An Investigative Report</a>, by the Covid Crisis Group, was recently published by PublicAffairs <span class="citation" data-cites="Covid-Crisis-Group2023">[1]</span>. The cost is $19.</p>
-<p>As a public health officer—both local and state—I have been involved in the Covid response as a government employee since the beginning <span class="citation" data-cites="Aragon2021_doi:10.1097-phh.0000000000001292">[2]</span>. I enjoyed the book because it covered the key decisions, policies, and politics at the national level, and the implications for future global, state, and local preparedness and response. Because they interviewed many people and reviewed numerous publications, they were able to tell a coherent story of the United States Covid response was led and managed at the national level.</p>
+<p>I have been involved in the Covid response since the beginning <span class="citation" data-cites="Aragon2021_doi:10.1097-phh.0000000000001292">[2]</span>. I enjoyed the book because it covered the key decisions, policies, and politics at the national level, and the implications for future global, state, and local preparedness and response. Because they interviewed many people and reviewed numerous publications, they were able to tell a coherent story of how the United States Covid response was led and managed at the national level.</p>
 <p>There are <strong>10 lessons</strong>, but you will not find them enumerated in the book. I found the 10 lessons in a <a href="https://nam.edu/event/discussion-of-findings-from-the-covid-crisis-group/">5+ hour webinar</a> sponsored by the National Academy of Sciences, Engineering, and Medicine (NASEM).</p>
 <div data-align="center">
 <iframe src="https://player.vimeo.com/video/819923414?h=fffe1cf100" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="">
@@ -34,7 +35,8 @@
 <li><a href="https://millercenter.org/news-events/events/lessons-covid-war-report-covid-crisis-group">Lessons from the Covid War: The report from the Covid Crisis Group</a>, featuring Danielle Allen, Carter Mecher, Philip Zelikow, and Guian McKee (moderator)</li>
 <li><a href="https://www.commonwealthclub.org/events/2023-04-26/lessons-covid-war">Lessons from the Covid War</a>, sponsored by the Commonwealth Club, featuring Emily Silverman, David A. Relman, Robert Rodriguez, and Charity Dean</li>
 </ul>
-<p>The book would have benefited by having an introductory chapter that summarized the 10 lessons, followed by the chapters in the same order. If I had not seen the NASEM webinar I would not have known their top 10 lessons. The book has more lessons and that is why I recommend it.</p>
+<p>The book would have benefited by having an introductory chapter that summarized the 10 lessons, followed by the chapters in the same order. If I had not seen the NASEM webinar I would not have known their top 10 lessons.</p>
+<p>I recommend this book and hope this summary and review makes your reading of the book more productive.</p>
 <p>Here are the <strong>Table of Contents</strong>:</p>
 <ol type="1">
 <li>From Tragedy to Possibility</li>
@@ -76,7 +78,7 @@ Lesson One (Chapter 1: From Tragedy to Possibility)
 <p>The United States did not have a war mindset. We were not prepared, and we did not respond with the urgency of fighting a war against a novel microbial threat. We had the knowledge—<strong>what</strong> we should do, but lacked <strong>how</strong> we should do it. And we lacked the leadership to ensure we tackle the four challenges.</p>
 <p>Why? There are three main cultures in governance:</p>
 <ol type="1">
-<li>“culture of <strong>programs and process</strong>” (management).</li>
+<li>“culture of <strong>programs and process</strong>” (management and administration).</li>
 <li>“culture of <strong>research and investigation</strong>” (knowledge discovery).</li>
 <li>“culture of <strong>operations</strong>” (knowledge deployment: implementing in the field at speed and at scale).</li>
 </ol>
@@ -106,10 +108,10 @@ Lesson Two (Chapter 3: The Defenders)
 <p>The problems identified include:</p>
 <ul>
 <li>Public health governance and operational capabilities are decentralized across State, Tribal, Local, and Territorial health jurisdiction. Federal health agencies have limited influence.</li>
-<li>The healthcare system is not a system; it is a fragmented connection of entities (payors, plans, providers, pharma, suppliers, etc.) in transactional relationships to squeeze every drop of profit from sickness care. Healthcare has limited connections with public health except for small CDC grants.</li>
+<li>The healthcare system is not a system; it is a fragmented connection of entities (payors, plans, providers, pharma, suppliers, etc.) in transactional relationships to squeeze every drop of profit from sickness care. Healthcare has limited preparedness connections with public health except for small CDC grants.</li>
 <li>The biopharma industry has little, if any, financial incentive to invest in infectious disease emergency preparedness and response.</li>
 </ul>
-<p>The new “National Health Security Enterprise” would reimagine these relationships and invest in preparedness as if we are preparing for a war.</p>
+<p>The new “National Health Security Enterprise” would reimagine and reorganize these relationships and invest in preparedness as if we are preparing for a war.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -192,7 +194,7 @@ Lesson Eight (Chapter 10: Strategy for a Global War)
 <p>The “America First” approach to vaccines backfired. Better global cooperation would have paid dividends for the United States and the world.</p>
 </div>
 </div>
-<p>This chapter covers the global collaboration, financing, manufacturing, and distribution of Covid vaccines (Figure&nbsp;1). In spite of some good intentions, vaccine equity efforts failed. The bottom line is that in a pandemic, US leadership in global vaccine equity would ultimately benefit the US at home and abroad.</p>
+<p>This chapter covers the global collaboration, financing, manufacturing, and distribution of Covid vaccines (Figure&nbsp;1). In spite of some good intentions, vaccine equity efforts failed. The bottom line is that in a pandemic, US leadership in global vaccine equity and distribution would have ultimately benefited the US at home and abroad.</p>
 <div id="fig-p263" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://drtomasaragon.github.io/posts/2023-05-08-lesson-from-the-covid-wars/images/fig_p263_global_efort.png" class="img-fluid figure-img" style="width:60.0%"></p>
