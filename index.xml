@@ -23,8 +23,8 @@
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This is a book review in progress, and feedback is welcomed and appreciated.</p>
-<p><a href="https://www.hachettebookgroup.com/titles/covid-crisis-group/lessons-from-the-covid-war/9781541703803/">Lessons from the Covid Wars: An Investigative Report</a>, by the Covid Crisis Group, was recently published by PublicAffairs <span class="citation" data-cites="Covid-Crisis-Group2023">[1]</span>. The cost is $19.</p>
-<p>I have been involved in the Covid pandemic response since the beginning <span class="citation" data-cites="Aragon2021_doi:10.1097-phh.0000000000001292">[2]</span>. I enjoyed the book because it covered the key decisions, policies, and politics at the national level, and the implications for future global, state, and local preparedness and response. Because they interviewed many people and reviewed numerous publications, they were able to tell a coherent story of how the United States Covid response was led and managed at the national level.</p>
+<p><a href="https://www.hachettebookgroup.com/titles/covid-crisis-group/lessons-from-the-covid-war/9781541703803/">Lessons from the Covid Wars: An Investigative Report</a>, by the <a href="https://covidcrisisgroup.org/">Covid Crisis Group</a>, was recently published by PublicAffairs <span class="citation" data-cites="Covid-Crisis-Group2023">[1]</span>. The cost is $19.</p>
+<p>I have been involved in the Covid pandemic response since the beginning <span class="citation" data-cites="Aragon2021_doi:10.1097-phh.0000000000001292 pmid33566658 pmid33411328 pmid33308337 pmid32687150">[2–6]</span>. I enjoyed the book because it covered the key decisions, policies, and politics at the national level, and the implications for future global, state, and local preparedness and response. Because they interviewed 300+ people and reviewed many publications, they were able to tell a coherent story of how the United States Covid response was led and managed at the national level.</p>
 <p>There are <strong>10 lessons</strong>, but you will not find them enumerated in the book. I found the 10 lessons in a <a href="https://nam.edu/event/discussion-of-findings-from-the-covid-crisis-group/">5-hour webinar</a> sponsored by the National Academy of Sciences, Engineering, and Medicine (NASEM).<sup>1</sup></p>
 <div style="text-align: center">
 <iframe src="https://player.vimeo.com/video/819923414?h=fffe1cf100" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="">
@@ -259,6 +259,18 @@ Lesson Ten (Chapter 11: America the Competent?)
 </div>
 <div id="ref-Aragon2021_doi:10.1097-phh.0000000000001292" class="csl-entry">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline">Aragón TJ, Cody SH, Farnitano C, Hernandez LB, Morrow SA, Pan ES, et al. Crisis decision-making at the speed of <span>COVID</span>-19: Field report on issuing the first regional shelter-in-place orders in the united states. Journal of Public Health Management and Practice [Internet]. 2021 Jan;27(1):S19–28. Available from: <a href="https://doi.org/10.1097/phh.0000000000001292">https://doi.org/10.1097/phh.0000000000001292</a></div>
+</div>
+<div id="ref-pmid33566658" class="csl-entry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Degutis LC, Shoaf K, n TJ, Atchison C, Dyjack D, Hites L, et al. <span class="nocase"><span>T</span>he <span>U</span>rgent <span>N</span>eed for <span>P</span>ublic <span>H</span>ealth <span>P</span>reparedness <span>F</span>unding and <span>S</span>upport</span>. Am J Public Health [Internet]. 2021 Mar;111(3):363–5. Available from: <a href="https://doi.org/10.2105/AJPH.2020.306068">https://doi.org/10.2105/AJPH.2020.306068</a></div>
+</div>
+<div id="ref-pmid33411328" class="csl-entry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Louie JK, Stoltey J, Scott HM, DuBois A, Golden L, Philip S, et al. <span class="nocase"><span>E</span>arly <span>C</span><span>O</span><span>V</span><span>I</span><span>D</span>-19 <span>S</span>uccesses in <span>S</span>killed <span>N</span>ursing <span>F</span>acilities in <span>S</span>an <span>F</span>rancisco</span>. J Am Geriatr Soc [Internet]. 2020 Dec;68(12):2744–5. Available from: <a href="https://doi.org/10.1111/jgs.16765">https://doi.org/10.1111/jgs.16765</a></div>
+</div>
+<div id="ref-pmid33308337" class="csl-entry">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Louie JK, Stoltey JE, Scott HM, Trammell S, Ememu E, Samuel MC, et al. <span class="nocase"><span>C</span>omparison of symptomatic and asymptomatic infections due to severe acute respiratory coronavirus virus 2 (<span>S</span><span>A</span><span>R</span><span>S</span>-<span>C</span>o<span>V</span>-2) in <span>S</span>an <span>F</span>rancisco long-term care facilities</span>. Infect Control Hosp Epidemiol [Internet]. 2022 Jan;43(1):123–4. Available from: <a href="https://doi.org/10.1017/ice.2020.1371">https://doi.org/10.1017/ice.2020.1371</a></div>
+</div>
+<div id="ref-pmid32687150" class="csl-entry">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Louie JK, Scott HM, DuBois A, Sturtz N, Lu W, Stoltey J, et al. <span class="nocase"><span>L</span>essons <span>F</span>rom <span>M</span>ass-<span>T</span>esting for <span>C</span>oronavirus <span>D</span>isease 2019 in <span>L</span>ong-<span>T</span>erm <span>C</span>are <span>F</span>acilities for the <span>E</span>lderly in <span>S</span>an <span>F</span>rancisco</span>. Clin Infect Dis [Internet]. 2021 Jun;72(11):2018–20. Available from: <a href="https://doi.org/10.1093/cid/ciaa1020">https://doi.org/10.1093/cid/ciaa1020</a></div>
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
