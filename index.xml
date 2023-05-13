@@ -24,7 +24,7 @@
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This is a book review in progress, and feedback is welcomed and appreciated.</p>
 <p><a href="https://www.hachettebookgroup.com/titles/covid-crisis-group/lessons-from-the-covid-war/9781541703803/">Lessons from the Covid Wars: An Investigative Report</a>, by the <a href="https://covidcrisisgroup.org/">Covid Crisis Group</a>, was recently published by PublicAffairs <span class="citation" data-cites="Covid-Crisis-Group2023">[1]</span>. The cost is $19.</p>
-<p>I have been involved in the Covid pandemic response since the beginning <span class="citation" data-cites="Aragon2021_doi:10.1097-phh.0000000000001292 pmid33566658 pmid33411328 pmid33308337 pmid32687150">[2–6]</span>. I enjoyed this <a href="https://covidcrisisgroup.org/members">multi-author</a> book because it covered the key decisions, policies, and politics at the national level, and the implications for future global, state, and local preparedness and response. Because they interviewed 300+ people and reviewed many publications, they were able to take a complex historical event and weave it into a coherent story of how the United States Covid response was led and managed at the national level. The lead author was <a href="https://millercenter.org/experts/philip-zelikow">Philip Zelikow</a>, Professor of History at University of Virginia.</p>
+<p>I have been involved in the Covid pandemic response since the beginning <span class="citation" data-cites="Aragon2021_doi:10.1097-phh.0000000000001292 pmid33566658 pmid33411328 pmid33308337 pmid32687150">[2–6]</span>. I enjoyed this <a href="https://covidcrisisgroup.org/members">34-author</a> book because it covered the key decisions, policies, and politics at the national level, and the implications for future global, state, and local preparedness and response. Because they interviewed 300+ people and reviewed many publications, they were able to take a complex historical event and weave it into a coherent story of how the United States Covid response was led and managed at the national level. The lead author was <a href="https://millercenter.org/experts/philip-zelikow">Philip Zelikow</a>, Professor of History at University of Virginia.</p>
 <p>There are <strong>10 lessons</strong>, but you will not find them enumerated in the book. I found the 10 lessons in a <a href="https://nam.edu/event/discussion-of-findings-from-the-covid-crisis-group/">5-hour webinar</a> sponsored by the National Academy of Sciences, Engineering, and Medicine (NASEM).<sup>1</sup></p>
 <div style="text-align: center">
 <iframe src="https://player.vimeo.com/video/819923414?h=fffe1cf100" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="">
@@ -35,6 +35,7 @@
 <li><a href="https://millercenter.org/news-events/events/lessons-covid-war-report-covid-crisis-group">Lessons from the Covid War: The report from the Covid Crisis Group</a>, featuring Danielle Allen, Carter Mecher, Philip Zelikow, and Guian McKee (moderator)</li>
 <li><a href="https://www.commonwealthclub.org/events/2023-04-26/lessons-covid-war">Lessons from the Covid War</a>, sponsored by the Commonwealth Club, featuring Emily Silverman, David A. Relman, Robert Rodriguez, and Charity Dean</li>
 <li><a href="https://www.washingtonpost.com/washington-post-live/2023/04/25/lessons-learned-us-covid-19-response/">Lessons learned from U.S. COVID-19 response</a>, By Washington Post Live (Dan Diamond, interviewer), featuring Philip Zelikow and Charity Dean</li>
+<li><a href="https://www.youtube.com/watch?v=6izIcDQQRNs">Philip Zelikow discusses “Lessons from the Covid War” with Richard J. Hatchett and Kendall Hoyt</a>, By the <a href="https://www.harvard.com/book/lessons_from_the_covid_war/">Harvard Book Store</a></li>
 </ul>
 <p>The book would have benefited by having an introductory chapter that summarized the 10 lessons, followed by the chapters in the same order. If I had not seen the NASEM webinar I would not have known their top 10 lessons.</p>
 <p>I recommend this book and hope this summary and review makes your reading of the book more productive.</p>
@@ -119,7 +120,7 @@ Lesson Two (Chapter 3: The Defenders)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lesson Three (in Chapter 6, p.&nbsp;156)
+Lesson Three (in Chapter 6, p.&nbsp;156: Communities Improvise with Few Tools)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -133,7 +134,7 @@ Lesson Three (in Chapter 6, p.&nbsp;156)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lesson Four (Chapter 2, pp.&nbsp;27–28)
+Lesson Four (Chapter 2, pp.&nbsp;27–28: Origins, Prevention, and Warning)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -167,13 +168,19 @@ Lesson Four (Chapter 2, pp.&nbsp;27–28)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lesson Five (Chapters 4 and 5)
+Lesson Five (Chapters 4 and 5: Containment Fails; Mobilization Lags &amp; Federal Crisis Management Collapses; Operation Warp Speed Begins)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Containment failed and federal crisis management collapsed under President Trump’s leadership. But Trump was a comorbidity.<sup>2</sup> Systemic problems existed before 2020, and continue to this day.</p>
 </div>
 </div>
+<p>Chapter 4 chronicles the early months of 2020. “[T]he month of January 2020 was a month of warnings and early reactions. February was a month in which some nations mobilized and the United States did not.” The chapter summarized three key issues (p.&nbsp;113):</p>
+<ol type="1">
+<li>“the problems of overall policy design”</li>
+<li>“the misjudgment about silent spread combined with weakness of biomedical surveillance”</li>
+<li>“the limited availability of tests”</li>
+</ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -450,7 +457,7 @@ Lesson Ten (Chapter 11: America the Competent?)
 <h4 data-number="3.1.1" class="anchored" data-anchor-id="step-1-the-sr-method-for-generating-criteria-weights"><span class="header-section-number">3.1.1</span> Step 1: The SR method for generating criteria weights</h4>
 <p>Here is the formula where <img src="https://latex.codecogs.com/png.latex?N"> is the number of criteria, and <img src="https://latex.codecogs.com/png.latex?w_i%5E%7BSR%7D"> is the weight for the <img src="https://latex.codecogs.com/png.latex?i%5E%7Bth%7D"> criterion <span class="citation" data-cites="Danielson2017_doi10.1007/978-3-319-52624-9_2">[1]</span>.<sup>1</sup></p>
 <p><img src="https://latex.codecogs.com/png.latex?%0Aw_i%5E%7BSR%7D%20=%20%5Cfrac%7B1/i%20+%20%5Cfrac%7BN+1-i%7D%7BN%7D%7D%7B%5Csum_%7Bj=1%7D%5EN%20(1/i%20+%20%5Cfrac%7BN+1-i%7D%7BN%7D)%7D%0A"></p>
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">using</span> <span class="bu" style="color: null;
@@ -535,7 +542,7 @@ font-style: inherit;">6</span>)</span></code></pre></div>
 </div>
 </div>
 <p>The weights sum to 1, as expected.</p>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>(<span class="fu" style="color: #4758AB;
@@ -550,7 +557,7 @@ font-style: inherit;">sum</span>(wi))</span></code></pre></div>
 <section id="step-2-evaluators-rank-the-criteria" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="step-2-evaluators-rank-the-criteria"><span class="header-section-number">3.2</span> Step 2: Evaluators rank the criteria</h3>
 <p>Five evaluators rank the criteria based on their expertise.</p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1">eval1 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
@@ -642,7 +649,7 @@ font-style: inherit;">"Value"</span>]</span></code></pre></div>
 <li>evaluator_rankings (required)</li>
 <li>weights (required)</li>
 </ul>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1">ne <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
@@ -887,7 +894,7 @@ font-style: inherit;">"weight"</span>]</span>
 <section id="step-3-calculate-mean-criteria-weights" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="step-3-calculate-mean-criteria-weights"><span class="header-section-number">3.3</span> Step 3: Calculate mean criteria weights</h3>
 <p>Calculate mean criteria weights using split-apply-combine workflow. In other words, stratifying by criterion, what is the mean weight for each criterion (attribute)?</p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## split</span></span>
@@ -1010,7 +1017,7 @@ font-style: inherit;">:</span>criteria)</span></code></pre></div>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## combine and apply </span></span>
@@ -1084,7 +1091,7 @@ font-style: inherit;">true</span>)</span></code></pre></div>
 </div>
 </div>
 <p>These are the final criteria weights and, as expected, they sum to 1.</p>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>(<span class="fu" style="color: #4758AB;
@@ -1104,7 +1111,7 @@ font-style: inherit;">sum</span>(crit_weights.weight_mean))</span></code></pre><
 <h3 data-number="4.1" class="anchored" data-anchor-id="function-to-automate-calculating-mean-weights"><span class="header-section-number">4.1</span> Function to automate calculating mean weights</h3>
 <p>We created the <code>calculate_rank_weights</code> function to calculate the weights for <img src="https://latex.codecogs.com/png.latex?n"> criteria using the SR method. Then we used Julia to calculate the mean weights for five evaluators.</p>
 <p>Now we create a final function to automate calculating the mean weights. This function will handle an arbitrary number of vectors with rankings, or a matrix created from those vectors beforehand. Notice that this new function will call our previous <code>calculate_rank_weights</code> function.</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">function</span> <span class="fu" style="color: #4758AB;
@@ -1232,7 +1239,7 @@ font-style: inherit;">end</span></span></code></pre></div>
 </div>
 </div>
 <p>Here we test passing vectors as arguments to the <code>calculate_mean_weights</code> function.</p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1">r1 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
@@ -1240,7 +1247,7 @@ background-color: null;
 font-style: inherit;">calculate_mean_weights</span>(eval1, eval2, eval3, eval4, eval5);</span></code></pre></div>
 </div>
 <p>The results are saved in <code>r1</code> and the semi-colon (<code>;</code>) suppresses the output. We use <code>typeof</code> function to evaluate the type of <code>r1</code>.</p>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">typeof</span>(r1)</span></code></pre></div>
@@ -1249,7 +1256,7 @@ font-style: inherit;">typeof</span>(r1)</span></code></pre></div>
 </div>
 </div>
 <p>We see that <code>r1</code> is a NamedTuple and it contains two data frames named <code>weights</code> and <code>data</code>. We can index each separately.</p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1">r1.weights</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
@@ -1302,7 +1309,7 @@ font-style: inherit;">typeof</span>(r1)</span></code></pre></div>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1">r1.data</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div><div style="float: left;"><span>30×3 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">5 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
@@ -1484,7 +1491,7 @@ font-style: inherit;">typeof</span>(r1)</span></code></pre></div>
 </div>
 </div>
 <p>Next, we create the matrix of evaluator data and then pass it to the <code>calculate_mean_weights</code> function.</p>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb19-1">eval_rankings_tab <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
@@ -1497,7 +1504,7 @@ background-color: null;
 font-style: inherit;">calculate_mean_weights</span>(eval_rankings_tab);</span></code></pre></div>
 </div>
 <p>The results are saved in <code>r</code> and the semi-colon (<code>;</code>) suppresses the output. We use <code>typeof</code> function to evaluate the type of <code>r2</code>.</p>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">typeof</span>(r2)</span></code></pre></div>
@@ -1506,7 +1513,7 @@ font-style: inherit;">typeof</span>(r2)</span></code></pre></div>
 </div>
 </div>
 <p>We see that <code>r2</code> is a NamedTuple and it contains two data frames named <code>weights</code> and <code>data</code>. We can index each separately.</p>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1">r2.weights</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
@@ -1559,7 +1566,7 @@ font-style: inherit;">typeof</span>(r2)</span></code></pre></div>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1">r2.data</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <div><div style="float: left;"><span>30×3 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">5 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
@@ -1741,7 +1748,7 @@ font-style: inherit;">typeof</span>(r2)</span></code></pre></div>
 </div>
 </div>
 <p>The <code>calculate_mean_weights</code> function worked for both vectors or a matrix. This was possible because of the splat operator (<code>...</code>) as in the two lines below.</p>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">function</span> <span class="fu" style="color: #4758AB;
@@ -1761,7 +1768,7 @@ font-style: inherit;">...</span>)</span></code></pre></div>
 <section id="review-of-selected-julia-code" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="review-of-selected-julia-code"><span class="header-section-number">4.2</span> Review of selected Julia code</h3>
 <p>Did you know you can use tuples to bind variable names to values?</p>
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1">x, y <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
@@ -1773,20 +1780,20 @@ font-style: inherit;">99</span></span></code></pre></div>
 <pre><code>(33, 99)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1">x</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>33</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1">y</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>99</code></pre>
 </div>
 </div>
 <p>This is super handy when we want to swap values between variables in one step.</p>
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1">x, y <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> y, x</span></code></pre></div>
@@ -1794,20 +1801,20 @@ font-style: inherit;">=</span> y, x</span></code></pre></div>
 <pre><code>(99, 33)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1">x</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>99</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="23">
+<div class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1">y</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>33</code></pre>
 </div>
 </div>
 <p>Here is how to prefill arrays:</p>
-<div class="cell" data-execution_count="24">
+<div class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">zeros</span>(<span class="fl" style="color: #AD0000;
@@ -1821,7 +1828,7 @@ font-style: inherit;">3</span>)</span></code></pre></div>
  0.0  0.0  0.0</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="25">
+<div class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb39-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ones</span>(<span class="fl" style="color: #AD0000;
@@ -1835,7 +1842,7 @@ font-style: inherit;">3</span>)</span></code></pre></div>
  1.0  1.0  1.0</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="26">
+<div class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb41-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">fill</span>(<span class="fl" style="color: #AD0000;
@@ -1852,7 +1859,7 @@ font-style: inherit;">3</span>))</span></code></pre></div>
 </div>
 </div>
 <p>The <code>reshape</code> function reshapes an array.</p>
-<div class="cell" data-execution_count="27">
+<div class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb43" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb43-1">A <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
@@ -1884,7 +1891,7 @@ font-style: inherit;">16</span>)</span></code></pre></div>
  16</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="28">
+<div class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb45" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb45-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">reshape</span>(A, (<span class="fl" style="color: #AD0000;
@@ -1900,7 +1907,7 @@ font-style: inherit;">4</span>))</span></code></pre></div>
  4  8  12  16</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="29">
+<div class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb47" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb47-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">reshape</span>(A, <span class="fl" style="color: #AD0000;
@@ -1915,7 +1922,7 @@ font-style: inherit;">:</span>)</span></code></pre></div>
 </div>
 </div>
 <p>Her is vertical concatenation (<code>vcat</code>): (<code>hcat</code>):</p>
-<div class="cell" data-execution_count="30">
+<div class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb49" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb49-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
@@ -1948,7 +1955,7 @@ font-style: inherit;">vcat</span>(x, y)</span></code></pre></div>
 </div>
 </div>
 <p>Here is horizontal concatenation (<code>hcat</code>):</p>
-<div class="cell" data-execution_count="31">
+<div class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb51" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb51-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">hcat</span>(x, y)</span></code></pre></div>
@@ -1960,7 +1967,7 @@ font-style: inherit;">hcat</span>(x, y)</span></code></pre></div>
 </div>
 </div>
 <p>The <code>!</code> operator signifies mutating (permanently changing) an object:</p>
-<div class="cell" data-execution_count="32">
+<div class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb53" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb53-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## combine and apply </span></span>
@@ -2034,7 +2041,7 @@ font-style: inherit;">true</span>)</span></code></pre></div>
 </div>
 </div>
 <p>The <code>repeat</code> function repeat a pattern.</p>
-<div class="cell" data-execution_count="33">
+<div class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb54" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb54-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">repeat</span>([<span class="fl" style="color: #AD0000;
@@ -2054,7 +2061,7 @@ font-style: inherit;">3</span>)</span></code></pre></div>
  5</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="34">
+<div class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb56" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb56-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## equivalent to above</span></span>
@@ -2081,7 +2088,7 @@ font-style: inherit;">3</span>]))</span></code></pre></div>
  5</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="35">
+<div class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb58" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb58-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">repeat</span>([<span class="fl" style="color: #AD0000;
@@ -2106,7 +2113,7 @@ font-style: inherit;">3</span>]))</span></code></pre></div>
 </div>
 </div>
 <p>Generating array of strings. Note how the splat (<code>...</code>) operator works.</p>
-<div class="cell" data-execution_count="36">
+<div class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb60" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb60-1">[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"eval"</span> <span class="op" style="color: #5E5E5E;
@@ -2125,7 +2132,7 @@ font-style: inherit;">3</span>)]</span></code></pre></div>
  ["eval1", "eval2", "eval3"]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="37">
+<div class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb62" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb62-1">[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"eval"</span> <span class="op" style="color: #5E5E5E;
@@ -2148,7 +2155,7 @@ font-style: inherit;">...</span>]</span></code></pre></div>
  "eval3"</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="38">
+<div class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb64" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb64-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">repeat</span>([<span class="st" style="color: #20794D;
@@ -2176,7 +2183,7 @@ font-style: inherit;">2</span>]))</span></code></pre></div>
  ["eval1", "eval2", "eval3"]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="39">
+<div class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb66" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb66-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">repeat</span>([<span class="st" style="color: #20794D;
@@ -2575,7 +2582,7 @@ Note
 <h3 data-number="2.1" class="anchored" data-anchor-id="chapter-1-introduction"><span class="header-section-number">2.1</span> Chapter 1 Introduction</h3>
 <p>My blog posting “<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>” is a good summary of what is covered in the Introduction. I will cover just one item—execution speed, and compare it to R.</p>
 <p>We will construct a <code>for</code> loop summation of a random sequence of integers from 1 to 1,000,000,000 (1 billion) that are sampled without replacment.<sup>1</sup> Here is the correct answer as a reference:</p>
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## In Julia</span></span>
@@ -2649,7 +2656,7 @@ sum_n = function(n){
 system.time(x <- sum_n(1000000000))
 x
 -->
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span> <span class="fu" style="color: #4758AB;
@@ -2757,7 +2764,7 @@ function sum_n(x)
 end
 @btime sum_n(samp)
 -->
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1">julia<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span> <span class="im" style="color: #00769E;
@@ -2855,7 +2862,7 @@ font-style: inherit;">500000000500000000</span></span></code></pre></div>
 <section id="basic-data-types" class="level4" data-number="2.2.1">
 <h4 data-number="2.2.1" class="anchored" data-anchor-id="basic-data-types"><span class="header-section-number">2.2.1</span> Basic data types</h4>
 <p>If you are familar with R or Python, you will feel comfortable with Julia. Here is a <strong>character</strong>:</p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## character; notice single quotation marks</span></span>
@@ -2867,7 +2874,7 @@ font-style: inherit;">'a'</span></span></code></pre></div>
 </div>
 </div>
 <p>A <strong>string</strong> is a collection of characters:</p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## string; notice double quotation marks</span></span>
@@ -2879,7 +2886,7 @@ font-style: inherit;">"Hello World"</span></span></code></pre></div>
 </div>
 </div>
 <p>An <strong>array</strong> is a collection in brackets. A <strong>vector</strong> is a 1-dimensional array. Commas are used to create a vector. By default, the vector is displayed vertically, but it is not a “column vector”.</p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## vector</span></span>
@@ -2898,7 +2905,7 @@ font-style: inherit;">3</span>]</span></code></pre></div>
 </div>
 </div>
 <p>To display horizontally use the <code>show</code> function.<sup>4</sup></p>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## vector</span></span>
@@ -2916,7 +2923,7 @@ font-style: inherit;">3</span>])</span></code></pre></div>
 </div>
 </div>
 <p>A <strong>matrix</strong> is a two-dimensional array. Numbers separated by spaces create one row of a <strong>matrix</strong>. This is not a vector.</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## matrix</span></span>
@@ -2935,7 +2942,7 @@ font-style: inherit;">4</span>]</span></code></pre></div>
 </div>
 </div>
 <p>Matrix rows separated by a semi-colon creates a multi-row matrix:</p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## matrix</span></span>
@@ -2963,7 +2970,7 @@ font-style: inherit;">9</span>]</span></code></pre></div>
 </div>
 </div>
 <p>The <code>size</code> function returns the dimensions of an array. Previously, we learned that a vector is a 1-dimensional array.</p>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">size</span>([<span class="fl" style="color: #AD0000;
@@ -2978,7 +2985,7 @@ font-style: inherit;">3</span>])</span></code></pre></div>
 </div>
 </div>
 <p>We see this vector is 1-dimensional (<code>(3,)</code>); in contrast,</p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">size</span>([<span class="fl" style="color: #AD0000;
@@ -2994,7 +3001,7 @@ font-style: inherit;">3</span>])</span></code></pre></div>
 </div>
 <p>this is a <code>(1, 3)</code> matrix or 2-dimensional.</p>
 <p>A <strong>tuple</strong> is a collection in parentheses, and commas separate the elements. Above, the <code>size</code> function returned a tuple. Tuples are immutable; their elements cannot be changed. Immutable objects increase computational speed.</p>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## tuple</span></span>
@@ -3010,7 +3017,7 @@ font-style: inherit;">3</span>)</span></code></pre></div>
 </div>
 </div>
 <p>Tuple elements can be named.</p>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## named tuple</span></span>
@@ -3032,7 +3039,7 @@ font-style: inherit;">6</span>)</span></code></pre></div>
 </div>
 </div>
 <p>The assigment operation (<code>=</code>) is used to <strong>bind</strong> data <em>values</em> to a <strong>variable</strong>. Binding in Julia is similar to binding in Python, but not in R.</p>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
@@ -3051,7 +3058,7 @@ font-style: inherit;">=</span> x</span>
 </div>
 </div>
 <p>If we change an element in <code>x</code>, the same change occurs in <code>y</code> because same array was binded to the variables <code>x</code> and <code>y</code>.</p>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb26-1">x[<span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>] <span class="op" style="color: #5E5E5E;
@@ -3070,7 +3077,7 @@ font-style: inherit;">## notice that y changes also</span></span>
 </div>
 </div>
 <p>This is not the case in R:</p>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb28-1"><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span> x <span class="op" style="color: #5E5E5E;
@@ -3118,7 +3125,7 @@ background-color: null;
 font-style: inherit;">2</span></span></code></pre></div>
 </div>
 <p>To replicate the R experience in Julia we assign a copy of <code>x</code> to <code>y</code>.</p>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="fl" style="color: #AD0000;
@@ -3145,7 +3152,7 @@ font-style: inherit;">99</span></span>
  99</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1">y</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>2-element Vector{Int64}:
@@ -3182,7 +3189,7 @@ font-style: inherit;">99</span></span>
 <p>the odds ratio is the cross-product:</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0AOR%20=%20%5Cfrac%7Ba%20d%7D%7Bb%20c%7D%0A"></p>
 <p>Here is a simple Julia function to calculate the odds ratio:</p>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">function</span> <span class="fu" style="color: #4758AB;
@@ -3208,7 +3215,7 @@ font-style: inherit;">end</span> </span></code></pre></div>
 </div>
 </div>
 <p>Because this is a simple function, it can also be created in an abbreviated form:</p>
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">oddsratio</span>(a, b, c, d) <span class="op" style="color: #5E5E5E;
@@ -3247,7 +3254,7 @@ font-style: inherit;">*</span> c)</span></code></pre></div>
 </tbody>
 </table>
 <p>Let’s test the <code>oddsratio</code> function by passing four integers from our 2x2 table.</p>
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">oddsratio</span>(<span class="fl" style="color: #AD0000;
@@ -3265,7 +3272,7 @@ font-style: inherit;">29</span>)</span></code></pre></div>
 </div>
 <p>The function <em>arguments</em>, <code>a</code>, <code>b</code>, <code>c</code>, and <code>d</code> are called <strong>positional</strong> arguments and are always required in the correct order.</p>
 <p>We now add a <strong>keyword</strong> argument which is optional. Keyword arguments are separated from the positional arguments by a semicolon (;). Any argument, positional or keyword, can be assigned a default value. We’ll create <code>oddsratio2</code>function to calculate a confidence interval using the Normal approximation. The keyword argument will have a default confidence level of 0.95.</p>
-<div class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb39-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">using</span> <span class="bu" style="color: null;
@@ -3377,7 +3384,7 @@ font-style: inherit;">end</span> </span></code></pre></div>
 </div>
 </div>
 <p>By default, <code>oddsratio2</code> will calculate the 95% confidence interval:</p>
-<div class="cell" data-execution_count="23">
+<div class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb41-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">oddsratio2</span>(<span class="fl" style="color: #AD0000;
@@ -3394,7 +3401,7 @@ font-style: inherit;">29</span>)</span></code></pre></div>
 </div>
 </div>
 <p>I can also calculate 99% confidence intervals:</p>
-<div class="cell" data-execution_count="24">
+<div class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb43" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb43-1">results <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
@@ -3417,7 +3424,7 @@ font-style: inherit;">0.99</span>)</span></code></pre></div>
 </div>
 </div>
 <p>And we can index elements of the named tuple.</p>
-<div class="cell" data-execution_count="25">
+<div class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb45" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb45-1">results.confint</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>(2.9619778898301936, 283.93189661797715)</code></pre>
@@ -3427,7 +3434,7 @@ font-style: inherit;">0.99</span>)</span></code></pre></div>
 <section id="anonymous-functions" class="level4" data-number="2.2.3">
 <h4 data-number="2.2.3" class="anchored" data-anchor-id="anonymous-functions"><span class="header-section-number">2.2.3</span> Anonymous functions</h4>
 <p>Functions can be arguments to functions. For example, we will create a <code>times_two</code> function and past it to other functions.</p>
-<div class="cell" data-execution_count="26">
+<div class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb47" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb47-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">times_two</span>(x) <span class="op" style="color: #5E5E5E;
@@ -3453,7 +3460,7 @@ font-style: inherit;">8</span>])</span></code></pre></div>
  16</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="27">
+<div class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb49" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb49-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">sum</span>(times_two, [<span class="fl" style="color: #AD0000;
@@ -3467,7 +3474,7 @@ font-style: inherit;">8</span>])</span></code></pre></div>
 <pre><code>22</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="28">
+<div class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb51" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb51-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">using</span> <span class="bu" style="color: null;
@@ -3487,7 +3494,7 @@ font-style: inherit;">8</span>])</span></code></pre></div>
 </div>
 </div>
 <p>Alternatively, we can pass the <code>times_two</code> function as an anonymous function; that is, a function without a name.</p>
-<div class="cell" data-execution_count="29">
+<div class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb53" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb53-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">map</span>(x <span class="op" style="color: #5E5E5E;
@@ -3510,7 +3517,7 @@ font-style: inherit;">8</span>])</span></code></pre></div>
  16</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="30">
+<div class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb55" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb55-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">sum</span>(x <span class="op" style="color: #5E5E5E;
@@ -3530,7 +3537,7 @@ font-style: inherit;">8</span>])</span></code></pre></div>
 <pre><code>22</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="31">
+<div class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb57" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb57-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mean</span>(x <span class="op" style="color: #5E5E5E;
@@ -3551,7 +3558,7 @@ font-style: inherit;">8</span>])</span></code></pre></div>
 </div>
 </div>
 <p>We can even calculate the odds ratio as an anonymous function.</p>
-<div class="cell" data-execution_count="32">
+<div class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb59" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb59-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">map</span>((a, b, c, d) <span class="op" style="color: #5E5E5E;
@@ -3578,7 +3585,7 @@ font-style: inherit;">...</span>)</span></code></pre></div>
 </div>
 </div>
 <p>Notice I used a trick. By default, the <code>map</code> function maps and executes a function with elements of a collection (eg, <code>[1 ,2, 8]</code>). However, for the odds ratio calcuation, I need to map the arguments <code>(a, b, c, d)</code> to their values <code>(12, 6, 2, 29)</code>, <em>then</em> calculate the odds ratio. Therefore, I used the splat operator (<code>...</code>) to break up the collection of values so that they could be mapped to their arguments first. Although I used a tuple <code>(12, 6, 2, 29)</code>, an array also works <code>[12, 6, 2, 29]</code>.</p>
-<div class="cell" data-execution_count="33">
+<div class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb61" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb61-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">map</span>((a, b, c, d) <span class="op" style="color: #5E5E5E;
@@ -3605,7 +3612,7 @@ font-style: inherit;">...</span>)</span></code></pre></div>
 </div>
 </div>
 <p>The splat operator (<code>...</code>) converts <code>[12, 6, 2, 29]</code> to <code>12, 6, 2, 29</code> which is very convenient if the vector is very large. In this case, with only four integers, I could have passed the integers without the splat operator.</p>
-<div class="cell" data-execution_count="34">
+<div class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb63" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb63-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">map</span>((a, b, c, d) <span class="op" style="color: #5E5E5E;
@@ -3641,7 +3648,7 @@ font-style: inherit;">29</span>)</span></code></pre></div>
 <li>Conducting a common analytic workflows</li>
 </ul>
 <p>The data set we will use is from National Health and Nutrition Examination Survey Data I Epidemiologic Follow-up Study (NHEFS). The version of the NHEFS data set we will use in from Professor Migual Hernan’s textbook “<a href="https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/">Causal Inference — What if</a>.”</p>
-<div class="cell" data-execution_count="35">
+<div class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb65" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb65-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> <span class="bu" style="color: null;
@@ -3691,7 +3698,7 @@ font-style: inherit;">6</span>]</span></code></pre></div>
 </div>
 <p>We are using the <code>Download</code>, <code>CSV</code>, and <code>Dataframes</code> modules.<sup>6</sup></p>
 <p>The data file has a header (variable names). If there is no header see p.&nbsp;191 of book.</p>
-<div class="cell" data-execution_count="36">
+<div class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb67" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb67-1">nhefs <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> CSV.<span class="fu" style="color: #4758AB;
@@ -4256,7 +4263,7 @@ font-style: inherit;">:</span>]</span></code></pre></div>
 </div>
 </div>
 <p>To see all the variable names we will take the vector of 64 names and reshape them into a 16 by 4 matrix for display purposes.</p>
-<div class="cell" data-execution_count="37">
+<div class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb68" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb68-1">vn <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
@@ -4310,7 +4317,7 @@ font-style: inherit;">4</span>)</span></code></pre></div>
 <li>Stratified by sex and race, what is the mean age?</li>
 </ul>
 <p>We start by creating smaller data set with these four variables, and describing them.</p>
-<div class="cell" data-execution_count="38">
+<div class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb70" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb70-1">nhefs4 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> nhefs[<span class="op" style="color: #5E5E5E;
@@ -4399,7 +4406,7 @@ font-style: inherit;">describe</span>(nhefs4)</span></code></pre></div>
 </div>
 </div>
 <p>For “split” we use the <code>groupby</code> function, and for “apply” and “combine” we use the <code>combine</code> function. I also insert a column with description of strate (eg, “white female”).</p>
-<div class="cell" data-execution_count="39">
+<div class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb71" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb71-1">gdf <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
@@ -4510,7 +4517,7 @@ font-style: inherit;">"black female"</span>])</span></code></pre></div>
 <section id="appendix-data-dictionary-for-nhefs-data-file" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="appendix-data-dictionary-for-nhefs-data-file"><span class="header-section-number">3</span> Appendix: Data dictionary for NHEFS data file</h2>
 <p>Download data dictionary which is an Microsoft Excel XLSX file.</p>
-<div class="cell" data-execution_count="40">
+<div class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb72" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb72-1"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">Downloads</span>.<span class="fu" style="color: #4758AB;
@@ -4531,7 +4538,7 @@ font-style: inherit;">"NHEFS_Codebook.xls"</span>)</span></code></pre></div>
 </div>
 </div>
 <p>Then, open up in you MS Excel and manually save as a CSV file. Although the Julia <code>XLSX.jl</code> package can read <code>.xlsx</code> files, it cannot read old <code>.xls</code> file (yet). So this is a work around.</p>
-<div class="cell" data-execution_count="41">
+<div class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb74" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb74-1">cb <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> CSV.<span class="fu" style="color: #4758AB;
@@ -4706,7 +4713,7 @@ font-style: inherit;">:</span>]</span></code></pre></div>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="42">
+<div class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb75" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb75-1">cb[<span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">21</span><span class="op" style="color: #5E5E5E;
@@ -4859,7 +4866,7 @@ font-style: inherit;">:</span>]</span></code></pre></div>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="43">
+<div class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb76" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb76-1">cb[<span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">41</span><span class="op" style="color: #5E5E5E;
