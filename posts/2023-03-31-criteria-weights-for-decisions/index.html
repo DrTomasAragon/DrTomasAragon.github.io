@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -111,7 +111,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -176,7 +177,7 @@ ga('send', {
  <span class="menu-text">Subscribe</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/drtomasaragon" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://threads.net/drtomasaragon" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -502,178 +503,202 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    [<span class="st">"evaluator"</span>, <span class="st">"criteria"</span>, <span class="st">"weight"</span>]</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<div><div style="float: left;"><span>30×3 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">5 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<div class="data-frame"><p>30 rows × 3 columns</p>
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">evaluator</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">weight</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">evaluator</th>
+<th data-quarto-table-cell-role="th">criteria</th>
+<th data-quarto-table-cell-role="th">weight</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>eval1</td>
+<td>Mileage</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.22409</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>eval1</td>
+<td>Color</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: left;">0.168067</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>eval1</td>
+<td>Price</td>
+<td>0.168067</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: left;">0.12605</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>eval1</td>
+<td>Safety</td>
+<td>0.12605</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: left;">0.0896359</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>eval1</td>
+<td>Reliability</td>
+<td>0.0896359</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.0560224</td>
+<td data-quarto-table-cell-role="th">6</td>
+<td>eval1</td>
+<td>Value</td>
+<td>0.0560224</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">7</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">7</td>
+<td>eval2</td>
+<td>Mileage</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">8</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.22409</td>
+<td data-quarto-table-cell-role="th">8</td>
+<td>eval2</td>
+<td>Color</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">9</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: left;">0.168067</td>
+<td data-quarto-table-cell-role="th">9</td>
+<td>eval2</td>
+<td>Safety</td>
+<td>0.168067</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">10</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: left;">0.12605</td>
+<td data-quarto-table-cell-role="th">10</td>
+<td>eval2</td>
+<td>Reliability</td>
+<td>0.12605</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">11</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.0896359</td>
+<td data-quarto-table-cell-role="th">11</td>
+<td>eval2</td>
+<td>Value</td>
+<td>0.0896359</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">12</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: left;">0.0560224</td>
+<td data-quarto-table-cell-role="th">12</td>
+<td>eval2</td>
+<td>Price</td>
+<td>0.0560224</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">13</td>
-<td style="text-align: left;">eval3</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">13</td>
+<td>eval3</td>
+<td>Color</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
+<td data-quarto-table-cell-role="th">14</td>
+<td>eval3</td>
+<td>Value</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">19</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">15</td>
+<td>eval3</td>
+<td>Price</td>
+<td>0.168067</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">20</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.22409</td>
+<td data-quarto-table-cell-role="th">16</td>
+<td>eval3</td>
+<td>Mileage</td>
+<td>0.12605</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">21</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.168067</td>
+<td data-quarto-table-cell-role="th">17</td>
+<td>eval3</td>
+<td>Reliability</td>
+<td>0.0896359</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">22</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: left;">0.12605</td>
+<td data-quarto-table-cell-role="th">18</td>
+<td>eval3</td>
+<td>Safety</td>
+<td>0.0560224</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">23</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: left;">0.0896359</td>
+<td data-quarto-table-cell-role="th">19</td>
+<td>eval4</td>
+<td>Mileage</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">24</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: left;">0.0560224</td>
+<td data-quarto-table-cell-role="th">20</td>
+<td>eval4</td>
+<td>Value</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">25</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">21</td>
+<td>eval4</td>
+<td>Color</td>
+<td>0.168067</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">26</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: left;">0.22409</td>
+<td data-quarto-table-cell-role="th">22</td>
+<td>eval4</td>
+<td>Safety</td>
+<td>0.12605</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">27</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.168067</td>
+<td data-quarto-table-cell-role="th">23</td>
+<td>eval4</td>
+<td>Reliability</td>
+<td>0.0896359</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">28</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: left;">0.12605</td>
+<td data-quarto-table-cell-role="th">24</td>
+<td>eval4</td>
+<td>Price</td>
+<td>0.0560224</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">29</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.0896359</td>
+<td data-quarto-table-cell-role="th">25</td>
+<td>eval5</td>
+<td>Safety</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">30</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.0560224</td>
+<td data-quarto-table-cell-role="th">26</td>
+<td>eval5</td>
+<td>Price</td>
+<td>0.22409</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">27</td>
+<td>eval5</td>
+<td>Color</td>
+<td>0.168067</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">28</td>
+<td>eval5</td>
+<td>Reliability</td>
+<td>0.12605</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">29</td>
+<td>eval5</td>
+<td>Mileage</td>
+<td>0.0896359</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">30</td>
+<td>eval5</td>
+<td>Value</td>
+<td>0.0560224</td>
 </tr>
 </tbody>
 </table>
@@ -688,110 +713,103 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## split</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> <span class="fu">groupby</span>(df, <span class="op">:</span>criteria)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<p><b>GroupedDataFrame with 6 groups based on key: criteria</b></p><div><div style="float: left;"><span>First Group (5 rows): criteria = "Mileage"</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<p><b>GroupedDataFrame with 6 groups based on key: criteria</b></p><p><i>First Group (5 rows): criteria = "Mileage"</i></p><div class="data-frame">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">evaluator</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">weight</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">evaluator</th>
+<th data-quarto-table-cell-role="th">criteria</th>
+<th data-quarto-table-cell-role="th">weight</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>eval1</td>
+<td>Mileage</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>eval2</td>
+<td>Mileage</td>
+<td>0.336134</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: left;">eval3</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.12605</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>eval3</td>
+<td>Mileage</td>
+<td>0.12605</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>eval4</td>
+<td>Mileage</td>
+<td>0.336134</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.0896359</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>eval5</td>
+<td>Mileage</td>
+<td>0.0896359</td>
 </tr>
 </tbody>
 </table>
 <p>⋮</p>
-<div>
-<div style="float: left;">
-<span>Last Group (5 rows): criteria = "Value"</span>
-</div>
-<div style="clear: both;">
-
-</div>
-</div>
-<div class="data-frame" style="overflow-x: scroll;">
+<p><em>Last Group (5 rows): criteria = "Value"</em></p>
+<div class="data-frame">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">evaluator</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">weight</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">evaluator</th>
+<th data-quarto-table-cell-role="th">criteria</th>
+<th data-quarto-table-cell-role="th">weight</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.0560224</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>eval1</td>
+<td>Value</td>
+<td>0.0560224</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.0896359</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>eval2</td>
+<td>Value</td>
+<td>0.0896359</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: left;">eval3</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.22409</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>eval3</td>
+<td>Value</td>
+<td>0.22409</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.22409</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>eval4</td>
+<td>Value</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.0560224</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>eval5</td>
+<td>Value</td>
+<td>0.0560224</td>
 </tr>
 </tbody>
 </table>
@@ -804,50 +822,50 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>crit_weights <span class="op">=</span> <span class="fu">combine</span>(gdf, <span class="op">:</span>weight <span class="op">=&gt;</span> mean)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort!</span>(crit_weights, <span class="op">:</span>weight_mean, rev <span class="op">=</span> <span class="cn">true</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-<div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<div class="data-frame"><p>6 rows × 2 columns</p>
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">weight_mean</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">criteria</th>
+<th data-quarto-table-cell-role="th">weight_mean</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Float64">Float64</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: right;">0.244818</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>Mileage</td>
+<td>0.244818</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: right;">0.22409</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>Color</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: right;">0.162465</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>Safety</td>
+<td>0.162465</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: right;">0.134454</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>Price</td>
+<td>0.134454</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: right;">0.129972</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>Value</td>
+<td>0.129972</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: right;">0.104202</td>
+<td data-quarto-table-cell-role="th">6</td>
+<td>Reliability</td>
+<td>0.104202</td>
 </tr>
 </tbody>
 </table>
@@ -915,50 +933,50 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>r1.weights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
-<div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<div class="data-frame"><p>6 rows × 2 columns</p>
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">weight_mean</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">criteria</th>
+<th data-quarto-table-cell-role="th">weight_mean</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Float64">Float64</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: right;">0.244818</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>Mileage</td>
+<td>0.244818</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: right;">0.22409</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>Color</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: right;">0.162465</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>Safety</td>
+<td>0.162465</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: right;">0.134454</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>Price</td>
+<td>0.134454</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: right;">0.129972</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>Value</td>
+<td>0.129972</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: right;">0.104202</td>
+<td data-quarto-table-cell-role="th">6</td>
+<td>Reliability</td>
+<td>0.104202</td>
 </tr>
 </tbody>
 </table>
@@ -968,178 +986,202 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>r1.data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
-<div><div style="float: left;"><span>30×3 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">5 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<div class="data-frame"><p>30 rows × 3 columns</p>
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">evaluator</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">weight</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">evaluator</th>
+<th data-quarto-table-cell-role="th">criteria</th>
+<th data-quarto-table-cell-role="th">weight</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>eval1</td>
+<td>Mileage</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.22409</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>eval1</td>
+<td>Color</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: left;">0.168067</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>eval1</td>
+<td>Price</td>
+<td>0.168067</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: left;">0.12605</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>eval1</td>
+<td>Safety</td>
+<td>0.12605</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: left;">0.0896359</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>eval1</td>
+<td>Reliability</td>
+<td>0.0896359</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.0560224</td>
+<td data-quarto-table-cell-role="th">6</td>
+<td>eval1</td>
+<td>Value</td>
+<td>0.0560224</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">7</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">7</td>
+<td>eval2</td>
+<td>Mileage</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">8</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.22409</td>
+<td data-quarto-table-cell-role="th">8</td>
+<td>eval2</td>
+<td>Color</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">9</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: left;">0.168067</td>
+<td data-quarto-table-cell-role="th">9</td>
+<td>eval2</td>
+<td>Safety</td>
+<td>0.168067</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">10</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: left;">0.12605</td>
+<td data-quarto-table-cell-role="th">10</td>
+<td>eval2</td>
+<td>Reliability</td>
+<td>0.12605</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">11</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.0896359</td>
+<td data-quarto-table-cell-role="th">11</td>
+<td>eval2</td>
+<td>Value</td>
+<td>0.0896359</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">12</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: left;">0.0560224</td>
+<td data-quarto-table-cell-role="th">12</td>
+<td>eval2</td>
+<td>Price</td>
+<td>0.0560224</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">13</td>
-<td style="text-align: left;">eval3</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">13</td>
+<td>eval3</td>
+<td>Color</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
+<td data-quarto-table-cell-role="th">14</td>
+<td>eval3</td>
+<td>Value</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">19</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">15</td>
+<td>eval3</td>
+<td>Price</td>
+<td>0.168067</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">20</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.22409</td>
+<td data-quarto-table-cell-role="th">16</td>
+<td>eval3</td>
+<td>Mileage</td>
+<td>0.12605</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">21</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.168067</td>
+<td data-quarto-table-cell-role="th">17</td>
+<td>eval3</td>
+<td>Reliability</td>
+<td>0.0896359</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">22</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: left;">0.12605</td>
+<td data-quarto-table-cell-role="th">18</td>
+<td>eval3</td>
+<td>Safety</td>
+<td>0.0560224</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">23</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: left;">0.0896359</td>
+<td data-quarto-table-cell-role="th">19</td>
+<td>eval4</td>
+<td>Mileage</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">24</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: left;">0.0560224</td>
+<td data-quarto-table-cell-role="th">20</td>
+<td>eval4</td>
+<td>Value</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">25</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">21</td>
+<td>eval4</td>
+<td>Color</td>
+<td>0.168067</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">26</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: left;">0.22409</td>
+<td data-quarto-table-cell-role="th">22</td>
+<td>eval4</td>
+<td>Safety</td>
+<td>0.12605</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">27</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.168067</td>
+<td data-quarto-table-cell-role="th">23</td>
+<td>eval4</td>
+<td>Reliability</td>
+<td>0.0896359</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">28</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: left;">0.12605</td>
+<td data-quarto-table-cell-role="th">24</td>
+<td>eval4</td>
+<td>Price</td>
+<td>0.0560224</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">29</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.0896359</td>
+<td data-quarto-table-cell-role="th">25</td>
+<td>eval5</td>
+<td>Safety</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">30</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.0560224</td>
+<td data-quarto-table-cell-role="th">26</td>
+<td>eval5</td>
+<td>Price</td>
+<td>0.22409</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">27</td>
+<td>eval5</td>
+<td>Color</td>
+<td>0.168067</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">28</td>
+<td>eval5</td>
+<td>Reliability</td>
+<td>0.12605</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">29</td>
+<td>eval5</td>
+<td>Mileage</td>
+<td>0.0896359</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">30</td>
+<td>eval5</td>
+<td>Value</td>
+<td>0.0560224</td>
 </tr>
 </tbody>
 </table>
@@ -1162,50 +1204,50 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>r2.weights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
-<div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<div class="data-frame"><p>6 rows × 2 columns</p>
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">weight_mean</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">criteria</th>
+<th data-quarto-table-cell-role="th">weight_mean</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Float64">Float64</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: right;">0.244818</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>Mileage</td>
+<td>0.244818</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: right;">0.22409</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>Color</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: right;">0.162465</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>Safety</td>
+<td>0.162465</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: right;">0.134454</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>Price</td>
+<td>0.134454</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: right;">0.129972</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>Value</td>
+<td>0.129972</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: right;">0.104202</td>
+<td data-quarto-table-cell-role="th">6</td>
+<td>Reliability</td>
+<td>0.104202</td>
 </tr>
 </tbody>
 </table>
@@ -1215,178 +1257,202 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>r2.data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
-<div><div style="float: left;"><span>30×3 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">5 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<div class="data-frame"><p>30 rows × 3 columns</p>
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">evaluator</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">weight</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">evaluator</th>
+<th data-quarto-table-cell-role="th">criteria</th>
+<th data-quarto-table-cell-role="th">weight</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>eval1</td>
+<td>Mileage</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.22409</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>eval1</td>
+<td>Color</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: left;">0.168067</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>eval1</td>
+<td>Price</td>
+<td>0.168067</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: left;">0.12605</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>eval1</td>
+<td>Safety</td>
+<td>0.12605</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: left;">0.0896359</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>eval1</td>
+<td>Reliability</td>
+<td>0.0896359</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
-<td style="text-align: left;">eval1</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.0560224</td>
+<td data-quarto-table-cell-role="th">6</td>
+<td>eval1</td>
+<td>Value</td>
+<td>0.0560224</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">7</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">7</td>
+<td>eval2</td>
+<td>Mileage</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">8</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.22409</td>
+<td data-quarto-table-cell-role="th">8</td>
+<td>eval2</td>
+<td>Color</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">9</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: left;">0.168067</td>
+<td data-quarto-table-cell-role="th">9</td>
+<td>eval2</td>
+<td>Safety</td>
+<td>0.168067</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">10</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: left;">0.12605</td>
+<td data-quarto-table-cell-role="th">10</td>
+<td>eval2</td>
+<td>Reliability</td>
+<td>0.12605</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">11</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.0896359</td>
+<td data-quarto-table-cell-role="th">11</td>
+<td>eval2</td>
+<td>Value</td>
+<td>0.0896359</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">12</td>
-<td style="text-align: left;">eval2</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: left;">0.0560224</td>
+<td data-quarto-table-cell-role="th">12</td>
+<td>eval2</td>
+<td>Price</td>
+<td>0.0560224</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">13</td>
-<td style="text-align: left;">eval3</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">13</td>
+<td>eval3</td>
+<td>Color</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
+<td data-quarto-table-cell-role="th">14</td>
+<td>eval3</td>
+<td>Value</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">19</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">15</td>
+<td>eval3</td>
+<td>Price</td>
+<td>0.168067</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">20</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.22409</td>
+<td data-quarto-table-cell-role="th">16</td>
+<td>eval3</td>
+<td>Mileage</td>
+<td>0.12605</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">21</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.168067</td>
+<td data-quarto-table-cell-role="th">17</td>
+<td>eval3</td>
+<td>Reliability</td>
+<td>0.0896359</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">22</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: left;">0.12605</td>
+<td data-quarto-table-cell-role="th">18</td>
+<td>eval3</td>
+<td>Safety</td>
+<td>0.0560224</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">23</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: left;">0.0896359</td>
+<td data-quarto-table-cell-role="th">19</td>
+<td>eval4</td>
+<td>Mileage</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">24</td>
-<td style="text-align: left;">eval4</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: left;">0.0560224</td>
+<td data-quarto-table-cell-role="th">20</td>
+<td>eval4</td>
+<td>Value</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">25</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: left;">0.336134</td>
+<td data-quarto-table-cell-role="th">21</td>
+<td>eval4</td>
+<td>Color</td>
+<td>0.168067</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">26</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: left;">0.22409</td>
+<td data-quarto-table-cell-role="th">22</td>
+<td>eval4</td>
+<td>Safety</td>
+<td>0.12605</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">27</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: left;">0.168067</td>
+<td data-quarto-table-cell-role="th">23</td>
+<td>eval4</td>
+<td>Reliability</td>
+<td>0.0896359</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">28</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: left;">0.12605</td>
+<td data-quarto-table-cell-role="th">24</td>
+<td>eval4</td>
+<td>Price</td>
+<td>0.0560224</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">29</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: left;">0.0896359</td>
+<td data-quarto-table-cell-role="th">25</td>
+<td>eval5</td>
+<td>Safety</td>
+<td>0.336134</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">30</td>
-<td style="text-align: left;">eval5</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: left;">0.0560224</td>
+<td data-quarto-table-cell-role="th">26</td>
+<td>eval5</td>
+<td>Price</td>
+<td>0.22409</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">27</td>
+<td>eval5</td>
+<td>Color</td>
+<td>0.168067</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">28</td>
+<td>eval5</td>
+<td>Reliability</td>
+<td>0.12605</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">29</td>
+<td>eval5</td>
+<td>Mileage</td>
+<td>0.0896359</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">30</td>
+<td>eval5</td>
+<td>Value</td>
+<td>0.0560224</td>
 </tr>
 </tbody>
 </table>
@@ -1536,50 +1602,50 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>crit_weights <span class="op">=</span> <span class="fu">combine</span>(gdf, <span class="op">:</span>weight <span class="op">=&gt;</span> mean)</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort!</span>(crit_weights, <span class="op">:</span>weight_mean, rev <span class="op">=</span> <span class="cn">true</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
-<div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<div class="data-frame"><p>6 rows × 2 columns</p>
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">weight_mean</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">criteria</th>
+<th data-quarto-table-cell-role="th">weight_mean</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<th data-quarto-table-cell-role="th" title="Float64">Float64</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: left;">Mileage</td>
-<td style="text-align: right;">0.244818</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>Mileage</td>
+<td>0.244818</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: right;">0.22409</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>Color</td>
+<td>0.22409</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: left;">Safety</td>
-<td style="text-align: right;">0.162465</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>Safety</td>
+<td>0.162465</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: left;">Price</td>
-<td style="text-align: right;">0.134454</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>Price</td>
+<td>0.134454</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
-<td style="text-align: left;">Value</td>
-<td style="text-align: right;">0.129972</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>Value</td>
+<td>0.129972</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
-<td style="text-align: left;">Reliability</td>
-<td style="text-align: right;">0.104202</td>
+<td data-quarto-table-cell-role="th">6</td>
+<td>Reliability</td>
+<td>0.104202</td>
 </tr>
 </tbody>
 </table>

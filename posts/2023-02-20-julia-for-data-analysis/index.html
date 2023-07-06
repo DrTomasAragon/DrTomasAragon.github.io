@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -111,7 +111,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -176,7 +177,7 @@ ga('send', {
  <span class="menu-text">Subscribe</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/drtomasaragon" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://threads.net/drtomasaragon" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -757,546 +758,122 @@ OR = \frac{a d}{b c}
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>nhefs <span class="op">=</span> CSV.<span class="fu">read</span>(<span class="st">"nhefs.csv"</span>, DataFrame)</span>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>nhefs[<span class="fl">1</span><span class="op">:</span><span class="fl">6</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
-<div><div style="float: left;"><span>6×64 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<div class="data-frame"><p>6 rows × 64 columns (omitted printing of 53 columns)</p>
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">seqn</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">qsmk</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">death</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">yrdth</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">modth</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">dadth</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">sbp</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">dbp</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">sex</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">age</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">race</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">income</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">marital</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">school</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">education</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">ht</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">wt71</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">wt82</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">wt82_71</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">birthplace</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">smokeintensity</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">smkintensity82_71</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">smokeyrs</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">asthma</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">bronch</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">tb</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">hf</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">hbp</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">pepticulcer</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">colitis</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">hepatitis</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">chroniccough</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">hayfever</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">diabetes</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">polio</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">tumor</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">nervousbreak</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">alcoholpy</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">alcoholfreq</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">alcoholtype</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">alcoholhowmuch</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">pica</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">headache</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">otherpain</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">weakheart</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">allergies</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">nerves</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">lackpep</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">hbpmed</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">boweltrouble</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">wtloss</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">infection</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">active</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">exercise</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">birthcontrol</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">pregnancies</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">cholesterol</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">hightax82</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">price71</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">price82</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">tax71</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">tax82</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">price71_82</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">tax71_82</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">seqn</th>
+<th data-quarto-table-cell-role="th">qsmk</th>
+<th data-quarto-table-cell-role="th">death</th>
+<th data-quarto-table-cell-role="th">yrdth</th>
+<th data-quarto-table-cell-role="th">modth</th>
+<th data-quarto-table-cell-role="th">dadth</th>
+<th data-quarto-table-cell-role="th">sbp</th>
+<th data-quarto-table-cell-role="th">dbp</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">race</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Float64}">Float64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Float64}">Float64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Float64}">Float64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Float64}">Float64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Float64}">Float64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Float64}">Float64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Float64}">Float64?</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Union{Missing, Float64}">Float64?</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
+<th data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
+<th data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
+<th data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
+<th data-quarto-table-cell-role="th" title="Union{Missing, Int64}">Int64?</th>
+<th data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th data-quarto-table-cell-role="th" title="Int64">Int64</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: right;">233</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right;">175</td>
-<td style="text-align: right;">96</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">174.188</td>
-<td style="text-align: right;">79.04</td>
-<td style="text-align: right;">68.946</td>
-<td style="text-align: right;">-10.094</td>
-<td style="text-align: right;">47</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: right;">-10</td>
-<td style="text-align: right;">29</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right;">197</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2.18359</td>
-<td style="text-align: right;">1.73999</td>
-<td style="text-align: right;">1.10229</td>
-<td style="text-align: right;">0.461975</td>
-<td style="text-align: right;">0.443787</td>
-<td style="text-align: right;">0.640381</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>233</td>
+<td>0</td>
+<td>0</td>
+<td><em>missing</em></td>
+<td><em>missing</em></td>
+<td><em>missing</em></td>
+<td>175</td>
+<td>96</td>
+<td>0</td>
+<td>42</td>
+<td>1</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: right;">235</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right;">123</td>
-<td style="text-align: right;">80</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">159.375</td>
-<td style="text-align: right;">58.63</td>
-<td style="text-align: right;">61.235</td>
-<td style="text-align: right;">2.60497</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">-10</td>
-<td style="text-align: right;">24</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right;">301</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2.34668</td>
-<td style="text-align: right;">1.79736</td>
-<td style="text-align: right;">1.36499</td>
-<td style="text-align: right;">0.571899</td>
-<td style="text-align: right;">0.549316</td>
-<td style="text-align: right;">0.792969</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>235</td>
+<td>0</td>
+<td>0</td>
+<td><em>missing</em></td>
+<td><em>missing</em></td>
+<td><em>missing</em></td>
+<td>123</td>
+<td>80</td>
+<td>0</td>
+<td>36</td>
+<td>0</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: right;">244</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right;">115</td>
-<td style="text-align: right;">75</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">56</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">168.5</td>
-<td style="text-align: right;">56.81</td>
-<td style="text-align: right;">66.2245</td>
-<td style="text-align: right;">9.41449</td>
-<td style="text-align: right;">51</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">-14</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">157</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.56958</td>
-<td style="text-align: right;">1.51343</td>
-<td style="text-align: right;">0.55127</td>
-<td style="text-align: right;">0.230988</td>
-<td style="text-align: right;">0.0561981</td>
-<td style="text-align: right;">0.320251</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>244</td>
+<td>0</td>
+<td>0</td>
+<td><em>missing</em></td>
+<td><em>missing</em></td>
+<td><em>missing</em></td>
+<td>115</td>
+<td>75</td>
+<td>1</td>
+<td>56</td>
+<td>1</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: right;">245</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">85</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">148</td>
-<td style="text-align: right;">78</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">68</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">170.188</td>
-<td style="text-align: right;">59.42</td>
-<td style="text-align: right;">64.4101</td>
-<td style="text-align: right;">4.99012</td>
-<td style="text-align: right;">37</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">53</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right;">174</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.50659</td>
-<td style="text-align: right;">1.4519</td>
-<td style="text-align: right;">0.524902</td>
-<td style="text-align: right;">0.219971</td>
-<td style="text-align: right;">0.0547943</td>
-<td style="text-align: right;">0.304993</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>245</td>
+<td>0</td>
+<td>1</td>
+<td>85</td>
+<td>2</td>
+<td>14</td>
+<td>148</td>
+<td>78</td>
+<td>0</td>
+<td>68</td>
+<td>1</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
-<td style="text-align: right;">252</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right;">118</td>
-<td style="text-align: right;">77</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">40</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">181.875</td>
-<td style="text-align: right;">87.09</td>
-<td style="text-align: right;">92.0793</td>
-<td style="text-align: right;">4.98925</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right;">216</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2.34668</td>
-<td style="text-align: right;">1.79736</td>
-<td style="text-align: right;">1.36499</td>
-<td style="text-align: right;">0.571899</td>
-<td style="text-align: right;">0.549316</td>
-<td style="text-align: right;">0.792969</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>252</td>
+<td>0</td>
+<td>0</td>
+<td><em>missing</em></td>
+<td><em>missing</em></td>
+<td><em>missing</em></td>
+<td>118</td>
+<td>77</td>
+<td>0</td>
+<td>40</td>
+<td>0</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
-<td style="text-align: right;">257</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right; font-style: italic;">missing</td>
-<td style="text-align: right;">141</td>
-<td style="text-align: right;">83</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">43</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">162.188</td>
-<td style="text-align: right;">99.0</td>
-<td style="text-align: right;">103.419</td>
-<td style="text-align: right;">4.41906</td>
-<td style="text-align: right;">34</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">212</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2.20996</td>
-<td style="text-align: right;">2.02588</td>
-<td style="text-align: right;">1.15479</td>
-<td style="text-align: right;">0.747925</td>
-<td style="text-align: right;">0.184082</td>
-<td style="text-align: right;">0.406982</td>
+<td data-quarto-table-cell-role="th">6</td>
+<td>257</td>
+<td>0</td>
+<td>0</td>
+<td><em>missing</em></td>
+<td><em>missing</em></td>
+<td><em>missing</em></td>
+<td>141</td>
+<td>83</td>
+<td>1</td>
+<td>43</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
@@ -1352,70 +929,70 @@ OR = \frac{a d}{b c}
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>nhefs4 <span class="op">=</span> nhefs[<span class="op">:</span>,[<span class="op">:</span>death,<span class="op">:</span>sex,<span class="op">:</span>age,<span class="op">:</span>race]]</span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(nhefs4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
-<div><div style="float: left;"><span>4×7 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<div class="data-frame"><p>4 rows × 7 columns</p>
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">variable</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">mean</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">min</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">median</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">max</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">nmissing</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">eltype</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">variable</th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">median</th>
+<th data-quarto-table-cell-role="th">max</th>
+<th data-quarto-table-cell-role="th">nmissing</th>
+<th data-quarto-table-cell-role="th">eltype</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Symbol">Symbol</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="DataType">DataType</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Symbol">Symbol</th>
+<th data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th data-quarto-table-cell-role="th" title="DataType">DataType</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: left;">death</td>
-<td style="text-align: right;">0.195212</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">Int64</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>death</td>
+<td>0.195212</td>
+<td>0</td>
+<td>0.0</td>
+<td>1</td>
+<td>0</td>
+<td>Int64</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: left;">sex</td>
-<td style="text-align: right;">0.509515</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">Int64</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>sex</td>
+<td>0.509515</td>
+<td>0</td>
+<td>1.0</td>
+<td>1</td>
+<td>0</td>
+<td>Int64</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: left;">age</td>
-<td style="text-align: right;">43.9153</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">44.0</td>
-<td style="text-align: right;">74</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">Int64</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>age</td>
+<td>43.9153</td>
+<td>25</td>
+<td>44.0</td>
+<td>74</td>
+<td>0</td>
+<td>Int64</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: left;">race</td>
-<td style="text-align: right;">0.131983</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: left;">Int64</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>race</td>
+<td>0.131983</td>
+<td>0</td>
+<td>0.0</td>
+<td>1</td>
+<td>0</td>
+<td>Int64</td>
 </tr>
 </tbody>
 </table>
@@ -1431,58 +1008,58 @@ OR = \frac{a d}{b c}
 <span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="fu">insertcols!</span>(results, </span>
 <span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>strata <span class="op">=&gt;</span> [<span class="st">"white male"</span>, <span class="st">"black male"</span>, <span class="st">"white female"</span>, <span class="st">"black female"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
-<div><div style="float: left;"><span>4×5 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<div class="data-frame"><p>4 rows × 5 columns</p>
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">sex</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">race</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">death_mean</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">age_mean</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">strata</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">race</th>
+<th data-quarto-table-cell-role="th">death_mean</th>
+<th data-quarto-table-cell-role="th">age_mean</th>
+<th data-quarto-table-cell-role="th">strata</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="String">String</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th data-quarto-table-cell-role="th" title="String">String</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.239716</td>
-<td style="text-align: right;">44.5262</td>
-<td style="text-align: left;">white male</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>0</td>
+<td>0</td>
+<td>0.239716</td>
+<td>44.5262</td>
+<td>white male</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.276596</td>
-<td style="text-align: right;">45.0638</td>
-<td style="text-align: left;">black male</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>0</td>
+<td>1</td>
+<td>0.276596</td>
+<td>45.0638</td>
+<td>black male</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.141044</td>
-<td style="text-align: right;">43.3808</td>
-<td style="text-align: left;">white female</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>0</td>
+<td>0.141044</td>
+<td>43.3808</td>
+<td>white female</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.190083</td>
-<td style="text-align: right;">42.595</td>
-<td style="text-align: left;">black female</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>1</td>
+<td>1</td>
+<td>0.190083</td>
+<td>42.595</td>
+<td>black female</td>
 </tr>
 </tbody>
 </table>
@@ -1514,142 +1091,142 @@ OR = \frac{a d}{b c}
 <span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="fu">insertcols!</span>(cb, <span class="fl">1</span>, <span class="op">:</span>row <span class="op">=&gt;</span> <span class="fl">1</span><span class="op">:</span><span class="fl">64</span>)</span>
 <span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>cb[<span class="fl">1</span><span class="op">:</span><span class="fl">20</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
-<div><div style="float: left;"><span>20×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<div class="data-frame"><p>20 rows × 3 columns</p>
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Description</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">row</th>
+<th data-quarto-table-cell-role="th">Variable</th>
+<th data-quarto-table-cell-role="th">Description</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="String31">String31</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="String">String</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th data-quarto-table-cell-role="th" title="String31">String31</th>
+<th data-quarto-table-cell-role="th" title="String">String</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">active</td>
-<td style="text-align: left;">IN YOUR USUAL DAY, HOW ACTIVE ARE YOU? IN 1971, 0:very active, 1:moderately active, 2:inactive</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>active</td>
+<td>IN YOUR USUAL DAY, HOW ACTIVE ARE YOU? IN 1971, 0:very active, 1:moderately active, 2:inactive</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">age</td>
-<td style="text-align: left;">AGE IN 1971</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>2</td>
+<td>age</td>
+<td>AGE IN 1971</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">alcoholfreq</td>
-<td style="text-align: left;">HOW OFTEN DO YOU DRINK? IN 1971 0: Almost every day, 1: 2-3 times/week, 2: 1-4 times/month, 3: &lt; 12 times/year, 4: No alcohol last year, 5: Unknown</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>3</td>
+<td>alcoholfreq</td>
+<td>HOW OFTEN DO YOU DRINK? IN 1971 0: Almost every day, 1: 2-3 times/week, 2: 1-4 times/month, 3: &lt; 12 times/year, 4: No alcohol last year, 5: Unknown</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">alcoholhowmuch</td>
-<td style="text-align: left;">WHEN YOU DRINK, HOW MUCH DO YOU DRINK? IN 1971</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>4</td>
+<td>alcoholhowmuch</td>
+<td>WHEN YOU DRINK, HOW MUCH DO YOU DRINK? IN 1971</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: left;">alcoholpy</td>
-<td style="text-align: left;">HAVE YOU HAD 1 DRINK PAST YEAR? IN 1971, 1:EVER, 0:NEVER; 2:MISSING</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>5</td>
+<td>alcoholpy</td>
+<td>HAVE YOU HAD 1 DRINK PAST YEAR? IN 1971, 1:EVER, 0:NEVER; 2:MISSING</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: left;">alcoholtype</td>
-<td style="text-align: left;">WHICH DO YOU MOST FREQUENTLY DRINK? IN 1971 1: BEER, 2: WINE, 3: LIQUOR, 4: OTHER/UNKNOWN</td>
+<td data-quarto-table-cell-role="th">6</td>
+<td>6</td>
+<td>alcoholtype</td>
+<td>WHICH DO YOU MOST FREQUENTLY DRINK? IN 1971 1: BEER, 2: WINE, 3: LIQUOR, 4: OTHER/UNKNOWN</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">7</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">allergies</td>
-<td style="text-align: left;">USE ALLERGIES MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">7</td>
+<td>7</td>
+<td>allergies</td>
+<td>USE ALLERGIES MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">8</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: left;">asthma</td>
-<td style="text-align: left;">DX ASTHMA IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">8</td>
+<td>8</td>
+<td>asthma</td>
+<td>DX ASTHMA IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">9</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: left;">bithcontrol</td>
-<td style="text-align: left;">BIRTH CONTROL PILLS PAST 6 MONTHS? IN 1971 1:YES, 0:NO, 2:MISSING</td>
+<td data-quarto-table-cell-role="th">9</td>
+<td>9</td>
+<td>bithcontrol</td>
+<td>BIRTH CONTROL PILLS PAST 6 MONTHS? IN 1971 1:YES, 0:NO, 2:MISSING</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">10</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: left;">birthplace</td>
-<td style="text-align: left;">CHECK STATE CODE - SECOND PAGE</td>
+<td data-quarto-table-cell-role="th">10</td>
+<td>10</td>
+<td>birthplace</td>
+<td>CHECK STATE CODE - SECOND PAGE</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">11</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: left;">boweltrouble</td>
-<td style="text-align: left;">USE BOWEL TROUBLE MEDICATION IN 1971, 1:EVER, 0:NEVER, ; 2:MISSING</td>
+<td data-quarto-table-cell-role="th">11</td>
+<td>11</td>
+<td>boweltrouble</td>
+<td>USE BOWEL TROUBLE MEDICATION IN 1971, 1:EVER, 0:NEVER, ; 2:MISSING</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">12</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: left;">bronch</td>
-<td style="text-align: left;">DX CHRONIC BRONCHITIS/EMPHYSEMA IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">12</td>
+<td>12</td>
+<td>bronch</td>
+<td>DX CHRONIC BRONCHITIS/EMPHYSEMA IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">13</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">cholesterol</td>
-<td style="text-align: left;">SERUM CHOLESTEROL (MG/100ML) IN 1971</td>
+<td data-quarto-table-cell-role="th">13</td>
+<td>13</td>
+<td>cholesterol</td>
+<td>SERUM CHOLESTEROL (MG/100ML) IN 1971</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">14</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: left;">chroniccough</td>
-<td style="text-align: left;">DX CHRONIC COUGH IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">14</td>
+<td>14</td>
+<td>chroniccough</td>
+<td>DX CHRONIC COUGH IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">15</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: left;">colitis</td>
-<td style="text-align: left;">DX COLITIS IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">15</td>
+<td>15</td>
+<td>colitis</td>
+<td>DX COLITIS IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">16</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: left;">dadth</td>
-<td style="text-align: left;">DAY OF DEATH</td>
+<td data-quarto-table-cell-role="th">16</td>
+<td>16</td>
+<td>dadth</td>
+<td>DAY OF DEATH</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">17</td>
-<td style="text-align: right;">17</td>
-<td style="text-align: left;">dbp</td>
-<td style="text-align: left;">DIASTOLIC BLOOD PRESSURE IN 1982</td>
+<td data-quarto-table-cell-role="th">17</td>
+<td>17</td>
+<td>dbp</td>
+<td>DIASTOLIC BLOOD PRESSURE IN 1982</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">18</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: left;">death</td>
-<td style="text-align: left;">DEATH BY 1992, 1:YES, 0:NO</td>
+<td data-quarto-table-cell-role="th">18</td>
+<td>18</td>
+<td>death</td>
+<td>DEATH BY 1992, 1:YES, 0:NO</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">19</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: left;">diabetes</td>
-<td style="text-align: left;">DX DIABETES IN 1971, 1:EVER, 0:NEVER, 2:MISSING</td>
+<td data-quarto-table-cell-role="th">19</td>
+<td>19</td>
+<td>diabetes</td>
+<td>DX DIABETES IN 1971, 1:EVER, 0:NEVER, 2:MISSING</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">20</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: left;">education</td>
-<td style="text-align: left;">AMOUNT OF EDUCATION BY 1971: 1: 8TH GRADE OR LESS, 2: HS DROPOUT, 3: HS, 4:COLLEGE DROPOUT, 5: COLLEGE OR MORE</td>
+<td data-quarto-table-cell-role="th">20</td>
+<td>20</td>
+<td>education</td>
+<td>AMOUNT OF EDUCATION BY 1971: 1: 8TH GRADE OR LESS, 2: HS DROPOUT, 3: HS, 4:COLLEGE DROPOUT, 5: COLLEGE OR MORE</td>
 </tr>
 </tbody>
 </table>
@@ -1659,142 +1236,142 @@ OR = \frac{a d}{b c}
 <div class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>cb[<span class="fl">21</span><span class="op">:</span><span class="fl">40</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
-<div><div style="float: left;"><span>20×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<div class="data-frame"><p>20 rows × 3 columns</p>
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Description</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">row</th>
+<th data-quarto-table-cell-role="th">Variable</th>
+<th data-quarto-table-cell-role="th">Description</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="String31">String31</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="String">String</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th data-quarto-table-cell-role="th" title="String31">String31</th>
+<th data-quarto-table-cell-role="th" title="String">String</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: left;">exercise</td>
-<td style="text-align: left;">IN RECREATION, HOW MUCH EXERCISE? IN 1971, 0:much exercise,1:moderate exercise,2:little or no exercise</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>21</td>
+<td>exercise</td>
+<td>IN RECREATION, HOW MUCH EXERCISE? IN 1971, 0:much exercise,1:moderate exercise,2:little or no exercise</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: left;">hayfever</td>
-<td style="text-align: left;">DX HAY FEVER IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>22</td>
+<td>hayfever</td>
+<td>DX HAY FEVER IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: right;">23</td>
-<td style="text-align: left;">hbp</td>
-<td style="text-align: left;">DX HIGH BLOOD PRESSURE IN 1971, 1:EVER, 0:NEVER, 2:MISSING</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>23</td>
+<td>hbp</td>
+<td>DX HIGH BLOOD PRESSURE IN 1971, 1:EVER, 0:NEVER, 2:MISSING</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: right;">24</td>
-<td style="text-align: left;">hbpmed</td>
-<td style="text-align: left;">USE HIGH BLOOD PRESSURE MEDICATION IN 1971, 1:EVER, 0:NEVER, ; 2:MISSING</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>24</td>
+<td>hbpmed</td>
+<td>USE HIGH BLOOD PRESSURE MEDICATION IN 1971, 1:EVER, 0:NEVER, ; 2:MISSING</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: left;">headache</td>
-<td style="text-align: left;">USE HEADACHE MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>25</td>
+<td>headache</td>
+<td>USE HEADACHE MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: left;">hepatitis</td>
-<td style="text-align: left;">DX HEPATITIS IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">6</td>
+<td>26</td>
+<td>hepatitis</td>
+<td>DX HEPATITIS IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">7</td>
-<td style="text-align: right;">27</td>
-<td style="text-align: left;">hf</td>
-<td style="text-align: left;">DX HEART FAILURE IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">7</td>
+<td>27</td>
+<td>hf</td>
+<td>DX HEART FAILURE IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">8</td>
-<td style="text-align: right;">28</td>
-<td style="text-align: left;">hightax82</td>
-<td style="text-align: left;">LIVING IN A HIGHLY TAXED STATE IN 1982, High taxed state of residence=1, 0 otherwise</td>
+<td data-quarto-table-cell-role="th">8</td>
+<td>28</td>
+<td>hightax82</td>
+<td>LIVING IN A HIGHLY TAXED STATE IN 1982, High taxed state of residence=1, 0 otherwise</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">9</td>
-<td style="text-align: right;">29</td>
-<td style="text-align: left;">ht</td>
-<td style="text-align: left;">HEIGHT IN CENTIMETERS IN 1971</td>
+<td data-quarto-table-cell-role="th">9</td>
+<td>29</td>
+<td>ht</td>
+<td>HEIGHT IN CENTIMETERS IN 1971</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">10</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: left;">income</td>
-<td style="text-align: left;">TOTAL FAMILY INCOME IN 1971 11:&lt;$1000, 12: 1000-1999, 13: 2000-2999, 14: 3000-3999, 15: 4000-4999, 16: 5000-5999, 17: 6000-6999, 18: 7000-9999, 19: 10000-14999, 20: 15000-19999, 21: 20000-24999, 22: 25000+</td>
+<td data-quarto-table-cell-role="th">10</td>
+<td>30</td>
+<td>income</td>
+<td>TOTAL FAMILY INCOME IN 1971 11:&lt;$1000, 12: 1000-1999, 13: 2000-2999, 14: 3000-3999, 15: 4000-4999, 16: 5000-5999, 17: 6000-6999, 18: 7000-9999, 19: 10000-14999, 20: 15000-19999, 21: 20000-24999, 22: 25000+</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">11</td>
-<td style="text-align: right;">31</td>
-<td style="text-align: left;">infection</td>
-<td style="text-align: left;">USE INFECTION MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">11</td>
+<td>31</td>
+<td>infection</td>
+<td>USE INFECTION MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">12</td>
-<td style="text-align: right;">32</td>
-<td style="text-align: left;">lackpep</td>
-<td style="text-align: left;">USELACK OF PEP MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">12</td>
+<td>32</td>
+<td>lackpep</td>
+<td>USELACK OF PEP MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">13</td>
-<td style="text-align: right;">33</td>
-<td style="text-align: left;">marital</td>
-<td style="text-align: left;">MARITAL STATUS IN 1971 1: Under 17, 2: Married, 3: Widowed, 4: Never married, 5: Divorced, 6: Separated, 8: Unknown</td>
+<td data-quarto-table-cell-role="th">13</td>
+<td>33</td>
+<td>marital</td>
+<td>MARITAL STATUS IN 1971 1: Under 17, 2: Married, 3: Widowed, 4: Never married, 5: Divorced, 6: Separated, 8: Unknown</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">14</td>
-<td style="text-align: right;">34</td>
-<td style="text-align: left;">modth</td>
-<td style="text-align: left;">MONTH OF DEATH</td>
+<td data-quarto-table-cell-role="th">14</td>
+<td>34</td>
+<td>modth</td>
+<td>MONTH OF DEATH</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">15</td>
-<td style="text-align: right;">35</td>
-<td style="text-align: left;">nerves</td>
-<td style="text-align: left;">USE NERVES MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">15</td>
+<td>35</td>
+<td>nerves</td>
+<td>USE NERVES MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">16</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: left;">nervousbreak</td>
-<td style="text-align: left;">DX NERVOUS BREAKDOWN IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">16</td>
+<td>36</td>
+<td>nervousbreak</td>
+<td>DX NERVOUS BREAKDOWN IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">17</td>
-<td style="text-align: right;">37</td>
-<td style="text-align: left;">otherpain</td>
-<td style="text-align: left;">USE OTHER PAINS MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">17</td>
+<td>37</td>
+<td>otherpain</td>
+<td>USE OTHER PAINS MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">18</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: left;">pepticulcer</td>
-<td style="text-align: left;">DX PEPTIC ULCER IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">18</td>
+<td>38</td>
+<td>pepticulcer</td>
+<td>DX PEPTIC ULCER IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">19</td>
-<td style="text-align: right;">39</td>
-<td style="text-align: left;">pica</td>
-<td style="text-align: left;">DO YOU EAT DIRT OR CLAY, STARCH OR OTHER NON STANDARD FOOD? IN 1971 1:EVER, 0:NEVER; 2:MISSING</td>
+<td data-quarto-table-cell-role="th">19</td>
+<td>39</td>
+<td>pica</td>
+<td>DO YOU EAT DIRT OR CLAY, STARCH OR OTHER NON STANDARD FOOD? IN 1971 1:EVER, 0:NEVER; 2:MISSING</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">20</td>
-<td style="text-align: right;">40</td>
-<td style="text-align: left;">polio</td>
-<td style="text-align: left;">DX POLIO IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">20</td>
+<td>40</td>
+<td>polio</td>
+<td>DX POLIO IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 </tbody>
 </table>
@@ -1804,166 +1381,166 @@ OR = \frac{a d}{b c}
 <div class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb76"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>cb[<span class="fl">41</span><span class="op">:</span><span class="fl">64</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="40">
-<div><div style="float: left;"><span>24×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<div class="data-frame"><p>24 rows × 3 columns</p>
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Description</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">row</th>
+<th data-quarto-table-cell-role="th">Variable</th>
+<th data-quarto-table-cell-role="th">Description</th>
 </tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="String31">String31</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="String">String</th>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th data-quarto-table-cell-role="th" title="String31">String31</th>
+<th data-quarto-table-cell-role="th" title="String">String</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: right;">41</td>
-<td style="text-align: left;">pregnancies</td>
-<td style="text-align: left;">TOTAL NUMBER OF PREGNANCIES? IN 1971</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>41</td>
+<td>pregnancies</td>
+<td>TOTAL NUMBER OF PREGNANCIES? IN 1971</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: left;">price71</td>
-<td style="text-align: left;">AVG TOBACCO PRICE IN STATE OF RESIDENCE 1971 (US$2008)</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>42</td>
+<td>price71</td>
+<td>AVG TOBACCO PRICE IN STATE OF RESIDENCE 1971 (US$2008)</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: right;">43</td>
-<td style="text-align: left;">price71_82</td>
-<td style="text-align: left;">DIFFERENCE IN AVG TOBACCO PRICE IN STATE OF RESIDENCE 1971-1982 (US$2008)</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>43</td>
+<td>price71_82</td>
+<td>DIFFERENCE IN AVG TOBACCO PRICE IN STATE OF RESIDENCE 1971-1982 (US$2008)</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: right;">44</td>
-<td style="text-align: left;">price82</td>
-<td style="text-align: left;">AVG TOBACCO PRICE IN STATE OF RESIDENCE 1982 (US$2008)</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>44</td>
+<td>price82</td>
+<td>AVG TOBACCO PRICE IN STATE OF RESIDENCE 1982 (US$2008)</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
-<td style="text-align: right;">45</td>
-<td style="text-align: left;">qsmk</td>
-<td style="text-align: left;">QUIT SMOKING BETWEEN 1ST QUESTIONNAIRE AND 1982, 1:YES, 0:NO</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>45</td>
+<td>qsmk</td>
+<td>QUIT SMOKING BETWEEN 1ST QUESTIONNAIRE AND 1982, 1:YES, 0:NO</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
-<td style="text-align: right;">46</td>
-<td style="text-align: left;">race</td>
-<td style="text-align: left;">0: WHITE 1: BLACK OR OTHER IN 1971</td>
+<td data-quarto-table-cell-role="th">6</td>
+<td>46</td>
+<td>race</td>
+<td>0: WHITE 1: BLACK OR OTHER IN 1971</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">7</td>
-<td style="text-align: right;">47</td>
-<td style="text-align: left;">sbp</td>
-<td style="text-align: left;">SYSTOLIC BLOOD PRESSURE IN 1982</td>
+<td data-quarto-table-cell-role="th">7</td>
+<td>47</td>
+<td>sbp</td>
+<td>SYSTOLIC BLOOD PRESSURE IN 1982</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">8</td>
-<td style="text-align: right;">48</td>
-<td style="text-align: left;">school</td>
-<td style="text-align: left;">HIGHEST GRADE OF REGULAR SCHOOL EVER IN 1971</td>
+<td data-quarto-table-cell-role="th">8</td>
+<td>48</td>
+<td>school</td>
+<td>HIGHEST GRADE OF REGULAR SCHOOL EVER IN 1971</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">9</td>
-<td style="text-align: right;">49</td>
-<td style="text-align: left;">seqn</td>
-<td style="text-align: left;">UNIQUE PERSONAL IDENTIFIER</td>
+<td data-quarto-table-cell-role="th">9</td>
+<td>49</td>
+<td>seqn</td>
+<td>UNIQUE PERSONAL IDENTIFIER</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">10</td>
-<td style="text-align: right;">50</td>
-<td style="text-align: left;">sex</td>
-<td style="text-align: left;">0: MALE 1: FEMALE</td>
+<td data-quarto-table-cell-role="th">10</td>
+<td>50</td>
+<td>sex</td>
+<td>0: MALE 1: FEMALE</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">11</td>
-<td style="text-align: right;">51</td>
-<td style="text-align: left;">smokeintensity</td>
-<td style="text-align: left;">NUMBER OF CIGARETTES SMOKED PER DAY IN 1971</td>
+<td data-quarto-table-cell-role="th">11</td>
+<td>51</td>
+<td>smokeintensity</td>
+<td>NUMBER OF CIGARETTES SMOKED PER DAY IN 1971</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">12</td>
-<td style="text-align: right;">52</td>
-<td style="text-align: left;">smkintensity 82_71</td>
-<td style="text-align: left;">INCREASE IN NUMBER OF CIGARETTES/DAY BETWEEN 1971 and 1982</td>
+<td data-quarto-table-cell-role="th">12</td>
+<td>52</td>
+<td>smkintensity 82_71</td>
+<td>INCREASE IN NUMBER OF CIGARETTES/DAY BETWEEN 1971 and 1982</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">13</td>
-<td style="text-align: right;">53</td>
-<td style="text-align: left;">smokeyrs</td>
-<td style="text-align: left;">YEARS OF SMOKING</td>
+<td data-quarto-table-cell-role="th">13</td>
+<td>53</td>
+<td>smokeyrs</td>
+<td>YEARS OF SMOKING</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">14</td>
-<td style="text-align: right;">54</td>
-<td style="text-align: left;">tax71</td>
-<td style="text-align: left;">TOBACCO TAX IN STATE OF RESIDENCE 1971 (US$2008)</td>
+<td data-quarto-table-cell-role="th">14</td>
+<td>54</td>
+<td>tax71</td>
+<td>TOBACCO TAX IN STATE OF RESIDENCE 1971 (US$2008)</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">15</td>
-<td style="text-align: right;">55</td>
-<td style="text-align: left;">tax71_82</td>
-<td style="text-align: left;">DIFFERENCE IN TOBACCO TAX IN STATE OF RESIDENCE 1971-1982 (US$2008)</td>
+<td data-quarto-table-cell-role="th">15</td>
+<td>55</td>
+<td>tax71_82</td>
+<td>DIFFERENCE IN TOBACCO TAX IN STATE OF RESIDENCE 1971-1982 (US$2008)</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">16</td>
-<td style="text-align: right;">56</td>
-<td style="text-align: left;">tax82</td>
-<td style="text-align: left;">TOBACCO TAX IN STATE OF RESIDENCE 1971 (US$2008)</td>
+<td data-quarto-table-cell-role="th">16</td>
+<td>56</td>
+<td>tax82</td>
+<td>TOBACCO TAX IN STATE OF RESIDENCE 1971 (US$2008)</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">17</td>
-<td style="text-align: right;">57</td>
-<td style="text-align: left;">tb</td>
-<td style="text-align: left;">DX TUBERCULOSIS IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">17</td>
+<td>57</td>
+<td>tb</td>
+<td>DX TUBERCULOSIS IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">18</td>
-<td style="text-align: right;">58</td>
-<td style="text-align: left;">tumor</td>
-<td style="text-align: left;">DX MALIGNANT TUMOR/GROWTH IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">18</td>
+<td>58</td>
+<td>tumor</td>
+<td>DX MALIGNANT TUMOR/GROWTH IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">19</td>
-<td style="text-align: right;">59</td>
-<td style="text-align: left;">weakheart</td>
-<td style="text-align: left;">USE WEAK HEART MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">19</td>
+<td>59</td>
+<td>weakheart</td>
+<td>USE WEAK HEART MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">20</td>
-<td style="text-align: right;">60</td>
-<td style="text-align: left;">wt71</td>
-<td style="text-align: left;">WEIGHT IN KILOGRAMS IN 1971</td>
+<td data-quarto-table-cell-role="th">20</td>
+<td>60</td>
+<td>wt71</td>
+<td>WEIGHT IN KILOGRAMS IN 1971</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">21</td>
-<td style="text-align: right;">61</td>
-<td style="text-align: left;">wt82</td>
-<td style="text-align: left;">WEIGHT IN KILOGRAMS IN 1982</td>
+<td data-quarto-table-cell-role="th">21</td>
+<td>61</td>
+<td>wt82</td>
+<td>WEIGHT IN KILOGRAMS IN 1982</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">22</td>
-<td style="text-align: right;">62</td>
-<td style="text-align: left;">wt82_71</td>
-<td style="text-align: left;">WEIGHT CHANGE IN KILOGRAMS</td>
+<td data-quarto-table-cell-role="th">22</td>
+<td>62</td>
+<td>wt82_71</td>
+<td>WEIGHT CHANGE IN KILOGRAMS</td>
 </tr>
 <tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">23</td>
-<td style="text-align: right;">63</td>
-<td style="text-align: left;">wtloss</td>
-<td style="text-align: left;">USE WEIGHT LOSS MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
+<td data-quarto-table-cell-role="th">23</td>
+<td>63</td>
+<td>wtloss</td>
+<td>USE WEIGHT LOSS MEDICATION IN 1971, 1:EVER, 0:NEVER</td>
 </tr>
 <tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">24</td>
-<td style="text-align: right;">64</td>
-<td style="text-align: left;">yrdth</td>
-<td style="text-align: left;">YEAR OF DEATH</td>
+<td data-quarto-table-cell-role="th">24</td>
+<td>64</td>
+<td>yrdth</td>
+<td>YEAR OF DEATH</td>
 </tr>
 </tbody>
 </table>
