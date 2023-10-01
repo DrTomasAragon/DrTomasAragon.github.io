@@ -2,86 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://drtomasaragon.github.io/about.html</loc>
-    <lastmod>2023-08-23T23:10:52.261Z</lastmod>
+    <lastmod>2023-10-01T19:37:17.605Z</lastmod>
   </url>
   <url>
     <loc>https://drtomasaragon.github.io/subscription.html</loc>
-    <lastmod>2023-08-23T23:10:50.014Z</lastmod>
+    <lastmod>2023-10-01T19:37:15.331Z</lastmod>
   </url>
   <url>
     <loc>https://drtomasaragon.github.io/posts/2022-08-20-decision-intelligence-books/index.html</loc>
-    <lastmod>2023-08-23T23:10:49.007Z</lastmod>
+    <lastmod>2023-10-01T19:37:14.255Z</lastmod>
   </url>
   <url>
     <loc>https://drtomasaragon.github.io/posts/2021-05-15-embodying-cultural-humility/index.html</loc>
-    <lastmod>2023-08-23T23:10:47.012Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drtomasaragon.github.io/posts/2023-03-31-criteria-weights-for-decisions/index.html</loc>
-    <lastmod>2023-08-23T23:10:45.376Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drtomasaragon.github.io/posts/2021-02-20-new-cdph-job/index.html</loc>
-    <lastmod>2023-08-23T23:10:40.902Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drtomasaragon.github.io/posts/2021-05-01-seven-principles-for-building-trust/index.html</loc>
-    <lastmod>2023-08-23T23:10:39.522Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drtomasaragon.github.io/posts/2017-10-22-humility-is-the-new-smart/index.html</loc>
-    <lastmod>2023-08-23T23:10:38.496Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drtomasaragon.github.io/posts/2023-01-14-my-journey-from-r-to-julia/index.html</loc>
-    <lastmod>2023-08-23T23:10:33.192Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drtomasaragon.github.io/posts/2023-08-08-building-and-extending-trust/index.html</loc>
-    <lastmod>2023-08-23T23:10:22.702Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drtomasaragon.github.io/posts/2021-05-22-congrats-ucb-sph-class-of-2021/index.html</loc>
-    <lastmod>2023-08-23T23:10:20.213Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drtomasaragon.github.io/posts/2022-12-10-becoming-the-best-at-getting-better/index.html</loc>
-    <lastmod>2023-08-23T23:10:21.915Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drtomasaragon.github.io/posts/2023-03-19-california-state-of-public-health/index.html</loc>
-    <lastmod>2023-08-23T23:10:23.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drtomasaragon.github.io/posts/2023-02-20-julia-for-data-analysis/index.html</loc>
-    <lastmod>2023-08-23T23:10:37.536Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drtomasaragon.github.io/posts/2018-06-11-the-book-of-why/index.html</loc>
-    <lastmod>2023-08-23T23:10:38.874Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drtomasaragon.github.io/posts/2018-06-15-how-emotions-are-made/index.html</loc>
-    <lastmod>2023-08-23T23:10:40.228Z</lastmod>
-  </url>
-  <url>
-    <loc>https://drtomasaragon.github.io/posts/2023-05-08-lesson-from-the-covid-wars/index.html</loc>
-    <lastmod>2023-08-23T23:10:42.006Z</lastmod>
+    <lastmod>2023-10-01T19:37:12.093Z</lastmod>
   </url>
   <url>
     <loc>https://drtomasaragon.github.io/posts/2021-03-13-decision-intelligence01/index.html</loc>
-    <lastmod>2023-08-23T23:10:46.331Z</lastmod>
+    <lastmod>2023-10-01T19:37:10.325Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drtomasaragon.github.io/posts/2023-05-08-lesson-from-the-covid-wars/index.html</loc>
+    <lastmod>2023-10-01T19:37:06.491Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drtomasaragon.github.io/posts/2018-06-15-how-emotions-are-made/index.html</loc>
+    <lastmod>2023-10-01T19:37:04.904Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drtomasaragon.github.io/posts/2018-06-11-the-book-of-why/index.html</loc>
+    <lastmod>2023-10-01T19:37:03.496Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drtomasaragon.github.io/posts/2023-02-20-julia-for-data-analysis/index.html</loc>
+    <lastmod>2023-10-01T19:37:02.080Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drtomasaragon.github.io/posts/2023-03-19-california-state-of-public-health/index.html</loc>
+    <lastmod>2023-10-01T19:36:44.532Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drtomasaragon.github.io/posts/2022-12-10-becoming-the-best-at-getting-better/index.html</loc>
+    <lastmod>2023-10-01T19:36:43.021Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drtomasaragon.github.io/posts/2021-05-22-congrats-ucb-sph-class-of-2021/index.html</loc>
+    <lastmod>2023-10-01T19:36:41.885Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drtomasaragon.github.io/posts/2023-08-08-building-and-extending-trust/index.html</loc>
+    <lastmod>2023-10-01T19:36:43.631Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drtomasaragon.github.io/posts/2023-01-14-my-journey-from-r-to-julia/index.html</loc>
+    <lastmod>2023-10-01T19:36:59.088Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drtomasaragon.github.io/posts/2017-10-22-humility-is-the-new-smart/index.html</loc>
+    <lastmod>2023-10-01T19:37:03.003Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drtomasaragon.github.io/posts/2021-05-01-seven-principles-for-building-trust/index.html</loc>
+    <lastmod>2023-10-01T19:37:04.189Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drtomasaragon.github.io/posts/2021-02-20-new-cdph-job/index.html</loc>
+    <lastmod>2023-10-01T19:37:05.451Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drtomasaragon.github.io/posts/2023-03-31-criteria-weights-for-decisions/index.html</loc>
+    <lastmod>2023-10-01T19:37:09.441Z</lastmod>
+  </url>
+  <url>
+    <loc>https://drtomasaragon.github.io/posts/2021-03-13-decision-intelligence01/index-YM29VGJ95K (3).html</loc>
+    <lastmod>2023-10-01T19:37:11.300Z</lastmod>
   </url>
   <url>
     <loc>https://drtomasaragon.github.io/posts/2023-03-24-respect-for-people/index.html</loc>
-    <lastmod>2023-08-23T23:10:48.058Z</lastmod>
+    <lastmod>2023-10-01T19:37:12.784Z</lastmod>
   </url>
   <url>
     <loc>https://drtomasaragon.github.io/works.html</loc>
-    <lastmod>2023-08-23T23:10:49.458Z</lastmod>
+    <lastmod>2023-10-01T19:37:14.995Z</lastmod>
   </url>
   <url>
     <loc>https://drtomasaragon.github.io/index.html</loc>
-    <lastmod>2023-08-23T23:10:51.897Z</lastmod>
+    <lastmod>2023-10-01T19:37:17.223Z</lastmod>
   </url>
 </urlset>
