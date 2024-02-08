@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -108,8 +115,35 @@ ga('send', {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Dr. Tomás Aragón" href="index.xml"><meta name="twitter:title" content="Dr.&nbsp;Tomás Aragón - Population Health Blog">
+<link rel="alternate" type="application/rss+xml" title="Dr. Tomás Aragón" href="index.xml" data-external="1"><meta name="twitter:title" content="Dr.&nbsp;Tomás Aragón - Population Health Blog">
 <meta name="twitter:image" content="https://drtomasaragon.github.io/posts/2023-05-08-lesson-from-the-covid-wars/images/book_cover_lessons_from_the_covid_war_1024x633.png">
 <meta name="twitter:image-height" content="633">
 <meta name="twitter:image-width" content="1024">
@@ -119,10 +153,10 @@ ga('send', {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Dr.&nbsp;Tomás Aragón</span>
     </a>
@@ -134,40 +168,40 @@ ga('send', {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./works.html" rel="" target="">
- <span class="menu-text">Works</span></a>
+    <a class="nav-link" href="./works.html"> 
+<span class="menu-text">Works</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./subscription.html" rel="" target="">
- <span class="menu-text">Subscribe</span></a>
+    <a class="nav-link" href="./subscription.html"> 
+<span class="menu-text">Subscribe</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://threads.net/drtomasaragon" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://threads.net/drtomasaragon"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/drtomasaragon" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://linkedin.com/in/drtomasaragon"> <i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/drtomasaragon" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/drtomasaragon"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -180,7 +214,7 @@ ga('send', {
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -204,21 +238,22 @@ ga('send', {
 
 
 
+
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Trust,Trustworthiness,Character,Stoicism" data-listing-date-sort="1691478000000" data-listing-file-modified-sort="1696194762476" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="0" data-categories="Trust,Trustworthiness,Character,Stoicism" data-listing-date-sort="1691478000000" data-listing-file-modified-sort="1707374834084" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="651">
 <div class="thumbnail">
-<p><a href="./posts/2023-08-08-building-and-extending-trust/index.html"> <img src="./posts/2023-08-08-building-and-extending-trust/images/tree-root-barrier.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2023-08-08-building-and-extending-trust/index.html" class="no-external"></a></p><a href="./posts/2023-08-08-building-and-extending-trust/index.html" class="no-external">
+<p><img src="./posts/2023-08-08-building-and-extending-trust/images/tree-root-barrier.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2023-08-08-building-and-extending-trust/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-08-08-building-and-extending-trust/index.html">
 <h3 class="no-anchor listing-title">
-Building trust requires being trustworthy and trusting wisely
+<a href="./posts/2023-08-08-building-and-extending-trust/index.html" class="no-external">Building trust requires being trustworthy and trusting wisely</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-08-08-building-and-extending-trust/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Trust'); return false;">
 Trust
@@ -233,14 +268,12 @@ Character
 Stoicism
 </div>
 </div>
-<a href="./posts/2023-08-08-building-and-extending-trust/index.html">
 <div class="listing-description">
-<p>“Summary and slide presentation”</p>
+<a href="./posts/2023-08-08-building-and-extending-trust/index.html" class="no-external">“Summary and slide presentation” </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-08-08-building-and-extending-trust/index.html">
+<a href="./posts/2023-08-08-building-and-extending-trust/index.html" class="no-external">
 <div class="listing-date">
 Aug 8, 2023
 </div>
@@ -250,19 +283,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Book review,COVID-19,Pandemic,Public health,Preparedness,SARS-CoV-2" data-listing-date-sort="1683529200000" data-listing-file-modified-sort="1684037614064" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="quarto-post image-right" data-index="1" data-categories="Book review,COVID-19,Pandemic,Public health,Preparedness,SARS-CoV-2" data-listing-date-sort="1683529200000" data-listing-file-modified-sort="1684037614064" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1958">
 <div class="thumbnail">
-<p><a href="./posts/2023-05-08-lesson-from-the-covid-wars/index.html"> <img src="./posts/2023-05-08-lesson-from-the-covid-wars/images/book_cover_lessons_from_the_covid_war_1024x633.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2023-05-08-lesson-from-the-covid-wars/index.html" class="no-external"></a></p><a href="./posts/2023-05-08-lesson-from-the-covid-wars/index.html" class="no-external">
+<p><img src="./posts/2023-05-08-lesson-from-the-covid-wars/images/book_cover_lessons_from_the_covid_war_1024x633.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2023-05-08-lesson-from-the-covid-wars/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-05-08-lesson-from-the-covid-wars/index.html">
 <h3 class="no-anchor listing-title">
-Lessons from the Covid Wars: An Investigative Report
+<a href="./posts/2023-05-08-lesson-from-the-covid-wars/index.html" class="no-external">Lessons from the Covid Wars: An Investigative Report</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-05-08-lesson-from-the-covid-wars/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Book review'); return false;">
 Book review
@@ -283,14 +316,12 @@ Preparedness
 SARS-CoV-2
 </div>
 </div>
-<a href="./posts/2023-05-08-lesson-from-the-covid-wars/index.html">
 <div class="listing-description">
-<p>“A book review and concise summary”</p>
+<a href="./posts/2023-05-08-lesson-from-the-covid-wars/index.html" class="no-external">“A book review and concise summary” </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-05-08-lesson-from-the-covid-wars/index.html">
+<a href="./posts/2023-05-08-lesson-from-the-covid-wars/index.html" class="no-external">
 <div class="listing-date">
 May 8, 2023
 </div>
@@ -300,19 +331,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Julia,R,Python,Data science,Programming,Decision intelligence,Scientific computing" data-listing-date-sort="1680246000000" data-listing-file-modified-sort="1683784948879" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14">
+<div class="quarto-post image-right" data-index="2" data-categories="Julia,R,Python,Data science,Programming,Decision intelligence,Scientific computing" data-listing-date-sort="1680246000000" data-listing-file-modified-sort="1707375671376" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2750">
 <div class="thumbnail">
-<p><a href="./posts/2023-03-31-criteria-weights-for-decisions/index.html"> <img src="./posts/2023-03-31-criteria-weights-for-decisions/images/book_cover_julia_for_data_analysis_1400x865.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2023-03-31-criteria-weights-for-decisions/index.html" class="no-external"></a></p><a href="./posts/2023-03-31-criteria-weights-for-decisions/index.html" class="no-external">
+<p><img src="./posts/2023-03-31-criteria-weights-for-decisions/images/book_cover_julia_for_data_analysis_1400x865.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2023-03-31-criteria-weights-for-decisions/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-03-31-criteria-weights-for-decisions/index.html">
 <h3 class="no-anchor listing-title">
-Simple method to get criteria weights for decision making
+<a href="./posts/2023-03-31-criteria-weights-for-decisions/index.html" class="no-external">Simple method to get criteria weights for decision making</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-03-31-criteria-weights-for-decisions/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Julia'); return false;">
 Julia
@@ -336,14 +367,12 @@ Decision intelligence
 Scientific computing
 </div>
 </div>
-<a href="./posts/2023-03-31-criteria-weights-for-decisions/index.html">
 <div class="listing-description">
-<p>“Calculating multi-attribute criteria weights with Julia”</p>
+<a href="./posts/2023-03-31-criteria-weights-for-decisions/index.html" class="no-external">“Calculating multi-attribute criteria weights with Julia” </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-03-31-criteria-weights-for-decisions/index.html">
+<a href="./posts/2023-03-31-criteria-weights-for-decisions/index.html" class="no-external">
 <div class="listing-date">
 Mar 31, 2023
 </div>
@@ -353,19 +382,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="CDPH Way,The CDPH Way,Lean,Dignity,Compassion,Equity,Humility,Leadership,Universal values,Continuous improvement" data-listing-date-sort="1679641200000" data-listing-file-modified-sort="1698167016668" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="3" data-categories="CDPH Way,The CDPH Way,Lean,Dignity,Compassion,Equity,Humility,Leadership,Universal values,Continuous improvement" data-listing-date-sort="1679641200000" data-listing-file-modified-sort="1698167016668" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="927">
 <div class="thumbnail">
-<p><a href="./posts/2023-03-24-respect-for-people/index.html"> <img src="./posts/2023-03-24-respect-for-people/images/cultural-respect_1200x741.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2023-03-24-respect-for-people/index.html" class="no-external"></a></p><a href="./posts/2023-03-24-respect-for-people/index.html" class="no-external">
+<p><img src="./posts/2023-03-24-respect-for-people/images/cultural-respect_1200x741.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2023-03-24-respect-for-people/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-03-24-respect-for-people/index.html">
 <h3 class="no-anchor listing-title">
-Showing “respect for people”
+<a href="./posts/2023-03-24-respect-for-people/index.html" class="no-external">Showing “respect for people”</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-03-24-respect-for-people/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('CDPH Way'); return false;">
 CDPH Way
@@ -398,14 +427,12 @@ Universal values
 Continuous improvement
 </div>
 </div>
-<a href="./posts/2023-03-24-respect-for-people/index.html">
 <div class="listing-description">
-<p>What does it mean to respect people? What does it mean to give respect and to feel respected?</p>
+<a href="./posts/2023-03-24-respect-for-people/index.html" class="no-external">What does it mean to respect people? What does it mean to give respect and to feel respected? </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-03-24-respect-for-people/index.html">
+<a href="./posts/2023-03-24-respect-for-people/index.html" class="no-external">
 <div class="listing-date">
 Mar 24, 2023
 </div>
@@ -415,19 +442,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="California,Public health,State Assembly,State Senate,Budget hearing,Health Officer,CDPH Director" data-listing-date-sort="1679209200000" data-listing-file-modified-sort="1683784969879" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<div class="quarto-post image-right" data-index="4" data-categories="California,Public health,State Assembly,State Senate,Budget hearing,Health Officer,CDPH Director" data-listing-date-sort="1679209200000" data-listing-file-modified-sort="1683784969879" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2332">
 <div class="thumbnail">
-<p><a href="./posts/2023-03-19-california-state-of-public-health/index.html"> <img src="./posts/2023-03-19-california-state-of-public-health/images/state_of_public_health_assembly_hearing_1216x760.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2023-03-19-california-state-of-public-health/index.html" class="no-external"></a></p><a href="./posts/2023-03-19-california-state-of-public-health/index.html" class="no-external">
+<p><img src="./posts/2023-03-19-california-state-of-public-health/images/state_of_public_health_assembly_hearing_1216x760.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2023-03-19-california-state-of-public-health/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-03-19-california-state-of-public-health/index.html">
 <h3 class="no-anchor listing-title">
-California State of Public Health
+<a href="./posts/2023-03-19-california-state-of-public-health/index.html" class="no-external">California State of Public Health</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-03-19-california-state-of-public-health/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('California'); return false;">
 California
@@ -451,14 +478,12 @@ Health Officer
 CDPH Director
 </div>
 </div>
-<a href="./posts/2023-03-19-california-state-of-public-health/index.html">
 <div class="listing-description">
-<p>“Presentation to the California Assembly and Senate Budget Subcommittees”</p>
+<a href="./posts/2023-03-19-california-state-of-public-health/index.html" class="no-external">“Presentation to the California Assembly and Senate Budget Subcommittees” </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-03-19-california-state-of-public-health/index.html">
+<a href="./posts/2023-03-19-california-state-of-public-health/index.html" class="no-external">
 <div class="listing-date">
 Mar 19, 2023
 </div>
@@ -468,19 +493,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="Book review,Julia,R,Python,Data science,Programming,Epidemiology,Scientific computing" data-listing-date-sort="1676880000000" data-listing-file-modified-sort="1683784984263" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<div class="quarto-post image-right" data-index="5" data-categories="Book review,Julia,R,Python,Data science,Programming,Epidemiology,Scientific computing" data-listing-date-sort="1676880000000" data-listing-file-modified-sort="1707375365610" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2276">
 <div class="thumbnail">
-<p><a href="./posts/2023-02-20-julia-for-data-analysis/index.html"> <img src="./posts/2023-02-20-julia-for-data-analysis/images/book_cover_julia_for_data_analysis_1400x865.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2023-02-20-julia-for-data-analysis/index.html" class="no-external"></a></p><a href="./posts/2023-02-20-julia-for-data-analysis/index.html" class="no-external">
+<p><img src="./posts/2023-02-20-julia-for-data-analysis/images/book_cover_julia_for_data_analysis_1400x865.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2023-02-20-julia-for-data-analysis/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-02-20-julia-for-data-analysis/index.html">
 <h3 class="no-anchor listing-title">
-Julia for Data Analysis
+<a href="./posts/2023-02-20-julia-for-data-analysis/index.html" class="no-external">Julia for Data Analysis</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-02-20-julia-for-data-analysis/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Book review'); return false;">
 Book review
@@ -507,14 +532,12 @@ Epidemiology
 Scientific computing
 </div>
 </div>
-<a href="./posts/2023-02-20-julia-for-data-analysis/index.html">
 <div class="listing-description">
-<p>“A book review for population health data scientists”</p>
+<a href="./posts/2023-02-20-julia-for-data-analysis/index.html" class="no-external">“A book review for population health data scientists” </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-02-20-julia-for-data-analysis/index.html">
+<a href="./posts/2023-02-20-julia-for-data-analysis/index.html" class="no-external">
 <div class="listing-date">
 Feb 20, 2023
 </div>
@@ -524,19 +547,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="Julia,R,Python,Data science,Programming,Epidemiology,Scientific computing" data-listing-date-sort="1673683200000" data-listing-file-modified-sort="1689826494343" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="6" data-categories="Julia,R,Python,Data science,Programming,Epidemiology,Scientific computing" data-listing-date-sort="1673683200000" data-listing-file-modified-sort="1707375068881" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1034">
 <div class="thumbnail">
-<p><a href="./posts/2023-01-14-my-journey-from-r-to-julia/index.html"> <img src="./posts/2023-01-14-my-journey-from-r-to-julia/images/julia-programming-language-mit-00.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2023-01-14-my-journey-from-r-to-julia/index.html" class="no-external"></a></p><a href="./posts/2023-01-14-my-journey-from-r-to-julia/index.html" class="no-external">
+<p><img src="./posts/2023-01-14-my-journey-from-r-to-julia/images/julia-programming-language-mit-00.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2023-01-14-my-journey-from-r-to-julia/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-01-14-my-journey-from-r-to-julia/index.html">
 <h3 class="no-anchor listing-title">
-My journey from R to Julia
+<a href="./posts/2023-01-14-my-journey-from-r-to-julia/index.html" class="no-external">My journey from R to Julia</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-01-14-my-journey-from-r-to-julia/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Julia'); return false;">
 Julia
@@ -560,14 +583,12 @@ Epidemiology
 Scientific computing
 </div>
 </div>
-<a href="./posts/2023-01-14-my-journey-from-r-to-julia/index.html">
 <div class="listing-description">
-<p>A very brief introduction to Julia for epidemiologists</p>
+<a href="./posts/2023-01-14-my-journey-from-r-to-julia/index.html" class="no-external">A very brief introduction to Julia for epidemiologists </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-01-14-my-journey-from-r-to-julia/index.html">
+<a href="./posts/2023-01-14-my-journey-from-r-to-julia/index.html" class="no-external">
 <div class="listing-date">
 Jan 14, 2023
 </div>
@@ -577,19 +598,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="CDPH Way,The CDPH Way,Lean,OKRs,Leadership,Continuous improvement,Objectives and Key Results" data-listing-date-sort="1670659200000" data-listing-file-modified-sort="1689568916942" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="quarto-post image-right" data-index="7" data-categories="CDPH Way,The CDPH Way,Lean,OKRs,Leadership,Continuous improvement,Objectives and Key Results" data-listing-date-sort="1670659200000" data-listing-file-modified-sort="1689568916942" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1855">
 <div class="thumbnail">
-<p><a href="./posts/2022-12-10-becoming-the-best-at-getting-better/index.html"> <img src="./posts/2022-12-10-becoming-the-best-at-getting-better/images/okrs_coursera_what-are-okrs-okr-definition-with-diagram_orig_cropped.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2022-12-10-becoming-the-best-at-getting-better/index.html" class="no-external"></a></p><a href="./posts/2022-12-10-becoming-the-best-at-getting-better/index.html" class="no-external">
+<p><img src="./posts/2022-12-10-becoming-the-best-at-getting-better/images/okrs_coursera_what-are-okrs-okr-definition-with-diagram_orig_cropped.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2022-12-10-becoming-the-best-at-getting-better/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2022-12-10-becoming-the-best-at-getting-better/index.html">
 <h3 class="no-anchor listing-title">
-Becoming the best at getting better
+<a href="./posts/2022-12-10-becoming-the-best-at-getting-better/index.html" class="no-external">Becoming the best at getting better</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2022-12-10-becoming-the-best-at-getting-better/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('CDPH Way'); return false;">
 CDPH Way
@@ -613,14 +634,12 @@ Continuous improvement
 Objectives and Key Results
 </div>
 </div>
-<a href="./posts/2022-12-10-becoming-the-best-at-getting-better/index.html">
 <div class="listing-description">
-<p>CDPH’s lean transformation with Objectives and Key Results (OKRs)</p>
+<a href="./posts/2022-12-10-becoming-the-best-at-getting-better/index.html" class="no-external">CDPH’s lean transformation with Objectives and Key Results (OKRs) </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2022-12-10-becoming-the-best-at-getting-better/index.html">
+<a href="./posts/2022-12-10-becoming-the-best-at-getting-better/index.html" class="no-external">
 <div class="listing-date">
 Dec 10, 2022
 </div>
@@ -630,19 +649,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="Book recommendations,Decision intelligence,Behavioral economics,Decision analysis" data-listing-date-sort="1660978800000" data-listing-file-modified-sort="1678036735112" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
+<div class="quarto-post image-right" data-index="8" data-categories="Book recommendations,Decision intelligence,Behavioral economics,Decision analysis" data-listing-date-sort="1660978800000" data-listing-file-modified-sort="1707375051570" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1521">
 <div class="thumbnail">
-<p><a href="./posts/2022-08-20-decision-intelligence-books/index.html"> <img src="./posts/2022-08-20-decision-intelligence-books/images/tja_book_decision_intelligence_venn_V04.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2022-08-20-decision-intelligence-books/index.html" class="no-external"></a></p><a href="./posts/2022-08-20-decision-intelligence-books/index.html" class="no-external">
+<p><img src="./posts/2022-08-20-decision-intelligence-books/images/tja_book_decision_intelligence_venn_V04.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2022-08-20-decision-intelligence-books/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2022-08-20-decision-intelligence-books/index.html">
 <h3 class="no-anchor listing-title">
-Decision intelligence books
+<a href="./posts/2022-08-20-decision-intelligence-books/index.html" class="no-external">Decision intelligence books</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2022-08-20-decision-intelligence-books/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Book recommendations'); return false;">
 Book recommendations
@@ -657,14 +676,12 @@ Behavioral economics
 Decision analysis
 </div>
 </div>
-<a href="./posts/2022-08-20-decision-intelligence-books/index.html">
 <div class="listing-description">
-<p>Here are my favorite books for making better decisions.</p>
+<a href="./posts/2022-08-20-decision-intelligence-books/index.html" class="no-external">Here are my favorite books for making better decisions. </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2022-08-20-decision-intelligence-books/index.html">
+<a href="./posts/2022-08-20-decision-intelligence-books/index.html" class="no-external">
 <div class="listing-date">
 Aug 20, 2022
 </div>
@@ -674,19 +691,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="Award,Graduation" data-listing-date-sort="1621666800000" data-listing-file-modified-sort="1660988623518" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="9" data-categories="Award,Graduation" data-listing-date-sort="1621666800000" data-listing-file-modified-sort="1660988623518" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="961">
 <div class="thumbnail">
-<p><a href="./posts/2021-05-22-congrats-ucb-sph-class-of-2021/index.html"> <img src="./posts/2021-05-22-congrats-ucb-sph-class-of-2021/images/feature.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2021-05-22-congrats-ucb-sph-class-of-2021/index.html" class="no-external"></a></p><a href="./posts/2021-05-22-congrats-ucb-sph-class-of-2021/index.html" class="no-external">
+<p><img src="./posts/2021-05-22-congrats-ucb-sph-class-of-2021/images/feature.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2021-05-22-congrats-ucb-sph-class-of-2021/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-05-22-congrats-ucb-sph-class-of-2021/index.html">
 <h3 class="no-anchor listing-title">
-Congratulations UC Berkeley School of Public Health Class of 2021!
+<a href="./posts/2021-05-22-congrats-ucb-sph-class-of-2021/index.html" class="no-external">Congratulations UC Berkeley School of Public Health Class of 2021!</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-05-22-congrats-ucb-sph-class-of-2021/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Award'); return false;">
 Award
@@ -695,14 +712,12 @@ Award
 Graduation
 </div>
 </div>
-<a href="./posts/2021-05-22-congrats-ucb-sph-class-of-2021/index.html">
 <div class="listing-description">
-<p>2021 Virtual Commencement, May 16, 2021</p>
+<a href="./posts/2021-05-22-congrats-ucb-sph-class-of-2021/index.html" class="no-external">2021 Virtual Commencement, May 16, 2021 </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-05-22-congrats-ucb-sph-class-of-2021/index.html">
+<a href="./posts/2021-05-22-congrats-ucb-sph-class-of-2021/index.html" class="no-external">
 <div class="listing-date">
 May 22, 2021
 </div>
@@ -712,19 +727,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="CDPH Way,The CDPH Way,Antiracism,Equity,Humility,Implicit bias,Leadership,Team skills,Trust" data-listing-date-sort="1621062000000" data-listing-file-modified-sort="1682531568170" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="10" data-categories="CDPH Way,The CDPH Way,Antiracism,Equity,Humility,Implicit bias,Leadership,Team skills,Trust" data-listing-date-sort="1621062000000" data-listing-file-modified-sort="1682531568170" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="481">
 <div class="thumbnail">
-<p><a href="./posts/2021-05-15-embodying-cultural-humility/index.html"> <img src="./posts/2021-05-15-embodying-cultural-humility/images/tree-hands_275x183.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2021-05-15-embodying-cultural-humility/index.html" class="no-external"></a></p><a href="./posts/2021-05-15-embodying-cultural-humility/index.html" class="no-external">
+<p><img src="./posts/2021-05-15-embodying-cultural-humility/images/tree-hands_275x183.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2021-05-15-embodying-cultural-humility/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-05-15-embodying-cultural-humility/index.html">
 <h3 class="no-anchor listing-title">
-Embodying cultural humility
+<a href="./posts/2021-05-15-embodying-cultural-humility/index.html" class="no-external">Embodying cultural humility</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-05-15-embodying-cultural-humility/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('CDPH Way'); return false;">
 CDPH Way
@@ -754,14 +769,12 @@ Team skills
 Trust
 </div>
 </div>
-<a href="./posts/2021-05-15-embodying-cultural-humility/index.html">
 <div class="listing-description">
-<p>Commit to lifelong learning and personal and institutional transformation.</p>
+<a href="./posts/2021-05-15-embodying-cultural-humility/index.html" class="no-external">Commit to lifelong learning and personal and institutional transformation. </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-05-15-embodying-cultural-humility/index.html">
+<a href="./posts/2021-05-15-embodying-cultural-humility/index.html" class="no-external">
 <div class="listing-date">
 May 15, 2021
 </div>
@@ -771,19 +784,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="CDPH Way,The CDPH Way,Character,Compassion,Competence,Humility,Accountability,Psychological safety,Team skills,Trust" data-listing-date-sort="1619852400000" data-listing-file-modified-sort="1682531613393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="11" data-categories="CDPH Way,The CDPH Way,Character,Compassion,Competence,Humility,Accountability,Psychological safety,Team skills,Trust" data-listing-date-sort="1619852400000" data-listing-file-modified-sort="1682531613393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="923">
 <div class="thumbnail">
-<p><a href="./posts/2021-05-01-seven-principles-for-building-trust/index.html"> <img src="./posts/2021-05-01-seven-principles-for-building-trust/images/building-trust_525x350.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2021-05-01-seven-principles-for-building-trust/index.html" class="no-external"></a></p><a href="./posts/2021-05-01-seven-principles-for-building-trust/index.html" class="no-external">
+<p><img src="./posts/2021-05-01-seven-principles-for-building-trust/images/building-trust_525x350.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2021-05-01-seven-principles-for-building-trust/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-05-01-seven-principles-for-building-trust/index.html">
 <h3 class="no-anchor listing-title">
-The 8 principles for building trust (updated Nov 27 2022)
+<a href="./posts/2021-05-01-seven-principles-for-building-trust/index.html" class="no-external">The 8 principles for building trust (updated Nov 27 2022)</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-05-01-seven-principles-for-building-trust/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('CDPH Way'); return false;">
 CDPH Way
@@ -816,14 +829,12 @@ Team skills
 Trust
 </div>
 </div>
-<a href="./posts/2021-05-01-seven-principles-for-building-trust/index.html">
 <div class="listing-description">
-<p>What is trust? How do we build and keep it?</p>
+<a href="./posts/2021-05-01-seven-principles-for-building-trust/index.html" class="no-external">What is trust? How do we build and keep it? </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-05-01-seven-principles-for-building-trust/index.html">
+<a href="./posts/2021-05-01-seven-principles-for-building-trust/index.html" class="no-external">
 <div class="listing-date">
 May 1, 2021
 </div>
@@ -833,19 +844,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="Decision intelligence,Data science,Behavioral economics,Continuous improvement" data-listing-date-sort="1615622400000" data-listing-file-modified-sort="1680991044000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<div class="quarto-post image-right" data-index="12" data-categories="Decision intelligence,Data science,Behavioral economics,Continuous improvement" data-listing-date-sort="1615622400000" data-listing-file-modified-sort="1680991044000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2204">
 <div class="thumbnail">
-<p><a href="./posts/2021-03-13-decision-intelligence01/index.html"> <img src="./posts/2021-03-13-decision-intelligence01/images/feature.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2021-03-13-decision-intelligence01/index.html" class="no-external"></a></p><a href="./posts/2021-03-13-decision-intelligence01/index.html" class="no-external">
+<p><img src="./posts/2021-03-13-decision-intelligence01/images/feature.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2021-03-13-decision-intelligence01/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-03-13-decision-intelligence01/index.html">
 <h3 class="no-anchor listing-title">
-Decision intelligence: An Introduction
+<a href="./posts/2021-03-13-decision-intelligence01/index.html" class="no-external">Decision intelligence: An Introduction</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-03-13-decision-intelligence01/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Decision intelligence'); return false;">
 Decision intelligence
@@ -860,14 +871,12 @@ Behavioral economics
 Continuous improvement
 </div>
 </div>
-<a href="./posts/2021-03-13-decision-intelligence01/index.html">
 <div class="listing-description">
-<p>Integrating problem solving, decision quality, performance improvement, and behavioral, data, and implementation sciences</p>
+<a href="./posts/2021-03-13-decision-intelligence01/index.html" class="no-external">Integrating problem solving, decision quality, performance improvement, and behavioral, data, and implementation sciences </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-03-13-decision-intelligence01/index.html">
+<a href="./posts/2021-03-13-decision-intelligence01/index.html" class="no-external">
 <div class="listing-date">
 Mar 13, 2021
 </div>
@@ -877,19 +886,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="Decision intelligence,Data science,Behavioral economics,Continuous improvement" data-listing-date-sort="1615622400000" data-listing-file-modified-sort="1680991044000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<div class="quarto-post image-right" data-index="13" data-categories="Decision intelligence,Data science,Behavioral economics,Continuous improvement" data-listing-date-sort="1615622400000" data-listing-file-modified-sort="1680991044000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2204">
 <div class="thumbnail">
-<p><a href="./posts/2021-03-13-decision-intelligence01/index-YM29VGJ95K (3).html"> <img src="./posts/2021-03-13-decision-intelligence01/images/feature.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2021-03-13-decision-intelligence01/index-YM29VGJ95K (3).html" class="no-external"></a></p><a href="./posts/2021-03-13-decision-intelligence01/index-YM29VGJ95K (3).html" class="no-external">
+<p><img src="./posts/2021-03-13-decision-intelligence01/images/feature.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2021-03-13-decision-intelligence01/index-YM29VGJ95K (3).html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-03-13-decision-intelligence01/index-YM29VGJ95K (3).html">
 <h3 class="no-anchor listing-title">
-Decision intelligence: An Introduction
+<a href="./posts/2021-03-13-decision-intelligence01/index-YM29VGJ95K (3).html" class="no-external">Decision intelligence: An Introduction</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-03-13-decision-intelligence01/index-YM29VGJ95K (3).html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Decision intelligence'); return false;">
 Decision intelligence
@@ -904,14 +913,12 @@ Behavioral economics
 Continuous improvement
 </div>
 </div>
-<a href="./posts/2021-03-13-decision-intelligence01/index-YM29VGJ95K (3).html">
 <div class="listing-description">
-<p>Integrating problem solving, decision quality, performance improvement, and behavioral, data, and implementation sciences</p>
+<a href="./posts/2021-03-13-decision-intelligence01/index-YM29VGJ95K (3).html" class="no-external">Integrating problem solving, decision quality, performance improvement, and behavioral, data, and implementation sciences </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-03-13-decision-intelligence01/index-YM29VGJ95K (3).html">
+<a href="./posts/2021-03-13-decision-intelligence01/index-YM29VGJ95K (3).html" class="no-external">
 <div class="listing-date">
 Mar 13, 2021
 </div>
@@ -921,19 +928,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="CDPH,Work" data-listing-date-sort="1613894400000" data-listing-file-modified-sort="1660985921926" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="14" data-categories="CDPH,Work" data-listing-date-sort="1613894400000" data-listing-file-modified-sort="1660985921926" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="755">
 <div class="thumbnail">
-<p><a href="./posts/2021-02-20-new-cdph-job/index.html"> <img src="./posts/2021-02-20-new-cdph-job/images/combatimoscovid_1800x1200.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2021-02-20-new-cdph-job/index.html" class="no-external"></a></p><a href="./posts/2021-02-20-new-cdph-job/index.html" class="no-external">
+<p><img src="./posts/2021-02-20-new-cdph-job/images/combatimoscovid_1800x1200.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2021-02-20-new-cdph-job/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-02-20-new-cdph-job/index.html">
 <h3 class="no-anchor listing-title">
-Never say never: Why I moved from local to state public health
+<a href="./posts/2021-02-20-new-cdph-job/index.html" class="no-external">Never say never: Why I moved from local to state public health</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-02-20-new-cdph-job/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('CDPH'); return false;">
 CDPH
@@ -942,14 +949,12 @@ CDPH
 Work
 </div>
 </div>
-<a href="./posts/2021-02-20-new-cdph-job/index.html">
 <div class="listing-description">
-<p>On January 4, 2021, I started as the new Director and State Health Officer at the California Department of Public Health (CDPH).</p>
+<a href="./posts/2021-02-20-new-cdph-job/index.html" class="no-external">On January 4, 2021, I started as the new Director and State Health Officer at the California Department of Public Health (CDPH). </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-02-20-new-cdph-job/index.html">
+<a href="./posts/2021-02-20-new-cdph-job/index.html" class="no-external">
 <div class="listing-date">
 Feb 21, 2021
 </div>
@@ -959,19 +964,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="Book review,Causal inference,Bayesian networks,Data science" data-listing-date-sort="1528700400000" data-listing-file-modified-sort="1660984912557" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="15" data-categories="Book review,Causal inference,Bayesian networks,Data science" data-listing-date-sort="1528700400000" data-listing-file-modified-sort="1660984912557" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="390">
 <div class="thumbnail">
-<p><a href="./posts/2018-06-11-the-book-of-why/index.html"> <img src="./posts/2018-06-11-the-book-of-why/images/Pearl2018_The-Book-of-Why_COVER_300x200.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2018-06-11-the-book-of-why/index.html" class="no-external"></a></p><a href="./posts/2018-06-11-the-book-of-why/index.html" class="no-external">
+<p><img src="./posts/2018-06-11-the-book-of-why/images/Pearl2018_The-Book-of-Why_COVER_300x200.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2018-06-11-the-book-of-why/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-06-11-the-book-of-why/index.html">
 <h3 class="no-anchor listing-title">
-The Book of Why: The new science of cause and effect
+<a href="./posts/2018-06-11-the-book-of-why/index.html" class="no-external">The Book of Why: The new science of cause and effect</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-06-11-the-book-of-why/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Book review'); return false;">
 Book review
@@ -986,14 +991,12 @@ Bayesian networks
 Data science
 </div>
 </div>
-<a href="./posts/2018-06-11-the-book-of-why/index.html">
 <div class="listing-description">
-<p>Brilliant introduction to causal inference with many public health examples.</p>
+<a href="./posts/2018-06-11-the-book-of-why/index.html" class="no-external">Brilliant introduction to causal inference with many public health examples. </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-06-11-the-book-of-why/index.html">
+<a href="./posts/2018-06-11-the-book-of-why/index.html" class="no-external">
 <div class="listing-date">
 Jun 11, 2018
 </div>
@@ -1003,19 +1006,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="Book review,Emotions,Neuroscience,Psychology" data-listing-date-sort="1528700400000" data-listing-file-modified-sort="1683688310552" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="16" data-categories="Book review,Emotions,Neuroscience,Psychology" data-listing-date-sort="1528700400000" data-listing-file-modified-sort="1683688310552" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1206">
 <div class="thumbnail">
-<p><a href="./posts/2018-06-15-how-emotions-are-made/index.html"> <img src="./posts/2018-06-15-how-emotions-are-made/images/feature.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2018-06-15-how-emotions-are-made/index.html" class="no-external"></a></p><a href="./posts/2018-06-15-how-emotions-are-made/index.html" class="no-external">
+<p><img src="./posts/2018-06-15-how-emotions-are-made/images/feature.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2018-06-15-how-emotions-are-made/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-06-15-how-emotions-are-made/index.html">
 <h3 class="no-anchor listing-title">
-How emotions are made: The secret life of the brain
+<a href="./posts/2018-06-15-how-emotions-are-made/index.html" class="no-external">How emotions are made: The secret life of the brain</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-06-15-how-emotions-are-made/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Book review'); return false;">
 Book review
@@ -1030,14 +1033,12 @@ Neuroscience
 Psychology
 </div>
 </div>
-<a href="./posts/2018-06-15-how-emotions-are-made/index.html">
 <div class="listing-description">
-<p>Most of what we know about our emotions (and how our brains work) is just plain wrong—and sometimes harmful!</p>
+<a href="./posts/2018-06-15-how-emotions-are-made/index.html" class="no-external">Most of what we know about our emotions (and how our brains work) is just plain wrong—and sometimes harmful! </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-06-15-how-emotions-are-made/index.html">
+<a href="./posts/2018-06-15-how-emotions-are-made/index.html" class="no-external">
 <div class="listing-date">
 Jun 11, 2018
 </div>
@@ -1047,19 +1048,19 @@ Tomás Aragón
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="CDPH Way,The CDPH Way,Book review,Humility,Mindfulness,Psychological safety,Team skills" data-listing-date-sort="1508655600000" data-listing-file-modified-sort="1682531655357" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14">
+<div class="quarto-post image-right" data-index="17" data-categories="CDPH Way,The CDPH Way,Book review,Humility,Mindfulness,Psychological safety,Team skills" data-listing-date-sort="1508655600000" data-listing-file-modified-sort="1682531655357" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2687">
 <div class="thumbnail">
-<p><a href="./posts/2017-10-22-humility-is-the-new-smart/index.html"> <img src="./posts/2017-10-22-humility-is-the-new-smart/images/humility-book_200x133.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2017-10-22-humility-is-the-new-smart/index.html" class="no-external"></a></p><a href="./posts/2017-10-22-humility-is-the-new-smart/index.html" class="no-external">
+<p><img src="./posts/2017-10-22-humility-is-the-new-smart/images/humility-book_200x133.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2017-10-22-humility-is-the-new-smart/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2017-10-22-humility-is-the-new-smart/index.html">
 <h3 class="no-anchor listing-title">
-Humility is the New Smart! Rethinking human excellence
+<a href="./posts/2017-10-22-humility-is-the-new-smart/index.html" class="no-external">Humility is the New Smart! Rethinking human excellence</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2017-10-22-humility-is-the-new-smart/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('CDPH Way'); return false;">
 CDPH Way
@@ -1083,14 +1084,12 @@ Psychological safety
 Team skills
 </div>
 </div>
-<a href="./posts/2017-10-22-humility-is-the-new-smart/index.html">
 <div class="listing-description">
-<p>Supercharge individual and organization learning and performance improvement.</p>
+<a href="./posts/2017-10-22-humility-is-the-new-smart/index.html" class="no-external">Supercharge individual and organization learning and performance improvement. </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2017-10-22-humility-is-the-new-smart/index.html">
+<a href="./posts/2017-10-22-humility-is-the-new-smart/index.html" class="no-external">
 <div class="listing-date">
 Oct 22, 2017
 </div>
@@ -1184,10 +1183,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1197,8 +1195,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1211,6 +1218,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1254,6 +1380,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1279,6 +1406,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1344,12 +1497,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Created with <a href="https://quarto.org">Quarto.org</a>—an open-source scientific and technical publishing system built on <a href="https://pandoc.org/">Pandoc</a>.</div>
+    <div class="nav-footer-center">
+<p>Created with <a href="https://quarto.org">Quarto.org</a>—an open-source scientific and technical publishing system built on <a href="https://pandoc.org/">Pandoc</a>.</p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

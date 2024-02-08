@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -79,7 +79,7 @@ div.csl-indent {
 }</style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -101,7 +101,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -110,6 +116,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -130,11 +137,38 @@ ga('send', {
 });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 <meta name="twitter:title" content="Dr.&nbsp;Tomás Aragón - Simple method to get criteria weights for decision making">
@@ -146,10 +180,10 @@ ga('send', {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Dr.&nbsp;Tomás Aragón</span>
     </a>
@@ -161,40 +195,40 @@ ga('send', {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../works.html" rel="" target="">
- <span class="menu-text">Works</span></a>
+    <a class="nav-link" href="../../works.html"> 
+<span class="menu-text">Works</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../subscription.html" rel="" target="">
- <span class="menu-text">Subscribe</span></a>
+    <a class="nav-link" href="../../subscription.html"> 
+<span class="menu-text">Subscribe</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://threads.net/drtomasaragon" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://threads.net/drtomasaragon"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/drtomasaragon" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://linkedin.com/in/drtomasaragon"> <i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/drtomasaragon" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/drtomasaragon"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -227,12 +261,12 @@ ga('send', {
       <div class="quarto-title-meta-contents">
       <p class="author"><a href="https://taragonmd.github.io">Tomás Aragón</a> <a href="https://orcid.org/0000-0002-2058-0423" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
     </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
           <p class="affiliation">
               California Department of Public Health
             </p>
         </div>
-      </div>
+    </div>
 
   <div class="quarto-title-meta">
 
@@ -282,12 +316,17 @@ ga('send', {
 
 
 
+
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
-<p>At the California Department of Public Health, we promote <a href="../2021-03-13-decision-intelligence01/index.html">decision intelligence</a> (DI)—improving how we make team decisions to find, select, and solve problems and to improve outcomes. A foundational component of DI is decision quality—the six requirements of good decision making. At a minimum, a decision quality checklist (DQ) (<a href="#tbl-dqr1">Table&nbsp;1</a>) improves the quality of decisions at any stage of problem solving. A good decision is only as strong as its weakest link. (To learn more about DQ watch 3.5min video from the <a href="https://www.decisioneducation.org/">Decision Education Foundation</a>.)</p>
-<div id="tbl-dqr1" class="anchored">
+<p>At the California Department of Public Health, we promote <a href="../2021-03-13-decision-intelligence01/index.html">decision intelligence</a> (DI)—improving how we make team decisions to find, select, and solve problems and to improve outcomes. A foundational component of DI is decision quality—the six requirements of good decision making. At a minimum, a decision quality checklist (DQ) (<a href="#tbl-dqr1" class="quarto-xref">Table&nbsp;1</a>) improves the quality of decisions at any stage of problem solving. A good decision is only as strong as its weakest link. (To learn more about DQ watch 3.5min video from the <a href="https://www.decisioneducation.org/">Decision Education Foundation</a>.)</p>
+<div id="tbl-dqr1" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-dqr1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Key questions to answer for decision quality (DQ)
+</figcaption>
+<div aria-describedby="tbl-dqr1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;1: Key questions to answer for decision quality (DQ)</caption>
 <colgroup>
 <col style="width: 4%">
 <col style="width: 11%">
@@ -334,6 +373,8 @@ ga('send', {
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 <p>Making higher quality decisions as a group can be challenging. Our brains prefer intuitive decision making. Deliberations are cognitively exhausting, especially in the face of competing objectives, uncertainty, and time constraints. That is why, unfortunately, decision-making is often deferred to an authority figure. It’s better to embrace team decision making but practice with simple tools and methods that promote group engagement, deliberation, and decision quality.</p>
 </section>
 <section id="making-single-and-multi-attribute-decisions" class="level2" data-number="2">
@@ -347,10 +388,14 @@ ga('send', {
 <p>However, more commonly, based on our <strong>frame</strong> (values, objectives, and key results), our team needs to select from among several <strong>alternatives</strong>, each of which has <strong>mutliple attributes</strong>. Selection examples include buying a smartphone, hiring an employee, or selecting a vendor. As individuals and as a group, we have preferences for these attributes based on what we know (<strong>information</strong>) and what consequences and impacts we care about (<strong>prospects</strong>). We need sound <strong>reasoning</strong> but it will not require a complex decision analysis. Engaging the team in fair and transparent deliberative decision making builds trust, consensus, and <strong>commitment</strong>.</p>
 <p>Our main task is to (a) <strong>develop criteria</strong> based on these attributes, (b) <strong>weight the criteria</strong> based on importance to us (preference), and (c) <strong>rate the alternatives</strong> based on the criteria and evidence (data, community, experts, analysis). Ideally, the criteria should be weighted without any knowledge of the alternatives. This is to prevent evaluators from biasing the criteria weights in favor of their favorite alternative.</p>
 <p>In this blog posting I show how to weight criteria using a simple ranking method. In a future blog post, I will show how to apply weighted criteria to rank and select alternatives. This first step, weighting criteria, is very powerful and practical. We will use a trivial example to nail down the concepts.</p>
-<p>Now, suppose we wish to buy a car and our choices are a Honda Civic, and Subaru Impreza, or Toyota Corolla. We have data on the following attributes: safety (S), mileage (M), reliability (R), color (C), price (P), and resale value (V). <a href="#tbl-car">Table&nbsp;2</a> summarizes the DQ requirements for buying our car.</p>
-<div id="tbl-car" class="anchored">
+<p>Now, suppose we wish to buy a car and our choices are a Honda Civic, and Subaru Impreza, or Toyota Corolla. We have data on the following attributes: safety (S), mileage (M), reliability (R), color (C), price (P), and resale value (V). <a href="#tbl-car" class="quarto-xref">Table&nbsp;2</a> summarizes the DQ requirements for buying our car.</p>
+<div id="tbl-car" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-car-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Decision quality requirements for buying a car
+</figcaption>
+<div aria-describedby="tbl-car-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;2: Decision quality requirements for buying a car</caption>
 <colgroup>
 <col style="width: 2%">
 <col style="width: 7%">
@@ -405,6 +450,8 @@ ga('send', {
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 </section>
 </section>
 <section id="calculating-criteria-weightsthe-easy-way" class="level2" data-number="3">
@@ -436,7 +483,7 @@ ga('send', {
 <p><span class="math display">\[
 w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 \]</span></p>
-<div class="cell" data-execution_count="2">
+<div id="25385abd" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsBase</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">calculate_rank_weights</span>(n<span class="op">::</span><span class="dt">Int64</span>)</span>
@@ -459,7 +506,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>The weights sum to 1, as expected.</p>
-<div class="cell" data-execution_count="3">
+<div id="4a26d7ad" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>(wi))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>1.0</code></pre>
@@ -470,7 +517,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <section id="step-2-evaluators-rank-the-criteria" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="step-2-evaluators-rank-the-criteria"><span class="header-section-number">3.2</span> Step 2: Evaluators rank the criteria</h3>
 <p>Five evaluators rank the criteria based on their expertise.</p>
-<div class="cell" data-execution_count="4">
+<div id="045c7df8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>eval1 <span class="op">=</span> [<span class="st">"Mileage"</span>, <span class="st">"Color"</span>, <span class="st">"Price"</span>, <span class="st">"Safety"</span>, <span class="st">"Reliability"</span>, <span class="st">"Value"</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>eval2 <span class="op">=</span> [<span class="st">"Mileage"</span>, <span class="st">"Color"</span>, <span class="st">"Safety"</span>, <span class="st">"Reliability"</span>, <span class="st">"Value"</span>, <span class="st">"Price"</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>eval3 <span class="op">=</span> [<span class="st">"Color"</span>, <span class="st">"Value"</span>, <span class="st">"Price"</span>, <span class="st">"Mileage"</span>, <span class="st">"Reliability"</span>, <span class="st">"Safety"</span>]</span>
@@ -492,7 +539,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <li>evaluator_rankings (required)</li>
 <li>weights (required)</li>
 </ul>
-<div class="cell" data-execution_count="5">
+<div id="84a940ed" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ne <span class="op">=</span> <span class="fl">5</span>; <span class="co"># number of evaluators</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>nc <span class="op">=</span> <span class="fl">6</span>; <span class="co"># number for criteria</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>evaluators <span class="op">=</span> <span class="fu">repeat</span>([<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span>ne)<span class="op">...</span>], inner<span class="op">=</span><span class="fu">repeat</span>([nc]))</span>
@@ -503,202 +550,178 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    [<span class="st">"evaluator"</span>, <span class="st">"criteria"</span>, <span class="st">"weight"</span>]</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<div class="data-frame"><p>30 rows × 3 columns</p>
+<div><div style="float: left;"><span>30×3 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">5 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">evaluator</th>
-<th data-quarto-table-cell-role="th">criteria</th>
-<th data-quarto-table-cell-role="th">weight</th>
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">evaluator</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">weight</th>
 </tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<tr class="odd subheader headerLastRow">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1</td>
-<td>eval1</td>
-<td>Mileage</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2</td>
-<td>eval1</td>
-<td>Color</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3</td>
-<td>eval1</td>
-<td>Price</td>
-<td>0.168067</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: left;">0.168067</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">4</td>
-<td>eval1</td>
-<td>Safety</td>
-<td>0.12605</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: left;">0.12605</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>eval1</td>
-<td>Reliability</td>
-<td>0.0896359</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: left;">0.0896359</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">6</td>
-<td>eval1</td>
-<td>Value</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.0560224</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">7</td>
-<td>eval2</td>
-<td>Mileage</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">7</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">8</td>
-<td>eval2</td>
-<td>Color</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">8</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">9</td>
-<td>eval2</td>
-<td>Safety</td>
-<td>0.168067</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">9</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: left;">0.168067</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">10</td>
-<td>eval2</td>
-<td>Reliability</td>
-<td>0.12605</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">10</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: left;">0.12605</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">11</td>
-<td>eval2</td>
-<td>Value</td>
-<td>0.0896359</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">11</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.0896359</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">12</td>
-<td>eval2</td>
-<td>Price</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">12</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: left;">0.0560224</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">13</td>
-<td>eval3</td>
-<td>Color</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">13</td>
+<td style="text-align: left;">eval3</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">14</td>
-<td>eval3</td>
-<td>Value</td>
-<td>0.22409</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">15</td>
-<td>eval3</td>
-<td>Price</td>
-<td>0.168067</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">19</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">16</td>
-<td>eval3</td>
-<td>Mileage</td>
-<td>0.12605</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">20</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">17</td>
-<td>eval3</td>
-<td>Reliability</td>
-<td>0.0896359</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">21</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.168067</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">18</td>
-<td>eval3</td>
-<td>Safety</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">22</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: left;">0.12605</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">19</td>
-<td>eval4</td>
-<td>Mileage</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">23</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: left;">0.0896359</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">20</td>
-<td>eval4</td>
-<td>Value</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">24</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: left;">0.0560224</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">21</td>
-<td>eval4</td>
-<td>Color</td>
-<td>0.168067</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">25</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">22</td>
-<td>eval4</td>
-<td>Safety</td>
-<td>0.12605</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">26</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: left;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">23</td>
-<td>eval4</td>
-<td>Reliability</td>
-<td>0.0896359</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">27</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.168067</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">24</td>
-<td>eval4</td>
-<td>Price</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">28</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: left;">0.12605</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">25</td>
-<td>eval5</td>
-<td>Safety</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">29</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.0896359</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">26</td>
-<td>eval5</td>
-<td>Price</td>
-<td>0.22409</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">27</td>
-<td>eval5</td>
-<td>Color</td>
-<td>0.168067</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">28</td>
-<td>eval5</td>
-<td>Reliability</td>
-<td>0.12605</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">29</td>
-<td>eval5</td>
-<td>Mileage</td>
-<td>0.0896359</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">30</td>
-<td>eval5</td>
-<td>Value</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">30</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.0560224</td>
 </tr>
 </tbody>
 </table>
@@ -709,163 +732,183 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <section id="step-3-calculate-mean-criteria-weights" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="step-3-calculate-mean-criteria-weights"><span class="header-section-number">3.3</span> Step 3: Calculate mean criteria weights</h3>
 <p>Calculate mean criteria weights using split-apply-combine workflow. In other words, stratifying by criterion, what is the mean weight for each criterion (attribute)?</p>
-<div class="cell" data-execution_count="6">
+<div id="913af84d" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## split</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> <span class="fu">groupby</span>(df, <span class="op">:</span>criteria)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<p><b>GroupedDataFrame with 6 groups based on key: criteria</b></p><p><i>First Group (5 rows): criteria = "Mileage"</i></p><div class="data-frame">
+<p><b>GroupedDataFrame with 6 groups based on key: criteria</b></p><div><div style="float: left;"><span>First Group (5 rows): criteria = "Mileage"</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">evaluator</th>
-<th data-quarto-table-cell-role="th">criteria</th>
-<th data-quarto-table-cell-role="th">weight</th>
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">evaluator</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">weight</th>
 </tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<tr class="odd subheader headerLastRow">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1</td>
-<td>eval1</td>
-<td>Mileage</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2</td>
-<td>eval2</td>
-<td>Mileage</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3</td>
-<td>eval3</td>
-<td>Mileage</td>
-<td>0.12605</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<td style="text-align: left;">eval3</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.12605</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">4</td>
-<td>eval4</td>
-<td>Mileage</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>eval5</td>
-<td>Mileage</td>
-<td>0.0896359</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.0896359</td>
 </tr>
 </tbody>
 </table>
+</div>
 <p>⋮</p>
-<p><em>Last Group (5 rows): criteria = "Value"</em></p>
-<div class="data-frame">
+<div>
+<div style="float: left;">
+<span>Last Group (5 rows): criteria = "Value"</span>
+</div>
+<div style="clear: both;">
+
+</div>
+</div>
+<div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">evaluator</th>
-<th data-quarto-table-cell-role="th">criteria</th>
-<th data-quarto-table-cell-role="th">weight</th>
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">evaluator</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">weight</th>
 </tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<tr class="odd subheader headerLastRow">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1</td>
-<td>eval1</td>
-<td>Value</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.0560224</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2</td>
-<td>eval2</td>
-<td>Value</td>
-<td>0.0896359</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.0896359</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3</td>
-<td>eval3</td>
-<td>Value</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<td style="text-align: left;">eval3</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.22409</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">4</td>
-<td>eval4</td>
-<td>Value</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>eval5</td>
-<td>Value</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.0560224</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-Danielson2017_doi10.1007/978-3-319-52624-9_2" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Danielson M, Ekenberg L. Trade-offs for ordinal ranking methods in multi-criteria decisions. In: Bajwa D, Koeszegi ST, Vetschera R, editors. Group decision and negotiation Theory, empirical evidence, and application [Internet]. Cham: Springer International Publishing; 2017. p. 16–27. Available from: <a href="https://doi.org/10.1007/978-3-319-52624-9_2">https://doi.org/10.1007/978-3-319-52624-9_2</a></div>
 </div>
-<div class="cell" data-execution_count="7">
+<div id="ref-Kaminski2023-isbn978-1633439368" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Kaminski B. Julia for data analysis. New York, NY: Manning Publications; 2023. </div>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The SR method was selected because it was the best performing.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main></div>
+<div id="d0bf8aa6" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">## combine and apply </span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>crit_weights <span class="op">=</span> <span class="fu">combine</span>(gdf, <span class="op">:</span>weight <span class="op">=&gt;</span> mean)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort!</span>(crit_weights, <span class="op">:</span>weight_mean, rev <span class="op">=</span> <span class="cn">true</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-<div class="data-frame"><p>6 rows × 2 columns</p>
+<div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">criteria</th>
-<th data-quarto-table-cell-role="th">weight_mean</th>
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">weight_mean</th>
 </tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
-<th data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<tr class="odd subheader headerLastRow">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Mileage</td>
-<td>0.244818</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: right;">0.244818</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Color</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: right;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3</td>
-<td>Safety</td>
-<td>0.162465</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: right;">0.162465</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Price</td>
-<td>0.134454</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: right;">0.134454</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>Value</td>
-<td>0.129972</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: right;">0.129972</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">6</td>
-<td>Reliability</td>
-<td>0.104202</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: right;">0.104202</td>
 </tr>
 </tbody>
 </table>
@@ -873,7 +916,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>These are the final criteria weights and, as expected, they sum to 1.</p>
-<div class="cell" data-execution_count="8">
+<div id="32a5581b" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>(crit_weights.weight_mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>1.0</code></pre>
@@ -881,15 +924,15 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 <p>In this example, mileage (M) has the highest weight (24.5%) and reliability (R) has the lowest weight (10.4%).</p>
 <p>In a future blog, I will show how to score the alternatives (Honda Civic, Toyota Corolla, and Subaru Impreza) with these weighted criteria, and then making a final ranking of which car to select.</p>
-</section>
-</section>
+
+
 <section id="appendix" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="appendix"><span class="header-section-number">4</span> Appendix</h2>
+<h2 data-number="4" data-anchor-id="appendix"><span class="header-section-number">4</span> Appendix</h2>
 <section id="function-to-automate-calculating-mean-weights" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="function-to-automate-calculating-mean-weights"><span class="header-section-number">4.1</span> Function to automate calculating mean weights</h3>
+<h3 data-number="4.1" data-anchor-id="function-to-automate-calculating-mean-weights"><span class="header-section-number">4.1</span> Function to automate calculating mean weights</h3>
 <p>We created the <code>calculate_rank_weights</code> function to calculate the weights for <span class="math inline">\(n\)</span> criteria using the SR method. Then we used Julia to calculate the mean weights for five evaluators.</p>
 <p>Now we create a final function to automate calculating the mean weights. This function will handle an arbitrary number of vectors with rankings, or a matrix created from those vectors beforehand. Notice that this new function will call our previous <code>calculate_rank_weights</code> function.</p>
-<div class="cell" data-execution_count="9">
+<div id="53fb3e58" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">calculate_mean_weights</span>(x<span class="op">...</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="fu">hcat</span>(x<span class="op">...</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    ncrit, neval <span class="op">=</span> <span class="fu">size</span>(x, <span class="fl">1</span>), <span class="fu">size</span>(x, <span class="fl">2</span>)</span>
@@ -919,269 +962,245 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>Here we test passing vectors as arguments to the <code>calculate_mean_weights</code> function.</p>
-<div class="cell" data-execution_count="10">
+<div id="f703ff83" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>r1 <span class="op">=</span> <span class="fu">calculate_mean_weights</span>(eval1, eval2, eval3, eval4, eval5);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The results are saved in <code>r1</code> and the semi-colon (<code>;</code>) suppresses the output. We use <code>typeof</code> function to evaluate the type of <code>r1</code>.</p>
-<div class="cell" data-execution_count="11">
+<div id="2dfbc621" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(r1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>NamedTuple{(:weights, :data), Tuple{DataFrame, DataFrame}}</code></pre>
+<pre><code>@NamedTuple{weights::DataFrame, data::DataFrame}</code></pre>
 </div>
 </div>
 <p>We see that <code>r1</code> is a NamedTuple and it contains two data frames named <code>weights</code> and <code>data</code>. We can index each separately.</p>
-<div class="cell" data-execution_count="12">
+<div id="3b48d0a7" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>r1.weights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
-<div class="data-frame"><p>6 rows × 2 columns</p>
+<div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">criteria</th>
-<th data-quarto-table-cell-role="th">weight_mean</th>
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">weight_mean</th>
 </tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
-<th data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<tr class="odd subheader headerLastRow">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Mileage</td>
-<td>0.244818</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: right;">0.244818</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Color</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: right;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3</td>
-<td>Safety</td>
-<td>0.162465</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: right;">0.162465</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Price</td>
-<td>0.134454</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: right;">0.134454</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>Value</td>
-<td>0.129972</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: right;">0.129972</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">6</td>
-<td>Reliability</td>
-<td>0.104202</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: right;">0.104202</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="13">
+<div id="754e7cb2" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>r1.data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
-<div class="data-frame"><p>30 rows × 3 columns</p>
+<div><div style="float: left;"><span>30×3 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">5 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">evaluator</th>
-<th data-quarto-table-cell-role="th">criteria</th>
-<th data-quarto-table-cell-role="th">weight</th>
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">evaluator</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">weight</th>
 </tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<tr class="odd subheader headerLastRow">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1</td>
-<td>eval1</td>
-<td>Mileage</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2</td>
-<td>eval1</td>
-<td>Color</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3</td>
-<td>eval1</td>
-<td>Price</td>
-<td>0.168067</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: left;">0.168067</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">4</td>
-<td>eval1</td>
-<td>Safety</td>
-<td>0.12605</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: left;">0.12605</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>eval1</td>
-<td>Reliability</td>
-<td>0.0896359</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: left;">0.0896359</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">6</td>
-<td>eval1</td>
-<td>Value</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.0560224</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">7</td>
-<td>eval2</td>
-<td>Mileage</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">7</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">8</td>
-<td>eval2</td>
-<td>Color</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">8</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">9</td>
-<td>eval2</td>
-<td>Safety</td>
-<td>0.168067</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">9</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: left;">0.168067</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">10</td>
-<td>eval2</td>
-<td>Reliability</td>
-<td>0.12605</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">10</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: left;">0.12605</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">11</td>
-<td>eval2</td>
-<td>Value</td>
-<td>0.0896359</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">11</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.0896359</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">12</td>
-<td>eval2</td>
-<td>Price</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">12</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: left;">0.0560224</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">13</td>
-<td>eval3</td>
-<td>Color</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">13</td>
+<td style="text-align: left;">eval3</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">14</td>
-<td>eval3</td>
-<td>Value</td>
-<td>0.22409</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">15</td>
-<td>eval3</td>
-<td>Price</td>
-<td>0.168067</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">19</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">16</td>
-<td>eval3</td>
-<td>Mileage</td>
-<td>0.12605</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">20</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">17</td>
-<td>eval3</td>
-<td>Reliability</td>
-<td>0.0896359</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">21</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.168067</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">18</td>
-<td>eval3</td>
-<td>Safety</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">22</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: left;">0.12605</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">19</td>
-<td>eval4</td>
-<td>Mileage</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">23</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: left;">0.0896359</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">20</td>
-<td>eval4</td>
-<td>Value</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">24</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: left;">0.0560224</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">21</td>
-<td>eval4</td>
-<td>Color</td>
-<td>0.168067</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">25</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">22</td>
-<td>eval4</td>
-<td>Safety</td>
-<td>0.12605</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">26</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: left;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">23</td>
-<td>eval4</td>
-<td>Reliability</td>
-<td>0.0896359</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">27</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.168067</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">24</td>
-<td>eval4</td>
-<td>Price</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">28</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: left;">0.12605</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">25</td>
-<td>eval5</td>
-<td>Safety</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">29</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.0896359</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">26</td>
-<td>eval5</td>
-<td>Price</td>
-<td>0.22409</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">27</td>
-<td>eval5</td>
-<td>Color</td>
-<td>0.168067</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">28</td>
-<td>eval5</td>
-<td>Reliability</td>
-<td>0.12605</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">29</td>
-<td>eval5</td>
-<td>Mileage</td>
-<td>0.0896359</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">30</td>
-<td>eval5</td>
-<td>Value</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">30</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.0560224</td>
 </tr>
 </tbody>
 </table>
@@ -1189,270 +1208,246 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>Next, we create the matrix of evaluator data and then pass it to the <code>calculate_mean_weights</code> function.</p>
-<div class="cell" data-execution_count="14">
+<div id="b2e565d4" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>eval_rankings_tab <span class="op">=</span> <span class="fu">hcat</span>(eval1, eval2, eval3, eval4, eval5)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>r2 <span class="op">=</span> <span class="fu">calculate_mean_weights</span>(eval_rankings_tab);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The results are saved in <code>r</code> and the semi-colon (<code>;</code>) suppresses the output. We use <code>typeof</code> function to evaluate the type of <code>r2</code>.</p>
-<div class="cell" data-execution_count="15">
+<div id="53196ec9" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(r2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>NamedTuple{(:weights, :data), Tuple{DataFrame, DataFrame}}</code></pre>
+<pre><code>@NamedTuple{weights::DataFrame, data::DataFrame}</code></pre>
 </div>
 </div>
 <p>We see that <code>r2</code> is a NamedTuple and it contains two data frames named <code>weights</code> and <code>data</code>. We can index each separately.</p>
-<div class="cell" data-execution_count="16">
+<div id="141de4d8" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>r2.weights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
-<div class="data-frame"><p>6 rows × 2 columns</p>
+<div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">criteria</th>
-<th data-quarto-table-cell-role="th">weight_mean</th>
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">weight_mean</th>
 </tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
-<th data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<tr class="odd subheader headerLastRow">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Mileage</td>
-<td>0.244818</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: right;">0.244818</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Color</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: right;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3</td>
-<td>Safety</td>
-<td>0.162465</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: right;">0.162465</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Price</td>
-<td>0.134454</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: right;">0.134454</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>Value</td>
-<td>0.129972</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: right;">0.129972</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">6</td>
-<td>Reliability</td>
-<td>0.104202</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: right;">0.104202</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="17">
+<div id="ff9488db" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>r2.data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
-<div class="data-frame"><p>30 rows × 3 columns</p>
+<div><div style="float: left;"><span>30×3 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">5 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">evaluator</th>
-<th data-quarto-table-cell-role="th">criteria</th>
-<th data-quarto-table-cell-role="th">weight</th>
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">evaluator</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">weight</th>
 </tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
+<tr class="odd subheader headerLastRow">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1</td>
-<td>eval1</td>
-<td>Mileage</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2</td>
-<td>eval1</td>
-<td>Color</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3</td>
-<td>eval1</td>
-<td>Price</td>
-<td>0.168067</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: left;">0.168067</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">4</td>
-<td>eval1</td>
-<td>Safety</td>
-<td>0.12605</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: left;">0.12605</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>eval1</td>
-<td>Reliability</td>
-<td>0.0896359</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: left;">0.0896359</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">6</td>
-<td>eval1</td>
-<td>Value</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
+<td style="text-align: left;">eval1</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.0560224</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">7</td>
-<td>eval2</td>
-<td>Mileage</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">7</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">8</td>
-<td>eval2</td>
-<td>Color</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">8</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">9</td>
-<td>eval2</td>
-<td>Safety</td>
-<td>0.168067</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">9</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: left;">0.168067</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">10</td>
-<td>eval2</td>
-<td>Reliability</td>
-<td>0.12605</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">10</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: left;">0.12605</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">11</td>
-<td>eval2</td>
-<td>Value</td>
-<td>0.0896359</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">11</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.0896359</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">12</td>
-<td>eval2</td>
-<td>Price</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">12</td>
+<td style="text-align: left;">eval2</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: left;">0.0560224</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">13</td>
-<td>eval3</td>
-<td>Color</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">13</td>
+<td style="text-align: left;">eval3</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">14</td>
-<td>eval3</td>
-<td>Value</td>
-<td>0.22409</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">15</td>
-<td>eval3</td>
-<td>Price</td>
-<td>0.168067</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">19</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">16</td>
-<td>eval3</td>
-<td>Mileage</td>
-<td>0.12605</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">20</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">17</td>
-<td>eval3</td>
-<td>Reliability</td>
-<td>0.0896359</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">21</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.168067</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">18</td>
-<td>eval3</td>
-<td>Safety</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">22</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: left;">0.12605</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">19</td>
-<td>eval4</td>
-<td>Mileage</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">23</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: left;">0.0896359</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">20</td>
-<td>eval4</td>
-<td>Value</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">24</td>
+<td style="text-align: left;">eval4</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: left;">0.0560224</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">21</td>
-<td>eval4</td>
-<td>Color</td>
-<td>0.168067</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">25</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: left;">0.336134</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">22</td>
-<td>eval4</td>
-<td>Safety</td>
-<td>0.12605</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">26</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: left;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">23</td>
-<td>eval4</td>
-<td>Reliability</td>
-<td>0.0896359</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">27</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">0.168067</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">24</td>
-<td>eval4</td>
-<td>Price</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">28</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: left;">0.12605</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">25</td>
-<td>eval5</td>
-<td>Safety</td>
-<td>0.336134</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">29</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: left;">0.0896359</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">26</td>
-<td>eval5</td>
-<td>Price</td>
-<td>0.22409</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">27</td>
-<td>eval5</td>
-<td>Color</td>
-<td>0.168067</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">28</td>
-<td>eval5</td>
-<td>Reliability</td>
-<td>0.12605</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">29</td>
-<td>eval5</td>
-<td>Mileage</td>
-<td>0.0896359</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">30</td>
-<td>eval5</td>
-<td>Value</td>
-<td>0.0560224</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">30</td>
+<td style="text-align: left;">eval5</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">0.0560224</td>
 </tr>
 </tbody>
 </table>
@@ -1460,53 +1455,53 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>The <code>calculate_mean_weights</code> function worked for both vectors or a matrix. This was possible because of the splat operator (<code>...</code>) as in the two lines below.</p>
-<div class="cell" data-execution_count="18">
+<div id="90f01832" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">calculate_mean_weights</span>(x<span class="op">...</span>)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="fu">hcat</span>(x<span class="op">...</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="review-of-selected-julia-code" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="review-of-selected-julia-code"><span class="header-section-number">4.2</span> Review of selected Julia code</h3>
+<h3 data-number="4.2" data-anchor-id="review-of-selected-julia-code"><span class="header-section-number">4.2</span> Review of selected Julia code</h3>
 <p>Did you know you can use tuples to bind variable names to values?</p>
-<div class="cell" data-execution_count="19">
+<div id="12de49c8" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> <span class="fl">33</span>, <span class="fl">99</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>(33, 99)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="20">
+<div id="e14de25b" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>33</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="21">
+<div id="1aed0d84" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>99</code></pre>
 </div>
 </div>
 <p>This is super handy when we want to swap values between variables in one step.</p>
-<div class="cell" data-execution_count="22">
+<div id="264a17d1" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> y, x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>(99, 33)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="23">
+<div id="431130df" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>99</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="24">
+<div id="8dbe1f2f" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>33</code></pre>
 </div>
 </div>
 <p>Here is how to prefill arrays:</p>
-<div class="cell" data-execution_count="25">
+<div id="9d1bbe93" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zeros</span>(<span class="fl">2</span>, <span class="fl">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>2×3 Matrix{Float64}:
@@ -1514,7 +1509,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  0.0  0.0  0.0</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="26">
+<div id="85c77d56" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ones</span>(<span class="fl">2</span>, <span class="fl">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>2×3 Matrix{Float64}:
@@ -1522,7 +1517,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  1.0  1.0  1.0</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="27">
+<div id="5718373e" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fill</span>(<span class="fl">1</span>, (<span class="fl">2</span>, <span class="fl">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>2×3 Matrix{Int64}:
@@ -1531,7 +1526,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>The <code>reshape</code> function reshapes an array.</p>
-<div class="cell" data-execution_count="28">
+<div id="82b09a60" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fu">Vector</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>16-element Vector{Int64}:
@@ -1553,7 +1548,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  16</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="29">
+<div id="9335368b" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">reshape</span>(A, (<span class="fl">4</span>, <span class="fl">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>4×4 Matrix{Int64}:
@@ -1563,7 +1558,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  4  8  12  16</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="30">
+<div id="0fee3ba0" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">reshape</span>(A, <span class="fl">2</span>, <span class="op">:</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>2×8 Matrix{Int64}:
@@ -1572,7 +1567,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>Her is vertical concatenation (<code>vcat</code>): (<code>hcat</code>):</p>
-<div class="cell" data-execution_count="31">
+<div id="10b12a7f" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">4</span>]</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span>]</span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vcat</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1587,7 +1582,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>Here is horizontal concatenation (<code>hcat</code>):</p>
-<div class="cell" data-execution_count="32">
+<div id="72619e15" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hcat</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>3×2 Matrix{Int64}:
@@ -1597,55 +1592,55 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>The <code>!</code> operator signifies mutating (permanently changing) an object:</p>
-<div class="cell" data-execution_count="33">
+<div id="a4801cb0" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">## combine and apply </span></span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>crit_weights <span class="op">=</span> <span class="fu">combine</span>(gdf, <span class="op">:</span>weight <span class="op">=&gt;</span> mean)</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort!</span>(crit_weights, <span class="op">:</span>weight_mean, rev <span class="op">=</span> <span class="cn">true</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
-<div class="data-frame"><p>6 rows × 2 columns</p>
+<div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">criteria</th>
-<th data-quarto-table-cell-role="th">weight_mean</th>
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">criteria</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">weight_mean</th>
 </tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th" title="Any">Any</th>
-<th data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<tr class="odd subheader headerLastRow">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Any">Any</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Mileage</td>
-<td>0.244818</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<td style="text-align: left;">Mileage</td>
+<td style="text-align: right;">0.244818</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Color</td>
-<td>0.22409</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<td style="text-align: left;">Color</td>
+<td style="text-align: right;">0.22409</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3</td>
-<td>Safety</td>
-<td>0.162465</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<td style="text-align: left;">Safety</td>
+<td style="text-align: right;">0.162465</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Price</td>
-<td>0.134454</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
+<td style="text-align: left;">Price</td>
+<td style="text-align: right;">0.134454</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>Value</td>
-<td>0.129972</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: right;">0.129972</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">6</td>
-<td>Reliability</td>
-<td>0.104202</td>
+<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
+<td style="text-align: left;">Reliability</td>
+<td style="text-align: right;">0.104202</td>
 </tr>
 </tbody>
 </table>
@@ -1653,7 +1648,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>The <code>repeat</code> function repeat a pattern.</p>
-<div class="cell" data-execution_count="34">
+<div id="76af6cca" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="fl">2</span>, <span class="fl">5</span>], <span class="fl">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>6-element Vector{Int64}:
@@ -1665,7 +1660,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  5</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="35">
+<div id="571f4162" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">## equivalent to above</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="fl">2</span>, <span class="fl">5</span>], outer<span class="op">=</span><span class="fu">repeat</span>([<span class="fl">3</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="34">
@@ -1678,7 +1673,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  5</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="36">
+<div id="8c63015e" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="fl">2</span>, <span class="fl">5</span>], inner<span class="op">=</span><span class="fu">repeat</span>([<span class="fl">3</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>6-element Vector{Int64}:
@@ -1691,14 +1686,14 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 <p>Generating array of strings. Note how the splat (<code>...</code>) operator works.</p>
-<div class="cell" data-execution_count="37">
+<div id="3cb20736" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>1-element Vector{Vector{String}}:
  ["eval1", "eval2", "eval3"]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="38">
+<div id="b3dd56b3" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)<span class="op">...</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>3-element Vector{String}:
@@ -1707,7 +1702,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  "eval3"</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="39">
+<div id="fd2f987a" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)], inner<span class="op">=</span><span class="fu">repeat</span>([<span class="fl">2</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>2-element Vector{Vector{String}}:
@@ -1715,7 +1710,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
  ["eval1", "eval2", "eval3"]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="40">
+<div id="af58bc5a" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repeat</span>([<span class="st">"eval"</span> <span class="op">.*</span> <span class="fu">string</span>.(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)<span class="op">...</span>], inner<span class="op">=</span><span class="fu">repeat</span>([<span class="fl">2</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>6-element Vector{String}:
@@ -1734,19 +1729,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
-<div id="ref-Danielson2017_doi10.1007/978-3-319-52624-9_2" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Danielson M, Ekenberg L. Trade-offs for ordinal ranking methods in multi-criteria decisions. In: Bajwa D, Koeszegi ST, Vetschera R, editors. Group decision and negotiation Theory, empirical evidence, and application [Internet]. Cham: Springer International Publishing; 2017. p. 16–27. Available from: <a href="https://doi.org/10.1007/978-3-319-52624-9_2">https://doi.org/10.1007/978-3-319-52624-9_2</a></div>
-</div>
-<div id="ref-Kaminski2023-isbn978-1633439368" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Kaminski B. Julia for data analysis. New York, NY: Manning Publications; 2023. </div>
-</div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>The SR method was selected because it was the best performing.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1826,10 +1809,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1839,8 +1821,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1853,6 +1844,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1896,6 +2006,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1921,6 +2032,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1980,18 +2117,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</div> <!-- /content -->
+ <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Created with <a href="https://quarto.org">Quarto.org</a>—an open-source scientific and technical publishing system built on <a href="https://pandoc.org/">Pandoc</a>.</div>
+    <div class="nav-footer-center">
+<p>Created with <a href="https://quarto.org">Quarto.org</a>—an open-source scientific and technical publishing system built on <a href="https://pandoc.org/">Pandoc</a>.</p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 
