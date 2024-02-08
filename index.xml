@@ -48,7 +48,7 @@
 <ul>
 <li>their propensity to trust/distrust,</li>
 <li>their perception of risk and benefits, and</li>
-<li>their appraisal of your trustworthiness); and</li>
+<li>their appraisal of your trustworthiness; and</li>
 </ul></li>
 <li>act in ways that inspire trust in the trustor.</li>
 </ul></li>
@@ -658,7 +658,7 @@ Table&nbsp;2: Decision quality requirements for buying a car
 <h4 data-number="3.1.1" class="anchored" data-anchor-id="step-1-the-sr-method-for-generating-criteria-weights"><span class="header-section-number">3.1.1</span> Step 1: The SR method for generating criteria weights</h4>
 <p>Here is the formula where <img src="https://latex.codecogs.com/png.latex?N"> is the number of criteria, and <img src="https://latex.codecogs.com/png.latex?w_i%5E%7BSR%7D"> is the weight for the <img src="https://latex.codecogs.com/png.latex?i%5E%7Bth%7D"> criterion <span class="citation" data-cites="Danielson2017_doi10.1007/978-3-319-52624-9_2">[1]</span>.<sup>1</sup></p>
 <p><img src="https://latex.codecogs.com/png.latex?%0Aw_i%5E%7BSR%7D%20=%20%5Cfrac%7B1/i%20+%20%5Cfrac%7BN+1-i%7D%7BN%7D%7D%7B%5Csum_%7Bj=1%7D%5EN%20(1/i%20+%20%5Cfrac%7BN+1-i%7D%7BN%7D)%7D%0A"></p>
-<div id="25385abd" class="cell" data-execution_count="1">
+<div id="25385abd" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">using</span> <span class="bu" style="color: null;
@@ -743,7 +743,7 @@ font-style: inherit;">6</span>)</span></code></pre></div>
 </div>
 </div>
 <p>The weights sum to 1, as expected.</p>
-<div id="4a26d7ad" class="cell" data-execution_count="2">
+<div id="4a26d7ad" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>(<span class="fu" style="color: #4758AB;
@@ -758,7 +758,7 @@ font-style: inherit;">sum</span>(wi))</span></code></pre></div>
 <section id="step-2-evaluators-rank-the-criteria" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="step-2-evaluators-rank-the-criteria"><span class="header-section-number">3.2</span> Step 2: Evaluators rank the criteria</h3>
 <p>Five evaluators rank the criteria based on their expertise.</p>
-<div id="045c7df8" class="cell" data-execution_count="3">
+<div id="045c7df8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1">eval1 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
@@ -850,7 +850,7 @@ font-style: inherit;">"Value"</span>]</span></code></pre></div>
 <li>evaluator_rankings (required)</li>
 <li>weights (required)</li>
 </ul>
-<div id="84a940ed" class="cell" data-execution_count="4">
+<div id="84a940ed" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1">ne <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
@@ -1095,7 +1095,7 @@ font-style: inherit;">"weight"</span>]</span>
 <section id="step-3-calculate-mean-criteria-weights" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="step-3-calculate-mean-criteria-weights"><span class="header-section-number">3.3</span> Step 3: Calculate mean criteria weights</h3>
 <p>Calculate mean criteria weights using split-apply-combine workflow. In other words, stratifying by criterion, what is the mean weight for each criterion (attribute)?</p>
-<div id="913af84d" class="cell" data-execution_count="5">
+<div id="913af84d" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">## split</span></span>
