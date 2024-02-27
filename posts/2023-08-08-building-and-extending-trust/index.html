@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -103,6 +103,35 @@ ga('send', {
 });
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 <meta name="twitter:title" content="Dr.&nbsp;Tomás Aragón - Building trust requires being trustworthy and trusting wisely">
@@ -278,7 +307,20 @@ ga('send', {
 <div style="text-align: center">
 <iframe src="https://link.excalidraw.com/p/readonly/Idml0njjI5CrvsCxO9Vm" width="740" height="416.25" frameborder="1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="">“&gt;</iframe>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+View or download full slides
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>You can also download <a href="https://app.box.com/s/1nrwjhn48fe24nj4y7e21ejufphm7yk7">PowerPoint slides</a> or <a href="https://app.box.com/s/nii545gtosek8nubm1sv2nwul2jjn9gt">PDF slides</a>.</p>
+<p>Feedback is valued and appreciated.</p>
+</div>
+</div>
 </section>
 <section id="trust-and-trustworthiness-matter" class="level2">
 <h2 class="anchored" data-anchor-id="trust-and-trustworthiness-matter">Trust and trustworthiness matter</h2>
@@ -325,53 +367,120 @@ Figure&nbsp;3: Public Trust in Federal, State, and Local Agencies on Covid-19
 </section>
 <section id="capp-model-of-trust" class="level2">
 <h2 class="anchored" data-anchor-id="capp-model-of-trust">4CAPP model of trust</h2>
+<p>The <strong>4CAPP</strong> is my way for remembering</p>
+<ol type="1">
+<li>The 4 <strong>C</strong> drivers of trustworthiness (trustee)</li>
+</ol>
+<ul>
+<li><strong>C</strong>haracter</li>
+<li><strong>C</strong>aring</li>
+<li><strong>C</strong>ompetent</li>
+<li><strong>C</strong>onsistent</li>
+</ul>
+<ol start="2" type="1">
+<li>The <strong>AAP</strong> drivers of extending trust (trustor)</li>
+</ol>
+<ul>
+<li><strong>A</strong>ppraisal of trustworthiness</li>
+<li><strong>P</strong>ropensity to trust/distrust</li>
+<li><strong>P</strong>erception of risks and benefits</li>
+</ul>
 <div id="fig-4capp3" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-4capp3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/tree-root-barrier.png" class="img-fluid figure-img" style="width:90.0%">
+<img src="images/trust_excalidraw_Building-and-Extending-Trust.png" class="img-fluid figure-img" style="width:90.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-4capp3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: 4CAPP model (picture): Relationships involve both trust and trustworthiness simultaneously between parties. To capture this two-way dynamic, the 4CAPP model was adapted from organizatonal trust researcher Professor Roger C Mayer. It includes key elements from the Feltman and Covey books.
 </figcaption>
 </figure>
 </div>
-<div id="fig-4capp1" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-4capp1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/trust_trustworthiness_venn_01.png" class="img-fluid figure-img" style="width:90.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-4capp1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: 4CAPP model (infographic): Relationships involve both trust and trustworthiness simultaneously between parties. To capture this two-way dynamic, the 4CAPP model was adapted from organizatonal trust researcher Professor Roger C Mayer. It includes key elements from the Feltman and Covey books.
-</figcaption>
-</figure>
-</div>
-<div id="fig-4capp2" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-4capp2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/trust_tikz_01_mayer_model.png" class="img-fluid figure-img" style="width:90.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-4capp2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: 4CAPP model (full): Relationships involve both trust and trustworthiness simultaneously between parties. To capture this two-way dynamic, the 4CAPP model was adapted from organizatonal trust researcher Professor Roger C Mayer. It includes key elements from the Feltman and Covey books.
-</figcaption>
-</figure>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-View or download full slides
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>View or download full slide <a href="https://app.box.com/s/n7xlueydaan97e0gmhunugsgi8llz52n">presentation</a>.</p>
-<p>Feedback is valued and appreciated.</p>
-</div>
-</div>
+<section id="building-trust-by-being-trustworthy" class="level3">
+<h3 class="anchored" data-anchor-id="building-trust-by-being-trustworthy">Building trust by being trustworthy</h3>
+<section id="can-i-believe-you-rightarrow-have-character" class="level4">
+<h4 class="anchored" data-anchor-id="can-i-believe-you-rightarrow-have-character">Can I believe you? <span class="math inline">\(\rightarrow\)</span> Have Character</h4>
+<ol type="1">
+<li>Universal values - embody and promote</li>
+<li>Humility - general, intellectual, and cultural</li>
+<li>Moral compass and ethical behavior</li>
+<li>Sincerity, honesty, and loyalty</li>
+<li>Integrity and courage</li>
+<li>Accountability</li>
+<li>Transparency</li>
+</ol>
+</section>
+<section id="do-you-care-about-me-rightarrow-be-caring" class="level4">
+<h4 class="anchored" data-anchor-id="do-you-care-about-me-rightarrow-be-caring">Do you care about me? <span class="math inline">\(\rightarrow\)</span> Be Caring</h4>
+<ol type="1">
+<li>Ensure psychological and physical safety</li>
+<li>Be kind and compassionate</li>
+<li>Ensure equity/fairness and dignity</li>
+<li>Promote inclusion and belonging</li>
+<li>Be trauma-responsive and -preventive</li>
+<li>Be curious, not judgmental</li>
+<li>Use humble inquiry</li>
+</ol>
+</section>
+<section id="can-you-deliver-rightarrow-be-competent" class="level4">
+<h4 class="anchored" data-anchor-id="can-you-deliver-rightarrow-be-competent">Can you deliver? <span class="math inline">\(\rightarrow\)</span> Be Competent</h4>
+<p>“Leadership is getting results in a way that inspires trust.” … SMR Covey</p>
+<ol type="1">
+<li>Leadership philosophy and praxis</li>
+<li>Interpersonal and team skills</li>
+<li>Management (strategic execution)</li>
+<li>Occupational mastery</li>
+</ol>
+</section>
+<section id="can-i-count-on-you-rightarrow-be-consistent-and-reliable" class="level4">
+<h4 class="anchored" data-anchor-id="can-i-count-on-you-rightarrow-be-consistent-and-reliable">Can I count on you? <span class="math inline">\(\rightarrow\)</span> Be Consistent (and reliable)</h4>
+<ol type="1">
+<li>Be consistent by reducing uncertainty</li>
+</ol>
+<ul>
+<li>improve your “batting average” (percent successful)</li>
+<li>reduce undesired variability (ie, don’t be erratic)</li>
+</ul>
+<ol start="2" type="1">
+<li>be reliable (100%) for commitments and promises</li>
+</ol>
+<ul>
+<li>fulfill commitments</li>
+<li>keep promises</li>
+</ul>
+</section>
+</section>
+<section id="extending-trust-deciding-to-risk-vulnerability" class="level3">
+<h3 class="anchored" data-anchor-id="extending-trust-deciding-to-risk-vulnerability">Extending trust (deciding to risk vulnerability)</h3>
+<ol type="1">
+<li>Set a default (“assume good intent”) and PDSA to assess your</li>
+</ol>
+<ul>
+<li>propensity to trust,</li>
+<li>perception of risk and benefits to you,</li>
+<li>appraisal of trustee’s trustworthiness</li>
+</ul>
+<ol start="2" type="1">
+<li>Reciprocate with the “shortcut” method to building trust</li>
+</ol>
+<ul>
+<li>“I want us to strengthen our trust and confidence in each other.
+<ul>
+<li>Here’s what I need from you (be honest): 1, 2, 3, …</li>
+<li>What do you need from me?” (The more specific, the better.)</li>
+</ul></li>
+</ul>
+<ol start="3" type="1">
+<li>Model the trust you expect of others</li>
+</ol>
+<ul>
+<li>be trustworthy,</li>
+<li>behave in ways that inspire trust, and</li>
+<li>design systems that promote a culture of trust.</li>
+</ul>
 
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">

@@ -9,7 +9,7 @@
 <link>https://drtomasaragon.github.io/</link>
 <atom:link href="https://drtomasaragon.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Population Health Blog</description>
-<generator>quarto-1.4.549</generator>
+<generator>quarto-1.4.550</generator>
 <lastBuildDate>Tue, 08 Aug 2023 07:00:00 GMT</lastBuildDate>
 <item>
   <title>Building trust requires being trustworthy and trusting wisely</title>
@@ -73,7 +73,20 @@
 <div style="text-align: center">
 <iframe src="https://link.excalidraw.com/p/readonly/Idml0njjI5CrvsCxO9Vm" width="740" height="416.25" frameborder="1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="">“&gt;</iframe>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+View or download full slides
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>You can also download <a href="https://app.box.com/s/1nrwjhn48fe24nj4y7e21ejufphm7yk7">PowerPoint slides</a> or <a href="https://app.box.com/s/nii545gtosek8nubm1sv2nwul2jjn9gt">PDF slides</a>.</p>
+<p>Feedback is valued and appreciated.</p>
+</div>
+</div>
 </section>
 <section id="trust-and-trustworthiness-matter" class="level2">
 <h2 class="anchored" data-anchor-id="trust-and-trustworthiness-matter">Trust and trustworthiness matter</h2>
@@ -120,53 +133,120 @@ Figure&nbsp;3: Public Trust in Federal, State, and Local Agencies on Covid-19
 </section>
 <section id="capp-model-of-trust" class="level2">
 <h2 class="anchored" data-anchor-id="capp-model-of-trust">4CAPP model of trust</h2>
+<p>The <strong>4CAPP</strong> is my way for remembering</p>
+<ol type="1">
+<li>The 4 <strong>C</strong> drivers of trustworthiness (trustee)</li>
+</ol>
+<ul>
+<li><strong>C</strong>haracter</li>
+<li><strong>C</strong>aring</li>
+<li><strong>C</strong>ompetent</li>
+<li><strong>C</strong>onsistent</li>
+</ul>
+<ol start="2" type="1">
+<li>The <strong>AAP</strong> drivers of extending trust (trustor)</li>
+</ol>
+<ul>
+<li><strong>A</strong>ppraisal of trustworthiness</li>
+<li><strong>P</strong>ropensity to trust/distrust</li>
+<li><strong>P</strong>erception of risks and benefits</li>
+</ul>
 <div id="fig-4capp3" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-4capp3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://drtomasaragon.github.io/posts/2023-08-08-building-and-extending-trust/images/tree-root-barrier.png" class="img-fluid figure-img" style="width:90.0%">
+<img src="https://drtomasaragon.github.io/posts/2023-08-08-building-and-extending-trust/images/trust_excalidraw_Building-and-Extending-Trust.png" class="img-fluid figure-img" style="width:90.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-4capp3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: 4CAPP model (picture): Relationships involve both trust and trustworthiness simultaneously between parties. To capture this two-way dynamic, the 4CAPP model was adapted from organizatonal trust researcher Professor Roger C Mayer. It includes key elements from the Feltman and Covey books.
 </figcaption>
 </figure>
 </div>
-<div id="fig-4capp1" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-4capp1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://drtomasaragon.github.io/posts/2023-08-08-building-and-extending-trust/images/trust_trustworthiness_venn_01.png" class="img-fluid figure-img" style="width:90.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-4capp1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: 4CAPP model (infographic): Relationships involve both trust and trustworthiness simultaneously between parties. To capture this two-way dynamic, the 4CAPP model was adapted from organizatonal trust researcher Professor Roger C Mayer. It includes key elements from the Feltman and Covey books.
-</figcaption>
-</figure>
-</div>
-<div id="fig-4capp2" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-4capp2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://drtomasaragon.github.io/posts/2023-08-08-building-and-extending-trust/images/trust_tikz_01_mayer_model.png" class="img-fluid figure-img" style="width:90.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-4capp2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: 4CAPP model (full): Relationships involve both trust and trustworthiness simultaneously between parties. To capture this two-way dynamic, the 4CAPP model was adapted from organizatonal trust researcher Professor Roger C Mayer. It includes key elements from the Feltman and Covey books.
-</figcaption>
-</figure>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-View or download full slides
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>View or download full slide <a href="https://app.box.com/s/n7xlueydaan97e0gmhunugsgi8llz52n">presentation</a>.</p>
-<p>Feedback is valued and appreciated.</p>
-</div>
-</div>
+<section id="building-trust-by-being-trustworthy" class="level3">
+<h3 class="anchored" data-anchor-id="building-trust-by-being-trustworthy">Building trust by being trustworthy</h3>
+<section id="can-i-believe-you-rightarrow-have-character" class="level4">
+<h4 class="anchored" data-anchor-id="can-i-believe-you-rightarrow-have-character">Can I believe you? <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> Have Character</h4>
+<ol type="1">
+<li>Universal values - embody and promote</li>
+<li>Humility - general, intellectual, and cultural</li>
+<li>Moral compass and ethical behavior</li>
+<li>Sincerity, honesty, and loyalty</li>
+<li>Integrity and courage</li>
+<li>Accountability</li>
+<li>Transparency</li>
+</ol>
+</section>
+<section id="do-you-care-about-me-rightarrow-be-caring" class="level4">
+<h4 class="anchored" data-anchor-id="do-you-care-about-me-rightarrow-be-caring">Do you care about me? <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> Be Caring</h4>
+<ol type="1">
+<li>Ensure psychological and physical safety</li>
+<li>Be kind and compassionate</li>
+<li>Ensure equity/fairness and dignity</li>
+<li>Promote inclusion and belonging</li>
+<li>Be trauma-responsive and -preventive</li>
+<li>Be curious, not judgmental</li>
+<li>Use humble inquiry</li>
+</ol>
+</section>
+<section id="can-you-deliver-rightarrow-be-competent" class="level4">
+<h4 class="anchored" data-anchor-id="can-you-deliver-rightarrow-be-competent">Can you deliver? <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> Be Competent</h4>
+<p>“Leadership is getting results in a way that inspires trust.” … SMR Covey</p>
+<ol type="1">
+<li>Leadership philosophy and praxis</li>
+<li>Interpersonal and team skills</li>
+<li>Management (strategic execution)</li>
+<li>Occupational mastery</li>
+</ol>
+</section>
+<section id="can-i-count-on-you-rightarrow-be-consistent-and-reliable" class="level4">
+<h4 class="anchored" data-anchor-id="can-i-count-on-you-rightarrow-be-consistent-and-reliable">Can I count on you? <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> Be Consistent (and reliable)</h4>
+<ol type="1">
+<li>Be consistent by reducing uncertainty</li>
+</ol>
+<ul>
+<li>improve your “batting average” (percent successful)</li>
+<li>reduce undesired variability (ie, don’t be erratic)</li>
+</ul>
+<ol start="2" type="1">
+<li>be reliable (100%) for commitments and promises</li>
+</ol>
+<ul>
+<li>fulfill commitments</li>
+<li>keep promises</li>
+</ul>
+</section>
+</section>
+<section id="extending-trust-deciding-to-risk-vulnerability" class="level3">
+<h3 class="anchored" data-anchor-id="extending-trust-deciding-to-risk-vulnerability">Extending trust (deciding to risk vulnerability)</h3>
+<ol type="1">
+<li>Set a default (“assume good intent”) and PDSA to assess your</li>
+</ol>
+<ul>
+<li>propensity to trust,</li>
+<li>perception of risk and benefits to you,</li>
+<li>appraisal of trustee’s trustworthiness</li>
+</ul>
+<ol start="2" type="1">
+<li>Reciprocate with the “shortcut” method to building trust</li>
+</ol>
+<ul>
+<li>“I want us to strengthen our trust and confidence in each other.
+<ul>
+<li>Here’s what I need from you (be honest): 1, 2, 3, …</li>
+<li>What do you need from me?” (The more specific, the better.)</li>
+</ul></li>
+</ul>
+<ol start="3" type="1">
+<li>Model the trust you expect of others</li>
+</ol>
+<ul>
+<li>be trustworthy,</li>
+<li>behave in ways that inspire trust, and</li>
+<li>design systems that promote a culture of trust.</li>
+</ul>
 
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body">
@@ -913,6 +993,7 @@ background-color: null;
 font-style: inherit;">"weight"</span>]</span>
 <span id="cb7-9">    )</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
+<div>
 <div><div style="float: left;"><span>30×3 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">5 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -1091,6 +1172,7 @@ font-style: inherit;">"weight"</span>]</span>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="step-3-calculate-mean-criteria-weights" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="step-3-calculate-mean-criteria-weights"><span class="header-section-number">3.3</span> Step 3: Calculate mean criteria weights</h3>
@@ -1107,6 +1189,7 @@ font-style: inherit;">groupby</span>(df, <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span>criteria)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
+<div>
 <p><b>GroupedDataFrame with 6 groups based on key: criteria</b></p><div><div style="float: left;"><span>First Group (5 rows): criteria = "Mileage"</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -1215,6 +1298,7 @@ font-style: inherit;">:</span>criteria)</span></code></pre></div>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>
@@ -2716,6 +2800,7 @@ font-style: inherit;">6</span>,<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
+<div>
 <div><div style="float: left;"><span>6×64 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -3262,6 +3347,7 @@ font-style: inherit;">:</span>]</span></code></pre></div>
 </div>
 </div>
 </div>
+</div>
 <p>To see all the variable names we will take the vector of 64 names and reshape them into a 16 by 4 matrix for display purposes.</p>
 <div id="5d84611e" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb67" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb67-1">vn <span class="op" style="color: #5E5E5E;
@@ -3339,6 +3425,7 @@ font-style: inherit;">:</span>race]]</span>
 background-color: null;
 font-style: inherit;">describe</span>(nhefs4)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
+<div>
 <div><div style="float: left;"><span>4×7 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -3409,6 +3496,7 @@ font-style: inherit;">describe</span>(nhefs4)</span></code></pre></div>
 </div>
 </div>
 </div>
+</div>
 <p>For “split” we use the <code>groupby</code> function, and for “apply” and “combine” we use the <code>combine</code> function. I also insert a column with description of strate (eg, “white female”).</p>
 <div id="a4a6bbf6" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb70" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb70-1">gdf <span class="op" style="color: #5E5E5E;
@@ -3452,6 +3540,7 @@ font-style: inherit;">"white female"</span>, <span class="st" style="color: #207
 background-color: null;
 font-style: inherit;">"black female"</span>])</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
+<div>
 <div><div style="float: left;"><span>4×5 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -3507,6 +3596,7 @@ font-style: inherit;">"black female"</span>])</span></code></pre></div>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>
@@ -3575,6 +3665,7 @@ font-style: inherit;">20</span>,<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
+<div>
 <div><div style="float: left;"><span>20×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -3717,6 +3808,7 @@ font-style: inherit;">:</span>]</span></code></pre></div>
 </div>
 </div>
 </div>
+</div>
 <div id="0d803642" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb74" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb74-1">cb[<span class="fl" style="color: #AD0000;
 background-color: null;
@@ -3728,6 +3820,7 @@ font-style: inherit;">40</span>,<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
+<div>
 <div><div style="float: left;"><span>20×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -3870,6 +3963,7 @@ font-style: inherit;">:</span>]</span></code></pre></div>
 </div>
 </div>
 </div>
+</div>
 <div id="230ef637" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb75" style="background: #f1f3f5;"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb75-1">cb[<span class="fl" style="color: #AD0000;
 background-color: null;
@@ -3881,6 +3975,7 @@ font-style: inherit;">64</span>,<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span>]</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="40">
+<div>
 <div><div style="float: left;"><span>24×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -4044,6 +4139,7 @@ font-style: inherit;">:</span>]</span></code></pre></div>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>

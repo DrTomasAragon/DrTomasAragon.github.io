@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -550,6 +550,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    [<span class="st">"evaluator"</span>, <span class="st">"criteria"</span>, <span class="st">"weight"</span>]</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
+<div>
 <div><div style="float: left;"><span>30×3 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">5 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -728,6 +729,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="step-3-calculate-mean-criteria-weights" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="step-3-calculate-mean-criteria-weights"><span class="header-section-number">3.3</span> Step 3: Calculate mean criteria weights</h3>
@@ -736,6 +738,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## split</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> <span class="fu">groupby</span>(df, <span class="op">:</span>criteria)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
+<div>
 <p><b>GroupedDataFrame with 6 groups based on key: criteria</b></p><div><div style="float: left;"><span>First Group (5 rows): criteria = "Mileage"</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -847,6 +850,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 </div>
+</div>
 </section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
 <div id="ref-Danielson2017_doi10.1007/978-3-319-52624-9_2" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Danielson M, Ekenberg L. Trade-offs for ordinal ranking methods in multi-criteria decisions. In: Bajwa D, Koeszegi ST, Vetschera R, editors. Group decision and negotiation Theory, empirical evidence, and application [Internet]. Cham: Springer International Publishing; 2017. p. 16–27. Available from: <a href="https://doi.org/10.1007/978-3-319-52624-9_2">https://doi.org/10.1007/978-3-319-52624-9_2</a></div>
@@ -865,6 +869,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>crit_weights <span class="op">=</span> <span class="fu">combine</span>(gdf, <span class="op">:</span>weight <span class="op">=&gt;</span> mean)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort!</span>(crit_weights, <span class="op">:</span>weight_mean, rev <span class="op">=</span> <span class="cn">true</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
+<div>
 <div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -912,6 +917,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>
@@ -976,6 +982,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <div id="3b48d0a7" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>r1.weights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
+<div>
 <div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -1026,9 +1033,11 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 </div>
+</div>
 <div id="754e7cb2" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>r1.data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
+<div>
 <div><div style="float: left;"><span>30×3 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">5 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -1204,6 +1213,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>
@@ -1223,6 +1233,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <div id="141de4d8" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>r2.weights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
+<div>
 <div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -1273,9 +1284,11 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </div>
 </div>
 </div>
+</div>
 <div id="ff9488db" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>r2.data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
+<div>
 <div><div style="float: left;"><span>30×3 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">5 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -1451,6 +1464,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>
@@ -1597,6 +1611,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>crit_weights <span class="op">=</span> <span class="fu">combine</span>(gdf, <span class="op">:</span>weight <span class="op">=&gt;</span> mean)</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort!</span>(crit_weights, <span class="op">:</span>weight_mean, rev <span class="op">=</span> <span class="cn">true</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
+<div>
 <div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -1644,6 +1659,7 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}}{\sum_{j=1}^N (1/i + \frac{N+1-i}{N})}
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>

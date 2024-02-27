@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -795,6 +795,7 @@ OR = \frac{a d}{b c}
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>nhefs <span class="op">=</span> CSV.<span class="fu">read</span>(<span class="st">"nhefs.csv"</span>, DataFrame)</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>nhefs[<span class="fl">1</span><span class="op">:</span><span class="fl">6</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
+<div>
 <div><div style="float: left;"><span>6×64 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -1341,6 +1342,7 @@ OR = \frac{a d}{b c}
 </div>
 </div>
 </div>
+</div>
 <p>To see all the variable names we will take the vector of 64 names and reshape them into a 16 by 4 matrix for display purposes.</p>
 <div id="5d84611e" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>vn <span class="op">=</span> <span class="fu">names</span>(nhefs)</span>
@@ -1394,6 +1396,7 @@ Figure&nbsp;1: The split-apply-combine is a common workflow in data science.
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>nhefs4 <span class="op">=</span> nhefs[<span class="op">:</span>,[<span class="op">:</span>death,<span class="op">:</span>sex,<span class="op">:</span>age,<span class="op">:</span>race]]</span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(nhefs4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
+<div>
 <div><div style="float: left;"><span>4×7 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -1464,6 +1467,7 @@ Figure&nbsp;1: The split-apply-combine is a common workflow in data science.
 </div>
 </div>
 </div>
+</div>
 <p>For “split” we use the <code>groupby</code> function, and for “apply” and “combine” we use the <code>combine</code> function. I also insert a column with description of strate (eg, “white female”).</p>
 <div id="a4a6bbf6" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> <span class="fu">groupby</span>(nhefs4, [<span class="op">:</span>sex, <span class="op">:</span>race])</span>
@@ -1473,6 +1477,7 @@ Figure&nbsp;1: The split-apply-combine is a common workflow in data science.
 <span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a><span class="fu">insertcols!</span>(results, </span>
 <span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>strata <span class="op">=&gt;</span> [<span class="st">"white male"</span>, <span class="st">"black male"</span>, <span class="st">"white female"</span>, <span class="st">"black female"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
+<div>
 <div><div style="float: left;"><span>4×5 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -1531,6 +1536,7 @@ Figure&nbsp;1: The split-apply-combine is a common workflow in data science.
 </div>
 </div>
 </div>
+</div>
 <p>Conclusions:</p>
 <ul>
 <li>In 1971, the mean age of males was slightly higher than the mean age of females.</li>
@@ -1556,6 +1562,7 @@ Figure&nbsp;1: The split-apply-combine is a common workflow in data science.
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="fu">insertcols!</span>(cb, <span class="fl">1</span>, <span class="op">:</span>row <span class="op">=&gt;</span> <span class="fl">1</span><span class="op">:</span><span class="fl">64</span>)</span>
 <span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>cb[<span class="fl">1</span><span class="op">:</span><span class="fl">20</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
+<div>
 <div><div style="float: left;"><span>20×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -1698,9 +1705,11 @@ Figure&nbsp;1: The split-apply-combine is a common workflow in data science.
 </div>
 </div>
 </div>
+</div>
 <div id="0d803642" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>cb[<span class="fl">21</span><span class="op">:</span><span class="fl">40</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
+<div>
 <div><div style="float: left;"><span>20×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -1843,9 +1852,11 @@ Figure&nbsp;1: The split-apply-combine is a common workflow in data science.
 </div>
 </div>
 </div>
+</div>
 <div id="230ef637" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>cb[<span class="fl">41</span><span class="op">:</span><span class="fl">64</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="40">
+<div>
 <div><div style="float: left;"><span>24×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -2009,6 +2020,7 @@ Figure&nbsp;1: The split-apply-combine is a common workflow in data science.
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>
