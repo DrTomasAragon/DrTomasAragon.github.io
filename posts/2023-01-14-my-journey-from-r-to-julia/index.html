@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.30">
+<meta name="generator" content="quarto-1.5.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2023-01-14">
 <meta name="description" content="A very brief introduction to Julia for epidemiologists">
 
-<title>Dr. Tomás Aragón – My journey from R to Julia</title>
+<title>My journey from R to Julia – myblog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,20 +122,6 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-
-<script type="text/javascript">
-
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-111617948-1', 'auto');
-
-ga('send', {
-  hitType: 'pageview',
-  'anonymizeIp': true,
-});
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -171,12 +157,6 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../styles.css">
-<meta name="twitter:title" content="Dr.&nbsp;Tomás Aragón - My journey from R to Julia">
-<meta name="twitter:description" content="A very brief introduction to Julia for epidemiologists">
-<meta name="twitter:image" content="https://drtomasaragon.github.io/posts/2023-01-14-my-journey-from-r-to-julia/images/julia-programming-language-mit-00.png">
-<meta name="twitter:image-height" content="1000">
-<meta name="twitter:image-width" content="1500">
-<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -187,43 +167,21 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Dr.&nbsp;Tomás Aragón</span>
+    <span class="navbar-title">myblog</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../works.html"> 
-<span class="menu-text">Works</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../subscription.html"> 
-<span class="menu-text">Subscribe</span></a>
-  </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://threads.net/drtomasaragon"> <i class="bi bi-twitter" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/drtomasaragon"> <i class="bi bi-linkedin" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/drtomasaragon"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://substack.com/@drtomasaragon"> <i class="bi bi-substack" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -341,7 +299,7 @@ Note
 </ul>
 <p>If I wanted to write one function to handle these possible data types as arguments, I would have to do a lot of processing and checking of data types in order to call the next function (nested or external). This requires much more work than is necessary. Let’s do this is Julia using multiple dispatch.</p>
 <p>In 2003, we published a study that provided evidence that drinking unfiltered municipal tap water was associated with developing cryptosporidiosis among patients with advanced HIV disease <span class="citation" data-cites="Aragon2003_pmid12515584">[<a href="#ref-Aragon2003_pmid12515584" role="doc-biblioref">2</a>]</span>. Here is a contingency table from this paper.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Exposure</th>
@@ -368,7 +326,7 @@ Note
 </tbody>
 </table>
 <p>Let’s calculate the unadjusted odds ratio comparing the highest exposure category to the lowest exposure category. Here is the 2x2 table for this calculation.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Exposure</th>
@@ -390,7 +348,7 @@ Note
 </tbody>
 </table>
 <p>For an appropriately structured table, for example,</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Exposure</th>
@@ -426,74 +384,74 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
 <li>a 2x2 table (matrix)</li>
 </ul>
 <p>The catch is that the three functions will have the same name: <code>oddsratio</code>. This is possible in Julia because of multiple dispatch. In contrast, R is single dispatch.</p>
-<div id="41fab98a" class="cell" data-execution_count="1">
+<div id="2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 1</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">oddsratio</span>(a<span class="op">::</span><span class="dt">Int</span>, b<span class="op">::</span><span class="dt">Int</span>, c<span class="op">::</span><span class="dt">Int</span>, d<span class="op">::</span><span class="dt">Int</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    or <span class="op">=</span> (a <span class="op">*</span> d) <span class="op">/</span> (b <span class="op">*</span> c)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> or</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>oddsratio (generic function with 1 method)</code></pre>
 </div>
 </div>
 <p>Let’s test the <code>oddsratio</code> function by passing four integers from our 2x2 table.</p>
-<div id="32bec73c" class="cell" data-execution_count="2">
+<div id="4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>29.0</code></pre>
 </div>
 </div>
 <p>Here is the second function to handle arguments that are proportions; for example, the exposure odds comparing cases to controls.</p>
-<div id="02cb558e" class="cell" data-execution_count="3">
+<div id="6" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 2</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">oddsratio</span>(p1<span class="op">::</span><span class="dt">Float64</span>, p0<span class="op">::</span><span class="dt">Float64</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    or <span class="op">=</span> ((p1)<span class="op">/</span>(<span class="fl">1</span> <span class="op">-</span> p1)) <span class="op">/</span> ((p0)<span class="op">/</span>(<span class="fl">1</span> <span class="op">-</span> p0))</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> or</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>oddsratio (generic function with 2 methods)</code></pre>
 </div>
 </div>
 <p>Let’s test the <code>oddsratio</code> function by passing two proportions from our 2x2 table.</p>
-<div id="98436663" class="cell" data-execution_count="4">
+<div id="8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>prop1 <span class="op">=</span> <span class="fl">12</span> <span class="op">/</span> (<span class="fl">12</span> <span class="op">+</span> <span class="fl">2</span>) <span class="co"># probability of exposure among cases</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>prop0 <span class="op">=</span> <span class="fl">6</span> <span class="op">/</span> (<span class="fl">6</span> <span class="op">+</span> <span class="fl">29</span>) <span class="co"># probability of exposure among controls</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(prop1, prop0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>28.999999999999982</code></pre>
 </div>
 </div>
 <p>Finally, here is the third function to handle an argument that is a 2x2 table (matrix).</p>
-<div id="6c33ac41" class="cell" data-execution_count="5">
+<div id="10" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 3</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">oddsratio</span>(x<span class="op">::</span><span class="dt">Matrix{Int}</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    or <span class="op">=</span> (x[<span class="fl">1</span>, <span class="fl">1</span>] <span class="op">*</span> x[<span class="fl">2</span>, <span class="fl">2</span>]) <span class="op">/</span> (x[<span class="fl">1</span>, <span class="fl">2</span>] <span class="op">*</span> x[<span class="fl">2</span>, <span class="fl">1</span>])</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> or</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>oddsratio (generic function with 3 methods)</code></pre>
 </div>
 </div>
 <p>Let’s test the <code>oddsratio</code> function by passing our 2x2 table.</p>
-<div id="0c34df0f" class="cell" data-execution_count="6">
+<div id="12" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tab <span class="op">=</span> [<span class="fl">12</span> <span class="fl">6</span>; <span class="fl">2</span> <span class="fl">29</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>2×2 Matrix{Int64}:
  12   6
   2  29</code></pre>
 </div>
 </div>
-<div id="8e792044" class="cell" data-execution_count="7">
+<div id="14" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(tab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>29.0</code></pre>
 </div>
 </div>
 <p>This is called multiple dispatch. The <code>oddsratio</code> function has three methods and can handle multiple data types. Notice how easy that was.</p>
-<div id="f3d33beb" class="cell" data-execution_count="8">
+<div id="16" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">methods</span>(oddsratio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-# 3 methods for generic function <b>oddsratio</b> from [35mMain[39m:<ul><li> oddsratio(x::<b>Matrix{Int64}</b>) in Main at In[6]:2</li> <li> oddsratio(p1::<b>Float64</b>, p0::<b>Float64</b>) in Main at In[4]:2</li> <li> oddsratio(a::<b>Int64</b>, b::<b>Int64</b>, c::<b>Int64</b>, d::<b>Int64</b>) in Main at In[2]:2</li> </ul>
+<div class="cell-output cell-output-display" data-execution_count="1">
+# 3 methods for generic function <b>oddsratio</b> from Main.Notebook:<ul><li> oddsratio(x::<b>Matrix{Int64}</b>) in Main.Notebook at <a href="https://github.com/DrTomasAragon/myblog/tree/97338567e5225d0ecca412607ad5ba70e07d5ee0//posts/2023-01-14-my-journey-from-r-to-julia/index.qmd#L243" target="_blank">/Users/tja/Library/CloudStorage/OneDrive-CADepartmentofPublicHealth/tja/gh/blog_dev/myblog/posts/2023-01-14-my-journey-from-r-to-julia/index.qmd:243</a></li> <li> oddsratio(p1::<b>Float64</b>, p0::<b>Float64</b>) in Main.Notebook at <a href="https://github.com/DrTomasAragon/myblog/tree/97338567e5225d0ecca412607ad5ba70e07d5ee0//posts/2023-01-14-my-journey-from-r-to-julia/index.qmd#L214" target="_blank">/Users/tja/Library/CloudStorage/OneDrive-CADepartmentofPublicHealth/tja/gh/blog_dev/myblog/posts/2023-01-14-my-journey-from-r-to-julia/index.qmd:214</a></li> <li> oddsratio(a::<b>Int64</b>, b::<b>Int64</b>, c::<b>Int64</b>, d::<b>Int64</b>) in Main.Notebook at <a href="https://github.com/DrTomasAragon/myblog/tree/97338567e5225d0ecca412607ad5ba70e07d5ee0//posts/2023-01-14-my-journey-from-r-to-julia/index.qmd#L187" target="_blank">/Users/tja/Library/CloudStorage/OneDrive-CADepartmentofPublicHealth/tja/gh/blog_dev/myblog/posts/2023-01-14-my-journey-from-r-to-julia/index.qmd:187</a></li> </ul>
 </div>
 </div>
 <p>Wow! Now anyone, including me, can add new methods to the <code>oddsratio</code> function without disrupting previous methods. This is very powerful. Other languages accomplish this using object-oriented programming. Julia is not an object-oriented programming lanuage.</p>
@@ -507,24 +465,24 @@ OR = \frac{p_1/(1 - p_1)}{p_0/(1 - p_0)}
 <section id="appendix" class="level2">
 <h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
 <p>Julia is very flexible in the creation of functions. Here are the same three functions in an abbreviated form.</p>
-<div id="3fdafd07" class="cell" data-execution_count="9">
+<div id="18" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 1</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(a<span class="op">::</span><span class="dt">Int</span>, b<span class="op">::</span><span class="dt">Int</span>, c<span class="op">::</span><span class="dt">Int</span>, d<span class="op">::</span><span class="dt">Int</span>) <span class="op">=</span> (a <span class="op">*</span> d) <span class="op">/</span> (b <span class="op">*</span> c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>oddsratio (generic function with 3 methods)</code></pre>
 </div>
 </div>
-<div id="5861f023" class="cell" data-execution_count="10">
+<div id="20" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 2</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(p1<span class="op">::</span><span class="dt">Float64</span>, p0<span class="op">::</span><span class="dt">Float64</span>) <span class="op">=</span> ((p1)<span class="op">/</span>(<span class="fl">1</span> <span class="op">-</span> p1)) <span class="op">/</span> ((p0)<span class="op">/</span>(<span class="fl">1</span> <span class="op">-</span> p0))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>oddsratio (generic function with 3 methods)</code></pre>
 </div>
 </div>
-<div id="ed685aef" class="cell" data-execution_count="11">
+<div id="22" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Function 3</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(x<span class="op">::</span><span class="dt">Matrix{Int}</span>) <span class="op">=</span> (x[<span class="fl">1</span>, <span class="fl">1</span>] <span class="op">*</span> x[<span class="fl">2</span>, <span class="fl">2</span>]) <span class="op">/</span> (x[<span class="fl">1</span>, <span class="fl">2</span>] <span class="op">*</span> x[<span class="fl">2</span>, <span class="fl">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>oddsratio (generic function with 3 methods)</code></pre>
 </div>
 </div>
@@ -645,7 +603,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/drtomasaragon\.github\.io\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -974,19 +932,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>Created with <a href="https://quarto.org">Quarto.org</a>—an open-source scientific and technical publishing system built on <a href="https://pandoc.org/">Pandoc</a>.</p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
-  </div>
-</footer>
 
 
 
