@@ -275,14 +275,22 @@ window.Quarto = {
 
 
 
-<div id="2" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#using Pkg</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Pkg.add("Downloads");</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Pkg.add("Distributions");</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Pkg.add("StatsBase");</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Pkg.add("CSV");</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Pkg.add("DataFrames");</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<!--
+
+
+
+```mkszxvj
+#using Pkg
+#Pkg.add("Downloads");
+#Pkg.add("Distributions");
+#Pkg.add("StatsBase");
+#Pkg.add("CSV");
+#Pkg.add("DataFrames");
+```
+
+
+
+-->
 <section id="overview" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
 <p>Julia is an open source, general purpose programming language for scientific computing and is well suited for data science. I taught R programming for several years at the UC Berkeley School of Public Health. I recently posted a blog entry on why I switched from R to Julia (“<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>”). In this blog entry I review the book “<a href="https://www.manning.com/books/julia-for-data-analysis">Julia for Data Analysis</a>” by Bogumit Kaminski <span class="citation" data-cites="Kaminski2023-isbn978-1633439368">[<a href="#ref-Kaminski2023-isbn978-1633439368" role="doc-biblioref">1</a>]</span>. In short, this is an outstanding book that I highly recommend without any reservations (5/5 stars). This review is a working blog that I will be updating with highlights from the book.</p>
@@ -313,15 +321,15 @@ window.Quarto = {
 <h3 data-number="2.1" class="anchored" data-anchor-id="chapter-1-introduction"><span class="header-section-number">2.1</span> Chapter 1 Introduction</h3>
 <p>My blog posting “<a href="../2023-01-14-my-journey-from-r-to-julia/index.html">My Journey from R to Julia</a>” is a good summary of what is covered in the Introduction. I will cover just one item—execution speed, and compare it to R.</p>
 <p>We will construct a <code>for</code> loop summation of a random sequence of integers from 1 to 1,000,000,000 (1 billion) that are sampled without replacment.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Here is the correct answer as a reference:</p>
-<div id="4" class="cell" data-execution_count="0">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">## In Julia</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span>  <span class="fu">sum</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">1_000_000_000</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fl">500000000500000000</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">## In R</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="fu">options</span>(digits<span class="op">=</span><span class="fl">20</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="fu">sum</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">1000000000</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>] <span class="fl">5.000000005e+17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="2" class="cell" data-execution_count="0">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## In Julia</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span>  <span class="fu">sum</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">1_000_000_000</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fl">500000000500000000</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">## In R</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="fu">options</span>(digits<span class="op">=</span><span class="fl">20</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="fu">sum</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">1000000000</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>] <span class="fl">5.000000005e+17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>By default, R would give the wrong answer (not shown) because it uses 64-bit floating point numbers.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> To get the correct answer we need 64-bit integers. For this I used the <code>bit64</code> R package to get the correct answer (below).</p>
 <!--
@@ -349,23 +357,23 @@ sum_n = function(n){
 system.time(x <- sum_n(1000000000))
 x
 -->
-<div id="6" class="cell" data-execution_count="0">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="fu">require</span>(<span class="st">"bit64"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> n <span class="op">=</span> <span class="fl">1000000000</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> samp <span class="op">=</span> <span class="fu">sample</span>(<span class="fl">1</span><span class="op">:</span>n, n, replace<span class="op">=</span>FALSE)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> sum_n <span class="op">=</span> <span class="kw">function</span>(x){</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>     s <span class="op">=</span> as.<span class="fu">integer64</span>(<span class="fl">0</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>     <span class="cf">for</span> (i <span class="kw">in</span> x){</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>         s <span class="op">=</span> s <span class="op">+</span> i</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>     }</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>     s</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> }</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> system.<span class="fu">time</span>(x <span class="op">&lt;-</span> <span class="fu">sum_n</span>(samp))</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>     user    system   elapsed </span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fl">11094.792</span>   <span class="fl">101.378</span> <span class="fl">11201.145</span> </span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> x</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>integer64</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>] <span class="fl">500000000500000000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="4" class="cell" data-execution_count="0">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="fu">require</span>(<span class="st">"bit64"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> n <span class="op">=</span> <span class="fl">1000000000</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> samp <span class="op">=</span> <span class="fu">sample</span>(<span class="fl">1</span><span class="op">:</span>n, n, replace<span class="op">=</span>FALSE)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> sum_n <span class="op">=</span> <span class="kw">function</span>(x){</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>     s <span class="op">=</span> as.<span class="fu">integer64</span>(<span class="fl">0</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>     <span class="cf">for</span> (i <span class="kw">in</span> x){</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>         s <span class="op">=</span> s <span class="op">+</span> i</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>     }</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="op">+</span>     s</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">+</span> }</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> system.<span class="fu">time</span>(x <span class="op">&lt;-</span> <span class="fu">sum_n</span>(samp))</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>     user    system   elapsed </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fl">11094.792</span>   <span class="fl">101.378</span> <span class="fl">11201.145</span> </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> x</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>integer64</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>] <span class="fl">500000000500000000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To get the correct answer in R, the execution time was about <strong>11,095 seconds</strong>. Okay, let’s try Julia.</p>
 <!--
@@ -381,22 +389,22 @@ function sum_n(x)
 end
 @btime sum_n(samp)
 -->
-<div id="8" class="cell" data-execution_count="0">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="im">using</span> <span class="bu">StatsBase</span>, <span class="bu">BenchmarkTools</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> n <span class="op">=</span> <span class="fl">1_000_000_000</span>;</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> samp <span class="op">=</span> <span class="fu">sample</span>(<span class="fl">1</span><span class="op">:</span>n, n, replace<span class="op">=</span><span class="cn">false</span>);</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="kw">function</span> <span class="fu">sum_n</span>(x)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>           s <span class="op">=</span> <span class="fl">0</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>               <span class="cf">for</span> i <span class="kw">in</span> x</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                   s <span class="op">=</span> s <span class="op">+</span> i</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>               <span class="cf">end</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>               <span class="cf">return</span> s</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>       <span class="kw">end</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>sum_n (generic <span class="kw">function</span> with <span class="fl">1</span> method)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="pp">@btime</span> <span class="fu">sum_n</span>(samp)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fl">158.118</span> ms (<span class="fl">1</span> allocation<span class="op">:</span> <span class="fl">16</span> bytes)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fl">500000000500000000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6" class="cell" data-execution_count="0">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="im">using</span> <span class="bu">StatsBase</span>, <span class="bu">BenchmarkTools</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> n <span class="op">=</span> <span class="fl">1_000_000_000</span>;</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> samp <span class="op">=</span> <span class="fu">sample</span>(<span class="fl">1</span><span class="op">:</span>n, n, replace<span class="op">=</span><span class="cn">false</span>);</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="kw">function</span> <span class="fu">sum_n</span>(x)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>           s <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>               <span class="cf">for</span> i <span class="kw">in</span> x</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                   s <span class="op">=</span> s <span class="op">+</span> i</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>               <span class="cf">end</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>               <span class="cf">return</span> s</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>       <span class="kw">end</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>sum_n (generic <span class="kw">function</span> with <span class="fl">1</span> method)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="pp">@btime</span> <span class="fu">sum_n</span>(samp)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fl">158.118</span> ms (<span class="fl">1</span> allocation<span class="op">:</span> <span class="fl">16</span> bytes)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fl">500000000500000000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In Julia, it took about <strong>158 milliseconds</strong>. R is about <strong>70,168 times slower</strong> than Julia!<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p>Conclusion: Compared to R, Julia can handle large <code>for</code> loops for summation and give an accurate answer fast. To add integers correctly using a <code>for</code> loop, R requires using the <code>bit64</code> package but is 70,168 time slower than Julia. With R, we are taught to avoid <code>for</code> loops — now you know why. However, a <code>for</code> loop is a workhorse tool that we want available to us; hence, this a huge advantage of Julia.</p>
@@ -407,25 +415,25 @@ end
 <section id="basic-data-types" class="level4" data-number="2.2.1">
 <h4 data-number="2.2.1" class="anchored" data-anchor-id="basic-data-types"><span class="header-section-number">2.2.1</span> Basic data types</h4>
 <p>If you are familar with R or Python, you will feel comfortable with Julia. Here is a <strong>character</strong>:</p>
-<div id="10" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">## character; notice single quotation marks</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ch">'a'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">## character; notice single quotation marks</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ch">'a'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>'a': ASCII/Unicode U+0061 (category Ll: Letter, lowercase)</code></pre>
 </div>
 </div>
 <p>A <strong>string</strong> is a collection of characters:</p>
-<div id="12" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">## string; notice double quotation marks</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="st">"Hello World"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="10" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">## string; notice double quotation marks</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st">"Hello World"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>"Hello World"</code></pre>
 </div>
 </div>
 <p>An <strong>array</strong> is a collection in brackets. A <strong>vector</strong> is a 1-dimensional array. Commas are used to create a vector. By default, the vector is displayed vertically, but it is not a “column vector”.</p>
-<div id="14" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">## vector</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="12" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## vector</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>3-element Vector{Int64}:
  1
@@ -434,26 +442,26 @@ end
 </div>
 </div>
 <p>To display horizontally use the <code>show</code> function.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div id="16" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">## vector</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>([<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="14" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">## vector</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>([<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1, 2, 3]</code></pre>
 </div>
 </div>
 <p>A <strong>matrix</strong> is a two-dimensional array. Numbers separated by spaces create one row of a <strong>matrix</strong>. This is not a vector.</p>
-<div id="18" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">## matrix</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span> <span class="fl">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="16" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">## matrix</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span> <span class="fl">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>1×4 Matrix{Int64}:
  1  2  3  4</code></pre>
 </div>
 </div>
 <p>Matrix rows separated by a semi-colon creates a multi-row matrix:</p>
-<div id="20" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">## matrix</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span> <span class="fl">4</span>; <span class="fl">6</span> <span class="fl">7</span> <span class="fl">8</span> <span class="fl">9</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="18" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">## matrix</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span> <span class="fl">4</span>; <span class="fl">6</span> <span class="fl">7</span> <span class="fl">8</span> <span class="fl">9</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>2×4 Matrix{Int64}:
  1  2  3  4
@@ -461,41 +469,41 @@ end
 </div>
 </div>
 <p>The <code>size</code> function returns the dimensions of an array. Previously, we learned that a vector is a 1-dimensional array.</p>
-<div id="22" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">size</span>([<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="20" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">size</span>([<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>(3,)</code></pre>
 </div>
 </div>
 <p>We see this vector is 1-dimensional (<code>(3,)</code>); in contrast,</p>
-<div id="24" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">size</span>([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="22" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">size</span>([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>(1, 3)</code></pre>
 </div>
 </div>
 <p>this is a <code>(1, 3)</code> matrix or 2-dimensional.</p>
 <p>A <strong>tuple</strong> is a collection in parentheses, and commas separate the elements. Above, the <code>size</code> function returned a tuple. Tuples are immutable; their elements cannot be changed. Immutable objects increase computational speed.</p>
-<div id="26" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">## tuple</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>(<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="24" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">## tuple</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>(<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>(1, 2, 3)</code></pre>
 </div>
 </div>
 <p>Tuple elements can be named.</p>
-<div id="28" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">## named tuple</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>(four <span class="op">=</span> <span class="fl">4</span>, five <span class="op">=</span> <span class="fl">5</span>, six <span class="op">=</span> <span class="fl">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="26" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">## named tuple</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>(four <span class="op">=</span> <span class="fl">4</span>, five <span class="op">=</span> <span class="fl">5</span>, six <span class="op">=</span> <span class="fl">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>(four = 4, five = 5, six = 6)</code></pre>
 </div>
 </div>
 <p>The assigment operation (<code>=</code>) is used to <strong>bind</strong> data <em>values</em> to a <strong>variable</strong>. Binding in Julia is similar to binding in Python, but not in R.</p>
-<div id="30" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>]</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="28" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>]</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>2-element Vector{Int64}:
  1
@@ -503,10 +511,10 @@ end
 </div>
 </div>
 <p>If we change an element in <code>x</code>, the same change occurs in <code>y</code> because same array was binded to the variables <code>x</code> and <code>y</code>.</p>
-<div id="32" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fl">2</span>] <span class="op">=</span> <span class="fl">99</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">## notice that y changes also</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="30" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fl">2</span>] <span class="op">=</span> <span class="fl">99</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co">## notice that y changes also</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>2-element Vector{Int64}:
   1
@@ -514,29 +522,29 @@ end
 </div>
 </div>
 <p>This is not the case in R:</p>
-<div id="34" class="cell" data-execution_count="0">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> x <span class="op">=</span> <span class="fu">c</span>(<span class="fl">1</span>, <span class="fl">2</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> y <span class="op">=</span> x</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> x[<span class="fl">2</span>] <span class="op">=</span> <span class="fl">99</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> x</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>]  <span class="fl">1</span> <span class="fl">99</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> y</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>] <span class="fl">1</span> <span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="32" class="cell" data-execution_count="0">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> x <span class="op">=</span> <span class="fu">c</span>(<span class="fl">1</span>, <span class="fl">2</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> y <span class="op">=</span> x</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> x[<span class="fl">2</span>] <span class="op">=</span> <span class="fl">99</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> x</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>]  <span class="fl">1</span> <span class="fl">99</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> y</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1</span>] <span class="fl">1</span> <span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To replicate the R experience in Julia we assign a copy of <code>x</code> to <code>y</code>.</p>
-<div id="36" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>]</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fu">copy</span>(x)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>x[<span class="fl">2</span>] <span class="op">=</span> <span class="fl">99</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="34" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>]</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fu">copy</span>(x)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>x[<span class="fl">2</span>] <span class="op">=</span> <span class="fl">99</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>2-element Vector{Int64}:
   1
  99</code></pre>
 </div>
 </div>
-<div id="38" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="36" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>2-element Vector{Int64}:
  1
@@ -574,18 +582,18 @@ end
 OR = \frac{a d}{b c}
 \]</span></p>
 <p>Here is a simple Julia function to calculate the odds ratio:</p>
-<div id="40" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">oddsratio</span>(a, b, c, d)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    or <span class="op">=</span> (a <span class="op">*</span> d) <span class="op">/</span> (b <span class="op">*</span> c)</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> or</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="38" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">oddsratio</span>(a, b, c, d)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    or <span class="op">=</span> (a <span class="op">*</span> d) <span class="op">/</span> (b <span class="op">*</span> c)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> or</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>oddsratio (generic function with 1 method)</code></pre>
 </div>
 </div>
 <p>Because this is a simple function, it can also be created in an abbreviated form:</p>
-<div id="42" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(a, b, c, d) <span class="op">=</span> (a <span class="op">*</span> d) <span class="op">/</span> (b <span class="op">*</span> c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="40" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(a, b, c, d) <span class="op">=</span> (a <span class="op">*</span> d) <span class="op">/</span> (b <span class="op">*</span> c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>oddsratio (generic function with 1 method)</code></pre>
 </div>
@@ -613,50 +621,50 @@ OR = \frac{a d}{b c}
 </tbody>
 </table>
 <p>Let’s test the <code>oddsratio</code> function by passing four integers from our 2x2 table.</p>
-<div id="44" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="42" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio</span>(<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>29.0</code></pre>
 </div>
 </div>
 <p>The function <em>arguments</em>, <code>a</code>, <code>b</code>, <code>c</code>, and <code>d</code> are called <strong>positional</strong> arguments and are always required in the correct order.</p>
 <p>We now add a <strong>keyword</strong> argument which is optional. Keyword arguments are separated from the positional arguments by a semicolon (;). Any argument, positional or keyword, can be assigned a default value. We’ll create <code>oddsratio2</code>function to calculate a confidence interval using the Normal approximation. The keyword argument will have a default confidence level of 0.95.</p>
-<div id="46" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Distributions</span> <span class="co"># to access standard normal distribution </span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">oddsratio2</span>(a, b, c, d; level <span class="op">=</span> <span class="fl">0.95</span>)</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    zv <span class="op">=</span> <span class="fu">quantile</span>(<span class="fu">Normal</span>(), <span class="fl">0.5</span><span class="fu">*</span>(<span class="fl">1</span> <span class="op">+</span> level))</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    est <span class="op">=</span> (a <span class="op">*</span> d) <span class="op">/</span> (b <span class="op">*</span> c)</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    log_or <span class="op">=</span> <span class="fu">log</span>(est)</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    se_log_or <span class="op">=</span> <span class="fu">sqrt</span>((<span class="fl">1</span><span class="op">/</span>a) <span class="op">+</span> (<span class="fl">1</span><span class="op">/</span>b) <span class="op">+</span> (<span class="fl">1</span><span class="op">/</span>c) <span class="op">+</span> (<span class="fl">1</span><span class="op">/</span>d))</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    lcl <span class="op">=</span> <span class="fu">exp</span>(log_or <span class="op">-</span> zv <span class="op">*</span> se_log_or)</span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    ucl <span class="op">=</span> <span class="fu">exp</span>(log_or <span class="op">+</span> zv <span class="op">*</span> se_log_or)</span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>        or <span class="op">=</span> est, </span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>        confint <span class="op">=</span> (lcl, ucl), </span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>        level <span class="op">=</span> level</span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="44" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Distributions</span> <span class="co"># to access standard normal distribution </span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">oddsratio2</span>(a, b, c, d; level <span class="op">=</span> <span class="fl">0.95</span>)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    zv <span class="op">=</span> <span class="fu">quantile</span>(<span class="fu">Normal</span>(), <span class="fl">0.5</span><span class="fu">*</span>(<span class="fl">1</span> <span class="op">+</span> level))</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    est <span class="op">=</span> (a <span class="op">*</span> d) <span class="op">/</span> (b <span class="op">*</span> c)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    log_or <span class="op">=</span> <span class="fu">log</span>(est)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    se_log_or <span class="op">=</span> <span class="fu">sqrt</span>((<span class="fl">1</span><span class="op">/</span>a) <span class="op">+</span> (<span class="fl">1</span><span class="op">/</span>b) <span class="op">+</span> (<span class="fl">1</span><span class="op">/</span>c) <span class="op">+</span> (<span class="fl">1</span><span class="op">/</span>d))</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    lcl <span class="op">=</span> <span class="fu">exp</span>(log_or <span class="op">-</span> zv <span class="op">*</span> se_log_or)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    ucl <span class="op">=</span> <span class="fu">exp</span>(log_or <span class="op">+</span> zv <span class="op">*</span> se_log_or)</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>        or <span class="op">=</span> est, </span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>        confint <span class="op">=</span> (lcl, ucl), </span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>        level <span class="op">=</span> level</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>oddsratio2 (generic function with 1 method)</code></pre>
 </div>
 </div>
 <p>By default, <code>oddsratio2</code> will calculate the 95% confidence interval:</p>
-<div id="48" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio2</span>(<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="46" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsratio2</span>(<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>(or = 29.0, confint = (5.110695577009899, 164.55685675804662), level = 0.95)</code></pre>
 </div>
 </div>
 <p>I can also calculate 99% confidence intervals:</p>
-<div id="50" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> <span class="fu">oddsratio2</span>(<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>; level <span class="op">=</span> <span class="fl">0.99</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="48" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> <span class="fu">oddsratio2</span>(<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>; level <span class="op">=</span> <span class="fl">0.99</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>(or = 29.0, confint = (2.9619778898301936, 283.93189661797715), level = 0.99)</code></pre>
 </div>
 </div>
 <p>And we can index elements of the named tuple.</p>
-<div id="52" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>results.confint</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="50" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>results.confint</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>(2.9619778898301936, 283.93189661797715)</code></pre>
 </div>
@@ -665,9 +673,9 @@ OR = \frac{a d}{b c}
 <section id="anonymous-functions" class="level4" data-number="2.2.3">
 <h4 data-number="2.2.3" class="anchored" data-anchor-id="anonymous-functions"><span class="header-section-number">2.2.3</span> Anonymous functions</h4>
 <p>Functions can be arguments to functions. For example, we will create a <code>times_two</code> function and past it to other functions.</p>
-<div id="54" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">times_two</span>(x) <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> x</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(times_two, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="52" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">times_two</span>(x) <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> x</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(times_two, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>3-element Vector{Int64}:
   2
@@ -675,22 +683,22 @@ OR = \frac{a d}{b c}
  16</code></pre>
 </div>
 </div>
-<div id="56" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(times_two, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="54" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(times_two, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>22</code></pre>
 </div>
 </div>
-<div id="58" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsBase</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(times_two, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="56" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsBase</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(times_two, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>7.333333333333333</code></pre>
 </div>
 </div>
 <p>Alternatively, we can pass the <code>times_two</code> function as an anonymous function; that is, a function without a name.</p>
-<div id="60" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(x <span class="op">-&gt;</span> <span class="fl">2</span> <span class="op">*</span> x, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="58" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(x <span class="op">-&gt;</span> <span class="fl">2</span> <span class="op">*</span> x, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>3-element Vector{Int64}:
   2
@@ -698,35 +706,35 @@ OR = \frac{a d}{b c}
  16</code></pre>
 </div>
 </div>
-<div id="62" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x <span class="op">-&gt;</span> <span class="fl">2</span> <span class="op">*</span> x, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="60" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x <span class="op">-&gt;</span> <span class="fl">2</span> <span class="op">*</span> x, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>22</code></pre>
 </div>
 </div>
-<div id="64" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x <span class="op">-&gt;</span> <span class="fl">2</span> <span class="op">*</span> x, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="62" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x <span class="op">-&gt;</span> <span class="fl">2</span> <span class="op">*</span> x, [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>7.333333333333333</code></pre>
 </div>
 </div>
 <p>We can even calculate the odds ratio as an anonymous function.</p>
-<div id="66" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>((a, b, c, d) <span class="op">-&gt;</span> (a <span class="op">*</span> d)<span class="op">/</span>(b <span class="op">*</span> c), (<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>)<span class="op">...</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="64" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>((a, b, c, d) <span class="op">-&gt;</span> (a <span class="op">*</span> d)<span class="op">/</span>(b <span class="op">*</span> c), (<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>)<span class="op">...</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>29.0</code></pre>
 </div>
 </div>
 <p>Notice I used a trick. By default, the <code>map</code> function maps and executes a function with elements of a collection (eg, <code>[1 ,2, 8]</code>). However, for the odds ratio calcuation, I need to map the arguments <code>(a, b, c, d)</code> to their values <code>(12, 6, 2, 29)</code>, <em>then</em> calculate the odds ratio. Therefore, I used the splat operator (<code>...</code>) to break up the collection of values so that they could be mapped to their arguments first. Although I used a tuple <code>(12, 6, 2, 29)</code>, an array also works <code>[12, 6, 2, 29]</code>.</p>
-<div id="68" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>((a, b, c, d) <span class="op">-&gt;</span> (a <span class="op">*</span> d)<span class="op">/</span>(b <span class="op">*</span> c), [<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>]<span class="op">...</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="66" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>((a, b, c, d) <span class="op">-&gt;</span> (a <span class="op">*</span> d)<span class="op">/</span>(b <span class="op">*</span> c), [<span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>]<span class="op">...</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>29.0</code></pre>
 </div>
 </div>
 <p>The splat operator (<code>...</code>) converts <code>[12, 6, 2, 29]</code> to <code>12, 6, 2, 29</code> which is very convenient if the vector is very large. In this case, with only four integers, I could have passed the integers without the splat operator.</p>
-<div id="70" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>((a, b, c, d) <span class="op">-&gt;</span> (a <span class="op">*</span> d)<span class="op">/</span>(b <span class="op">*</span> c), <span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="68" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>((a, b, c, d) <span class="op">-&gt;</span> (a <span class="op">*</span> d)<span class="op">/</span>(b <span class="op">*</span> c), <span class="fl">12</span>, <span class="fl">6</span>, <span class="fl">2</span>, <span class="fl">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>29.0</code></pre>
 </div>
@@ -743,13 +751,13 @@ OR = \frac{a d}{b c}
 <li>Conducting a common analytic workflows</li>
 </ul>
 <p>The data set we will use is from National Health and Nutrition Examination Survey Data I Epidemiologic Follow-up Study (NHEFS). The version of the NHEFS data set we will use in from Professor Migual Hernan’s textbook “<a href="https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/">Causal Inference — What if</a>.”</p>
-<div id="72" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Downloads</span></span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CSV</span>, <span class="bu">DataFrames</span></span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="bu">Downloads</span>.<span class="fu">download</span>(<span class="st">"https://www.hsph.harvard.edu/miguel-hernan/wp-content"</span> <span class="op">*</span></span>
-<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"/uploads/sites/1268/2019/03/nhefs.csv"</span>, <span class="st">"nhefs.csv"</span>)</span>
-<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a><span class="fu">readlines</span>(<span class="st">"nhefs.csv"</span>)[<span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="70" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Downloads</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CSV</span>, <span class="bu">DataFrames</span></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="bu">Downloads</span>.<span class="fu">download</span>(<span class="st">"https://www.hsph.harvard.edu/miguel-hernan/wp-content"</span> <span class="op">*</span></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"/uploads/sites/1268/2019/03/nhefs.csv"</span>, <span class="st">"nhefs.csv"</span>)</span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a><span class="fu">readlines</span>(<span class="st">"nhefs.csv"</span>)[<span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>6-element Vector{String}:
  "seqn,qsmk,death,yrdth,modth,dad" ⋯ 465 bytes ⋯ "ax71,tax82,price71_82,tax71_82"
@@ -762,9 +770,9 @@ OR = \frac{a d}{b c}
 </div>
 <p>We are using the <code>Download</code>, <code>CSV</code>, and <code>Dataframes</code> modules.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
 <p>The data file has a header (variable names). If there is no header see p.&nbsp;191 of book.</p>
-<div id="74" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>nhefs <span class="op">=</span> CSV.<span class="fu">read</span>(<span class="st">"nhefs.csv"</span>, DataFrame)</span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>nhefs[<span class="fl">1</span><span class="op">:</span><span class="fl">6</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="72" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>nhefs <span class="op">=</span> CSV.<span class="fu">read</span>(<span class="st">"nhefs.csv"</span>, DataFrame)</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>nhefs[<span class="fl">1</span><span class="op">:</span><span class="fl">6</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div><div style="float: left;"><span>6×64 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -1313,9 +1321,9 @@ OR = \frac{a d}{b c}
 </div>
 </div>
 <p>To see all the variable names we will take the vector of 64 names and reshape them into a 16 by 4 matrix for display purposes.</p>
-<div id="76" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>vn <span class="op">=</span> <span class="fu">names</span>(nhefs)</span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">reshape</span>(vn, <span class="op">:</span>, <span class="fl">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="74" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>vn <span class="op">=</span> <span class="fu">names</span>(nhefs)</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">reshape</span>(vn, <span class="op">:</span>, <span class="fl">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>16×4 Matrix{String}:
  "seqn"       "wt71"               "hayfever"        "hbpmed"
@@ -1361,9 +1369,9 @@ Figure&nbsp;1: The split-apply-combine is a common workflow in data science.
 <li>Stratified by sex and race, what is the mean age?</li>
 </ul>
 <p>We start by creating smaller data set with these four variables, and describing them.</p>
-<div id="78" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>nhefs4 <span class="op">=</span> nhefs[<span class="op">:</span>,[<span class="op">:</span>death,<span class="op">:</span>sex,<span class="op">:</span>age,<span class="op">:</span>race]]</span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(nhefs4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="76" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>nhefs4 <span class="op">=</span> nhefs[<span class="op">:</span>,[<span class="op">:</span>death,<span class="op">:</span>sex,<span class="op">:</span>age,<span class="op">:</span>race]]</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(nhefs4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div><div style="float: left;"><span>4×7 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -1436,13 +1444,13 @@ Figure&nbsp;1: The split-apply-combine is a common workflow in data science.
 </div>
 </div>
 <p>For “split” we use the <code>groupby</code> function, and for “apply” and “combine” we use the <code>combine</code> function. I also insert a column with description of strate (eg, “white female”).</p>
-<div id="80" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> <span class="fu">groupby</span>(nhefs4, [<span class="op">:</span>sex, <span class="op">:</span>race])</span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> <span class="fu">combine</span>(gdf,</span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>death <span class="op">=&gt;</span> mean,</span>
-<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>age <span class="op">=&gt;</span> mean)</span>
-<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a><span class="fu">insertcols!</span>(results, </span>
-<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>strata <span class="op">=&gt;</span> [<span class="st">"white male"</span>, <span class="st">"black male"</span>, <span class="st">"white female"</span>, <span class="st">"black female"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="78" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> <span class="fu">groupby</span>(nhefs4, [<span class="op">:</span>sex, <span class="op">:</span>race])</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> <span class="fu">combine</span>(gdf,</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>death <span class="op">=&gt;</span> mean,</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>age <span class="op">=&gt;</span> mean)</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="fu">insertcols!</span>(results, </span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>strata <span class="op">=&gt;</span> [<span class="st">"white male"</span>, <span class="st">"black male"</span>, <span class="st">"white female"</span>, <span class="st">"black female"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div><div style="float: left;"><span>4×5 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -1513,19 +1521,19 @@ Figure&nbsp;1: The split-apply-combine is a common workflow in data science.
 <section id="appendix-data-dictionary-for-nhefs-data-file" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="appendix-data-dictionary-for-nhefs-data-file"><span class="header-section-number">3</span> Appendix: Data dictionary for NHEFS data file</h2>
 <p>Download data dictionary which is an Microsoft Excel XLSX file.</p>
-<div id="82" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Downloads</span>.<span class="fu">download</span>(<span class="st">"https://www.hsph.harvard.edu/miguel-hernan/wp-content"</span> <span class="op">*</span></span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"/uploads/sites/1268/2012/10/NHEFS_Codebook.xls"</span>,</span>
-<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"NHEFS_Codebook.xls"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="80" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Downloads</span>.<span class="fu">download</span>(<span class="st">"https://www.hsph.harvard.edu/miguel-hernan/wp-content"</span> <span class="op">*</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"/uploads/sites/1268/2012/10/NHEFS_Codebook.xls"</span>,</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"NHEFS_Codebook.xls"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>"NHEFS_Codebook.xls"</code></pre>
 </div>
 </div>
 <p>Then, open up in you MS Excel and manually save as a CSV file. Although the Julia <code>XLSX.jl</code> package can read <code>.xlsx</code> files, it cannot read old <code>.xls</code> file (yet). So this is a work around.</p>
-<div id="84" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>cb <span class="op">=</span> CSV.<span class="fu">read</span>(<span class="st">"NHEFS_Codebook.csv"</span>, DataFrame)</span>
-<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="fu">insertcols!</span>(cb, <span class="fl">1</span>, <span class="op">:</span>row <span class="op">=&gt;</span> <span class="fl">1</span><span class="op">:</span><span class="fl">64</span>)</span>
-<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>cb[<span class="fl">1</span><span class="op">:</span><span class="fl">20</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="82" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>cb <span class="op">=</span> CSV.<span class="fu">read</span>(<span class="st">"NHEFS_Codebook.csv"</span>, DataFrame)</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="fu">insertcols!</span>(cb, <span class="fl">1</span>, <span class="op">:</span>row <span class="op">=&gt;</span> <span class="fl">1</span><span class="op">:</span><span class="fl">64</span>)</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>cb[<span class="fl">1</span><span class="op">:</span><span class="fl">20</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div><div style="float: left;"><span>20×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -1669,8 +1677,8 @@ Figure&nbsp;1: The split-apply-combine is a common workflow in data science.
 </div>
 </div>
 </div>
-<div id="86" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>cb[<span class="fl">21</span><span class="op">:</span><span class="fl">40</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="84" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>cb[<span class="fl">21</span><span class="op">:</span><span class="fl">40</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div><div style="float: left;"><span>20×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -1814,8 +1822,8 @@ Figure&nbsp;1: The split-apply-combine is a common workflow in data science.
 </div>
 </div>
 </div>
-<div id="88" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>cb[<span class="fl">41</span><span class="op">:</span><span class="fl">64</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="86" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>cb[<span class="fl">41</span><span class="op">:</span><span class="fl">64</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div><div style="float: left;"><span>24×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
