@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Tomás Aragón">
-<meta name="dcterms.date" content="2023-03-31">
-<meta name="description" content="“Improving human decision intelligence”">
+<meta name="dcterms.date" content="2024-07-13">
+<meta name="description" content="“Improving human decision intelligence with Julia code”">
 
-<title>Simple method to get weights for decision making – Tomás Aragón, MD, DrPH</title>
+<title>Simple method for calculating decision criteria weights – Tomás Aragón, MD, DrPH</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -200,10 +200,10 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Simple method to get weights for decision making</h1>
+      <h1 class="title">Simple method for calculating decision criteria weights</h1>
                   <div>
         <div class="description">
-          <p>“Improving human decision intelligence”</p>
+          <p>“Improving human decision intelligence with Julia code”</p>
         </div>
       </div>
                           <div class="quarto-categories">
@@ -236,7 +236,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 31, 2023</p>
+        <p class="date">July 13, 2024</p>
       </div>
     </div>
     
@@ -276,7 +276,7 @@ window.Quarto = {
 
 
 
-```bcxfnji
+```tgkfowx
 #using Pkg
 #Pkg.add("Downloads");
 #Pkg.add("Distributions");
@@ -290,7 +290,7 @@ window.Quarto = {
 -->
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
-<p>At the California Department of Public Health, we promote human decision intelligence (HDI)—improving how we make team decisions to find, select, and solve problems and to improve outcomes. A foundational component of HDI is decision quality—the six requirements of good decision making. At a minimum, a decision quality checklist (DQ) (<a href="#tbl-dq" class="quarto-xref">Table&nbsp;1</a>) improves the quality of decisions at any stage of problem solving. A good decision is only as strong as its weakest link.</p>
+<p><strong>Human decision intelligence</strong> (HDI)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> is applying ethics, science, and technology to support team and individual decisions to solve problems, achieve objectives, and improve and innovate in the face of time constraints, uncertainty, and trade-offs. Think of human decision intelligence in the same way you might think about human emotional intelligence. A foundational component of HDI is <strong>decision quality</strong> — the six requirements of good decision making. At a minimum, a decision quality checklist (DQ) (<a href="#tbl-dq" class="quarto-xref">Table&nbsp;1</a>) improves the quality of decisions at any stage of problem solving. A good decision is only as strong as its weakest link.</p>
 <div id="tbl-dq" class="striped quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-dq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -345,6 +345,19 @@ Table&nbsp;1: Key questions to answer for decision quality (DQ)
 </table>
 </div>
 </figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What should I read to improve my decision making? Visit <a href="https://teampublichealth.substack.com/p/what-should-i-read-to-improve-my">TeamPublicHealth</a> at <a href="https://substack.com/@drtomasaragon">Substack.com</a>.</p>
+</div>
 </div>
 </section>
 <section id="decision-making" class="level2" data-number="2">
@@ -449,11 +462,12 @@ Table&nbsp;2: Decision quality requirements for buying a car
 </ol>
 <section id="step-1-the-sr-method-for-generating-criteria-weights" class="level4" data-number="3.1.1">
 <h4 data-number="3.1.1" class="anchored" data-anchor-id="step-1-the-sr-method-for-generating-criteria-weights"><span class="header-section-number">3.1.1</span> Step 1: The SR method for generating criteria weights</h4>
-<p>Here is the formula<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> where <span class="math inline">\(N\)</span> is the number of criteria, and <span class="math inline">\(w_i^{SR}\)</span> is the weight for the <span class="math inline">\(i^{th}\)</span> criterion <span class="citation" data-cites="Danielson2017_doi10.1007/978-3-319-52624-9_2">[<a href="#ref-Danielson2017_doi10.1007/978-3-319-52624-9_2" role="doc-biblioref">1</a>]</span>.</p>
+<p>Here is the formula<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> where <span class="math inline">\(N\)</span> is the number of criteria, and <span class="math inline">\(w_i^{SR}\)</span> is the weight for the <span class="math inline">\(i^{th}\)</span> criterion <span class="citation" data-cites="Danielson2017_doi10.1007/978-3-319-52624-9_2">[<a href="#ref-Danielson2017_doi10.1007/978-3-319-52624-9_2" role="doc-biblioref">1</a>]</span>.</p>
 <p><span class="math display">\[
 w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}} {\sum_{j=1}^N
                         \left(\frac{N+1-i}{N}\right)}
 \]</span></p>
+<p>For this calculation I use the <a href="https://julialang.org/">Julia Language</a>. Julia is as simple to program as Python but with the speed of C++. These calculations can also be completed in R.</p>
 <div id="2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsBase</span></span>
@@ -1422,7 +1436,8 @@ w_i^{SR} = \frac{1/i + \frac{N+1-i}{N}} {\sum_{j=1}^N
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>The SR method was selected because it was the best performing.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>I focus on human decision intelligence (HDI), in contrast to “decision intelligence” (DI). “Decision intelligence is an engineering discipline that augments data science with theory from social science, decision theory, and managerial science. Its application provides a framework for best practices in organizational decision-making and processes for applying machine learning at scale. The basic idea is that decisions are based on our understanding of how actions lead to outcomes. Decision intelligence is a discipline for analyzing this chain of cause and effect, and decision modeling is a visual language for representing these chains.”<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>The SR method was selected because it was the best performing.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
